@@ -1,0 +1,1383 @@
+[
+ {
+  "word": "He",
+  "start": 0.09,
+  "end": 0.3,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "froze",
+  "start": 0.3,
+  "end": 0.6,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "the",
+  "start": 0.6,
+  "end": 0.86,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "woman",
+  "start": 0.86,
+  "end": 1.29,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "he",
+  "start": 1.29,
+  "end": 1.46,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "loved,",
+  "start": 1.46,
+  "end": 2.05,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "and",
+  "start": 2.05,
+  "end": 2.31,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "he",
+  "start": 2.31,
+  "end": 2.38,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "did",
+  "start": 2.38,
+  "end": 2.57,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "it",
+  "start": 2.57,
+  "end": 2.71,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "to",
+  "start": 2.71,
+  "end": 2.84,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "save",
+  "start": 2.84,
+  "end": 3.11,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "her",
+  "start": 3.11,
+  "end": 3.31,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "life.",
+  "start": 3.31,
+  "end": 3.84,
+  "line": 1,
+  "matched": true
+ },
+ {
+  "word": "Alone",
+  "start": 3.84,
+  "end": 4.26,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "in",
+  "start": 4.26,
+  "end": 4.43,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "the",
+  "start": 4.43,
+  "end": 4.68,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "cold,",
+  "start": 4.68,
+  "end": 5.2,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "he",
+  "start": 5.2,
+  "end": 5.51,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "watches",
+  "start": 5.51,
+  "end": 5.94,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "a",
+  "start": 5.94,
+  "end": 6.02,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "tiny",
+  "start": 6.02,
+  "end": 6.41,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "dancer",
+  "start": 6.41,
+  "end": 6.88,
+  "line": 2,
+  "matched": true,
+  "accent": true
+ },
+ {
+  "word": "spin",
+  "start": 6.88,
+  "end": 7.18,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "inside",
+  "start": 7.18,
+  "end": 7.72,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "a",
+  "start": 7.72,
+  "end": 7.81,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "snow",
+  "start": 7.81,
+  "end": 8.02,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "globe.",
+  "start": 8.02,
+  "end": 8.64,
+  "line": 2,
+  "matched": true
+ },
+ {
+  "word": "The",
+  "start": 8.64,
+  "end": 8.94,
+  "line": 3,
+  "matched": true
+ },
+ {
+  "word": "dancer",
+  "start": 8.94,
+  "end": 9.22,
+  "line": 3,
+  "matched": true
+ },
+ {
+  "word": "looks",
+  "start": 9.22,
+  "end": 9.54,
+  "line": 3,
+  "matched": true
+ },
+ {
+  "word": "like",
+  "start": 9.54,
+  "end": 9.8,
+  "line": 3,
+  "matched": true
+ },
+ {
+  "word": "his",
+  "start": 9.8,
+  "end": 9.99,
+  "line": 3,
+  "matched": true
+ },
+ {
+  "word": "wife,",
+  "start": 9.99,
+  "end": 10.64,
+  "line": 3,
+  "matched": true
+ },
+ {
+  "word": "Nora,",
+  "start": 10.64,
+  "end": 10.8,
+  "line": 3,
+  "matched": true
+ },
+ {
+  "word": "and",
+  "start": 10.8,
+  "end": 11.07,
+  "line": 3,
+  "matched": true
+ },
+ {
+  "word": "Nora",
+  "start": 11.07,
+  "end": 11.44,
+  "line": 3,
+  "matched": true
+ },
+ {
+  "word": "was",
+  "start": 11.44,
+  "end": 11.71,
+  "line": 3,
+  "matched": true
+ },
+ {
+  "word": "dying.",
+  "start": 11.71,
+  "end": 12.16,
+  "line": 3,
+  "matched": true
+ },
+ {
+  "word": "So",
+  "start": 12.16,
+  "end": 12.46,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "Victor,",
+  "start": 12.46,
+  "end": 13.01,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "a",
+  "start": 13.01,
+  "end": 13.09,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "GothCorp",
+  "start": 13.288,
+  "end": 13.629,
+  "line": 4,
+  "matched": false
+ },
+ {
+  "word": "scientist,",
+  "start": 14.2,
+  "end": 14.73,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "froze",
+  "start": 14.73,
+  "end": 15.1,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "her",
+  "start": 15.1,
+  "end": 15.33,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "to",
+  "start": 15.33,
+  "end": 15.48,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "buy",
+  "start": 15.48,
+  "end": 15.53,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "time",
+  "start": 15.52,
+  "end": 16.13,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "for",
+  "start": 16.13,
+  "end": 16.24,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "a",
+  "start": 16.24,
+  "end": 16.31,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "cure.",
+  "start": 16.31,
+  "end": 16.88,
+  "line": 4,
+  "matched": true
+ },
+ {
+  "word": "But",
+  "start": 16.88,
+  "end": 17.18,
+  "line": 5,
+  "matched": true
+ },
+ {
+  "word": "the",
+  "start": 17.18,
+  "end": 17.34,
+  "line": 5,
+  "matched": true
+ },
+ {
+  "word": "company's",
+  "start": 17.34,
+  "end": 18.03,
+  "line": 5,
+  "matched": true
+ },
+ {
+  "word": "CEO,",
+  "start": 18.03,
+  "end": 18.41,
+  "line": 5,
+  "matched": true
+ },
+ {
+  "word": "Ferris",
+  "start": 18.41,
+  "end": 18.92,
+  "line": 5,
+  "matched": true
+ },
+ {
+  "word": "Boyle,",
+  "start": 18.92,
+  "end": 19.45,
+  "line": 5,
+  "matched": true
+ },
+ {
+  "word": "cut",
+  "start": 19.45,
+  "end": 19.66,
+  "line": 5,
+  "matched": true
+ },
+ {
+  "word": "his",
+  "start": 19.66,
+  "end": 19.92,
+  "line": 5,
+  "matched": true
+ },
+ {
+  "word": "money.",
+  "start": 19.92,
+  "end": 20.48,
+  "line": 5,
+  "matched": true
+ },
+ {
+  "word": "One",
+  "start": 20.48,
+  "end": 20.78,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "night,",
+  "start": 20.78,
+  "end": 21.16,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "Boyle",
+  "start": 21.16,
+  "end": 21.42,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "walked",
+  "start": 21.42,
+  "end": 21.8,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "in",
+  "start": 21.8,
+  "end": 21.92,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "with",
+  "start": 21.92,
+  "end": 22.15,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "two",
+  "start": 22.15,
+  "end": 22.52,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "guards",
+  "start": 22.52,
+  "end": 22.8,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "and",
+  "start": 22.8,
+  "end": 22.98,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "ordered",
+  "start": 22.98,
+  "end": 23.41,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "it",
+  "start": 23.41,
+  "end": 23.53,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "shut",
+  "start": 23.53,
+  "end": 23.78,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "down.",
+  "start": 23.78,
+  "end": 24.24,
+  "line": 6,
+  "matched": true
+ },
+ {
+  "word": "Victor",
+  "start": 24.24,
+  "end": 24.64,
+  "line": 7,
+  "matched": true
+ },
+ {
+  "word": "begged.",
+  "start": 24.64,
+  "end": 25.17,
+  "line": 7,
+  "matched": true
+ },
+ {
+  "word": "Turning",
+  "start": 25.17,
+  "end": 25.64,
+  "line": 7,
+  "matched": true
+ },
+ {
+  "word": "it",
+  "start": 25.64,
+  "end": 25.77,
+  "line": 7,
+  "matched": true
+ },
+ {
+  "word": "off",
+  "start": 25.77,
+  "end": 26.28,
+  "line": 7,
+  "matched": true
+ },
+ {
+  "word": "meant",
+  "start": 26.28,
+  "end": 26.33,
+  "line": 7,
+  "matched": true
+ },
+ {
+  "word": "Nora",
+  "start": 26.3,
+  "end": 26.57,
+  "line": 7,
+  "matched": true
+ },
+ {
+  "word": "would",
+  "start": 26.57,
+  "end": 26.9,
+  "line": 7,
+  "matched": true
+ },
+ {
+  "word": "die.",
+  "start": 26.9,
+  "end": 27.36,
+  "line": 7,
+  "matched": true
+ },
+ {
+  "word": "Nobody",
+  "start": 27.45,
+  "end": 27.75,
+  "line": 8,
+  "matched": true
+ },
+ {
+  "word": "noticed",
+  "start": 27.75,
+  "end": 28.2,
+  "line": 8,
+  "matched": true
+ },
+ {
+  "word": "the",
+  "start": 28.2,
+  "end": 28.39,
+  "line": 8,
+  "matched": true
+ },
+ {
+  "word": "little",
+  "start": 28.39,
+  "end": 28.78,
+  "line": 8,
+  "matched": true
+ },
+ {
+  "word": "red",
+  "start": 28.78,
+  "end": 28.91,
+  "line": 8,
+  "matched": true
+ },
+ {
+  "word": "light",
+  "start": 28.91,
+  "end": 29.4,
+  "line": 8,
+  "matched": true
+ },
+ {
+  "word": "blinking",
+  "start": 29.4,
+  "end": 29.81,
+  "line": 8,
+  "matched": true
+ },
+ {
+  "word": "in",
+  "start": 29.81,
+  "end": 29.93,
+  "line": 8,
+  "matched": true
+ },
+ {
+  "word": "the",
+  "start": 29.93,
+  "end": 30.13,
+  "line": 8,
+  "matched": true
+ },
+ {
+  "word": "corner.",
+  "start": 30.13,
+  "end": 30.56,
+  "line": 8,
+  "matched": true
+ },
+ {
+  "word": "Then",
+  "start": 30.56,
+  "end": 30.86,
+  "line": 9,
+  "matched": true
+ },
+ {
+  "word": "Boyle",
+  "start": 30.86,
+  "end": 31.13,
+  "line": 9,
+  "matched": true
+ },
+ {
+  "word": "kicked",
+  "start": 31.13,
+  "end": 31.53,
+  "line": 9,
+  "matched": true
+ },
+ {
+  "word": "him",
+  "start": 31.53,
+  "end": 31.72,
+  "line": 9,
+  "matched": true
+ },
+ {
+  "word": "into",
+  "start": 31.72,
+  "end": 31.98,
+  "line": 9,
+  "matched": true
+ },
+ {
+  "word": "the",
+  "start": 31.98,
+  "end": 32.23,
+  "line": 9,
+  "matched": true
+ },
+ {
+  "word": "freezing",
+  "start": 32.23,
+  "end": 32.69,
+  "line": 9,
+  "matched": true
+ },
+ {
+  "word": "chemicals.",
+  "start": 32.69,
+  "end": 33.52,
+  "line": 9,
+  "matched": true
+ },
+ {
+  "word": "Victor",
+  "start": 33.52,
+  "end": 34.03,
+  "line": 10,
+  "matched": true
+ },
+ {
+  "word": "survived,",
+  "start": 34.03,
+  "end": 34.88,
+  "line": 10,
+  "matched": true
+ },
+ {
+  "word": "but",
+  "start": 34.88,
+  "end": 35.07,
+  "line": 10,
+  "matched": true
+ },
+ {
+  "word": "his",
+  "start": 35.07,
+  "end": 35.56,
+  "line": 10,
+  "matched": true
+ },
+ {
+  "word": "body",
+  "start": 35.56,
+  "end": 35.68,
+  "line": 10,
+  "matched": true
+ },
+ {
+  "word": "could",
+  "start": 35.68,
+  "end": 36.09,
+  "line": 10,
+  "matched": true
+ },
+ {
+  "word": "only",
+  "start": 36.09,
+  "end": 36.39,
+  "line": 10,
+  "matched": true
+ },
+ {
+  "word": "live",
+  "start": 36.39,
+  "end": 36.71,
+  "line": 10,
+  "matched": true
+ },
+ {
+  "word": "below",
+  "start": 36.71,
+  "end": 37.44,
+  "line": 10,
+  "matched": true
+ },
+ {
+  "word": "zero.",
+  "start": 37.44,
+  "end": 37.49,
+  "line": 10,
+  "matched": true
+ },
+ {
+  "word": "And",
+  "start": 37.44,
+  "end": 37.74,
+  "line": 11,
+  "matched": true
+ },
+ {
+  "word": "Nora,",
+  "start": 37.74,
+  "end": 38.01,
+  "line": 11,
+  "matched": true
+ },
+ {
+  "word": "as",
+  "start": 38.01,
+  "end": 38.15,
+  "line": 11,
+  "matched": true
+ },
+ {
+  "word": "far",
+  "start": 38.15,
+  "end": 38.34,
+  "line": 11,
+  "matched": true
+ },
+ {
+  "word": "as",
+  "start": 38.34,
+  "end": 38.47,
+  "line": 11,
+  "matched": true
+ },
+ {
+  "word": "he",
+  "start": 38.47,
+  "end": 38.6,
+  "line": 11,
+  "matched": true
+ },
+ {
+  "word": "knew,",
+  "start": 38.6,
+  "end": 39.0,
+  "line": 11,
+  "matched": true
+ },
+ {
+  "word": "was",
+  "start": 39.0,
+  "end": 39.44,
+  "line": 11,
+  "matched": true
+ },
+ {
+  "word": "gone.",
+  "start": 39.44,
+  "end": 39.68,
+  "line": 11,
+  "matched": true,
+  "accent": true
+ },
+ {
+  "word": "So",
+  "start": 39.68,
+  "end": 39.98,
+  "line": 12,
+  "matched": true
+ },
+ {
+  "word": "he",
+  "start": 39.98,
+  "end": 40.03,
+  "line": 12,
+  "matched": true
+ },
+ {
+  "word": "built",
+  "start": 40.02,
+  "end": 40.46,
+  "line": 12,
+  "matched": true
+ },
+ {
+  "word": "a",
+  "start": 40.46,
+  "end": 40.54,
+  "line": 12,
+  "matched": true
+ },
+ {
+  "word": "suit",
+  "start": 40.54,
+  "end": 40.89,
+  "line": 12,
+  "matched": true
+ },
+ {
+  "word": "of",
+  "start": 40.89,
+  "end": 41.06,
+  "line": 12,
+  "matched": true
+ },
+ {
+  "word": "ice",
+  "start": 41.06,
+  "end": 41.35,
+  "line": 12,
+  "matched": true
+ },
+ {
+  "word": "and",
+  "start": 41.35,
+  "end": 41.72,
+  "line": 12,
+  "matched": true
+ },
+ {
+  "word": "started",
+  "start": 41.72,
+  "end": 42.07,
+  "line": 12,
+  "matched": true
+ },
+ {
+  "word": "tearing",
+  "start": 42.07,
+  "end": 42.57,
+  "line": 12,
+  "matched": true
+ },
+ {
+  "word": "GothCorp",
+  "start": 42.901,
+  "end": 43.206,
+  "line": 12,
+  "matched": false
+ },
+ {
+  "word": "apart.",
+  "start": 43.14,
+  "end": 43.76,
+  "line": 12,
+  "matched": true
+ },
+ {
+  "word": "Gotham",
+  "start": 43.76,
+  "end": 44.28,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "saw",
+  "start": 44.28,
+  "end": 44.54,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "a",
+  "start": 44.54,
+  "end": 44.62,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "monster.",
+  "start": 44.62,
+  "end": 45.52,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "Then",
+  "start": 45.52,
+  "end": 45.82,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "he",
+  "start": 45.82,
+  "end": 45.89,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "came",
+  "start": 45.89,
+  "end": 46.2,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "for",
+  "start": 46.2,
+  "end": 46.33,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "Boyle",
+  "start": 46.33,
+  "end": 46.64,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "at",
+  "start": 46.64,
+  "end": 46.76,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "a",
+  "start": 46.76,
+  "end": 46.82,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "company",
+  "start": 46.82,
+  "end": 47.56,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "ceremony.",
+  "start": 47.56,
+  "end": 48.0,
+  "line": 13,
+  "matched": true
+ },
+ {
+  "word": "Batman",
+  "start": 48.0,
+  "end": 48.45,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "stopped",
+  "start": 48.45,
+  "end": 48.97,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "him,",
+  "start": 48.97,
+  "end": 49.36,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "then",
+  "start": 49.36,
+  "end": 49.55,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "showed",
+  "start": 49.55,
+  "end": 50.04,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "the",
+  "start": 50.04,
+  "end": 50.09,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "city",
+  "start": 50.07,
+  "end": 50.32,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "what",
+  "start": 50.32,
+  "end": 50.59,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "that",
+  "start": 50.59,
+  "end": 50.86,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "red",
+  "start": 50.86,
+  "end": 51.06,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "light",
+  "start": 51.06,
+  "end": 51.39,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "saw.",
+  "start": 51.39,
+  "end": 51.84,
+  "line": 14,
+  "matched": true
+ },
+ {
+  "word": "A",
+  "start": 51.84,
+  "end": 51.93,
+  "line": 15,
+  "matched": true
+ },
+ {
+  "word": "security",
+  "start": 51.93,
+  "end": 52.52,
+  "line": 15,
+  "matched": true
+ },
+ {
+  "word": "camera",
+  "start": 52.52,
+  "end": 52.92,
+  "line": 15,
+  "matched": true
+ },
+ {
+  "word": "had",
+  "start": 52.92,
+  "end": 53.13,
+  "line": 15,
+  "matched": true
+ },
+ {
+  "word": "recorded",
+  "start": 53.13,
+  "end": 53.88,
+  "line": 15,
+  "matched": true
+ },
+ {
+  "word": "everything",
+  "start": 53.88,
+  "end": 54.43,
+  "line": 15,
+  "matched": true
+ },
+ {
+  "word": "Boyle",
+  "start": 54.43,
+  "end": 54.78,
+  "line": 15,
+  "matched": true
+ },
+ {
+  "word": "did",
+  "start": 54.78,
+  "end": 54.99,
+  "line": 15,
+  "matched": true
+ },
+ {
+  "word": "that",
+  "start": 54.99,
+  "end": 55.27,
+  "line": 15,
+  "matched": true
+ },
+ {
+  "word": "night.",
+  "start": 55.27,
+  "end": 55.92,
+  "line": 15,
+  "matched": true
+ },
+ {
+  "word": "Now,",
+  "start": 56.81,
+  "end": 57.02,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "in",
+  "start": 57.02,
+  "end": 57.13,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "Arkham,",
+  "start": 57.13,
+  "end": 57.79,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "he",
+  "start": 57.79,
+  "end": 57.95,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "holds",
+  "start": 57.95,
+  "end": 58.39,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "the",
+  "start": 58.39,
+  "end": 58.76,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "little",
+  "start": 58.76,
+  "end": 59.12,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "dancer",
+  "start": 59.12,
+  "end": 59.68,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "and",
+  "start": 59.68,
+  "end": 59.94,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "begs",
+  "start": 59.94,
+  "end": 60.28,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "Nora",
+  "start": 60.28,
+  "end": 60.69,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "to",
+  "start": 60.69,
+  "end": 60.74,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "forgive",
+  "start": 60.74,
+  "end": 61.1,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "him.",
+  "start": 61.1,
+  "end": 61.44,
+  "line": 16,
+  "matched": true
+ },
+ {
+  "word": "Gotham",
+  "start": 61.44,
+  "end": 61.89,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "calls",
+  "start": 61.89,
+  "end": 62.27,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "him",
+  "start": 62.27,
+  "end": 62.5,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "Mr.",
+  "start": 62.5,
+  "end": 62.88,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "Freeze,",
+  "start": 62.88,
+  "end": 63.6,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "but",
+  "start": 63.6,
+  "end": 63.9,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "maybe",
+  "start": 63.9,
+  "end": 64.16,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "he",
+  "start": 64.16,
+  "end": 64.3,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "was",
+  "start": 64.3,
+  "end": 64.51,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "never",
+  "start": 64.51,
+  "end": 64.86,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "the",
+  "start": 64.86,
+  "end": 65.06,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "coldest",
+  "start": 65.06,
+  "end": 65.64,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "man",
+  "start": 65.64,
+  "end": 65.77,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "in",
+  "start": 65.77,
+  "end": 65.91,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "that",
+  "start": 65.91,
+  "end": 66.19,
+  "line": 17,
+  "matched": true
+ },
+ {
+  "word": "lab.",
+  "start": 66.19,
+  "end": 66.64,
+  "line": 17,
+  "matched": true
+ }
+]

@@ -1,5 +1,7 @@
 studio/node_modules/
 studio/out/
-episodes/*/09_render/*.mp4
+episodes/*/09_render/final*.mp4
+episodes/*/05_voice/*.wav
+episodes/*/06_audio/*.wav
 __pycache__/
 *.pyc

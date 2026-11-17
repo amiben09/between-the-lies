@@ -1,0 +1,59 @@
+{
+ "duration": 67.92,
+ "key": 62,
+ "bpm": 64.0,
+ "seed": 7,
+ "sections": [
+  {
+   "start": 0.0,
+   "end": 3.709,
+   "mood": "hook",
+   "intensity": 0.6
+  },
+  {
+   "start": 3.709,
+   "end": 16.803,
+   "mood": "tender",
+   "intensity": 0.5
+  },
+  {
+   "start": 16.803,
+   "end": 20.301,
+   "mood": "tension",
+   "intensity": 0.6
+  },
+  {
+   "start": 20.301,
+   "end": 33.406,
+   "mood": "grief",
+   "intensity": 0.75
+  },
+  {
+   "start": 33.406,
+   "end": 43.612,
+   "mood": "rise",
+   "intensity": 0.85
+  },
+  {
+   "start": 43.612,
+   "end": 55.999,
+   "mood": "tension",
+   "intensity": 0.7
+  },
+  {
+   "start": 55.999,
+   "end": 56.599,
+   "mood": "silence"
+  },
+  {
+   "start": 56.599,
+   "end": 67.92,
+   "mood": "resolve",
+   "intensity": 0.5
+  }
+ ],
+ "hits": [
+  33.606,
+  56.799
+ ]
+}

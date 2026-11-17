@@ -8,7 +8,8 @@ export const Root: React.FC = () => (
   <>
     <Composition id="BridgeShort" component={BridgeShort} durationInFrames={BRIDGE_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="CaptionPreview" component={CaptionPreview} durationInFrames={2016} fps={30} width={1080} height={1920}
-      defaultProps={{ dir: "preview" }} />
+      defaultProps={{ dir: "preview", seconds: 67.2 }}
+      calculateMetadata={({ props }) => ({ durationInFrames: Math.ceil(props.seconds * 30) })} />
     <Composition id="FaceSheet" component={FaceSheet} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );
