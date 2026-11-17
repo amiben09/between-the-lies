@@ -5,3 +5,4 @@ episodes/*/05_voice/*.wav
 episodes/*/06_audio/*.wav
 __pycache__/
 *.pyc
+episodes/*/09_render/ep*_v[0-9].mp4
