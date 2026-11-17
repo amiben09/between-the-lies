@@ -2,10 +2,10 @@
 // shot (no static holds), crossfades (or hard cuts), a cinematic grade + vignette + light grain, the final mix and captions.
 // Props come from episodes/<slug>/07_shots.json: { dir, seconds, shots: [{ id, start, end, clip, cut }] }.
 import React from "react";
-import { AbsoluteFill, Audio, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig, Easing } from "remotion";
+import { AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig, Easing } from "remotion";
 import { Captions } from "./components/Captions";
 
-export type Shot = { id: number; start: number; end: number; clip: string; cut?: boolean; clipSeconds?: number };
+export type Shot = { id: number; start: number; end: number; clip: string; cut?: boolean; clipSeconds?: number; rate?: number };
 export type EpisodeProps = { dir: string; seconds: number; shots: Shot[]; xfade?: number; captions?: boolean };
 
 const XFADE_DEFAULT = 7; // frames
@@ -16,17 +16,20 @@ const ShotLayer: React.FC<{ shot: Shot; dir: string; frames: number; fadeIn: num
   const clipLen = shot.clipSeconds ?? 5;
   const need = frames / fps;
   // stretch slightly (never faster than 1x) when a shot is longer than its clip
-  const rate = need > clipLen ? Math.max(0.6, clipLen / need) : 1;
+  const rate = shot.rate ?? (need > clipLen ? Math.max(0.6, clipLen / need) : 1); // per-shot override (e.g. keep only the action)
   const opacity = fadeIn > 0 ? interpolate(f, [0, fadeIn], [0, 1], { extrapolateRight: "clamp" }) : 1;
   // camera drift: alternate push-in / slight pan so consecutive shots never feel static
   const u = interpolate(f, [0, frames], [0, 1], { extrapolateRight: "clamp", easing: Easing.inOut(Easing.sin) });
-  const scale = 1.04 + 0.05 * u;
+  const still = /\.(png|jpe?g|webp)$/i.test(shot.clip);
+  const scale = still ? 1.02 + 0.12 * u : 1.04 + 0.05 * u; // stills get a stronger push-in so they never read as frozen
   const dx = (index % 2 ? 1 : -1) * 14 * u;
   return (
     <AbsoluteFill style={{ opacity }}>
       <AbsoluteFill style={{ transform: `translate(${dx}px, 0) scale(${scale})` }}>
-        <OffthreadVideo src={staticFile(`${dir}/${shot.clip}`)} playbackRate={rate} muted
-          style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        {/\.(png|jpe?g|webp)$/i.test(shot.clip)
+          ? <Img src={staticFile(`${dir}/${shot.clip}`)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          : <OffthreadVideo src={staticFile(`${dir}/${shot.clip}`)} playbackRate={rate} muted
+              style={{ width: "100%", height: "100%", objectFit: "cover" }} />}
       </AbsoluteFill>
     </AbsoluteFill>
   );

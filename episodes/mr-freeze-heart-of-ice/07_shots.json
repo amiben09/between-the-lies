@@ -6,140 +6,164 @@
    "start": 0.0,
    "end": 2.917,
    "clip": "clips/S01.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 2,
    "start": 2.917,
    "end": 6.456,
    "clip": "clips/S02.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 3,
    "start": 6.456,
    "end": 9.088,
    "clip": "clips/S03.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 4,
    "start": 9.088,
    "end": 11.69,
    "clip": "clips/S04.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 5,
    "start": 11.69,
    "end": 14.728,
    "clip": "clips/S05.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 6,
    "start": 14.728,
    "end": 18.096,
    "clip": "clips/S06.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 7,
    "start": 18.096,
    "end": 20.916,
    "clip": "clips/S07.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 8,
    "start": 20.916,
    "end": 23.623,
    "clip": "clips/S08.mp4",
-   "cut": true
+   "cut": true,
+   "clipSeconds": 5.167
   },
   {
    "id": 9,
    "start": 23.623,
    "end": 25.905,
    "clip": "clips/S09.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 10,
    "start": 25.905,
    "end": 29.533,
    "clip": "clips/S10.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 11,
    "start": 29.533,
    "end": 33.236,
    "clip": "clips/S11.mp4",
-   "cut": true
+   "cut": true,
+   "clipSeconds": 5.167,
+   "rate": 0.6,
+   "note": "clip settles after ~2.3 s (Victor sits calmly): slowed to 0.6x so only the kick + burst play"
   },
   {
    "id": 12,
    "start": 33.236,
    "end": 36.249,
    "clip": "clips/S12.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 13,
    "start": 36.249,
    "end": 37.903,
    "clip": "clips/S13.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 14,
    "start": 37.903,
    "end": 40.8,
    "clip": "clips/S14.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 15,
    "start": 40.8,
    "end": 44.606,
    "clip": "clips/S15.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 16,
    "start": 44.606,
    "end": 46.148,
    "clip": "clips/S16.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 17,
    "start": 46.148,
    "end": 49.219,
    "clip": "clips/S17.mp4",
-   "cut": true
+   "cut": true,
+   "clipSeconds": 5.167
   },
   {
    "id": 18,
    "start": 49.219,
    "end": 53.568,
-   "clip": "clips/S18.mp4",
-   "cut": false
+   "clip": "clips/S18.png",
+   "cut": false,
+   "note": "clip S18.mp4 rejected: Boyle duplicates mid-shot; still + push-in",
+   "clipSeconds": 5.167
   },
   {
    "id": 19,
    "start": 53.568,
    "end": 57.159,
    "clip": "clips/S19.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   },
   {
    "id": 20,
    "start": 57.159,
    "end": 62.5,
    "clip": "clips/S20.mp4",
-   "cut": false
+   "cut": false,
+   "clipSeconds": 5.167
   }
- ]
+ ],
+ "dir": "ep/mr-freeze-heart-of-ice"
 }
