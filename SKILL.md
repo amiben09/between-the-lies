@@ -24,7 +24,7 @@ this channel needs are listed in `references/engine_changes.md`.
    line in the voice-over and captions. No logos and no official title cards.
 4. **Captions ON.** This overrides the engine's default "no captions" rule (see `references/engine_changes.md`).
 5. **No historical "You see," explainer formula.** We use the drama formula in `references/story_formula.md`.
-6. English narration for a US audience. 60-70 s. Start with 175-195 spoken words.
+6. English narration for a US audience. 60-70 s at ~4 words/s (3.7-4.2): 240-260 spoken words.
 7. Nothing is rendered or generated until its gate is approved by the user.
 
 ## Pipeline and gates

@@ -1,4 +1,7 @@
-# The BETWEEN THE LIES drama formula (60-70 s, 175-195 words)
+# The BETWEEN THE LIES drama formula (60-70 s, 240-260 words at ~4 words/s)
+
+Pace decision (2026-11-17, channel owner): narration at ~4 words/s (3.7-4.2), so scripts are 240-260 words.
+Beat word budgets below scale by x1.35 from the original 185-word plan.
 
 The engine's historical formula (hook → setting → "You see," explanation → rule) is NOT used here.
 

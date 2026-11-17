@@ -1,22 +1,156 @@
-{"duration": 68.0, "events": [
- {"t": 0.0,  "fx": "ice_crackle", "args": {"dur": 3.0}, "gain_db": -2},
- {"t": 3.8,  "fx": "city_night", "args": {"dur": 13.0}, "gain_db": -8},
- {"t": 4.2,  "fx": "clock_tick", "args": {"dur": 12}, "gain_db": -10},
- {"t": 17.0, "fx": "paper", "args": {"dur": 0.8}, "gain_db": -6},
- {"t": 20.4, "fx": "door_close", "args": {}, "gain_db": -3},
- {"t": 21.2, "fx": "footsteps", "args": {"dur": 2.6, "rate": 2.4, "surface": "stone"}, "gain_db": -6},
- {"t": 24.2, "fx": "heartbeat", "args": {"dur": 9.0, "bpm": 84}, "gain_db": -3},
- {"t": 25.0, "fx": "breath", "args": {"kind": "shaky"}, "gain_db": -3},
- {"t": 27.4, "fx": "clock_tick", "args": {"dur": 3}, "gain_db": -6},
- {"t": 30.6, "fx": "glass_set", "args": {}, "gain_db": 0},
- {"t": 30.7, "fx": "ice_crackle", "args": {"dur": 2.5}, "gain_db": 0},
- {"t": 31.0, "fx": "tinnitus", "args": {"dur": 3.0}, "gain_db": -2},
- {"t": 37.5, "fx": "window_rain", "args": {"dur": 6.0}, "gain_db": -6},
- {"t": 39.9, "fx": "ice_crackle", "args": {"dur": 2.0}, "gain_db": -4},
- {"t": 43.8, "fx": "city_night", "args": {"dur": 8.0}, "gain_db": -8},
- {"t": 46.2, "fx": "ice_crackle", "args": {"dur": 1.5}, "gain_db": -3},
- {"t": 48.1, "fx": "whoosh", "args": {"dur": 0.8}, "gain_db": -6},
- {"t": 52.0, "fx": "clock_tick", "args": {"dur": 4}, "gain_db": -8},
- {"t": 56.0, "fx": "window_rain", "args": {"dur": 12.0}, "gain_db": -9},
- {"t": 61.6, "fx": "breath", "args": {"kind": "sob"}, "gain_db": -6}
-]}
+{
+ "duration": 62.79,
+ "events": [
+  {
+   "t": 0.0,
+   "fx": "ice_crackle",
+   "args": {
+    "dur": 2.5
+   },
+   "gain_db": -2
+  },
+  {
+   "t": 3.04,
+   "fx": "city_night",
+   "args": {
+    "dur": 15.2
+   },
+   "gain_db": -8
+  },
+  {
+   "t": 3.34,
+   "fx": "clock_tick",
+   "args": {
+    "dur": 15
+   },
+   "gain_db": -10
+  },
+  {
+   "t": 18.22,
+   "fx": "paper",
+   "args": {
+    "dur": 0.8
+   },
+   "gain_db": -6
+  },
+  {
+   "t": 20.84,
+   "fx": "door_close",
+   "args": {},
+   "gain_db": -3
+  },
+  {
+   "t": 21.64,
+   "fx": "footsteps",
+   "args": {
+    "dur": 2.2,
+    "rate": 2.6,
+    "surface": "stone"
+   },
+   "gain_db": -6
+  },
+  {
+   "t": 23.74,
+   "fx": "heartbeat",
+   "args": {
+    "dur": 9.4,
+    "bpm": 92
+   },
+   "gain_db": -3
+  },
+  {
+   "t": 24.04,
+   "fx": "breath",
+   "args": {
+    "kind": "shaky"
+   },
+   "gain_db": -3
+  },
+  {
+   "t": 31.25,
+   "fx": "glass_set",
+   "args": {},
+   "gain_db": 0
+  },
+  {
+   "t": 31.35,
+   "fx": "ice_crackle",
+   "args": {
+    "dur": 2.5
+   },
+   "gain_db": 0
+  },
+  {
+   "t": 33.36,
+   "fx": "tinnitus",
+   "args": {
+    "dur": 3.0
+   },
+   "gain_db": -2
+  },
+  {
+   "t": 36.37,
+   "fx": "window_rain",
+   "args": {
+    "dur": 5.0
+   },
+   "gain_db": -6
+  },
+  {
+   "t": 38.02,
+   "fx": "ice_crackle",
+   "args": {
+    "dur": 2.0
+   },
+   "gain_db": -4
+  },
+  {
+   "t": 40.92,
+   "fx": "city_night",
+   "args": {
+    "dur": 8.4
+   },
+   "gain_db": -8
+  },
+  {
+   "t": 44.73,
+   "fx": "ice_crackle",
+   "args": {
+    "dur": 1.6
+   },
+   "gain_db": -2
+  },
+  {
+   "t": 46.27,
+   "fx": "whoosh",
+   "args": {
+    "dur": 0.8
+   },
+   "gain_db": -6
+  },
+  {
+   "t": 49.34,
+   "fx": "clock_tick",
+   "args": {
+    "dur": 3
+   },
+   "gain_db": -8
+  },
+  {
+   "t": 53.19,
+   "fx": "window_rain",
+   "args": {
+    "dur": 9.6
+   },
+   "gain_db": -9
+  },
+  {
+   "t": 55.19,
+   "fx": "breath",
+   "args": {
+    "kind": "sob"
+   },
+   "gain_db": -6
+  }
+ ]
+}

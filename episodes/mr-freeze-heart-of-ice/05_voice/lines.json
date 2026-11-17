@@ -3,119 +3,147 @@
   "line": 1,
   "beat": "HOOK",
   "start": 0.08,
-  "end": 3.609,
+  "end": 2.817,
   "text": "He froze the woman he loved, and he did it to save her life."
  },
  {
   "line": 2,
   "beat": "LOVE",
-  "start": 3.959,
-  "end": 8.547,
+  "start": 3.037,
+  "end": 6.476,
   "text": "Alone in the cold, he watches a tiny *dancer* spin inside a snow globe."
  },
  {
   "line": 3,
   "beat": "LOVE",
-  "start": 8.727,
-  "end": 12.083,
+  "start": 6.5760000000000005,
+  "end": 9.108,
   "text": "The dancer looks like his wife, Nora, and Nora was dying."
  },
  {
   "line": 4,
   "beat": "LOVE",
-  "start": 12.263,
-  "end": 16.703,
-  "text": "So Victor, a GothCorp scientist, froze her to buy time for a cure."
+  "start": 9.208,
+  "end": 11.71,
+  "text": "No doctor could save her, and Victor wasn't a doctor."
  },
  {
   "line": 5,
-  "beat": "CRACK",
-  "start": 17.052999999999997,
-  "end": 20.200999999999997,
-  "text": "But the company's CEO, Ferris Boyle, cut his money."
+  "beat": "LOVE",
+  "start": 11.81,
+  "end": 14.748,
+  "text": "He was a scientist at GothCorp, and his whole job was cold."
  },
  {
   "line": 6,
-  "beat": "WOUND",
-  "start": 20.551,
-  "end": 24.108999999999998,
-  "text": "One night, Boyle walked in with two guards and ordered it shut down."
+  "beat": "LOVE",
+  "start": 14.848,
+  "end": 17.996,
+  "text": "So he built a chamber, froze her, and bought himself time to find a cure."
  },
  {
   "line": 7,
-  "beat": "WOUND",
-  "start": 24.288999999999998,
-  "end": 27.253999999999998,
-  "text": "Victor begged. Turning it off meant Nora would die."
+  "beat": "CRACK",
+  "start": 18.215999999999998,
+  "end": 20.816,
+  "text": "But the company's CEO, Ferris Boyle, cut his funding."
  },
  {
   "line": 8,
   "beat": "WOUND",
-  "start": 27.433999999999997,
-  "end": 30.497999999999998,
-  "text": "Nobody noticed the little red light blinking in the corner."
+  "start": 21.035999999999998,
+  "end": 23.642999999999997,
+  "text": "One night, Boyle walked in with two guards and ordered it shut down."
  },
  {
   "line": 9,
   "beat": "WOUND",
-  "start": 30.677999999999997,
-  "end": 33.306,
-  "text": "Then Boyle kicked him into the freezing chemicals."
+  "start": 23.743,
+  "end": 25.924999999999997,
+  "text": "Victor begged. Turning it off meant Nora would die."
  },
  {
   "line": 10,
-  "beat": "TURN",
-  "start": 33.656,
-  "end": 37.363,
-  "text": "Victor survived, but his body could only live below zero."
+  "beat": "WOUND",
+  "start": 26.025,
+  "end": 29.552999999999997,
+  "text": "Boyle refused, and nobody noticed the little red light blinking in the corner."
  },
  {
   "line": 11,
-  "beat": "TURN",
-  "start": 37.543,
-  "end": 39.664,
-  "text": "And Nora, as far as he knew, was *gone*."
+  "beat": "WOUND",
+  "start": 29.653,
+  "end": 33.135999999999996,
+  "text": "Victor fought back, and Boyle kicked him into a table of freezing chemicals."
  },
  {
   "line": 12,
   "beat": "TURN",
-  "start": 39.844,
-  "end": 43.512,
-  "text": "So he built a suit of ice and started tearing GothCorp apart."
+  "start": 33.356,
+  "end": 36.269,
+  "text": "He survived, but now his body could only live below zero."
  },
  {
   "line": 13,
-  "beat": "REVELATION",
-  "start": 43.861999999999995,
-  "end": 47.964,
-  "text": "Gotham saw a monster. Then he came for Boyle at a company ceremony."
+  "beat": "TURN",
+  "start": 36.369,
+  "end": 37.923,
+  "text": "And Nora, as far as he knew, was *gone*."
  },
  {
   "line": 14,
-  "beat": "REVELATION",
-  "start": 48.144,
-  "end": 51.78,
-  "text": "Batman stopped him, then showed the city what that red light saw."
+  "beat": "TURN",
+  "start": 38.022999999999996,
+  "end": 40.699999999999996,
+  "text": "So he built a suit of ice and started tearing GothCorp apart."
  },
  {
   "line": 15,
   "beat": "REVELATION",
-  "start": 51.96,
-  "end": 55.899,
-  "text": "A security camera had recorded everything Boyle did that night."
+  "start": 40.92,
+  "end": 42.543,
+  "text": "Gotham saw a monster in a frozen suit."
  },
  {
   "line": 16,
-  "beat": "PAYOFF",
-  "start": 56.849,
-  "end": 61.417,
-  "text": "Now, in Arkham, he holds the little dancer and begs Nora to forgive him."
+  "beat": "REVELATION",
+  "start": 42.643,
+  "end": 44.626,
+  "text": "Then he came for Boyle at a company ceremony."
  },
  {
   "line": 17,
+  "beat": "REVELATION",
+  "start": 44.726,
+  "end": 46.168,
+  "text": "He froze Boyle from the waist down."
+ },
+ {
+  "line": 18,
+  "beat": "REVELATION",
+  "start": 46.268,
+  "end": 49.239,
+  "text": "But Batman stopped him, then showed the city what that red light saw."
+ },
+ {
+  "line": 19,
+  "beat": "REVELATION",
+  "start": 49.339,
+  "end": 52.867999999999995,
+  "text": "It was a security camera, and the tape showed exactly what Boyle did that night."
+ },
+ {
+  "line": 20,
   "beat": "PAYOFF",
-  "start": 61.597,
-  "end": 66.72,
+  "start": 53.687999999999995,
+  "end": 57.178999999999995,
+  "text": "Now, in Arkham, he holds the little dancer and begs Nora to forgive him."
+ },
+ {
+  "line": 21,
+  "beat": "PAYOFF",
+  "start": 57.278999999999996,
+  "end": 61.294,
   "text": "Gotham calls him Mr. Freeze, but maybe he was never the coldest man in that lab."
  }
 ]

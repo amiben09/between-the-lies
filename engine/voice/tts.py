@@ -5,7 +5,7 @@ Engine: Kokoro-82M (Apache-2.0, runs on CPU, free, commercial use allowed). Stoc
 narrator. Word timings come from whisper.cpp (`whisper-cli`) and are aligned back to the script words, so the captions
 always show the script's spelling.
 
-Pauses: 0.18 s between lines, 0.35 s between beats (HOOK -> LOVE ...), 0.6 s for each [beat] mark.
+Pauses (defaults): 0.10 s between lines, 0.22 s between beats (HOOK -> LOVE ...), 0.6 s for each [beat] mark.
 
 Run with the TTS environment's Python:
   /root/.cache/btl-tts/bin/python tts.py episodes/<slug>/04_script.md -o episodes/<slug>/05_voice
@@ -31,6 +31,7 @@ import numpy as np
 LINE_RE = re.compile(r"^L(\d+)\s*\[(\w+)\]\s*\[(\w+)\]\s*(.*)$")
 WORD_RE = re.compile(r"[A-Za-z0-9]+(?:['’][A-Za-z]+)?")
 OUT_SR = 48000
+LINE_GAP, BEAT_GAP = 0.18, 0.35  # overridable with --line-gap / --beat-gap
 log = logging.getLogger("tts")
 
 
@@ -68,7 +69,7 @@ def synth(items: list[dict], voice: str, speed: float) -> tuple[np.ndarray, list
             chunks.append(np.zeros(int(it["pause"] * sr)))
             t += it["pause"]
             continue
-        gap = 0.0 if prev_beat is None else (0.35 if it["beat"] != prev_beat else 0.18)
+        gap = 0.0 if prev_beat is None else (BEAT_GAP if it["beat"] != prev_beat else LINE_GAP)
         prev_beat = it["beat"]
         if gap:
             chunks.append(np.zeros(int(gap * sr)))
@@ -170,14 +171,18 @@ def main() -> int:
     ap.add_argument("script")
     ap.add_argument("-o", "--outdir", default=".")
     ap.add_argument("--voice", default="am_michael")
-    ap.add_argument("--speed", type=float, default=0.95)
+    ap.add_argument("--speed", type=float, default=1.25, help="Kokoro speed (1.25 ~ 4 words/s with the default gaps)")
+    ap.add_argument("--line-gap", type=float, default=0.10, help="pause between lines in the same beat (s)")
+    ap.add_argument("--beat-gap", type=float, default=0.22, help="pause between beats (s)")
     ap.add_argument("--whisper-model", default=os.path.expanduser("~/.claude-video-vision/models/ggml-base.bin"))
     ap.add_argument("-v", "--verbose", action="store_true")
     a = ap.parse_args()
     logging.basicConfig(level=logging.INFO if a.verbose else logging.WARNING, format="%(name)s: %(message)s")
-    if not 0.7 <= a.speed <= 1.3:
-        print("error: --speed must be 0.7-1.3", file=sys.stderr)
+    if not 0.7 <= a.speed <= 1.6:
+        print("error: --speed must be 0.7-1.6", file=sys.stderr)
         return 2
+    global LINE_GAP, BEAT_GAP
+    LINE_GAP, BEAT_GAP = max(0.0, a.line_gap), max(0.0, a.beat_gap)
     try:
         items = parse(a.script)
         os.makedirs(a.outdir, exist_ok=True)

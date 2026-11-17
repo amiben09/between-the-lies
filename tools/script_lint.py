@@ -197,15 +197,15 @@ def lint(header: dict[str, str], lines: list[Line], beats: int, args: argparse.N
     return r
 
 
-def lint_words(r: Report, words: list[tuple[str, float, float]], n_script_words: int) -> None:
+def lint_words(r: Report, words: list[tuple[str, float, float]], n_script_words: int, pmin: float = 3.7, pmax: float = 4.2) -> None:
     start, end = words[0][1], words[-1][2]
     dur = end
     r.add("PASS" if start <= 0.15 else "WARN", "voice-start", f"first word at {start:.2f} s (<= 0.15)")
     r.add("PASS" if 60 <= dur <= 70 else "FAIL", "voice-duration", f"{dur:.1f} s (60-70)")
     wps = len(words) / max(end - start, 0.01)
-    r.add("PASS" if 2.8 <= wps <= 3.4 else "WARN", "pace", f"{wps:.2f} words/s (2.8-3.4)")
+    r.add("PASS" if pmin <= wps <= pmax else "WARN", "pace", f"{wps:.2f} words/s ({pmin}-{pmax})")
     gaps = [(words[i][0], words[i + 1][1] - words[i][2]) for i in range(len(words) - 1)]
-    long_gaps = [(w, g) for w, g in gaps if g > 0.9]
+    long_gaps = [(w, g) for w, g in gaps if g > 0.9]  # [beat] silences are ~0.6-0.8 s
     r.add("PASS" if not long_gaps else "WARN", "gaps", "no gap > 0.9 s" if not long_gaps else
           "; ".join(f"after '{w}': {g:.2f} s" for w, g in long_gaps[:5]))
     diff = abs(len(words) - n_script_words)
@@ -216,9 +216,11 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Lint a BETWEEN THE LIES script (and optional voice timings).")
     ap.add_argument("script", type=Path, help="path to 04_script.md")
     ap.add_argument("--words", type=Path, help="words.json with word timestamps")
-    ap.add_argument("--min-words", type=int, default=175)
-    ap.add_argument("--max-words", type=int, default=195)
-    ap.add_argument("--wps", type=float, default=3.0, help="words/s used for the duration estimate (default 3.0)")
+    ap.add_argument("--min-words", type=int, default=240)
+    ap.add_argument("--max-words", type=int, default=262)
+    ap.add_argument("--wps", type=float, default=3.9, help="words/s used for the duration estimate (default 3.9)")
+    ap.add_argument("--pace-min", type=float, default=3.7)
+    ap.add_argument("--pace-max", type=float, default=4.2)
     ap.add_argument("--max-sentence", type=int, default=16)
     ap.add_argument("--original", action="store_true", help="original story: [ORIGINAL]/[INTERP] need no softener")
     ap.add_argument("--json", action="store_true", help="print the report as JSON")
@@ -233,7 +235,7 @@ def main() -> int:
         header, lines, beats = parse_script(args.script)
         report = lint(header, lines, beats, args)
         if args.words:
-            lint_words(report, load_words(args.words), sum(len(words_of(l.text)) for l in lines))
+            lint_words(report, load_words(args.words), sum(len(words_of(l.text)) for l in lines), args.pace_min, args.pace_max)
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as e:
         print(f"error: {e}", file=sys.stderr)
         return 2
