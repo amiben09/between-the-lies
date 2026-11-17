@@ -5,6 +5,8 @@ export const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 export const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 export const smooth = (t: number) => { t = clamp(t); return t * t * t * (t * (t * 6 - 15) + 10); };
 export const ramp = (f: number, a: number, b: number) => smooth((f - a) / Math.max(1, b - a));
+/** Camera glide: eased but never fully stopped (a held camera reads as a frozen frame). */
+export const glide = (t: number) => { t = clamp(t); return 0.55 * smooth(t) + 0.45 * t; };
 export const rng = (seed: number) => () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
 
 export type Ctx = CanvasRenderingContext2D;
@@ -73,7 +75,7 @@ export function camAt(keys: { f: number; c: Cam }[], f: number): Cam {
   for (let i = 0; i < keys.length - 1; i++) {
     const a = keys[i], b = keys[i + 1];
     if (f <= b.f) {
-      const t = smooth((f - a.f) / (b.f - a.f));
+      const t = glide((f - a.f) / (b.f - a.f));
       return { x: lerp(a.c.x, b.c.x, t), y: lerp(a.c.y, b.c.y, t), zoom: lerp(a.c.zoom, b.c.zoom, t), roll: lerp(a.c.roll ?? 0, b.c.roll ?? 0, t) };
     }
   }
@@ -150,4 +152,14 @@ export function particles(g: Ctx, f: number, kind: "dust" | "rain" | "sparks", s
     }
   }
   g.restore();
+}
+
+/** Keyframed value: K(f, [[frame, value], ...]) with smootherstep between keys (holds outside the range). */
+export function K(f: number, keys: [number, number][]): number {
+  if (f <= keys[0][0]) return keys[0][1];
+  for (let i = 0; i < keys.length - 1; i++) {
+    const [fa, va] = keys[i], [fb, vb] = keys[i + 1];
+    if (f <= fb) return lerp(va, vb, smooth((f - fa) / Math.max(1, fb - fa)));
+  }
+  return keys[keys.length - 1][1];
 }

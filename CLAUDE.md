@@ -86,6 +86,16 @@ black/broken frames, severe flicker, clipping or sync problems.
 4. shot-plan.md + visual prompts  5. audio cue sheet + rights-log.md  6. contact sheets + QA report
 7. final MP4, captions (.srt), audio stems, upload-package.md
 
+## Pipeline v2 (proven on Always v2)
+1. Narration file: one beat per line; earned pauses as a trailing `{0.6}` (seconds).
+2. Voice: `python engine/tools/tts.py <narration> <outdir> am_michael 1.30 0.10` (venv `/home/user/.venv-tts`, `HF_HUB_DISABLE_XET=1`).
+3. Verify + re-time: `python engine/tools/align.py <voice.wav> <words.json> <lines.json> <asr_report.json>` — Whisper must hear every word.
+4. Captions: `python3 engine/tools/captions.py <narration> <words.json> <captions.json> <out.srt> <highlight words…>`.
+5. Picture: shots in `engine/src/episodes/<ep>/shots.ts`, keyed to words/lines (never hand-typed frames). Canvas2D 2.5D engine in `engine/src/btl/`.
+6. Sound: `engine/audio-lib/score_<ep>.py` keyed to lines.json; master with ffmpeg loudnorm two-pass to -14 LUFS / -1.5 dBTP.
+7. Full render → mux → QC gate `python3 engine/scripts/check_episode.py …` — exit 1 = REJECTED, never deliver.
+Payoff rule: ≥ 4 s of picture after the last spoken word. Every shot must keep moving (camera `glide`, breathing, saccades).
+
 ## Commands (run from `engine/`)
 - Studio preview: `npm run studio`
 - Typecheck: `npm run typecheck`

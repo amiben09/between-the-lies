@@ -11,6 +11,14 @@ export function layer(g: Ctx, cam: Cam, key: string, depth: number, paint: Paint
   withLayer(g, cam, depth, () => { g.globalAlpha = alpha; g.drawImage(c, -M, -M); g.globalAlpha = 1; });
 }
 
+/** Rack focus: crossfade between two cached blur levels of the same layer (t: 0 = blurA, 1 = blurB). */
+export function layerRack(g: Ctx, cam: Cam, key: string, depth: number, paint: Painter, blurA: number, blurB: number, t: number) {
+  if (t <= 0.01) return layer(g, cam, key + "_b" + blurA, depth, paint, blurA);
+  if (t >= 0.99) return layer(g, cam, key + "_b" + blurB, depth, paint, blurB);
+  layer(g, cam, key + "_b" + blurA, depth, paint, blurA);
+  layer(g, cam, key + "_b" + blurB, depth, paint, blurB, t);
+}
+
 // ---------- shared painting helpers ----------
 export function bricks(g: Ctx, x: number, y: number, w: number, h: number, base: string, seed: number, bw = 120, bh = 56) {
   const r = rng(seed);
@@ -215,4 +223,40 @@ export const shack = {
     g.beginPath(); g.moveTo(w * 0.6, h * 0.25); g.lineTo(w * 0.76, h * 0.27); g.lineTo(w * 0.5, h * 0.9); g.lineTo(w * 0.15, h * 0.9); g.fill();
     floor(g, h * 0.74, w, h, "#2e2420", "#0e0a0a");
   },
+};
+
+// ---------- v2 additions ----------
+/** Spinner's End-style childhood home (original design): bare kitchen, one bulb, cold window. */
+export const home = {
+  back: (g: Ctx, w: number, h: number) => {
+    g.fillStyle = linGrad(g, 0, 0, 0, h, [[0, "#2a2422"], [1, "#1a1514"]]); g.fillRect(-M, -M, w + 2 * M, h + 2 * M);
+    // peeling wallpaper stripes
+    g.fillStyle = "rgba(90,70,60,0.25)"; for (let x = -M; x < w + M; x += 70) g.fillRect(x, -M, 30, h * 0.72 + M);
+    archWindow(g, w * 0.62, h * 0.18, 260, 380, linGrad(g, 0, h * 0.18, 0, h * 0.4, [[0, "#3a4a66"], [1, "#1a2230"]]), "#120e0d");
+    g.fillStyle = "#3a2c24"; g.fillRect(-M, h * 0.62, w * 0.55 + M, 30); g.fillStyle = "#2a1f1a"; g.fillRect(w * 0.05, h * 0.62 + 30, 30, 220); g.fillRect(w * 0.45, h * 0.62 + 30, 30, 220); // table
+    floor(g, h * 0.74, w, h, "#2a2220", "#0c0908");
+    g.fillStyle = radGrad(g, w * 0.3, h * 0.12, 0, 700, [[0, "rgba(255,200,120,0.35)"], [1, "rgba(0,0,0,0)"]]); g.fillRect(-M, -M, w + 2 * M, h + 2 * M);
+    g.strokeStyle = "#0e0a09"; g.lineWidth = 4; g.beginPath(); g.moveTo(w * 0.3, -M); g.lineTo(w * 0.3, h * 0.1); g.stroke();
+    g.fillStyle = "#ffe0a0"; g.beginPath(); g.arc(w * 0.3, h * 0.11, 18, 0, 6.283); g.fill();
+  },
+};
+
+/** Foreground framing layers (depth > 1: they pass the lens faster than the subject = strong parallax). */
+export const fg = {
+  pillar: (g: Ctx, w: number, h: number) => { g.fillStyle = linGrad(g, w * 0.86, 0, w * 1.1, 0, [[0, "#120f16"], [0.4, "#1e1a24"], [1, "#0a080c"]]); g.fillRect(w * 0.86, -M, 300, h + 2 * M); },
+  reeds: (g: Ctx, w: number, h: number) => { const r = rng(61); g.strokeStyle = "#140a12"; for (let i = 0; i < 70; i++) { const x = -M + r() * 420, y0 = h + M; g.lineWidth = 6 + r() * 8; g.beginPath(); g.moveTo(x, y0); g.quadraticCurveTo(x + 30, h * 0.75, x + 10 + r() * 60, h * (0.55 + r() * 0.2)); g.stroke(); } },
+  shelf: (g: Ctx, w: number, h: number) => { g.fillStyle = "#1a110e"; g.fillRect(-M, -M, M + 150, h + 2 * M); const r = rng(71); for (let y = 0; y < h; y += 150) { g.fillStyle = "#2a1a14"; g.fillRect(-M, y + 120, M + 150, 16); for (let x = -M; x < 140; x += 22) { g.fillStyle = ["#4a2020", "#20304a", "#3a3a1a"][Math.floor(r() * 3)]; g.fillRect(x, y + 50 + r() * 20, 18, 70); } } },
+  cauldron: (g: Ctx, w: number, h: number) => { g.fillStyle = "#0e0e10"; g.beginPath(); g.ellipse(w * 0.85, h * 1.02, 300, 220, 0, 0, 6.283); g.fill(); g.fillStyle = "#3f6a3a"; g.beginPath(); g.ellipse(w * 0.85, h * 0.92, 250, 40, 0, 0, 6.283); g.fill(); },
+  chair: (g: Ctx, w: number, h: number) => {
+    g.fillStyle = "#2a1a16"; g.strokeStyle = "#0e0808"; g.lineWidth = 6;
+    g.beginPath(); g.roundRect(w * 0.26, h * 0.42, w * 0.3, h * 0.3, 24); g.fill(); g.stroke(); // back
+    g.beginPath(); g.roundRect(w * 0.22, h * 0.68, w * 0.38, 50, 12); g.fill(); g.stroke(); // seat
+    g.fillRect(w * 0.24, h * 0.7, 26, 200); g.fillRect(w * 0.56, h * 0.7, 26, 200);
+  },
+};
+
+/** Office extras for the grief beat: dying fire glow and a wall clock. */
+export const officeNight = {
+  back: (g: Ctx, w: number, h: number) => { office.back(g, w, h); g.fillStyle = "rgba(10,12,30,0.45)"; g.fillRect(-M, -M, w + 2 * M, h + 2 * M);
+    g.fillStyle = "#2a2018"; g.beginPath(); g.arc(w * 0.82, h * 0.2, 70, 0, 6.283); g.fill(); g.strokeStyle = "#c9a95a"; g.lineWidth = 6; g.stroke(); },
 };

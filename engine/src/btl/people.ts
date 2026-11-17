@@ -3,7 +3,7 @@
 // (key/shade gradient, source-atop), optionally depth-blurred, then composited — so lighting never touches the set.
 import { Cam, Ctx, H, W, makeCanvas, radGrad } from "./core";
 
-export type Kind = "snape" | "lily" | "harry" | "neville" | "dumbledore" | "voldemort" | "bully";
+export type Kind = "snape" | "lily" | "harry" | "james" | "neville" | "dumbledore" | "voldemort" | "bully";
 export type Age = "child" | "teen" | "adult";
 export type Arm = [number, number]; // [shoulder deg from straight down, + = toward screen-right; elbow bend deg]
 export type Pose = {
@@ -24,7 +24,15 @@ export type Pose = {
   tear?: number;                             // 0..1
   prop?: (g: Ctx, hand: "L" | "R", x: number, y: number) => void;
   headOnly?: boolean;                        // draw head + shoulders only (close-ups)
+  tilt?: number;                             // head tilt deg (+ = toward screen-right)
+  nod?: number;                              // head drop (+) / lift (-), in head-heights
+  shoulders?: number;                        // -1 tense shrug .. 0 .. 1 grief slump
+  handL?: Hand; handR?: Hand;                // hand shapes
+  tremble?: number;                          // 0..1 shaking hands/head
+  walk?: number;                             // walk-cycle phase (radians); undefined = standing
+  still?: boolean;                           // disable automatic micro-motion (gaze saccades, sway)
 };
+export type Hand = "mitt" | "open" | "fist" | "point" | "grip";
 export type Light = { x: number; y: number; r: number; key: string; shade: string; keyA?: number; shadeA?: number };
 
 type Look = { skin: string; skinSh: string; hair: string; hairHi: string; iris: string; coat: string; coatHi: string; trim?: string; legs: string; H: number; hh: number; sw: number; robe: boolean };
@@ -39,6 +47,8 @@ function look(kind: Kind, age: Age): Look {
       coat: age === "child" ? "#d9b65e" : age === "adult" ? "#6f7f9e" : "#1d1a22", coatHi: age === "child" ? "#efd27e" : age === "adult" ? "#93a3c0" : "#2f2a36", trim: age === "teen" ? "#a8322b" : undefined, legs: "#e8d0b4", robe: age !== "child" };
     case "harry": return { ...sz, skin: "#ecccb0", skinSh: "#c19c83", hair: "#120f12", hairHi: "#2d2830", iris: "#1fae63",
       coat: age === "adult" ? "#3a3f4a" : "#1d1a22", coatHi: "#343040", trim: "#a8322b", legs: "#2d3140", robe: age === "child" };
+    case "james": return { ...sz, skin: "#e9c8aa", skinSh: "#be987e", hair: "#120f12", hairHi: "#2d2830", iris: "#8a6a3a",
+      coat: "#1d1a22", coatHi: "#343040", trim: "#a8322b", legs: "#2d3140", robe: true };
     case "neville": return { ...sz, skin: "#efd0b5", skinSh: "#c79f86", hair: "#5a3b26", hairHi: "#7c5638", iris: "#5a4a3a",
       coat: "#1d1a22", coatHi: "#343040", trim: "#a8322b", legs: "#2d3140", robe: true };
     case "dumbledore": return { ...sz, H: 1060, skin: "#e6cdb6", skinSh: "#b8987f", hair: "#d9d6d2", hairHi: "#ffffff", iris: "#5b8fc9",
@@ -94,12 +104,17 @@ function inked(g: Ctx, fill: string | CanvasGradient, lw = 5) {
 function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
   const L = look(kind, age);
   const kneel = p.kneel ?? 0;
-  const br = p.breathe !== undefined ? Math.sin(p.breathe / 30 * Math.PI * 0.55) : 0;
+  const fr = p.breathe ?? 0;
+  const br = p.breathe !== undefined ? Math.sin(fr / 30 * Math.PI * 0.55) : 0;
+  const sh = p.shoulders ?? 0;
+  const tr = p.tremble ?? 0;
+  const walking = p.walk !== undefined, ws = walking ? Math.sin(p.walk!) : 0;
   const Hh = L.H * (1 - kneel * 0.3);
-  const shY = -Hh + L.hh * 1.12 + br * 2;
-  const sw = L.sw * (1 + br * 0.006);
+  const shY = -Hh + L.hh * 1.12 + br * 3 + (sh > 0 ? sh * L.hh * 0.16 : sh * L.hh * 0.09);
+  const sw = L.sw * (1 + br * 0.008) * (1 - Math.max(0, sh) * 0.05);
   g.save();
   if (p.lean) { g.rotate(p.lean * Math.PI / 180); }
+  if (walking) g.translate(0, -Math.abs(Math.cos(p.walk!)) * L.H * 0.014);
 
   // contact shadow
   if (!p.rot && !p.headOnly) { g.save(); g.fillStyle = "rgba(0,0,0,0.35)"; g.beginPath(); g.ellipse(0, 0, sw * 0.75, 14, 0, 0, 6.283); g.fill(); g.restore(); }
@@ -110,9 +125,10 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
     if (!L.robe) {
       g.save();
       for (const sx of [-1, 1]) {
-        g.beginPath(); g.roundRect(sx * sw * 0.16 - sw * 0.1, hemY - 20, sw * 0.2, -hemY + 6, 6);
+        const lift = walking ? Math.max(0, sx * ws) * 26 : 0, stride = walking ? sx * ws * sw * 0.12 : 0;
+        g.beginPath(); g.roundRect(sx * sw * 0.16 - sw * 0.1 + stride * 0.5, hemY - 20, sw * 0.2, -hemY + 6 - lift, 6);
         inked(g, L.legs, 4);
-        g.beginPath(); g.ellipse(sx * sw * 0.16 + (p.facing ?? 0) * 10, -6, sw * 0.15, 12, 0, 0, 6.283); inked(g, "#1d1719", 4);
+        g.beginPath(); g.ellipse(sx * sw * 0.16 + (p.facing ?? 0) * 10 + stride, -6 - lift, sw * 0.15, 12, 0, 0, 6.283); inked(g, "#1d1719", 4);
       }
       g.restore();
     }
@@ -125,8 +141,9 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
     g.quadraticCurveTo(-sw / 2 - 6, shY - 6, -sw * 0.18, shY - 12);
     g.lineTo(sw * 0.18, shY - 12);
     g.quadraticCurveTo(sw / 2 + 6, shY - 6, sw / 2, shY + 18);
-    g.lineTo(sw / 2 * flare, hemY);
-    g.quadraticCurveTo(0, hemY + 10, -sw / 2 * flare, hemY);
+    const sway = (walking ? ws * 14 : 0) + Math.sin(fr * 0.05) * 2;
+    g.lineTo(sw / 2 * flare + sway, hemY);
+    g.quadraticCurveTo(sway, hemY + 10, -sw / 2 * flare + sway, hemY);
     g.closePath();
     const cg = g.createLinearGradient(-sw, 0, sw, 0);
     cg.addColorStop(0, L.coatHi); cg.addColorStop(0.55, L.coat); cg.addColorStop(1, L.coat);
@@ -154,7 +171,10 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
     // arms
     const armLen = L.H * 0.17, foreLen = L.H * 0.16, aw = sw * 0.22;
     for (const side of ["L", "R"] as const) {
-      const a = (side === "L" ? p.armL : p.armR) ?? (side === "L" ? [8, 6] : [-8, -6]);
+      const a0 = (side === "L" ? p.armL : p.armR) ?? (side === "L" ? [8, 6] : [-8, -6]);
+      const swing = walking ? (side === "L" ? -1 : 1) * ws * 14 : 0;
+      const shake = tr * Math.sin(fr * 2.3 + (side === "L" ? 0 : 1.7)) * 3;
+      const a: Arm = [a0[0] + swing + shake, a0[1] + shake * 0.6 + Math.sin(fr * 0.04 + (side === "L" ? 0 : 2)) * 1.5];
       const sx = (side === "L" ? -1 : 1) * sw * 0.44, sy = shY + 14;
       const r1 = a[0] * Math.PI / 180, r2 = (a[0] + a[1]) * Math.PI / 180;
       const ex = sx + Math.sin(r1) * armLen, ey = sy + Math.cos(r1) * armLen;
@@ -167,11 +187,47 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
       // hand (child Snape's sleeves swallow half the hand)
       const hr = L.H * (age === "child" ? 0.03 : 0.027);
       const hx2 = hx + Math.sin(r2) * hr * (kind === "snape" && age === "child" ? 0.2 : 0.8), hy2 = hy + Math.cos(r2) * hr * (kind === "snape" && age === "child" ? 0.2 : 0.8);
-      if (!p.back) { g.beginPath(); g.ellipse(hx2, hy2, hr * 0.85, hr * 1.1, -r2, 0, 6.283); inked(g, L.skin, 4); }
+      if (!p.back) drawHand(g, hx2, hy2, r2, (side === "L" ? p.handL : p.handR) ?? "mitt", L.skin, hr, side === "L" ? -1 : 1);
       if (p.prop) p.prop(g, side, hx2, hy2);
     }
   }
-  head(g, L, kind, age, p, 0, shY - L.hh * 0.62 + br * 1.5);
+  const neckY = shY - 6;
+  const micro = p.still ? 0 : Math.sin(fr * 0.031) * 1.2 + Math.sin(fr * 0.017 + 1) * 0.8;
+  const tilt = (p.tilt ?? 0) + micro + tr * Math.sin(fr * 1.9) * 1.2 + (walking ? ws * 1.5 : 0);
+  g.save();
+  g.translate(0, neckY);
+  g.rotate(tilt * Math.PI / 180);
+  g.translate(0, -neckY + ((p.nod ?? 0) + Math.max(0, sh) * 0.22) * L.hh);
+  head(g, L, kind, age, p.still ? p : { ...p, look: saccade(p.look ?? [0, 0], fr, kind.length * 7 + age.length) }, 0, shY - L.hh * 0.62 + br * 1.5);
+  g.restore();
+  g.restore();
+}
+
+/** Small automatic eye movements: a new fixation every ~0.4-0.9 s, so gaze is never dead. */
+function saccade(look: [number, number], f: number, seed: number): [number, number] {
+  const k = Math.floor((f + seed * 3) / 19);
+  const r = (n: number) => { const x = Math.sin((k * 12.9898 + n * 78.233 + seed) * 43758.5453); return x - Math.floor(x) - 0.5; };
+  return [look[0] + r(1) * 0.16, look[1] + r(2) * 0.12];
+}
+
+/** Hand shapes, oriented along the forearm (angle r from straight down). */
+function drawHand(g: Ctx, x: number, y: number, r: number, shape: Hand, skin: string, hr: number, side: number) {
+  g.save(); g.translate(x, y); g.rotate(-r);
+  const fing = (dx: number, len: number, w: number, ang: number) => { g.save(); g.translate(dx, hr * 0.55); g.rotate(ang); g.beginPath(); g.roundRect(-w / 2, 0, w, len, w / 2); inked(g, skin, 3.5); g.restore(); };
+  if (shape === "open" || shape === "grip") {
+    const len = shape === "open" ? hr * 0.95 : hr * 0.5;
+    for (let i = 0; i < 4; i++) fing((i - 1.5) * hr * 0.36, len, hr * 0.32, (i - 1.5) * (shape === "open" ? 0.16 : 0.05));
+    g.beginPath(); g.ellipse(0, 0, hr * 0.85, hr * 0.8, 0, 0, 6.283); inked(g, skin, 4);
+    fing(side * hr * 0.75, hr * 0.7, hr * 0.34, -side * (shape === "open" ? 0.9 : 0.5));
+  } else if (shape === "fist" || shape === "point") {
+    g.beginPath(); g.ellipse(0, hr * 0.15, hr * 0.78, hr * 0.82, 0, 0, 6.283); inked(g, skin, 4);
+    g.strokeStyle = "rgba(28,18,28,0.6)"; g.lineWidth = 2.5;
+    for (let i = 0; i < 3; i++) { g.beginPath(); g.moveTo((i - 1) * hr * 0.3, hr * 0.55); g.lineTo((i - 1) * hr * 0.3, hr * 0.8); g.stroke(); }
+    if (shape === "point") fing(-side * hr * 0.2, hr * 1.2, hr * 0.32, 0);
+  } else {
+    g.beginPath(); g.ellipse(0, 0, hr * 0.85, hr * 1.1, 0, 0, 6.283); inked(g, skin, 4);
+    g.strokeStyle = "rgba(28,18,28,0.45)"; g.lineWidth = 2; g.beginPath(); g.moveTo(side * hr * 0.5, -hr * 0.2); g.quadraticCurveTo(side * hr * 0.75, hr * 0.3, side * hr * 0.35, hr * 0.6); g.stroke();
+  }
   g.restore();
 }
 
@@ -317,7 +373,7 @@ function head(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: nu
     g.strokeStyle = "#c9a95a"; g.lineWidth = 3;
     for (const sgn of [-1, 1]) { g.beginPath(); g.arc(cx + fo + sgn * sp, ey + rx * 0.02, rx * 0.24, 0, Math.PI); g.stroke(); }
   }
-  if (kind === "harry") {
+  if (kind === "harry" || kind === "james") {
     g.strokeStyle = "#2a2226"; g.lineWidth = 4.5;
     for (const sgn of [-1, 1]) { g.beginPath(); g.arc(cx + fo + sgn * sp, ey, rx * 0.3, 0, 6.283); g.stroke(); }
     g.beginPath(); g.moveTo(cx + fo - sp + rx * 0.3, ey); g.lineTo(cx + fo + sp - rx * 0.3, ey); g.stroke();
@@ -343,7 +399,7 @@ function frontHair(g: Ctx, L: Look, kind: Kind, age: Age, cx: number, cy: number
     g.quadraticCurveTo(cx + rx * 0.7, cy - ry * 0.45, cx + rx * 0.1 + fo, cy - ry * 0.62);
     g.quadraticCurveTo(cx - rx * 0.5, cy - ry * 0.5, cx - rx * 0.8, cy - ry * 0.2);
     g.closePath();
-  } else if (kind === "harry") { // untidy mop
+  } else if (kind === "harry" || kind === "james") { // untidy mop
     g.moveTo(cx - rx * 1.05, cy - ry * 0.1);
     const pts = [-1, -0.7, -0.4, -0.1, 0.2, 0.5, 0.8, 1.05];
     g.lineTo(cx - rx * 1.1, cy - ry * 0.75);

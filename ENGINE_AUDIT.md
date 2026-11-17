@@ -57,3 +57,13 @@
 5. **Character rig**: the proof card is a placeholder. Real characters need the cinematic 2.5D design system
    (layered face parts for expressions, hands, blink/breath, walk) — build from the approved character bible.
 6. Full-res 1080x1920 renders on CPU will be ~4-5 s/frame (~2.5 h per 65 s episode); a GPU machine is much faster.
+
+## Update — Always v2 (17 Nov 2026)
+- Production route A now uses a **Canvas2D 2.5D engine** inside Remotion (`engine/src/btl/`): cached painted parallax layers,
+  rack focus, per-character lighting + depth blur. ~0.5 s/frame at 1080x1920 on CPU (vs ~2 s at half-res for WebGL/swangle).
+- Character rig: keyframed expressions (K), gaze micro-saccades, blinks, breathing, head tilt/nod, shoulder tension/slump,
+  5 hand shapes, tremble, walk cycle, kneel, lying/rotated poses.
+- Voice: Kokoro TTS (local) + **Whisper small.en verification** (`engine/tools/align.py`): every scripted word must be heard;
+  word timings are re-taken from Whisper. This caught a clipped word ("excuse it") that timestamp-based trimming had cut.
+- QC gate `engine/scripts/check_episode.py`: specs, duration, loudness/TP, ending hold, caption completeness/sync, ASR,
+  pauses, chronology/labels, black frames, frozen frames. Non-zero exit = rejected export.
