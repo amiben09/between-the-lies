@@ -80,6 +80,8 @@ Fill `templates/06_cast.md` and `templates/07_shotplan.md`, using the camera gra
 FOREGROUND). Every visual reaction lands 0-3 frames before its word. Render stills for G3.
 
 ### 9. Render, captions, sound
+Camera rhythm first: `python3 engine/edit/camera_plan.py episodes/<slug>/07_shots.json episodes/<slug>/05_voice/words.json --every 1.0`,
+then render `EpisodeCut` with `--props=episodes/<slug>/07_shots.json`.
 Follow the engine pipeline, steps 9-10, plus the caption layer and the drama score in
 `references/engine_changes.md`.
 

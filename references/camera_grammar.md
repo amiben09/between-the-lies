@@ -1,5 +1,14 @@
 # Camera grammar for relationship drama (adapted from the engine's measured grammar)
 
+## Channel rule (2026-11-17): reference-channel rhythm, ALWAYS
+Run `engine/edit/camera_plan.py 07_shots.json words.json --every 1.0` before every render. It gives:
+- a **new framing every ~1.3 s**, landing 1 frame before a word (clause starts and *accent* words first);
+- **ease-out bursts**: fastest on the first frame, settled in 9 frames; holds keep **creeping in** (0.25 %/f, 0.6 %/f on punches);
+- **punch-in** on accent words; framing cycles wide → medium → close;
+- **whip pans** with motion blur between shots (6 f out + 6 f in, alternating direction), hard cuts only where marked;
+- a **4-frame white flash** after the hook.
+Slow drifts and soft crossfades (editor v1) are retired.
+
 Engine baseline (keep these): smootherstep glides of 18-40 f, every hold creeps 0.15-0.35 %/f,
 impact kicks that flip sign each frame and decay over 7 f, foreground props in about 1/3 of shots, DOF focused on the eyes.
 
