@@ -31,6 +31,9 @@ export type Pose = {
   tremble?: number;                          // 0..1 shaking hands/head
   walk?: number;                             // walk-cycle phase (radians); undefined = standing
   still?: boolean;                           // disable automatic micro-motion (gaze saccades, sway)
+  coat?: string; coatHi?: string;            // costume override (e.g. school robes on children, a wedding dress)
+  trim?: string | null;                      // house colour override (null = none)
+  robe?: boolean;                            // floor-length override
 };
 export type Hand = "mitt" | "open" | "fist" | "point" | "grip";
 export type Light = { x: number; y: number; r: number; key: string; shade: string; keyA?: number; shadeA?: number };
@@ -102,7 +105,8 @@ function inked(g: Ctx, fill: string | CanvasGradient, lw = 5) {
 }
 
 function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
-  const L = look(kind, age);
+  const L0 = look(kind, age);
+  const L: Look = { ...L0, ...(p.coat ? { coat: p.coat, coatHi: p.coatHi ?? p.coat } : {}), ...(p.robe !== undefined ? { robe: p.robe } : {}), ...(p.trim !== undefined ? { trim: p.trim ?? undefined } : {}) };
   const kneel = p.kneel ?? 0;
   const fr = p.breathe ?? 0;
   const br = p.breathe !== undefined ? Math.sin(fr / 30 * Math.PI * 0.55) : 0;

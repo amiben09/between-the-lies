@@ -14,6 +14,7 @@ for l in raw:
     m = re.search(r"\{([0-9.]+)\}\s*$", l)
     pauses.append(float(m.group(1)) if m else 0.0); lines.append(re.sub(r"\s*\{[0-9.]+\}\s*$", "", l))
 audio, words, t0 = [], [], 0.15
+segs = {}
 audio.append(np.zeros(int(SR * t0), np.float32))
 for li, line in enumerate(lines):
     for r in pipe(line, voice=voice, speed=speed, split_pattern=None):
@@ -21,13 +22,13 @@ for li, line in enumerate(lines):
         tks = [tk for tk in r.tokens if tk.start_ts is not None and re.search(r"[A-Za-z0-9]", tk.text)]
         # trim Kokoro's own head/tail silence: keep 40 ms before the first word, 120 ms after the last
         # energy-based trim (Kokoro timestamps run early; never cut a word's tail)
-        envl = np.convolve(np.abs(a), np.ones(240) / 240, "same"); thr = envl.max() * 0.02
+        envl = np.convolve(np.abs(a), np.ones(240) / 240, "same"); thr = envl.max() * 0.01
         loud = np.where(envl > thr)[0]
         a0 = max(0, loud[0] - int(0.03 * SR)); a1 = min(len(a), loud[-1] + int(0.15 * SR))
         seg = a[a0:a1].astype(np.float32); seg[:240] *= np.linspace(0, 1, 240); seg[-480:] *= np.linspace(1, 0, 480)
         for tk in tks:
             words.append({"w": tk.text, "s": round(t0 + tk.start_ts - a0 / SR, 3), "e": round(t0 + tk.end_ts - a0 / SR, 3), "line": li})
-        audio.append(seg); t0 += len(seg) / SR
+        segs.setdefault(li, [t0, t0]); audio.append(seg); t0 += len(seg) / SR; segs[li][1] = t0
     gap = pause + pauses[li]
     audio.append(np.zeros(int(SR * gap), np.float32)); t0 += gap
 audio.append(np.zeros(int(SR * 0.3), np.float32)); t0 += 0.3
@@ -36,5 +37,5 @@ json.dump({"duration": round(t0, 3), "words": words}, open(f"{out}/words.json", 
 speech = words[-1]["e"] - words[0]["s"]
 art = sum(max(w["e"] for w in words if w["line"] == li) - min(w["s"] for w in words if w["line"] == li) for li in range(len(lines)))
 print(f"articulation (inside lines) = {len(words)/art:.2f} w/s")
-json.dump([{"line": li, "s": min(w["s"] for w in words if w["line"] == li), "e": max(w["e"] for w in words if w["line"] == li), "pause_after": pauses[li], "text": lines[li]} for li in range(len(lines))], open(f"{out}/lines.json", "w"), indent=1)
+json.dump([{"line": li, "s": min(w["s"] for w in words if w["line"] == li), "e": max(w["e"] for w in words if w["line"] == li), "pause_after": pauses[li], "text": lines[li], "seg_s": round(segs[li][0], 4), "seg_e": round(segs[li][1], 4)} for li in range(len(lines))], open(f"{out}/lines.json", "w"), indent=1)
 print(f"voice={voice} speed={speed} words={len(words)} speech={speech:.2f}s rate={len(words)/speech:.2f} w/s total={t0:.2f}s")

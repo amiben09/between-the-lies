@@ -1,0 +1,235 @@
+{
+ "continuity": "Harry Potter novels (book canon)",
+ "structure": {
+  "hook": [
+   0
+  ],
+  "world": [
+   1
+  ],
+  "world_rules": [
+   2,
+   3
+  ],
+  "characters": [
+   4,
+   5
+  ],
+  "main_drama": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "final_revelation": [
+   16,
+   17,
+   18,
+   19,
+   20
+  ]
+ },
+ "lines": [
+  {
+   "line": 0,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    23
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 1,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    24
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 2,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    25
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 3,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    26
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 4,
+   "year": 1969,
+   "frame_device": false,
+   "claims": [
+    3,
+    5
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 5,
+   "year": 1971,
+   "frame_device": false,
+   "claims": [
+    6
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 6,
+   "year": 1976,
+   "frame_device": false,
+   "claims": [
+    8
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 7,
+   "year": 1976,
+   "frame_device": false,
+   "claims": [
+    9
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 8,
+   "year": 1978,
+   "frame_device": false,
+   "claims": [
+    10,
+    27
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 9,
+   "year": 1979,
+   "frame_device": false,
+   "claims": [
+    11,
+    28
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 10,
+   "year": 1980,
+   "frame_device": false,
+   "claims": [
+    12
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 11,
+   "year": 1980,
+   "frame_device": false,
+   "claims": [
+    13,
+    29
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 12,
+   "year": 1981,
+   "frame_device": false,
+   "claims": [
+    14
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 13,
+   "year": 1981,
+   "frame_device": false,
+   "claims": [
+    15
+   ],
+   "label": "ADAPTATION"
+  },
+  {
+   "line": 14,
+   "year": 1991,
+   "frame_device": false,
+   "claims": [
+    16,
+    17
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 15,
+   "year": 1991,
+   "frame_device": false,
+   "claims": [
+    18
+   ],
+   "label": "CHANNEL JUDGEMENT"
+  },
+  {
+   "line": 16,
+   "year": 1997,
+   "frame_device": false,
+   "claims": [
+    19,
+    30
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 17,
+   "year": 1997,
+   "frame_device": false,
+   "claims": [
+    19
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 18,
+   "year": 1997,
+   "frame_device": false,
+   "claims": [
+    19
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 19,
+   "year": 1998,
+   "frame_device": false,
+   "claims": [
+    21
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 20,
+   "year": 1998,
+   "frame_device": false,
+   "claims": [
+    22
+   ],
+   "label": "SUPPORTED INTERPRETATION"
+  }
+ ]
+}

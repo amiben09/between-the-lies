@@ -1,0 +1,191 @@
+[
+ {
+  "line": 0,
+  "s": 0.187,
+  "e": 4.456,
+  "pause_after": 0.15,
+  "text": "First, he hurt the love of his life. Then he spent the rest of his life protecting her son.",
+  "seg_s": 0.15,
+  "seg_e": 4.6087
+ },
+ {
+  "line": 1,
+  "s": 4.793,
+  "e": 9.573,
+  "pause_after": 0.0,
+  "text": "Severus Snape was born a wizard. Young wizards train at a hidden castle school called Hogwarts.",
+  "seg_s": 4.7587,
+  "seg_e": 9.7263
+ },
+ {
+  "line": 2,
+  "s": 9.757,
+  "e": 12.965,
+  "pause_after": 0.0,
+  "text": "There, a magic hat sorts students into houses by who they are inside.",
+  "seg_s": 9.7263,
+  "seg_e": 13.1843
+ },
+ {
+  "line": 3,
+  "s": 13.217,
+  "e": 17.618,
+  "pause_after": 0.0,
+  "text": "Gryffindor takes the brave. Slytherin takes the ambitious. The two houses are enemies.",
+  "seg_s": 13.1843,
+  "seg_e": 17.7726
+ },
+ {
+  "line": 4,
+  "s": 17.803,
+  "e": 21.887,
+  "pause_after": 0.0,
+  "text": "As a lonely boy, Severus met Lily, a girl who made flowers bloom in her hand.",
+  "seg_s": 17.7726,
+  "seg_e": 22.1541
+ },
+ {
+  "line": 5,
+  "s": 22.185,
+  "e": 25.506,
+  "pause_after": 0.0,
+  "text": "But the hat split them: Lily to Gryffindor, Severus to Slytherin.",
+  "seg_s": 22.1541,
+  "seg_e": 25.6578
+ },
+ {
+  "line": 6,
+  "s": 25.689,
+  "e": 28.943,
+  "pause_after": 0.0,
+  "text": "There, James Potter, a Gryffindor bully, humiliated him in public.",
+  "seg_s": 25.6578,
+  "seg_e": 29.1093
+ },
+ {
+  "line": 7,
+  "s": 29.141,
+  "e": 33.576,
+  "pause_after": 0.4,
+  "text": "Lily defended him. To prove he didn't need her, he called her a Mudblood, their cruelest slur.",
+  "seg_s": 29.1093,
+  "seg_e": 33.7559
+ },
+ {
+  "line": 8,
+  "s": 34.189,
+  "e": 36.504,
+  "pause_after": 0.0,
+  "text": "She never forgave him, and later married James.",
+  "seg_s": 34.1559,
+  "seg_e": 36.6583
+ },
+ {
+  "line": 9,
+  "s": 36.691,
+  "e": 39.661,
+  "pause_after": 0.0,
+  "text": "Severus joined Voldemort, the most feared dark wizard alive.",
+  "seg_s": 36.6583,
+  "seg_e": 39.8661
+ },
+ {
+  "line": 10,
+  "s": 39.898,
+  "e": 43.583,
+  "pause_after": 0.35,
+  "text": "He passed his master a prophecy, then realized it meant Lily's baby son.",
+  "seg_s": 39.8661,
+  "seg_e": 43.7366
+ },
+ {
+  "line": 11,
+  "s": 44.117,
+  "e": 46.748,
+  "pause_after": 0.15,
+  "text": "He begged Dumbledore, the school's headmaster, to hide her.",
+  "seg_s": 44.0866,
+  "seg_e": 46.8985
+ },
+ {
+  "line": 12,
+  "s": 47.079,
+  "e": 47.867,
+  "pause_after": 0.5,
+  "text": "It wasn't enough.",
+  "seg_s": 47.0485,
+  "seg_e": 48.0204
+ },
+ {
+  "line": 13,
+  "s": 48.557,
+  "e": 50.509,
+  "pause_after": 0.0,
+  "text": "So he promised to protect the boy with her eyes.",
+  "seg_s": 48.5204,
+  "seg_e": 50.6644
+ },
+ {
+  "line": 14,
+  "s": 50.697,
+  "e": 55.058,
+  "pause_after": 0.2,
+  "text": "But Harry had her eyes in James Potter's face, so Severus guarded him and tormented him.",
+  "seg_s": 50.6644,
+  "seg_e": 55.2562
+ },
+ {
+  "line": 15,
+  "s": 55.488,
+  "e": 57.289,
+  "pause_after": 0.35,
+  "text": "That explains it. It doesn't excuse it.",
+  "seg_s": 55.4562,
+  "seg_e": 57.4419
+ },
+ {
+  "line": 16,
+  "s": 57.822,
+  "e": 62.232,
+  "pause_after": 0.0,
+  "text": "Asked if he cared for the boy, Severus answered with a silver doe, a memory of Lily.",
+  "seg_s": 57.7919,
+  "seg_e": 62.3818
+ },
+ {
+  "line": 17,
+  "s": 62.412,
+  "e": 63.287,
+  "pause_after": 0.55,
+  "text": "After all this time?",
+  "seg_s": 62.3818,
+  "seg_e": 63.4602
+ },
+ {
+  "line": 18,
+  "s": 64.04,
+  "e": 64.566,
+  "pause_after": 0.6,
+  "text": "Always.",
+  "seg_s": 64.0102,
+  "seg_e": 64.7299
+ },
+ {
+  "line": 19,
+  "s": 65.36,
+  "e": 67.8,
+  "pause_after": 0.75,
+  "text": "Dying, he asked Harry for one last thing. Look at me.",
+  "seg_s": 65.3299,
+  "seg_e": 67.9628
+ },
+ {
+  "line": 20,
+  "s": 68.747,
+  "e": 70.878,
+  "pause_after": 0.0,
+  "text": "Maybe so the last thing he ever saw was her eyes.",
+  "seg_s": 68.7128,
+  "seg_e": 71.0371
+ }
+]

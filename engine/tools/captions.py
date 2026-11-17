@@ -15,12 +15,12 @@ def split(seg):  # balanced split, prefer commas, max 8 words per caption
     commas = [i + 1 for i, (t, _) in enumerate(seg[:-1]) if t[-1] in ",:;" and 3 <= i + 1 <= len(seg) - 3]
     if commas:
         c = min(commas, key=lambda i: abs(i - len(seg) / 2)); return split(seg[:c]) + split(seg[c:])
-    STOP = {"a", "an", "the", "in", "of", "to", "for", "with", "her", "his", "he", "she", "make", "was", "and", "at", "who", "it", "that", "so", "if", "made"}
+    STOP = {"a", "an", "the", "in", "of", "to", "for", "with", "her", "his", "he", "she", "make", "was", "and", "at", "who", "it", "that", "so", "if", "made", "by", "into", "hidden"}
     mid = len(seg) / 2
     cands = [i for i in range(3, len(seg) - 2)]
     STARTS = {"in", "who", "he", "she", "where", "that", "then", "with", "if", "for", "so", "and", "but", "when", "make", "to"}
     w_ = lambda i: re.sub(r"[^\w']", "", seg[i][0]).lower()
-    cut = min(cands, key=lambda i: abs(i - mid) + (3 if w_(i - 1) in STOP else 0) - (2.5 if w_(i) in STARTS else 0))
+    cut = min(cands, key=lambda i: abs(i - mid) + (3 if w_(i - 1) in STOP else 0) - (2.5 if w_(i) in STARTS else 0) + (4 if w_(i) in {"of", "into", "by"} else 0))
     return split(seg[:cut]) + split(seg[cut:])
 sent = []
 for t, w in zip(toks, words):

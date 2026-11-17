@@ -21,15 +21,36 @@ for tag, i1, i2, j1, j2 in sm.get_opcodes():
             deltas.append(asr[j].start - words[i]["s"]); words[i]["s"], words[i]["e"] = round(asr[j].start, 3), round(asr[j].end, 3); words[i]["asr"] = True; matched += 1
     elif tag in ("delete", "replace"):
         missing += [words[i]["w"] + f"@{words[i]['s']:.2f}" for i in range(i1, i2)]
+# Snap every line's first/last word to the real audio onset/offset (Whisper boundary times drift by up to ~0.3 s),
+# then guarantee a minimum duration per word.
+env_ = np.convolve(np.abs(a), np.ones(int(0.01 * sr)) / int(0.01 * sr), "same"); thr = env_.max() * 0.01
+def onset(t0, t1):
+    i0, i1 = int(max(0, t0) * sr), int(t1 * sr); idx = np.where(env_[i0:i1] > thr)[0]; return None if len(idx) == 0 else (i0 + idx[0]) / sr
+def offset(t0, t1):
+    i0, i1 = int(max(0, t0) * sr), int(t1 * sr); idx = np.where(env_[i0:i1] > thr)[0]; return None if len(idx) == 0 else (i0 + idx[-1]) / sr
+L0 = json.load(open(lj)); SEG = {l["line"]: (l["seg_s"], l["seg_e"]) for l in L0}  # exact line segments from tts.py
+snaps = []
+for li, (s0, s1) in SEG.items():
+    ws = [w for w in words if w["line"] == li]
+    on, off = onset(s0, s1), offset(s0, s1)
+    if on is not None: snaps.append(round(on - ws[0]["s"], 3)); ws[0]["s"] = round(on, 3)
+    if off is not None: snaps.append(round(off - ws[-1]["e"], 3)); ws[-1]["e"] = round(off, 3)
+    for w in ws:  # no word may leave its own line's audio
+        w["s"] = round(min(max(w["s"], ws[0]["s"]), ws[-1]["e"] - 0.02), 3); w["e"] = round(min(max(w["e"], w["s"] + 0.02), ws[-1]["e"]), 3)
 for i in range(1, len(words)):  # keep monotonic
     words[i]["s"] = max(words[i]["s"], words[i - 1]["e"] - 0.02)
+for i, w in enumerate(words):  # minimum 80 ms per word
+    if w["e"] - w["s"] < 0.08:
+        w["e"] = round(w["s"] + 0.08, 3)
+        if i + 1 < len(words) and words[i + 1]["s"] < w["e"]: words[i + 1]["s"] = w["e"]
 json.dump(D, open(wj, "w"), indent=0)
-L = json.load(open(lj))
+L = L0
 for l in L:
     ws = [w for w in words if w["line"] == l["line"]]; l["s"], l["e"] = ws[0]["s"], ws[-1]["e"]
 json.dump(L, open(lj, "w"), indent=1)
 r = {"script_words": len(words), "heard": matched, "missing": missing, "asr_text": " ".join(w.word.strip() for w in asr),
-     "timing_shift_s": {"mean": round(float(np.mean(deltas)), 3), "max_abs": round(float(np.max(np.abs(deltas))), 3)}}
+     "timing_shift_s": {"mean": round(float(np.mean(deltas)), 3), "max_abs": round(float(np.max(np.abs(deltas))), 3)},
+     "line_snap_s": {"max_abs": round(float(np.max(np.abs(snaps))), 3) if snaps else 0}}
 json.dump(r, open(rep, "w"), indent=1)
 print(json.dumps({k: v for k, v in r.items() if k != "asr_text"}))
 sys.exit(1 if missing else 0)

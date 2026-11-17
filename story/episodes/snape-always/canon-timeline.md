@@ -26,7 +26,17 @@ Labels: CANON · SUPPORTED INTERPRETATION (narrated as analysis / "maybe") · AD
 | 21 | 2 May 1998 | Dying, "Look at me" to Harry | CANON | DH 32 | text |
 | 22 | — | "Maybe so the last thing he ever saw was her eyes" | SUPPORTED INTERPRETATION ("maybe") | DH 32 | text |
 
+| 23 | 1976-1998 | "First, he hurt the love of his life. Then he spent the rest of his life protecting her son." | CANON (slur + passing the prophecy that led to her death; protection 1981-98) | OotP 28; DH 33 | text |
+| 24 | — | Snape was born a wizard; young wizards train at a hidden castle school called Hogwarts | CANON (half-blood wizard; Hogwarts hidden from non-magic people) | PS; HBP 30 | text |
+| 25 | — | A magic hat sorts students into houses by who they are inside | CANON (the Sorting Hat sorts by qualities/values) | PS 7 | text |
+| 26 | — | Gryffindor = brave, Slytherin = ambitious; "the two houses are enemies" | CANON (house traits) + SUPPORTED INTERPRETATION ("enemies" = long-standing rivalry) | PS 7; series-wide | text |
+| 27 | c. 1978 | Lily never forgave him and later married James | CANON | DH 33; PS | text |
+| 28 | — | Voldemort, "the most feared dark wizard alive" | CANON | series-wide | text |
+| 29 | — | Dumbledore, the school's headmaster | CANON | series-wide | text |
+| 30 | 1997 | The silver doe as "a memory of Lily" | SUPPORTED INTERPRETATION (Dumbledore answers the doe with "Lily?") | DH 33 | text |
+
 ## Visual embellishments (picture only)
+- v3: the castle/lake design, the hat floating above a first-year, students in two glaring rows, the wedding seen from behind a hedge (Snape's presence there is NOT canon — shown as a symbolic outsider image), the memory flash of Lily holding the baby.
 - Hilltop: Snape sinking to his knees; wind is canon, no rain is shown in v2.
 - "It wasn't enough": Snape slumped in a chair in Dumbledore's office (posture not verified; v1's cradling-the-body image came from the FILM and is REMOVED).
 - Tower window watching a lantern; the ghost of James's face overlaid on Harry's; final playground reprise.

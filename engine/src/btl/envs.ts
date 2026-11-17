@@ -260,3 +260,77 @@ export const officeNight = {
   back: (g: Ctx, w: number, h: number) => { office.back(g, w, h); g.fillStyle = "rgba(10,12,30,0.45)"; g.fillRect(-M, -M, w + 2 * M, h + 2 * M);
     g.fillStyle = "#2a2018"; g.beginPath(); g.arc(w * 0.82, h * 0.2, 70, 0, 6.283); g.fill(); g.strokeStyle = "#c9a95a"; g.lineWidth = 6; g.stroke(); },
 };
+
+// ---------- v3 world-building sets ----------
+/** Hidden castle school at night across a lake (original design). */
+export const castle = {
+  sky: (g: Ctx, w: number, h: number) => {
+    g.fillStyle = linGrad(g, 0, -M, 0, h * 0.7, [[0, "#070a18"], [0.6, "#1a2448"], [1, "#3a3a62"]]); g.fillRect(-M, -M, w + 2 * M, h + 2 * M);
+    const r = rng(91); for (let i = 0; i < 220; i++) { g.fillStyle = `rgba(230,235,255,${r() * 0.8})`; g.fillRect(r() * (w + 2 * M) - M, r() * h * 0.55 - M, 2, 2); }
+    g.fillStyle = radGrad(g, w * 0.78, h * 0.13, 0, 160, [[0, "rgba(250,248,235,0.95)"], [0.18, "rgba(220,225,245,0.5)"], [1, "rgba(0,0,0,0)"]]); g.fillRect(-M, -M, w + 2 * M, h);
+  },
+  hills: (g: Ctx, w: number, h: number) => {
+    g.fillStyle = "#0d1226"; g.beginPath(); g.moveTo(-M, h * 0.5); for (let x = -M; x <= w + M; x += 40) g.lineTo(x, h * 0.44 - Math.sin(x * 0.004) * 90 - Math.sin(x * 0.013) * 25); g.lineTo(w + M, h * 0.6); g.lineTo(-M, h * 0.6); g.fill();
+  },
+  castle: (g: Ctx, w: number, h: number) => {
+    const base = h * 0.5, r = rng(93);
+    g.fillStyle = "#151a30";
+    const towers: [number, number, number][] = [[0.18, 0.2, 60], [0.3, 0.26, 80], [0.42, 0.14, 70], [0.55, 0.22, 90], [0.66, 0.3, 60], [0.78, 0.24, 75], [0.88, 0.32, 55]];
+    g.fillRect(w * 0.14, base - h * 0.12, w * 0.8, h * 0.12 + 40);
+    for (const [fx, fy, tw] of towers) {
+      const x = w * fx, top = h * fy;
+      g.fillRect(x - tw / 2, top, tw, base - top);
+      g.beginPath(); g.moveTo(x - tw / 2 - 12, top); g.lineTo(x, top - tw * 1.5); g.lineTo(x + tw / 2 + 12, top); g.fill();
+      for (let y = top + 40; y < base - 20; y += 46) if (r() < 0.7) { g.fillStyle = radGrad(g, x, y, 0, 22, [[0, "rgba(255,210,130,0.95)"], [1, "rgba(255,170,80,0)"]]); g.fillRect(x - 22, y - 22, 44, 44); g.fillStyle = "#ffd890"; g.fillRect(x - 5, y - 8, 10, 16); g.fillStyle = "#151a30"; }
+    }
+    for (let x = w * 0.16; x < w * 0.92; x += 34) if (r() < 0.5) { g.fillStyle = "#ffcf80"; g.fillRect(x, base - h * 0.08 + r() * 60, 8, 12); }
+  },
+  lake: (g: Ctx, w: number, h: number) => {
+    g.fillStyle = linGrad(g, 0, h * 0.5, 0, h + M, [[0, "#1a2240"], [1, "#05070f"]]); g.fillRect(-M, h * 0.5, w + 2 * M, h * 0.5 + M);
+    const r = rng(95); g.fillStyle = "rgba(255,210,140,0.35)"; for (let i = 0; i < 120; i++) { const x = w * 0.15 + r() * w * 0.75, y = h * 0.52 + r() * h * 0.2; g.fillRect(x, y, 10 + r() * 30, 3); }
+    g.fillStyle = "rgba(240,240,255,0.25)"; for (let i = 0; i < 40; i++) { const y = h * 0.52 + i * 8; g.fillRect(w * 0.72 + Math.sin(i) * 20, y, 60 - i, 3); }
+  },
+  shore: (g: Ctx, w: number, h: number) => { g.fillStyle = "#04050a"; g.beginPath(); g.moveTo(-M, h + M); g.lineTo(-M, h * 0.82); g.quadraticCurveTo(w * 0.3, h * 0.76, w * 0.55, h * 0.86); g.quadraticCurveTo(w * 0.8, h * 0.95, w + M, h * 0.88); g.lineTo(w + M, h + M); g.fill(); },
+};
+
+function emblem(g: Ctx, x: number, y: number, kind: "lion" | "snake", col: string) {
+  g.save(); g.translate(x, y); g.fillStyle = col; g.strokeStyle = col; g.lineCap = "round";
+  if (kind === "lion") { // stylised lion head: mane rays + face
+    for (let i = 0; i < 14; i++) { const a = (i / 14) * Math.PI * 2; g.beginPath(); g.moveTo(Math.cos(a) * 26, Math.sin(a) * 30); g.lineTo(Math.cos(a) * 52, Math.sin(a) * 58); g.lineWidth = 12; g.stroke(); }
+    g.beginPath(); g.ellipse(0, 0, 32, 36, 0, 0, 6.283); g.fill();
+    g.fillStyle = "#7a1c18"; g.beginPath(); g.arc(-11, -6, 5, 0, 6.283); g.arc(11, -6, 5, 0, 6.283); g.fill(); g.beginPath(); g.moveTo(-8, 12); g.lineTo(8, 12); g.lineTo(0, 20); g.fill();
+  } else { // coiled snake, head raised
+    g.lineWidth = 16; g.beginPath(); g.moveTo(-40, 50); g.bezierCurveTo(40, 50, 40, 10, 0, 10); g.bezierCurveTo(-40, 10, -40, -30, 10, -30); g.stroke();
+    g.beginPath(); g.ellipse(22, -38, 20, 13, -0.4, 0, 6.283); g.fill();
+    g.fillStyle = "#0e3a24"; g.beginPath(); g.arc(26, -42, 4, 0, 6.283); g.fill();
+  }
+  g.restore();
+}
+/** Great hall for the sorting: lion banner left, snake banner right, floating candles, raised stool. */
+export const sortHall = {
+  back: (g: Ctx, w: number, h: number) => {
+    g.fillStyle = linGrad(g, -M, 0, w + M, 0, [[0, "#3a1614"], [0.42, "#2a2024"], [0.58, "#18241f"], [1, "#0d2418"]]); g.fillRect(-M, -M, w + 2 * M, h + 2 * M);
+    for (const x of [-M + 40, w * 0.22, w * 0.72, w + M - 140]) archWindow(g, x, h * 0.06, 160, 520, linGrad(g, 0, h * 0.06, 0, h * 0.35, [[0, "#2a3a6a"], [1, "#141a2c"]]));
+    g.fillStyle = "#a8261e"; g.fillRect(-M + 210, -M, 230, h * 0.44 + M); g.fillStyle = "#d8a63a"; g.fillRect(-M + 210, h * 0.44 - 10, 230, 14); emblem(g, -M + 325, h * 0.26, "lion", "#e8b84a");
+    g.fillStyle = "#1c5a38"; g.fillRect(w + M - 440, -M, 230, h * 0.44 + M); g.fillStyle = "#b8bcc0"; g.fillRect(w + M - 440, h * 0.44 - 10, 230, 14); emblem(g, w + M - 325, h * 0.26, "snake", "#c8ccd0");
+    floor(g, h * 0.66, w, h, "#2a2224", "#100c0e");
+    g.fillStyle = "#3a2a20"; g.fillRect(w * 0.3, h * 0.62, w * 0.4, 30); // dais
+  },
+  candles: hall.candles,
+};
+
+/** Wedding garden, seen from outside the hedge: bright and warm — for her. */
+export const wedding = {
+  back: (g: Ctx, w: number, h: number) => {
+    g.fillStyle = linGrad(g, 0, -M, 0, h * 0.6, [[0, "#9cc4e8"], [1, "#f4e6c8"]]); g.fillRect(-M, -M, w + 2 * M, h + 2 * M);
+    floor(g, h * 0.58, w, h, "#9aaa60", "#4a5a2a");
+    tree(g, w * 0.1, h * 0.62, 1.1, "#5a4030", "#6a8a3a", "#8aaa4a", 101); tree(g, w * 0.92, h * 0.6, 1.0, "#5a4030", "#6a8a3a", "#8aaa4a", 103);
+    // flower arch
+    g.strokeStyle = "#e8e2d4"; g.lineWidth = 18; g.beginPath(); g.moveTo(w * 0.32, h * 0.66); g.lineTo(w * 0.32, h * 0.36); g.arc(w * 0.5, h * 0.36, w * 0.18, Math.PI, 0); g.lineTo(w * 0.68, h * 0.66); g.stroke();
+    const r = rng(105); for (let i = 0; i < 90; i++) { const a = Math.PI + r() * Math.PI, rr = w * 0.18; const x = w * 0.5 + Math.cos(a) * rr + (r() - 0.5) * 30, y = h * 0.36 + Math.sin(a) * rr + (r() - 0.5) * 30; g.fillStyle = ["#f4c8d4", "#fbe8ee", "#f2c040", "#e89aaa"][Math.floor(r() * 4)]; g.beginPath(); g.arc(x, y, 8 + r() * 8, 0, 6.283); g.fill(); }
+    for (let i = 0; i < 40; i++) { const side = i % 2 ? w * 0.32 : w * 0.68, y = h * 0.36 + r() * h * 0.3; g.fillStyle = ["#f4c8d4", "#fbe8ee", "#e89aaa"][i % 3]; g.beginPath(); g.arc(side + (r() - 0.5) * 30, y, 8 + r() * 6, 0, 6.283); g.fill(); }
+    // guests (soft silhouettes)
+    g.fillStyle = "rgba(60,50,70,0.55)"; for (let i = 0; i < 9; i++) { const x = w * 0.12 + i * w * 0.09; if (x > w * 0.3 && x < w * 0.7) continue; g.beginPath(); g.ellipse(x, h * 0.6, 26, 32, 0, 0, 6.283); g.fill(); g.fillRect(x - 34, h * 0.62, 68, 140); }
+  },
+  hedge: (g: Ctx, w: number, h: number) => { const r = rng(107); for (let i = 0; i < 34; i++) { g.fillStyle = i % 3 ? "#1e2a14" : "#2a3a1c"; g.beginPath(); g.ellipse(-M + r() * 560, h * 0.55 + r() * h * 0.6, 120 + r() * 80, 100 + r() * 70, 0, 0, 6.283); g.fill(); } },
+};
