@@ -18,7 +18,19 @@ CORE THEME: Bad people are not born; they are made. Treat this as an inquiry int
 - One point of view, one central relationship, one emotional question.
 - Canon-based sources by default. Do not invent events and call them canon.
 - Original cinematic 2.5D graphic-drama visual identity; do not copy a specific creator's style, framing, character design, script or voice.
-- Narration begins with a strong emotional contradiction, mystery or consequence. Never automatically begin with "In this world".
+- OPENING STRUCTURE — MANDATORY ORDER (user rule, overrides the manual's script beats):
+  1. EMOTIONAL HOOK — the central contradiction, betrayal, sacrifice, tragedy or mystery. Never a generic world explanation.
+  2. WORLD INTRODUCTION — immediately: where the story takes place; only the minimum needed to understand it.
+  3. IMPORTANT WORLD RULES — the social structure, magic rules, institutions or relationships that drive the plot
+     (e.g. the Sorting Hat splits students into rival houses by personality).
+  4. CHARACTER INTRODUCTION — the characters and their relationship; introduce every character/group by what they ARE
+     ("Voldemort, the most feared dark wizard alive"), never by name alone.
+  5. MAIN DRAMA — love, conflict, psychological wounds, betrayal, transformation, consequences.
+  6. FINAL REVELATION — an earned emotional payoff.
+  Never assume the viewer knows the source universe. Keep world-building short (target ≤ ~20% of runtime): the
+  relationship stays the main subject. Never use "In this world…" automatically as the opening hook (or as a formula
+  for the world line either). VISUAL RULE: every important world-building sentence gets its own matching visual scene
+  (establishing shot, institution, rule shown happening) — log it in the shot plan's "world line → visual" table.
 - Captions ON (phrase-level, 1-2 lines, outside the top/right/bottom UI safe zones).
 
 ## Working rules
@@ -48,7 +60,8 @@ CORE THEME: Bad people are not born; they are made. Treat this as an inquiry int
 - Finish: "After watching this story, the viewer will understand that ______." — it must not be a generic slogan.
 
 ## Script gate
-- Structure: emotional contradiction hook (0-3 s) -> relationship proof -> wound -> escalation -> reinterpretation -> complete payoff.
+- Structure: follow the MANDATORY OPENING ORDER above (hook → world → world rules → characters → main drama → final revelation).
+  Inside the main drama: relationship proof → wound → escalation → reinterpretation.
 - Word targets at 3.7 words/s (±5%): 45 s 158-175 · 60 s 211-233 · 65 s 228-252 · 70 s 246-272 · 75 s 264-291.
   Formula: words = seconds × 3.7. Spoken duration = words ÷ 3.7.
 - Simple spoken English, concrete details, contractions, varied sentence length. No generic AI filler, fake quotes,
