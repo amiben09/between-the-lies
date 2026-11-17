@@ -1,0 +1,564 @@
+{
+ "seconds": 62.5,
+ "shots": [
+  {
+   "id": 1,
+   "start": 0.0,
+   "end": 2.917,
+   "clip": "clips3d/S01.mp4",
+   "cut": false,
+   "clipSeconds": 3.2,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.0,
+     "fx": 0.5,
+     "fy": 0.5,
+     "punch": false
+    },
+    {
+     "t": 1.57,
+     "s": 1.225,
+     "fx": 0.5,
+     "fy": 0.46,
+     "punch": false
+    }
+   ],
+   "whip": 0
+  },
+  {
+   "id": 2,
+   "start": 2.917,
+   "end": 6.456,
+   "clip": "clips3d/S02.mp4",
+   "cut": false,
+   "clipSeconds": 3.8,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.09,
+     "fx": 0.548,
+     "fy": 0.468,
+     "punch": false
+    },
+    {
+     "t": 1.053,
+     "s": 1.19,
+     "fx": 0.53,
+     "fy": 0.444,
+     "punch": false
+    },
+    {
+     "t": 1.883,
+     "s": 1.312,
+     "fx": 0.5,
+     "fy": 0.46,
+     "punch": true
+    }
+   ],
+   "whip": 1
+  },
+  {
+   "id": 3,
+   "start": 6.456,
+   "end": 9.088,
+   "clip": "clips3d/S03.mp4",
+   "cut": false,
+   "clipSeconds": 2.9,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.08,
+     "fx": 0.5,
+     "fy": 0.532,
+     "punch": false
+    },
+    {
+     "t": 1.594,
+     "s": 1.225,
+     "fx": 0.5,
+     "fy": 0.46,
+     "punch": false
+    }
+   ],
+   "whip": -1
+  },
+  {
+   "id": 4,
+   "start": 9.088,
+   "end": 11.69,
+   "clip": "clips3d/S04.mp4",
+   "cut": false,
+   "clipSeconds": 2.9,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.0,
+     "fx": 0.5,
+     "fy": 0.5,
+     "punch": false
+    },
+    {
+     "t": 1.272,
+     "s": 1.225,
+     "fx": 0.5,
+     "fy": 0.46,
+     "punch": false
+    }
+   ],
+   "whip": 1
+  },
+  {
+   "id": 5,
+   "start": 11.69,
+   "end": 14.728,
+   "clip": "clips3d/S05.mp4",
+   "cut": false,
+   "clipSeconds": 3.3,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.09,
+     "fx": 0.452,
+     "fy": 0.468,
+     "punch": false
+    },
+    {
+     "t": 1.57,
+     "s": 1.19,
+     "fx": 0.53,
+     "fy": 0.444,
+     "punch": false
+    }
+   ],
+   "whip": -1
+  },
+  {
+   "id": 6,
+   "start": 14.728,
+   "end": 18.096,
+   "clip": "clips3d/S06.mp4",
+   "cut": false,
+   "clipSeconds": 3.7,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.11,
+     "fx": 0.5,
+     "fy": 0.452,
+     "punch": false
+    },
+    {
+     "t": 0.992,
+     "s": 1.225,
+     "fx": 0.5,
+     "fy": 0.46,
+     "punch": false
+    },
+    {
+     "t": 2.512,
+     "s": 1.09,
+     "fx": 0.548,
+     "fy": 0.468,
+     "punch": false
+    }
+   ],
+   "whip": 1
+  },
+  {
+   "id": 7,
+   "start": 18.096,
+   "end": 20.916,
+   "clip": "clips3d/S07.mp4",
+   "cut": false,
+   "clipSeconds": 3.1,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.0,
+     "fx": 0.5,
+     "fy": 0.5,
+     "punch": false
+    },
+    {
+     "t": 1.154,
+     "s": 1.225,
+     "fx": 0.5,
+     "fy": 0.46,
+     "punch": false
+    }
+   ],
+   "whip": -1
+  },
+  {
+   "id": 8,
+   "start": 20.916,
+   "end": 23.623,
+   "clip": "clips3d/S08.mp4",
+   "cut": true,
+   "clipSeconds": 3.0,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.08,
+     "fx": 0.5,
+     "fy": 0.532,
+     "punch": false
+    },
+    {
+     "t": 1.534,
+     "s": 1.225,
+     "fx": 0.5,
+     "fy": 0.46,
+     "punch": false
+    }
+   ],
+   "whip": 0
+  },
+  {
+   "id": 9,
+   "start": 23.623,
+   "end": 25.905,
+   "clip": "clips3d/S09.mp4",
+   "cut": false,
+   "clipSeconds": 2.6,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.08,
+     "fx": 0.5,
+     "fy": 0.532,
+     "punch": false
+    },
+    {
+     "t": 1.547,
+     "s": 1.19,
+     "fx": 0.53,
+     "fy": 0.444,
+     "punch": false
+    }
+   ],
+   "whip": -1
+  },
+  {
+   "id": 10,
+   "start": 25.905,
+   "end": 29.533,
+   "clip": "clips3d/S10.mp4",
+   "cut": false,
+   "clipSeconds": 3.9,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.0,
+     "fx": 0.5,
+     "fy": 0.5,
+     "punch": false
+    },
+    {
+     "t": 1.585,
+     "s": 1.19,
+     "fx": 0.47,
+     "fy": 0.444,
+     "punch": false
+    },
+    {
+     "t": 3.025,
+     "s": 1.09,
+     "fx": 0.548,
+     "fy": 0.468,
+     "punch": false
+    }
+   ],
+   "whip": 1
+  },
+  {
+   "id": 11,
+   "start": 29.533,
+   "end": 33.236,
+   "clip": "clips3d/S11.mp4",
+   "cut": true,
+   "clipSeconds": 4.0,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.08,
+     "fx": 0.5,
+     "fy": 0.532,
+     "punch": false
+    },
+    {
+     "t": 1.077,
+     "s": 1.225,
+     "fx": 0.5,
+     "fy": 0.46,
+     "punch": false
+    },
+    {
+     "t": 2.447,
+     "s": 1.09,
+     "fx": 0.452,
+     "fy": 0.468,
+     "punch": false
+    }
+   ],
+   "whip": 0
+  },
+  {
+   "id": 12,
+   "start": 33.236,
+   "end": 36.249,
+   "clip": "clips3d/S12.mp4",
+   "cut": false,
+   "clipSeconds": 3.3,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.09,
+     "fx": 0.452,
+     "fy": 0.468,
+     "punch": false
+    },
+    {
+     "t": 1.534,
+     "s": 1.19,
+     "fx": 0.47,
+     "fy": 0.444,
+     "punch": false
+    }
+   ],
+   "whip": 1
+  },
+  {
+   "id": 13,
+   "start": 36.249,
+   "end": 37.903,
+   "clip": "clips3d/S13.mp4",
+   "cut": false,
+   "clipSeconds": 2.0,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.0,
+     "fx": 0.5,
+     "fy": 0.5,
+     "punch": false
+    },
+    {
+     "t": 1.051,
+     "s": 1.19,
+     "fx": 0.53,
+     "fy": 0.444,
+     "punch": false
+    }
+   ],
+   "whip": -1
+  },
+  {
+   "id": 14,
+   "start": 37.903,
+   "end": 40.8,
+   "clip": "clips3d/S14.mp4",
+   "cut": false,
+   "clipSeconds": 3.2,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.09,
+     "fx": 0.452,
+     "fy": 0.468,
+     "punch": false
+    },
+    {
+     "t": 1.507,
+     "s": 1.19,
+     "fx": 0.53,
+     "fy": 0.444,
+     "punch": false
+    }
+   ],
+   "whip": 1
+  },
+  {
+   "id": 15,
+   "start": 40.8,
+   "end": 44.606,
+   "clip": "clips3d/S15.mp4",
+   "cut": false,
+   "clipSeconds": 4.1,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.08,
+     "fx": 0.5,
+     "fy": 0.532,
+     "punch": false
+    },
+    {
+     "t": 1.65,
+     "s": 1.225,
+     "fx": 0.5,
+     "fy": 0.46,
+     "punch": false
+    },
+    {
+     "t": 3.25,
+     "s": 1.08,
+     "fx": 0.5,
+     "fy": 0.532,
+     "punch": false
+    }
+   ],
+   "whip": -1
+  },
+  {
+   "id": 16,
+   "start": 44.606,
+   "end": 46.148,
+   "clip": "clips3d/S16.mp4",
+   "cut": false,
+   "clipSeconds": 1.8,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.03,
+     "fx": 0.5,
+     "fy": 0.48,
+     "punch": false
+    }
+   ],
+   "whip": 1
+  },
+  {
+   "id": 17,
+   "start": 46.148,
+   "end": 49.219,
+   "clip": "clips3d/S17.mp4",
+   "cut": true,
+   "clipSeconds": 3.4,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.08,
+     "fx": 0.5,
+     "fy": 0.532,
+     "punch": false
+    },
+    {
+     "t": 1.102,
+     "s": 1.225,
+     "fx": 0.5,
+     "fy": 0.46,
+     "punch": false
+    },
+    {
+     "t": 2.452,
+     "s": 1.08,
+     "fx": 0.5,
+     "fy": 0.532,
+     "punch": false
+    }
+   ],
+   "whip": 0
+  },
+  {
+   "id": 18,
+   "start": 49.219,
+   "end": 53.568,
+   "clip": "clips3d/S18.mp4",
+   "cut": false,
+   "clipSeconds": 4.6,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.09,
+     "fx": 0.548,
+     "fy": 0.468,
+     "punch": false
+    },
+    {
+     "t": 1.461,
+     "s": 1.19,
+     "fx": 0.53,
+     "fy": 0.444,
+     "punch": false
+    },
+    {
+     "t": 2.961,
+     "s": 1.09,
+     "fx": 0.452,
+     "fy": 0.468,
+     "punch": false
+    }
+   ],
+   "whip": 1
+  },
+  {
+   "id": 19,
+   "start": 53.568,
+   "end": 57.159,
+   "clip": "clips3d/S19.mp4",
+   "cut": false,
+   "clipSeconds": 3.9,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.0,
+     "fx": 0.5,
+     "fy": 0.5,
+     "punch": false
+    },
+    {
+     "t": 1.522,
+     "s": 1.19,
+     "fx": 0.47,
+     "fy": 0.444,
+     "punch": false
+    },
+    {
+     "t": 2.962,
+     "s": 1.08,
+     "fx": 0.5,
+     "fy": 0.532,
+     "punch": false
+    }
+   ],
+   "whip": -1
+  },
+  {
+   "id": 20,
+   "start": 57.159,
+   "end": 62.5,
+   "clip": "clips3d/S20.mp4",
+   "cut": false,
+   "clipSeconds": 5.6,
+   "keys": [
+    {
+     "t": 0.0,
+     "s": 1.09,
+     "fx": 0.548,
+     "fy": 0.468,
+     "punch": false
+    },
+    {
+     "t": 1.531,
+     "s": 1.19,
+     "fx": 0.53,
+     "fy": 0.444,
+     "punch": false
+    },
+    {
+     "t": 2.991,
+     "s": 1.08,
+     "fx": 0.5,
+     "fy": 0.532,
+     "punch": false
+    }
+   ],
+   "whip": 1
+  }
+ ],
+ "dir": "ep/mr-freeze-heart-of-ice",
+ "flashAfterHook": true,
+ "note": "free 3D version: shots rendered with three.js at 10 fps / 540x960 (studio/scripts/render_shots3d.mjs), camera keys at half zoom"
+}
