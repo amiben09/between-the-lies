@@ -1,0 +1,7 @@
+node_modules/
+engine-base/
+out/
+work/frames/
+qa/*/perframe.npz
+*.wav
+!audio/**/.gitkeep
