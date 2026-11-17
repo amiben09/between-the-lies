@@ -7,3 +7,4 @@ __pycache__/
 *.pyc
 episodes/*/09_render/ep*_v[0-9].mp4
 *.part.mp4
+episodes/*/09_render/*FREE3D_v[0-9].mp4
