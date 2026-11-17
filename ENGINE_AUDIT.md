@@ -14,7 +14,7 @@
 | Upstream SKILL.md / STYLE_BIBLE | Between the Lies |
 |---|---|
 | Bean-head cartoon cards, saturated storybook town, black world ink | Cinematic 2.5D graphic drama, expressive faces/hands |
-| Absurd-fact hook, "You see," pivot, deadpan jokes, 3.7 words/s | Emotional-contradiction hook, 175-190 WPM with pauses |
+| Absurd-fact hook, "You see," pivot, deadpan jokes | Emotional-contradiction hook (speed 3.7 words/s KEPT — user decision) |
 | No captions | Phrase-level captions |
 | Music +3 dB / bed ~5-10 dB under voice | Music ~18-24 dB under dense speech, dynamic ducking |
 | 2K export 1440x2560 | 1080x1920 |

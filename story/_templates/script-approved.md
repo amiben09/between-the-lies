@@ -1,5 +1,5 @@
 # Script — <EPISODE>   status: DRAFT / APPROVED (date)
-Target duration: __ s · word count: __ · est. spoken duration at 180 WPM: __ s
+Target duration: __ s · word count: __ · est. spoken duration at 3.7 words/s (words ÷ 3.7): __ s
 
 ## Narration (spoken text only)
 1. (0-3 s · contradiction hook)

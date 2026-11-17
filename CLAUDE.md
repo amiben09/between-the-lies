@@ -11,7 +11,9 @@ CORE THEME: Bad people are not born; they are made. Treat this as an inquiry int
 
 ## Locked defaults (do not ask again)
 - 9:16 vertical, 1080x1920, 30 fps. H.264 MP4, AAC 48 kHz stereo, yuv420p, ~-14 LUFS, <= -1 dBTP.
-- 45-75 seconds; default 60-70 seconds. 175-190 WPM starting point; time against the real voice.
+- 45-75 seconds; default 60-70 seconds.
+- NARRATION SPEED: 3.7 words per second (~222 WPM), LOCKED by the user (overrides the manual's 175-190 WPM).
+  Fast, steady delivery; keep pauses short and only where a reveal earns them. Verify against the real voice (words.json).
 - English narration for a broad US/Canada/UK audience.
 - One point of view, one central relationship, one emotional question.
 - Canon-based sources by default. Do not invent events and call them canon.
@@ -27,7 +29,7 @@ CORE THEME: Bad people are not born; they are made. Treat this as an inquiry int
 5. Do not call paid generation services or spend credits without explicit approval and a clear price disclosure.
 6. Never describe an asset as licensed/verified unless the licence was actually checked. Log every asset in `story/episodes/<slug>/rights-log.md`.
 7. Do NOT use `engine-base/references/` (frames and style bible of another channel). Do not inherit upstream SKILL.md
-   user rules (no captions, "+3 dB music", 1440x2560, 3.7 words/s, absurd-fact hooks) — they belong to a different channel.
+   user rules (no captions, "+3 dB music", 1440x2560, absurd-fact hooks; the 3.7 words/s speed IS kept — user decision) — they belong to a different channel.
 
 ## Source research gate
 - Create `source-dossier.md` and `canon-timeline.md`.
@@ -47,7 +49,8 @@ CORE THEME: Bad people are not born; they are made. Treat this as an inquiry int
 
 ## Script gate
 - Structure: emotional contradiction hook (0-3 s) -> relationship proof -> wound -> escalation -> reinterpretation -> complete payoff.
-- Word targets: 45 s 125-140 · 60 s 165-185 · 70 s 190-210 · 75 s 205-225.
+- Word targets at 3.7 words/s (±5%): 45 s 158-175 · 60 s 211-233 · 65 s 228-252 · 70 s 246-272 · 75 s 264-291.
+  Formula: words = seconds × 3.7. Spoken duration = words ÷ 3.7.
 - Simple spoken English, concrete details, contractions, varied sentence length. No generic AI filler, fake quotes,
   unsupported inner thoughts or forced moral. Never end on an unfinished sentence or a vague question.
 - Deliver narration separately from stage directions; give word count and estimated spoken duration.
