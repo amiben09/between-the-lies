@@ -1,0 +1,18 @@
+{
+  "duration": 63.0,
+  "key": 62,
+  "bpm": 66,
+  "seed": 7,
+  "sections": [
+    {"start": 0.0, "end": 4.0, "mood": "hook"},
+    {"start": 4.0, "end": 14.0, "mood": "tender", "intensity": 0.5},
+    {"start": 14.0, "end": 24.0, "mood": "tension", "intensity": 0.6},
+    {"start": 24.0, "end": 36.0, "mood": "grief", "intensity": 0.7},
+    {"start": 36.0, "end": 48.0, "mood": "rise", "intensity": 0.8},
+    {"start": 48.0, "end": 49.0, "mood": "silence"},
+    {"start": 49.0, "end": 58.0, "mood": "grief", "intensity": 0.5},
+    {"start": 58.0, "end": 63.0, "mood": "resolve"}
+  ],
+  "hits": [36.0, 48.0],
+  "out": "music.wav"
+}

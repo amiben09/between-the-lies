@@ -1,6 +1,8 @@
 # Engine changes BETWEEN THE LIES needs (cartoon-3d-short → drama)
 
-Status: DESIGN ONLY. Nothing is implemented until the system is approved.
+Status (2026-11-17): approved; items 1, 3, 4 (faces), 6, 7 and 9 are DONE and tested. Items 2, 4 (body poses), 5 and 8 are open.
+Code: `studio/src/videos/bridge/` (engine fork), `studio/src/components/Captions.tsx`, `engine/drama_audio/`, `engine/voice/`.
+Render on a machine without a GPU with `BTL_GL=swangle` (default in studio/scripts/stills.mjs): ~10 s per frame at 0.5 scale.
 
 ## Prerequisites the repo does NOT include
 - A Remotion 4 project with `@remotion/three`, three, `@react-three/fiber` and `@react-three/postprocessing`

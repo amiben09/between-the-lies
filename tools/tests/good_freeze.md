@@ -5,7 +5,7 @@ PLANTS: L3, L8
 TWIST: L15
 L1 [HOOK] [CANON] He froze the woman he loved, and he did it to save her life.
 L2 [LOVE] [CANON] He was a quiet scientist with no friends and no enemies, just her.
-L3 [LOVE] [CANON] He kept a little snow globe with a dancer inside, because it reminded him of her.
+L3 [LOVE] [CANON] He kept a little *snow* *globe* with a dancer inside, because it reminded him of her.
 L4 [CRACK] [CANON] Then she got sick, and there was no cure.
 L5 [CRACK] [CANON] So he froze her in a secret chamber, to keep her asleep until a cure existed.
 L6 [WOUND] [CANON] But the machines belonged to the company, and the company wanted it shut down.
@@ -19,4 +19,4 @@ L13 [REVELATION] [CANON] The city saw a monster freezing everything in his path.
 L14 [REVELATION] [INTERP] Maybe nobody noticed he only ever hunted one man.
 [beat]
 L15 [PAYOFF] [CANON] Locked in his cell, he watches the snow fall inside the globe and whispers, "I'm sorry."
-L16 [PAYOFF] [CANON] The city calls him Mr. Freeze, but he was never made of ice.
+L16 [PAYOFF] [CANON] The city calls him Mr. Freeze, but he was never made of *ice.*
