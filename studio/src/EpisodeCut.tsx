@@ -9,6 +9,7 @@
 import React from "react";
 import { AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Captions } from "./components/Captions";
+import { SCENES } from "./free/scenes";
 
 export type CamKey = { t: number; s: number; fx: number; fy: number; punch?: boolean };
 export type Shot = {
@@ -63,12 +64,20 @@ const ShotLayer: React.FC<{ shot: Shot; dir: string; frames: number; whipIn: num
   return (
     <AbsoluteFill style={{ transform: `translateX(${tx}px)`, filter: blur > 0.5 ? `blur(${blur}px)` : undefined }}>
       <AbsoluteFill style={{ transform: `scale(${cam.s})`, transformOrigin: `${cam.fx * 100}% ${cam.fy * 100}%` }}>
-        {still
+        {shot.clip.startsWith("scene:")
+          ? <SceneSlot id={Number(shot.clip.slice(6))} dur={frames} />
+          : still
           ? <Img src={staticFile(`${dir}/${shot.clip}`)} style={style} />
           : <OffthreadVideo src={staticFile(`${dir}/${shot.clip}`)} playbackRate={rate} muted style={style} />}
       </AbsoluteFill>
     </AbsoluteFill>
   );
+};
+
+/** free (no-credit) version: a hand-built scene instead of a generated clip ("clip": "scene:<id>") */
+const SceneSlot: React.FC<{ id: number; dur: number }> = ({ id, dur }) => {
+  const Scene = SCENES[id];
+  return Scene ? <AbsoluteFill style={{ overflow: "hidden" }}><Scene dur={dur} /></AbsoluteFill> : <AbsoluteFill style={{ background: "#300" }} />;
 };
 
 const Grade: React.FC = () => {
