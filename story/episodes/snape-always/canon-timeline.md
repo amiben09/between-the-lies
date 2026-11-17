@@ -35,7 +35,13 @@ Labels: CANON · SUPPORTED INTERPRETATION (narrated as analysis / "maybe") · AD
 | 29 | — | Dumbledore, the school's headmaster | CANON | series-wide | text |
 | 30 | 1997 | The silver doe as "a memory of Lily" | SUPPORTED INTERPRETATION (Dumbledore answers the doe with "Lily?") | DH 33 | text |
 
+| 31 | c. 1969 | Lily was from a non-magical (Muggle) family | CANON | DH 33; PS | text |
+| 32 | 1971-76 | They stayed friends while Severus drifted toward dark magic and its admirers | CANON | DH 33 | text |
+| 33 | — | Some wizards despised children of non-magical parents; "Mudblood" is their slur for them | CANON | CoS 7-8; OotP 28; DH | text |
+| 34 | — | Gryffindor and Slytherin are RIVAL houses (v3's "enemies" corrected) | CANON | PS 7; series-wide | text |
+
 ## Visual embellishments (picture only)
+- v3.1: Severus keeping Lily's flower while they're still friends; the same flowers as her wedding bouquet; a first-year cornered by older Slytherins to SHOW the prejudice (generic scene, no named canon victim).
 - v3: the castle/lake design, the hat floating above a first-year, students in two glaring rows, the wedding seen from behind a hedge (Snape's presence there is NOT canon — shown as a symbolic outsider image), the memory flash of Lily holding the baby.
 - Hilltop: Snape sinking to his knees; wind is canon, no rain is shown in v2.
 - "It wasn't enough": Snape slumped in a chair in Dumbledore's office (posture not verified; v1's cradling-the-body image came from the FILM and is REMOVED).

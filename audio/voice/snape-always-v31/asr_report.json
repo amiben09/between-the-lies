@@ -1,0 +1,13 @@
+{
+ "script_words": 231,
+ "heard": 231,
+ "missing": [],
+ "asr_text": "first he hurt the love of his life then he spent the rest of his life protecting her son at eleven severus snape went to hogwarts a hidden school of magic inside a magic hat places students in rival houses gryffindor for the brave slytherin for the ambitious as a lonely boy he'd met lily a girl from a nonmagical family who made flowers bloom lily became a gryffindor severus a slytherin they stayed friends but he drifted toward dark magic james potter a gryffindor bully humiliated him lily defended him some wizards despised children of nonmagical parents and had a slur for them to prove he didn't need her he called her that word mudblood she never forgave him she married james severus joined voldemort the most feared dark wizard alive he passed his master a prophecy then realized it meant lily's baby son he begged dumbledore the headmaster to hide her it wasn't enough so he promised to protect the boy with her eyes but harry had her eyes in james's face so he guarded him and tormented him that explains it it doesn't excuse it asked if he cared for the boy he conjured a silver doe a memory of lily after all this time always dying he asked harry for one last thing look at me maybe so the last thing he ever saw was her eyes",
+ "timing_shift_s": {
+  "mean": 0.005,
+  "max_abs": 0.533
+ },
+ "line_snap_s": {
+  "max_abs": 0.43
+ }
+}

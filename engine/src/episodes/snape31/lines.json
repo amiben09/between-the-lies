@@ -1,0 +1,191 @@
+[
+ {
+  "line": 0,
+  "s": 0.186,
+  "e": 4.456,
+  "pause_after": 0.15,
+  "text": "First, he hurt the love of his life. Then he spent the rest of his life protecting her son.",
+  "seg_s": 0.15,
+  "seg_e": 4.6092
+ },
+ {
+  "line": 1,
+  "s": 4.789,
+  "e": 8.084,
+  "pause_after": 0.0,
+  "text": "At eleven, Severus Snape went to Hogwarts, a hidden school of magic.",
+  "seg_s": 4.7592,
+  "seg_e": 8.2382
+ },
+ {
+  "line": 2,
+  "s": 8.268,
+  "e": 14.081,
+  "pause_after": 0.0,
+  "text": "Inside, a magic hat places students in rival houses: Gryffindor for the brave, Slytherin for the ambitious.",
+  "seg_s": 8.2382,
+  "seg_e": 14.2307
+ },
+ {
+  "line": 3,
+  "s": 14.262,
+  "e": 19.17,
+  "pause_after": 0.0,
+  "text": "As a lonely boy, he'd met Lily, a girl from a non-magical family who made flowers bloom.",
+  "seg_s": 14.2307,
+  "seg_e": 19.3825
+ },
+ {
+  "line": 4,
+  "s": 19.412,
+  "e": 24.56,
+  "pause_after": 0.0,
+  "text": "Lily became a Gryffindor, Severus a Slytherin. They stayed friends, but he drifted toward dark magic.",
+  "seg_s": 19.3825,
+  "seg_e": 24.7105
+ },
+ {
+  "line": 5,
+  "s": 24.744,
+  "e": 28.344,
+  "pause_after": 0.0,
+  "text": "James Potter, a Gryffindor bully, humiliated him. Lily defended him.",
+  "seg_s": 24.7105,
+  "seg_e": 28.5193
+ },
+ {
+  "line": 6,
+  "s": 28.556,
+  "e": 32.562,
+  "pause_after": 0.0,
+  "text": "Some wizards despised children of non-magical parents, and had a slur for them.",
+  "seg_s": 28.5193,
+  "seg_e": 32.7188
+ },
+ {
+  "line": 7,
+  "s": 32.749,
+  "e": 35.587,
+  "pause_after": 0.4,
+  "text": "To prove he didn't need her, he called her that word. Mudblood.",
+  "seg_s": 32.7188,
+  "seg_e": 35.7668
+ },
+ {
+  "line": 8,
+  "s": 36.205,
+  "e": 38.216,
+  "pause_after": 0.0,
+  "text": "She never forgave him. She married James.",
+  "seg_s": 36.1668,
+  "seg_e": 38.3719
+ },
+ {
+  "line": 9,
+  "s": 38.404,
+  "e": 41.374,
+  "pause_after": 0.0,
+  "text": "Severus joined Voldemort, the most feared dark wizard alive.",
+  "seg_s": 38.3719,
+  "seg_e": 41.5798
+ },
+ {
+  "line": 10,
+  "s": 41.612,
+  "e": 45.297,
+  "pause_after": 0.35,
+  "text": "He passed his master a prophecy, then realized it meant Lily's baby son.",
+  "seg_s": 41.5798,
+  "seg_e": 45.45
+ },
+ {
+  "line": 11,
+  "s": 45.831,
+  "e": 48.087,
+  "pause_after": 0.15,
+  "text": "He begged Dumbledore, the headmaster, to hide her.",
+  "seg_s": 45.8,
+  "seg_e": 48.2384
+ },
+ {
+  "line": 12,
+  "s": 48.419,
+  "e": 49.206,
+  "pause_after": 0.45,
+  "text": "It wasn't enough.",
+  "seg_s": 48.3884,
+  "seg_e": 49.3601
+ },
+ {
+  "line": 13,
+  "s": 49.846,
+  "e": 51.8,
+  "pause_after": 0.0,
+  "text": "So he promised to protect the boy with her eyes.",
+  "seg_s": 49.8101,
+  "seg_e": 51.9548
+ },
+ {
+  "line": 14,
+  "s": 51.986,
+  "e": 55.783,
+  "pause_after": 0.2,
+  "text": "But Harry had her eyes in James's face, so he guarded him and tormented him.",
+  "seg_s": 51.9548,
+  "seg_e": 55.9622
+ },
+ {
+  "line": 15,
+  "s": 56.194,
+  "e": 57.995,
+  "pause_after": 0.35,
+  "text": "That explains it. It doesn't excuse it.",
+  "seg_s": 56.1622,
+  "seg_e": 58.1479
+ },
+ {
+  "line": 16,
+  "s": 58.53,
+  "e": 62.1,
+  "pause_after": 0.0,
+  "text": "Asked if he cared for the boy, he conjured a silver doe, a memory of Lily.",
+  "seg_s": 58.4979,
+  "seg_e": 62.2943
+ },
+ {
+  "line": 17,
+  "s": 62.325,
+  "e": 63.201,
+  "pause_after": 0.5,
+  "text": "After all this time?",
+  "seg_s": 62.2943,
+  "seg_e": 63.373
+ },
+ {
+  "line": 18,
+  "s": 63.903,
+  "e": 64.429,
+  "pause_after": 0.6,
+  "text": "Always.",
+  "seg_s": 63.873,
+  "seg_e": 64.5914
+ },
+ {
+  "line": 19,
+  "s": 65.222,
+  "e": 67.661,
+  "pause_after": 0.65,
+  "text": "Dying, he asked Harry for one last thing. Look at me.",
+  "seg_s": 65.1914,
+  "seg_e": 67.8247
+ },
+ {
+  "line": 20,
+  "s": 68.508,
+  "e": 70.641,
+  "pause_after": 0.0,
+  "text": "Maybe so the last thing he ever saw was her eyes.",
+  "seg_s": 68.4747,
+  "seg_e": 70.8001
+ }
+]

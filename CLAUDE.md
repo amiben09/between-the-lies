@@ -33,6 +33,25 @@ CORE THEME: Bad people are not born; they are made. Treat this as an inquiry int
   (establishing shot, institution, rule shown happening) — log it in the shot plan's "world line → visual" table.
 - Captions ON (phrase-level, 1-2 lines, outside the top/right/bottom UI safe zones).
 
+## STORYTELLING DNA — FROZEN FORMULA (user decision after Always v3; do not change the fundamentals)
+1. Start with an emotional contradiction.
+2. Introduce the world so newcomers understand it (world + rules ≈ 12-17 s).
+3. Explain only the rules relevant to the characters (every rule must pay off later in the story).
+4. Establish the relationship and make us care.
+5. Show the exact decision that destroys it.
+6. Explain the psychological transformation.
+7. Reveal the hidden truth.
+8. Finish with an emotionally meaningful callback.
+"The audience should understand the world, but remember the relationship."
+Reference episode: Always v3 (story/episodes/snape-always, engine/src/episodes/snape3). Keep its structure and visual identity.
+
+MEANINGFUL OBJECTS: every episode carries 1-2 objects with emotional history (flower, letter, ring, photograph, broken toy,
+watch…) that appear early, return at the turning point and pay off in the callback. Objects must come from the source
+when possible; an invented object is a VISUAL EMBELLISHMENT and is logged as such.
+PRECISION: never overstate social rules (e.g. Gryffindor/Slytherin are RIVAL houses, not "enemies"; a friendship ends
+because of a character's choices, not because an institution "split" them). Explain any slur or prejudice the plot
+turns on (what it means and who it targets) — with its own visual.
+
 ## Working rules
 1. Read this file, the manual and the existing project files before asking questions or making changes.
 2. Reuse established user decisions. Ask only for a genuinely blocking missing detail.

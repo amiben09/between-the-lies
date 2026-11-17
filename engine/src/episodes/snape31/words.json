@@ -1,0 +1,1622 @@
+{
+"duration": 71.1,
+"words": [
+{
+"w": "First",
+"s": 0.186,
+"e": 0.4,
+"line": 0,
+"asr": true
+},
+{
+"w": "he",
+"s": 0.62,
+"e": 0.7,
+"line": 0,
+"asr": true
+},
+{
+"w": "hurt",
+"s": 0.7,
+"e": 0.82,
+"line": 0,
+"asr": true
+},
+{
+"w": "the",
+"s": 0.82,
+"e": 1.02,
+"line": 0,
+"asr": true
+},
+{
+"w": "love",
+"s": 1.02,
+"e": 1.22,
+"line": 0,
+"asr": true
+},
+{
+"w": "of",
+"s": 1.22,
+"e": 1.38,
+"line": 0,
+"asr": true
+},
+{
+"w": "his",
+"s": 1.38,
+"e": 1.5,
+"line": 0,
+"asr": true
+},
+{
+"w": "life",
+"s": 1.5,
+"e": 1.82,
+"line": 0,
+"asr": true
+},
+{
+"w": "Then",
+"s": 2.2,
+"e": 2.36,
+"line": 0,
+"asr": true
+},
+{
+"w": "he",
+"s": 2.36,
+"e": 2.46,
+"line": 0,
+"asr": true
+},
+{
+"w": "spent",
+"s": 2.46,
+"e": 2.64,
+"line": 0,
+"asr": true
+},
+{
+"w": "the",
+"s": 2.64,
+"e": 2.8,
+"line": 0,
+"asr": true
+},
+{
+"w": "rest",
+"s": 2.8,
+"e": 2.94,
+"line": 0,
+"asr": true
+},
+{
+"w": "of",
+"s": 2.94,
+"e": 3.1,
+"line": 0,
+"asr": true
+},
+{
+"w": "his",
+"s": 3.1,
+"e": 3.24,
+"line": 0,
+"asr": true
+},
+{
+"w": "life",
+"s": 3.24,
+"e": 3.46,
+"line": 0,
+"asr": true
+},
+{
+"w": "protecting",
+"s": 3.46,
+"e": 3.84,
+"line": 0,
+"asr": true
+},
+{
+"w": "her",
+"s": 3.84,
+"e": 4.12,
+"line": 0,
+"asr": true
+},
+{
+"w": "son",
+"s": 4.12,
+"e": 4.456,
+"line": 0,
+"asr": true
+},
+{
+"w": "At",
+"s": 4.789,
+"e": 4.869,
+"line": 1,
+"asr": true
+},
+{
+"w": "eleven",
+"s": 4.869,
+"e": 5.14,
+"line": 1,
+"asr": true
+},
+{
+"w": "Severus",
+"s": 5.52,
+"e": 5.64,
+"line": 1,
+"asr": true
+},
+{
+"w": "Snape",
+"s": 5.64,
+"e": 5.98,
+"line": 1,
+"asr": true
+},
+{
+"w": "went",
+"s": 5.98,
+"e": 6.18,
+"line": 1,
+"asr": true
+},
+{
+"w": "to",
+"s": 6.18,
+"e": 6.32,
+"line": 1,
+"asr": true
+},
+{
+"w": "Hogwarts",
+"s": 6.32,
+"e": 6.64,
+"line": 1,
+"asr": true
+},
+{
+"w": "a",
+"s": 7.12,
+"e": 7.2,
+"line": 1,
+"asr": true
+},
+{
+"w": "hidden",
+"s": 7.2,
+"e": 7.32,
+"line": 1,
+"asr": true
+},
+{
+"w": "school",
+"s": 7.32,
+"e": 7.62,
+"line": 1,
+"asr": true
+},
+{
+"w": "of",
+"s": 7.62,
+"e": 7.82,
+"line": 1,
+"asr": true
+},
+{
+"w": "magic",
+"s": 7.82,
+"e": 8.084,
+"line": 1,
+"asr": true
+},
+{
+"w": "Inside",
+"s": 8.268,
+"e": 8.6,
+"line": 2,
+"asr": true
+},
+{
+"w": "a",
+"s": 8.78,
+"e": 8.86,
+"line": 2,
+"asr": true
+},
+{
+"w": "magic",
+"s": 8.86,
+"e": 9.08,
+"line": 2,
+"asr": true
+},
+{
+"w": "hat",
+"s": 9.08,
+"e": 9.3,
+"line": 2,
+"asr": true
+},
+{
+"w": "places",
+"s": 9.3,
+"e": 9.62,
+"line": 2,
+"asr": true
+},
+{
+"w": "students",
+"s": 9.62,
+"e": 9.94,
+"line": 2,
+"asr": true
+},
+{
+"w": "in",
+"s": 9.94,
+"e": 10.2,
+"line": 2,
+"asr": true
+},
+{
+"w": "rival",
+"s": 10.2,
+"e": 10.42,
+"line": 2,
+"asr": true
+},
+{
+"w": "houses",
+"s": 10.42,
+"e": 10.88,
+"line": 2,
+"asr": true
+},
+{
+"w": "Gryffindor",
+"s": 11.46,
+"e": 11.8,
+"line": 2,
+"asr": true
+},
+{
+"w": "for",
+"s": 11.8,
+"e": 11.98,
+"line": 2,
+"asr": true
+},
+{
+"w": "the",
+"s": 11.98,
+"e": 12.1,
+"line": 2,
+"asr": true
+},
+{
+"w": "brave",
+"s": 12.1,
+"e": 12.4,
+"line": 2,
+"asr": true
+},
+{
+"w": "Slytherin",
+"s": 12.92,
+"e": 13.16,
+"line": 2,
+"asr": true
+},
+{
+"w": "for",
+"s": 13.16,
+"e": 13.32,
+"line": 2,
+"asr": true
+},
+{
+"w": "the",
+"s": 13.32,
+"e": 13.48,
+"line": 2,
+"asr": true
+},
+{
+"w": "ambitious",
+"s": 13.48,
+"e": 14.081,
+"line": 2,
+"asr": true
+},
+{
+"w": "As",
+"s": 14.262,
+"e": 14.342,
+"line": 3,
+"asr": true
+},
+{
+"w": "a",
+"s": 14.342,
+"e": 14.46,
+"line": 3,
+"asr": true
+},
+{
+"w": "lonely",
+"s": 14.46,
+"e": 14.7,
+"line": 3,
+"asr": true
+},
+{
+"w": "boy",
+"s": 14.7,
+"e": 15.02,
+"line": 3,
+"asr": true
+},
+{
+"w": "he'd",
+"s": 15.3,
+"e": 15.46,
+"line": 3,
+"asr": true
+},
+{
+"w": "met",
+"s": 15.46,
+"e": 15.64,
+"line": 3,
+"asr": true
+},
+{
+"w": "Lily",
+"s": 15.64,
+"e": 15.84,
+"line": 3,
+"asr": true
+},
+{
+"w": "a",
+"s": 16.32,
+"e": 16.44,
+"line": 3,
+"asr": true
+},
+{
+"w": "girl",
+"s": 16.44,
+"e": 16.64,
+"line": 3,
+"asr": true
+},
+{
+"w": "from",
+"s": 16.64,
+"e": 16.88,
+"line": 3,
+"asr": true
+},
+{
+"w": "a",
+"s": 16.88,
+"e": 17.02,
+"line": 3,
+"asr": true
+},
+{
+"w": "non-magical",
+"s": 17.02,
+"e": 17.62,
+"line": 3,
+"asr": true
+},
+{
+"w": "family",
+"s": 17.62,
+"e": 17.96,
+"line": 3,
+"asr": true
+},
+{
+"w": "who",
+"s": 17.96,
+"e": 18.24,
+"line": 3,
+"asr": true
+},
+{
+"w": "made",
+"s": 18.24,
+"e": 18.4,
+"line": 3,
+"asr": true
+},
+{
+"w": "flowers",
+"s": 18.4,
+"e": 18.8,
+"line": 3,
+"asr": true
+},
+{
+"w": "bloom",
+"s": 18.8,
+"e": 19.17,
+"line": 3,
+"asr": true
+},
+{
+"w": "Lily",
+"s": 19.412,
+"e": 19.56,
+"line": 4,
+"asr": true
+},
+{
+"w": "became",
+"s": 19.56,
+"e": 19.9,
+"line": 4,
+"asr": true
+},
+{
+"w": "a",
+"s": 19.9,
+"e": 20.06,
+"line": 4,
+"asr": true
+},
+{
+"w": "Gryffindor",
+"s": 20.06,
+"e": 20.52,
+"line": 4,
+"asr": true
+},
+{
+"w": "Severus",
+"s": 20.82,
+"e": 21.06,
+"line": 4,
+"asr": true
+},
+{
+"w": "a",
+"s": 21.06,
+"e": 21.32,
+"line": 4,
+"asr": true
+},
+{
+"w": "Slytherin",
+"s": 21.32,
+"e": 21.76,
+"line": 4,
+"asr": true
+},
+{
+"w": "They",
+"s": 22.16,
+"e": 22.26,
+"line": 4,
+"asr": true
+},
+{
+"w": "stayed",
+"s": 22.26,
+"e": 22.54,
+"line": 4,
+"asr": true
+},
+{
+"w": "friends",
+"s": 22.54,
+"e": 22.88,
+"line": 4,
+"asr": true
+},
+{
+"w": "but",
+"s": 22.88,
+"e": 23.14,
+"line": 4,
+"asr": true
+},
+{
+"w": "he",
+"s": 23.14,
+"e": 23.26,
+"line": 4,
+"asr": true
+},
+{
+"w": "drifted",
+"s": 23.26,
+"e": 23.54,
+"line": 4,
+"asr": true
+},
+{
+"w": "toward",
+"s": 23.54,
+"e": 23.9,
+"line": 4,
+"asr": true
+},
+{
+"w": "dark",
+"s": 23.9,
+"e": 24.18,
+"line": 4,
+"asr": true
+},
+{
+"w": "magic",
+"s": 24.18,
+"e": 24.56,
+"line": 4,
+"asr": true
+},
+{
+"w": "James",
+"s": 24.744,
+"e": 25.0,
+"line": 5,
+"asr": true
+},
+{
+"w": "Potter",
+"s": 25.0,
+"e": 25.28,
+"line": 5,
+"asr": true
+},
+{
+"w": "a",
+"s": 25.48,
+"e": 25.56,
+"line": 5,
+"asr": true
+},
+{
+"w": "Gryffindor",
+"s": 25.56,
+"e": 26.0,
+"line": 5,
+"asr": true
+},
+{
+"w": "bully",
+"s": 26.0,
+"e": 26.22,
+"line": 5,
+"asr": true
+},
+{
+"w": "humiliated",
+"s": 26.84,
+"e": 26.92,
+"line": 5,
+"asr": true
+},
+{
+"w": "him",
+"s": 26.92,
+"e": 27.16,
+"line": 5,
+"asr": true
+},
+{
+"w": "Lily",
+"s": 27.62,
+"e": 27.7,
+"line": 5,
+"asr": true
+},
+{
+"w": "defended",
+"s": 27.7,
+"e": 28.06,
+"line": 5,
+"asr": true
+},
+{
+"w": "him",
+"s": 28.06,
+"e": 28.344,
+"line": 5,
+"asr": true
+},
+{
+"w": "Some",
+"s": 28.556,
+"e": 28.74,
+"line": 6,
+"asr": true
+},
+{
+"w": "wizards",
+"s": 28.74,
+"e": 29.02,
+"line": 6,
+"asr": true
+},
+{
+"w": "despised",
+"s": 29.02,
+"e": 29.48,
+"line": 6,
+"asr": true
+},
+{
+"w": "children",
+"s": 29.48,
+"e": 29.9,
+"line": 6,
+"asr": true
+},
+{
+"w": "of",
+"s": 29.9,
+"e": 30.2,
+"line": 6,
+"asr": true
+},
+{
+"w": "non-magical",
+"s": 30.2,
+"e": 30.9,
+"line": 6,
+"asr": true
+},
+{
+"w": "parents",
+"s": 30.9,
+"e": 31.26,
+"line": 6,
+"asr": true
+},
+{
+"w": "and",
+"s": 31.26,
+"e": 31.76,
+"line": 6,
+"asr": true
+},
+{
+"w": "had",
+"s": 31.76,
+"e": 31.88,
+"line": 6,
+"asr": true
+},
+{
+"w": "a",
+"s": 31.88,
+"e": 32.0,
+"line": 6,
+"asr": true
+},
+{
+"w": "slur",
+"s": 32.0,
+"e": 32.16,
+"line": 6,
+"asr": true
+},
+{
+"w": "for",
+"s": 32.16,
+"e": 32.38,
+"line": 6,
+"asr": true
+},
+{
+"w": "them",
+"s": 32.38,
+"e": 32.562,
+"line": 6,
+"asr": true
+},
+{
+"w": "To",
+"s": 32.749,
+"e": 32.84,
+"line": 7,
+"asr": true
+},
+{
+"w": "prove",
+"s": 32.84,
+"e": 33.02,
+"line": 7,
+"asr": true
+},
+{
+"w": "he",
+"s": 33.02,
+"e": 33.18,
+"line": 7,
+"asr": true
+},
+{
+"w": "didn't",
+"s": 33.18,
+"e": 33.4,
+"line": 7,
+"asr": true
+},
+{
+"w": "need",
+"s": 33.4,
+"e": 33.58,
+"line": 7,
+"asr": true
+},
+{
+"w": "her",
+"s": 33.58,
+"e": 33.72,
+"line": 7,
+"asr": true
+},
+{
+"w": "he",
+"s": 33.86,
+"e": 33.94,
+"line": 7,
+"asr": true
+},
+{
+"w": "called",
+"s": 33.94,
+"e": 34.1,
+"line": 7,
+"asr": true
+},
+{
+"w": "her",
+"s": 34.1,
+"e": 34.26,
+"line": 7,
+"asr": true
+},
+{
+"w": "that",
+"s": 34.26,
+"e": 34.4,
+"line": 7,
+"asr": true
+},
+{
+"w": "word",
+"s": 34.4,
+"e": 34.74,
+"line": 7,
+"asr": true
+},
+{
+"w": "Mudblood",
+"s": 35.16,
+"e": 35.587,
+"line": 7,
+"asr": true
+},
+{
+"w": "She",
+"s": 36.205,
+"e": 36.3,
+"line": 8,
+"asr": true
+},
+{
+"w": "never",
+"s": 36.3,
+"e": 36.44,
+"line": 8,
+"asr": true
+},
+{
+"w": "forgave",
+"s": 36.44,
+"e": 36.86,
+"line": 8,
+"asr": true
+},
+{
+"w": "him",
+"s": 36.86,
+"e": 37.02,
+"line": 8,
+"asr": true
+},
+{
+"w": "She",
+"s": 37.32,
+"e": 37.42,
+"line": 8,
+"asr": true
+},
+{
+"w": "married",
+"s": 37.42,
+"e": 37.7,
+"line": 8,
+"asr": true
+},
+{
+"w": "James",
+"s": 37.7,
+"e": 38.216,
+"line": 8,
+"asr": true
+},
+{
+"w": "Severus",
+"s": 38.404,
+"e": 38.68,
+"line": 9,
+"asr": true
+},
+{
+"w": "joined",
+"s": 38.68,
+"e": 39.08,
+"line": 9,
+"asr": true
+},
+{
+"w": "Voldemort",
+"s": 39.08,
+"e": 39.42,
+"line": 9,
+"asr": true
+},
+{
+"w": "the",
+"s": 39.86,
+"e": 39.96,
+"line": 9,
+"asr": true
+},
+{
+"w": "most",
+"s": 39.96,
+"e": 40.12,
+"line": 9,
+"asr": true
+},
+{
+"w": "feared",
+"s": 40.12,
+"e": 40.42,
+"line": 9,
+"asr": true
+},
+{
+"w": "dark",
+"s": 40.42,
+"e": 40.74,
+"line": 9,
+"asr": true
+},
+{
+"w": "wizard",
+"s": 40.74,
+"e": 41.02,
+"line": 9,
+"asr": true
+},
+{
+"w": "alive",
+"s": 41.02,
+"e": 41.374,
+"line": 9,
+"asr": true
+},
+{
+"w": "He",
+"s": 41.612,
+"e": 41.692,
+"line": 10,
+"asr": true
+},
+{
+"w": "passed",
+"s": 41.692,
+"e": 41.9,
+"line": 10,
+"asr": true
+},
+{
+"w": "his",
+"s": 41.9,
+"e": 42.12,
+"line": 10,
+"asr": true
+},
+{
+"w": "master",
+"s": 42.12,
+"e": 42.44,
+"line": 10,
+"asr": true
+},
+{
+"w": "a",
+"s": 42.44,
+"e": 42.6,
+"line": 10,
+"asr": true
+},
+{
+"w": "prophecy",
+"s": 42.6,
+"e": 42.94,
+"line": 10,
+"asr": true
+},
+{
+"w": "then",
+"s": 43.32,
+"e": 43.52,
+"line": 10,
+"asr": true
+},
+{
+"w": "realized",
+"s": 43.52,
+"e": 43.92,
+"line": 10,
+"asr": true
+},
+{
+"w": "it",
+"s": 43.92,
+"e": 44.14,
+"line": 10,
+"asr": true
+},
+{
+"w": "meant",
+"s": 44.14,
+"e": 44.36,
+"line": 10,
+"asr": true
+},
+{
+"w": "Lily's",
+"s": 44.36,
+"e": 44.76,
+"line": 10,
+"asr": true
+},
+{
+"w": "baby",
+"s": 44.76,
+"e": 44.92,
+"line": 10,
+"asr": true
+},
+{
+"w": "son",
+"s": 44.92,
+"e": 45.297,
+"line": 10,
+"asr": true
+},
+{
+"w": "He",
+"s": 45.831,
+"e": 45.911,
+"line": 11,
+"asr": true
+},
+{
+"w": "begged",
+"s": 45.911,
+"e": 46.12,
+"line": 11,
+"asr": true
+},
+{
+"w": "Dumbledore",
+"s": 46.12,
+"e": 46.62,
+"line": 11,
+"asr": true
+},
+{
+"w": "the",
+"s": 46.94,
+"e": 47.02,
+"line": 11,
+"asr": true
+},
+{
+"w": "headmaster",
+"s": 47.02,
+"e": 47.4,
+"line": 11,
+"asr": true
+},
+{
+"w": "to",
+"s": 47.6,
+"e": 47.68,
+"line": 11,
+"asr": true
+},
+{
+"w": "hide",
+"s": 47.68,
+"e": 47.9,
+"line": 11,
+"asr": true
+},
+{
+"w": "her",
+"s": 47.9,
+"e": 48.087,
+"line": 11,
+"asr": true
+},
+{
+"w": "It",
+"s": 48.419,
+"e": 48.5,
+"line": 12,
+"asr": true
+},
+{
+"w": "wasn't",
+"s": 48.5,
+"e": 48.78,
+"line": 12,
+"asr": true
+},
+{
+"w": "enough",
+"s": 48.78,
+"e": 49.206,
+"line": 12,
+"asr": true
+},
+{
+"w": "So",
+"s": 49.846,
+"e": 49.926,
+"line": 13,
+"asr": true
+},
+{
+"w": "he",
+"s": 49.926,
+"e": 50.04,
+"line": 13,
+"asr": true
+},
+{
+"w": "promised",
+"s": 50.04,
+"e": 50.3,
+"line": 13,
+"asr": true
+},
+{
+"w": "to",
+"s": 50.3,
+"e": 50.48,
+"line": 13,
+"asr": true
+},
+{
+"w": "protect",
+"s": 50.48,
+"e": 50.72,
+"line": 13,
+"asr": true
+},
+{
+"w": "the",
+"s": 50.72,
+"e": 50.88,
+"line": 13,
+"asr": true
+},
+{
+"w": "boy",
+"s": 50.88,
+"e": 51.06,
+"line": 13,
+"asr": true
+},
+{
+"w": "with",
+"s": 51.06,
+"e": 51.26,
+"line": 13,
+"asr": true
+},
+{
+"w": "her",
+"s": 51.26,
+"e": 51.38,
+"line": 13,
+"asr": true
+},
+{
+"w": "eyes",
+"s": 51.38,
+"e": 51.8,
+"line": 13,
+"asr": true
+},
+{
+"w": "But",
+"s": 51.986,
+"e": 52.1,
+"line": 14,
+"asr": true
+},
+{
+"w": "Harry",
+"s": 52.1,
+"e": 52.24,
+"line": 14,
+"asr": true
+},
+{
+"w": "had",
+"s": 52.24,
+"e": 52.48,
+"line": 14,
+"asr": true
+},
+{
+"w": "her",
+"s": 52.48,
+"e": 52.62,
+"line": 14,
+"asr": true
+},
+{
+"w": "eyes",
+"s": 52.62,
+"e": 52.88,
+"line": 14,
+"asr": true
+},
+{
+"w": "in",
+"s": 52.88,
+"e": 53.14,
+"line": 14,
+"asr": true
+},
+{
+"w": "James's",
+"s": 53.14,
+"e": 53.52,
+"line": 14,
+"asr": true
+},
+{
+"w": "face",
+"s": 53.52,
+"e": 53.76,
+"line": 14,
+"asr": true
+},
+{
+"w": "so",
+"s": 54.04,
+"e": 54.34,
+"line": 14,
+"asr": true
+},
+{
+"w": "he",
+"s": 54.34,
+"e": 54.46,
+"line": 14,
+"asr": true
+},
+{
+"w": "guarded",
+"s": 54.46,
+"e": 54.72,
+"line": 14,
+"asr": true
+},
+{
+"w": "him",
+"s": 54.72,
+"e": 54.98,
+"line": 14,
+"asr": true
+},
+{
+"w": "and",
+"s": 54.98,
+"e": 55.2,
+"line": 14,
+"asr": true
+},
+{
+"w": "tormented",
+"s": 55.2,
+"e": 55.54,
+"line": 14,
+"asr": true
+},
+{
+"w": "him",
+"s": 55.54,
+"e": 55.783,
+"line": 14,
+"asr": true
+},
+{
+"w": "That",
+"s": 56.194,
+"e": 56.32,
+"line": 15,
+"asr": true
+},
+{
+"w": "explains",
+"s": 56.32,
+"e": 56.66,
+"line": 15,
+"asr": true
+},
+{
+"w": "it",
+"s": 56.66,
+"e": 56.96,
+"line": 15,
+"asr": true
+},
+{
+"w": "It",
+"s": 57.1,
+"e": 57.22,
+"line": 15,
+"asr": true
+},
+{
+"w": "doesn't",
+"s": 57.22,
+"e": 57.44,
+"line": 15,
+"asr": true
+},
+{
+"w": "excuse",
+"s": 57.44,
+"e": 57.76,
+"line": 15,
+"asr": true
+},
+{
+"w": "it",
+"s": 57.76,
+"e": 57.995,
+"line": 15,
+"asr": true
+},
+{
+"w": "Asked",
+"s": 58.53,
+"e": 58.68,
+"line": 16,
+"asr": true
+},
+{
+"w": "if",
+"s": 58.68,
+"e": 58.84,
+"line": 16,
+"asr": true
+},
+{
+"w": "he",
+"s": 58.84,
+"e": 58.96,
+"line": 16,
+"asr": true
+},
+{
+"w": "cared",
+"s": 58.96,
+"e": 59.12,
+"line": 16,
+"asr": true
+},
+{
+"w": "for",
+"s": 59.12,
+"e": 59.3,
+"line": 16,
+"asr": true
+},
+{
+"w": "the",
+"s": 59.3,
+"e": 59.42,
+"line": 16,
+"asr": true
+},
+{
+"w": "boy",
+"s": 59.42,
+"e": 59.66,
+"line": 16,
+"asr": true
+},
+{
+"w": "he",
+"s": 59.86,
+"e": 59.94,
+"line": 16,
+"asr": true
+},
+{
+"w": "conjured",
+"s": 59.94,
+"e": 60.24,
+"line": 16,
+"asr": true
+},
+{
+"w": "a",
+"s": 60.24,
+"e": 60.38,
+"line": 16,
+"asr": true
+},
+{
+"w": "silver",
+"s": 60.38,
+"e": 60.66,
+"line": 16,
+"asr": true
+},
+{
+"w": "doe",
+"s": 60.66,
+"e": 61.04,
+"line": 16,
+"asr": true
+},
+{
+"w": "a",
+"s": 61.32,
+"e": 61.4,
+"line": 16,
+"asr": true
+},
+{
+"w": "memory",
+"s": 61.4,
+"e": 61.6,
+"line": 16,
+"asr": true
+},
+{
+"w": "of",
+"s": 61.6,
+"e": 61.84,
+"line": 16,
+"asr": true
+},
+{
+"w": "Lily",
+"s": 61.84,
+"e": 62.1,
+"line": 16,
+"asr": true
+},
+{
+"w": "After",
+"s": 62.325,
+"e": 62.54,
+"line": 17,
+"asr": true
+},
+{
+"w": "all",
+"s": 62.54,
+"e": 62.72,
+"line": 17,
+"asr": true
+},
+{
+"w": "this",
+"s": 62.72,
+"e": 62.88,
+"line": 17,
+"asr": true
+},
+{
+"w": "time",
+"s": 62.88,
+"e": 63.201,
+"line": 17,
+"asr": true
+},
+{
+"w": "Always",
+"s": 63.903,
+"e": 64.429,
+"line": 18,
+"asr": true
+},
+{
+"w": "Dying",
+"s": 65.222,
+"e": 65.42,
+"line": 19,
+"asr": true
+},
+{
+"w": "he",
+"s": 65.42,
+"e": 65.6,
+"line": 19,
+"asr": true
+},
+{
+"w": "asked",
+"s": 65.6,
+"e": 65.84,
+"line": 19,
+"asr": true
+},
+{
+"w": "Harry",
+"s": 65.84,
+"e": 66.04,
+"line": 19,
+"asr": true
+},
+{
+"w": "for",
+"s": 66.04,
+"e": 66.22,
+"line": 19,
+"asr": true
+},
+{
+"w": "one",
+"s": 66.22,
+"e": 66.42,
+"line": 19,
+"asr": true
+},
+{
+"w": "last",
+"s": 66.42,
+"e": 66.66,
+"line": 19,
+"asr": true
+},
+{
+"w": "thing",
+"s": 66.66,
+"e": 66.92,
+"line": 19,
+"asr": true
+},
+{
+"w": "Look",
+"s": 67.28,
+"e": 67.36,
+"line": 19,
+"asr": true
+},
+{
+"w": "at",
+"s": 67.36,
+"e": 67.5,
+"line": 19,
+"asr": true
+},
+{
+"w": "me",
+"s": 67.5,
+"e": 67.661,
+"line": 19,
+"asr": true
+},
+{
+"w": "Maybe",
+"s": 68.508,
+"e": 68.62,
+"line": 20,
+"asr": true
+},
+{
+"w": "so",
+"s": 68.62,
+"e": 68.82,
+"line": 20,
+"asr": true
+},
+{
+"w": "the",
+"s": 68.82,
+"e": 68.96,
+"line": 20,
+"asr": true
+},
+{
+"w": "last",
+"s": 68.96,
+"e": 69.14,
+"line": 20,
+"asr": true
+},
+{
+"w": "thing",
+"s": 69.14,
+"e": 69.34,
+"line": 20,
+"asr": true
+},
+{
+"w": "he",
+"s": 69.34,
+"e": 69.48,
+"line": 20,
+"asr": true
+},
+{
+"w": "ever",
+"s": 69.48,
+"e": 69.66,
+"line": 20,
+"asr": true
+},
+{
+"w": "saw",
+"s": 69.66,
+"e": 69.94,
+"line": 20,
+"asr": true
+},
+{
+"w": "was",
+"s": 69.94,
+"e": 70.12,
+"line": 20,
+"asr": true
+},
+{
+"w": "her",
+"s": 70.12,
+"e": 70.26,
+"line": 20,
+"asr": true
+},
+{
+"w": "eyes",
+"s": 70.26,
+"e": 70.641,
+"line": 20,
+"asr": true
+}
+]
+}

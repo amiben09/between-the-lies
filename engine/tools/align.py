@@ -12,6 +12,16 @@ segs, _ = WhisperModel("small.en", device="cpu", compute_type="int8").transcribe
 asr = [w for s in segs for w in s.words]
 D = json.load(open(wj)); words = D["words"]
 n = lambda x: re.sub(r"[^a-z0-9']", "", x.lower())
+NUM = {"1": "one", "2": "two", "3": "three", "4": "four", "5": "five", "6": "six", "7": "seven", "8": "eight", "9": "nine", "10": "ten", "11": "eleven", "12": "twelve", "17": "seventeen", "20": "twenty"}
+# hyphenated words: Whisper may split "non-magical" into "non" + "-magical" → compare without hyphens/spaces by merging
+asr_m = []
+for w in asr:
+    t = NUM.get(n(w.word), n(w.word))
+    if asr_m and w.word.startswith("-"): asr_m[-1] = (asr_m[-1][0] + t, asr_m[-1][1], w); continue
+    asr_m.append((t, w, w))
+class _W:  # merged word: start of first piece, end of last
+    def __init__(self, t, a_, b_): self.word, self.start, self.end = t, a_.start, b_.end
+asr = [_W(t, a_, b_) for t, a_, b_ in asr_m]
 A, B = [n(w["w"]) for w in words], [n(w.word) for w in asr]
 sm = difflib.SequenceMatcher(a=A, b=B, autojunk=False)
 matched, deltas, missing = 0, [], []
