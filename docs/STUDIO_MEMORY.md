@@ -36,7 +36,7 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
 | Always v3 | QC-approved (user 8.8/10) | world-first after hook → newcomers understand; "houses are enemies" was a canon overstatement |
 | **Always v3.1** | QC-approved, reference episode | rival houses, Mudblood explained with a scene, world 9.5 s, flower object (`engine/src/episodes/snape31`) |
 | Necessity test | done | 3D: 65 % frames with parallax vs 2.5D 2 %; 3D 2.2 s/frame vs 2.5D 0.05 s/frame on CPU (`docs/NECESSITY_TEST_2026-11-18.md`) |
-| **Next Time (Itachi, Naruto)** | storyboard approved by "create it" → full production | see `story/episodes/itachi-next-time/` |
+| **Next Time (Itachi, Naruto)** | full production: 13 dressed 3D sets, 33 beats, original koto/flute/taiko score | `engine/src/episodes/itachi/` (Episode.tsx, sets.tsx, stage.tsx), score `engine/audio-lib/score_itachi.py` |
 
 ## 4. Pipeline (commands; run from repo root unless noted)
 1. Research → `story/episodes/<ep>/source-dossier.md` (claims table `| # | ... |` — the QC gate parses claim ids).
@@ -54,7 +54,9 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
 - `engine/src/btl/` 2.5D canvas engine: `core.ts` (camera keys, `glide`, `K` keyframes, post grade/grain/particles),
   `people.ts` (character rig: 10 designs incl. Itachi/Sasuke, expressions, saccades, blinks, breathing, hands, tremble, walk,
   kneel, costume overrides, `eyesRed`, `headband`, **`reachArm()` 2-bone IK**), `envs.ts` (painted sets + `layerRack`), `kit.ts`.
-- `engine/src/three/` 3D: `kit3d.tsx` (toon + ink outlines, `CameraRig`, `CardActor`), `village.tsx` (Japanese-style village kit).
+- `engine/src/three/` 3D: `kit3d.tsx` (toon + ink outlines, geometry `intern`, `CameraRig`, `CardCanvas`, `CardActor`), `village.tsx` (village kit),
+  `props.tsx` (barrels, crates, stone lanterns, noren, banners, laundry, bamboo, rocks, instanced grass, trees, fences, motes, rain, light shafts, mist, flames+smoke).
+- Episode stage pattern: `engine/src/episodes/itachi/stage.tsx` (`Stage` = canvas + camera + per-mood lights/fog + tint/vignette/blur) and one component per beat keyed to beats.json.
 - `engine/src/tests/` necessity test (Street3D / Street25D); `engine/src/episodes/` (snape, snape2, snape3, snape31, itachi).
 - Tools: `engine/tools/{tts,align,captions,beatsheet}.py`, `engine/tools/refscan/refscan.py`, `engine/scripts/{check_episode.py,short_qa.py,stills.mjs}`.
 
@@ -75,6 +77,17 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
 - **Rendering here**: no GPU; `BTL_GL=swangle` (stills script) / `--gl=swangle` (render). Remotion bundling costs ~15 s per job.
 - **refscan**: hard-cut detector 97 % recall on v3.1; "visual setups" metric needed for fly-through styles; BPM unreliable.
 - Canon traps: film-only scenes in book continuity; unverifiable quotes → paraphrase and label.
+- **3D render memory/speed (Itachi)**: sets built `new THREE.XGeometry()` inline each frame → ~20 s/frame + leaks.
+  Fix: `intern()` in `Inked` (kit3d) reuses one geometry per shape → ~4-5 s/frame at 1080x1920 (swangle, 3 tabs).
+  Uncached per-house canvas textures (100+ per street, re-created on every beat mount) crashed Chromium ("Page crashed!")
+  → `houseTex` cache + toon-material cache keyed by map + CardCanvas disposes its canvas/texture on unmount.
+  Render in 120-frame resumable chunks with retries: `engine/scripts/render_chunks.sh <Comp> <dir> <frames> 120 3`.
+- **House kit bug**: `House` face 0 had w/d swapped (box z-extent = w) → characters hid inside walls. Fixed in village.tsx.
+- **Two-shots in 3D**: draw both characters into ONE card (`CardCanvas`, 2D coords, ground at y=1880, `ppm`) so
+  `reachArm` contact (forehead poke, piggyback) is exact. Separate cards can't touch.
+- **Depth-of-field close-ups**: `Stage blur={px}` renders the 3D set blurred; full-res 2D rig drawn on an overlay canvas
+  (no `post()` on overlays: its soft-light fill would paint over the 3D background).
+- Forehead target for Sasuke drawn at (x,y,s), facing ~0.45: `[x + 38s, y − H·s + 38s]` (H = 640 child / 880 teen).
 
 ## 7. Open items
 - Push to GitHub (user hasn't given a repo) — the cloud container is ephemeral; a `git bundle` is sent to the user each session.

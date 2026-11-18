@@ -1,6 +1,6 @@
 // Reusable 3D kit (from the necessity test): toon materials, ink outlines, canvas textures, camera rig, and our
 // 2D-rig characters as camera-facing cards (identity + facial acting preserved inside the 3D world).
-import React, { useLayoutEffect, useMemo } from "react";
+import React, { useEffect, useLayoutEffect, useMemo } from "react";
 import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { Ctx, makeCanvas } from "../btl/core";
@@ -9,8 +9,8 @@ import { Age, Kind, Light, Pose, person } from "../btl/people";
 export const gradientMap = (() => { const d = new Uint8Array([60, 140, 255]); const t = new THREE.DataTexture(d, 3, 1, THREE.RedFormat); t.minFilter = t.magFilter = THREE.NearestFilter; t.needsUpdate = true; return t; })();
 const matCache = new Map<string, THREE.Material>();
 export const toon = (color: string, map?: THREE.Texture, emissive?: string, ei = 1) => {
-  if (map) return new THREE.MeshToonMaterial({ color, map, gradientMap, emissive: emissive ?? "#000000", emissiveIntensity: ei });
-  const k = `${color}|${emissive}|${ei}`;
+  const k = `${color}|${emissive}|${ei}|${map?.uuid ?? ""}`;
+  if (map) { if (!matCache.has(k)) matCache.set(k, new THREE.MeshToonMaterial({ color, map, gradientMap, emissive: emissive ?? "#000000", emissiveIntensity: ei })); return matCache.get(k)!; }
   if (!matCache.has(k)) matCache.set(k, new THREE.MeshToonMaterial({ color, gradientMap, emissive: emissive ?? "#000000", emissiveIntensity: ei }));
   return matCache.get(k)!;
 };
@@ -21,14 +21,24 @@ export function canvasTex(w: number, h: number, paint: (g: CanvasRenderingContex
   if (repeat) { t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(...repeat); }
   return t;
 }
+/** Geometry interning: sets build `new THREE.XGeometry(...)` inline every frame; reuse one GPU-resident copy per shape
+ *  (otherwise every frame re-uploads and leaks geometry — measured ~20 s/frame vs a few seconds). */
+const GEO = new Map<string, THREE.BufferGeometry>();
+export function intern(geo: THREE.BufferGeometry): THREE.BufferGeometry {
+  const params = (geo as unknown as { parameters?: object }).parameters;
+  if (!params || geo.userData.noIntern) return geo;
+  const k = geo.type + JSON.stringify(params);
+  const hit = GEO.get(k); if (hit) { if (hit !== geo) geo.dispose(); return hit; }
+  GEO.set(k, geo); return geo;
+}
 /** Mesh with an inverted-hull ink outline. */
 export const Inked: React.FC<{ geo: THREE.BufferGeometry; mat: THREE.Material | THREE.Material[]; pos: [number, number, number]; rot?: [number, number, number]; scale?: [number, number, number]; outline?: number }> =
-  ({ geo, mat, pos, rot, scale, outline = 0.02 }) => (
+  ({ geo: geo0, mat, pos, rot, scale, outline = 0.02 }) => { const geo = intern(geo0); return (
     <group position={pos} rotation={rot ?? [0, 0, 0]} scale={scale ?? [1, 1, 1]}>
       <mesh geometry={geo} material={mat} />
       {outline > 0 && <mesh geometry={geo} material={INK} scale={[1 + outline, 1 + outline, 1 + outline]} />}
     </group>
-  );
+  ); };
 
 /** Deterministic camera: position, look-at target and lens per frame. */
 export const CameraRig: React.FC<{ pos: THREE.Vector3; look: THREE.Vector3; fov: number; roll?: number }> = ({ pos, look, fov, roll = 0 }) => {
@@ -44,6 +54,7 @@ export const CameraRig: React.FC<{ pos: THREE.Vector3; look: THREE.Vector3; fov:
 export const CardCanvas: React.FC<{ draw: (g: Ctx) => void; at: [number, number, number]; ppm: number; camPos: THREE.Vector3; spherical?: boolean; res?: number; shadow?: number }> =
   ({ draw, at, ppm, camPos, spherical, res = 0.5, shadow = 0.35 }) => {
     const card = useMemo(() => { const [c, g] = makeCanvas(Math.round(1080 * res), Math.round(1920 * res)); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return { c, g, t }; }, [res]);
+    useEffect(() => () => { card.t.dispose(); card.c.width = card.c.height = 0; }, [card]);
     card.g.setTransform(1, 0, 0, 1, 0, 0); card.g.clearRect(0, 0, card.c.width, card.c.height);
     card.g.setTransform(res, 0, 0, res, 0, 0); draw(card.g); card.t.needsUpdate = true;
     const hM = 1920 / ppm, wM = 1080 / ppm;

@@ -7,7 +7,14 @@ import { Inked, canvasTex, gradientMap, toon } from "./kit3d";
 
 export type Mood = "night" | "dawn" | "sunset" | "day";
 const PPM = 80;
+const HOUSE_TEX = new Map<string, THREE.Texture>();
+/** Cached: identical facades share one texture (sets remount per beat; uncached textures exhausted renderer memory). */
 export function houseTex(seed: number, wM: number, hM: number, mood: Mood, opts: { door?: "open" | "closed"; lit?: number } = {}) {
+  const key = [seed, wM.toFixed(2), hM.toFixed(2), mood, opts.door ?? "", opts.lit ?? ""].join("|");
+  const hit = HOUSE_TEX.get(key); if (hit) return hit;
+  const t = houseTexPaint(seed, wM, hM, mood, opts); HOUSE_TEX.set(key, t); return t;
+}
+function houseTexPaint(seed: number, wM: number, hM: number, mood: Mood, opts: { door?: "open" | "closed"; lit?: number }) {
   const r = rng(seed); const w = Math.round(wM * PPM), h = Math.round(hM * PPM);
   const night = mood === "night";
   return canvasTex(w, h, (g) => {
@@ -47,7 +54,7 @@ export const House: React.FC<{ x: number; z: number; w: number; d: number; h: nu
     const [bx, bz] = face === 0 ? [w, d] : [d, w]; // face 0: w runs along x
     const body = useMemo(() => new THREE.BoxGeometry(bx, h, bz), [bx, h, bz]);
     const eave = useMemo(() => new THREE.BoxGeometry(bx + 1.0, 0.14, bz + 1.0), [bx, bz]);
-    const hip = useMemo(() => { const g = new THREE.ConeGeometry(1, 1, 4); g.rotateY(Math.PI / 4); return g; }, []);
+    const hip = useMemo(() => { const g = new THREE.ConeGeometry(1, 1, 4); g.rotateY(Math.PI / 4); g.userData.noIntern = true; return g; }, []);
     return (
       <group>
         <Inked geo={body} mat={mats} pos={[x, h / 2, z]} outline={0.006} />

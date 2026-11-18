@@ -1,0 +1,184 @@
+{
+ "continuity": "Naruto manga (Part I + Shippuden), main continuity; 'year' = Itachi's age",
+ "structure": {
+  "hook": [
+   0
+  ],
+  "world": [
+   1
+  ],
+  "world_rules": [
+   2,
+   3
+  ],
+  "characters": [
+   4,
+   5
+  ],
+  "main_drama": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ],
+  "final_revelation": [
+   12,
+   13,
+   14,
+   15
+  ]
+ },
+ "lines": [
+  {
+   "line": 0,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    1,
+    2
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 1,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    3
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 2,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    4
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 3,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    5
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 4,
+   "year": 8,
+   "frame_device": false,
+   "claims": [
+    6
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 5,
+   "year": 8,
+   "frame_device": false,
+   "claims": [
+    7
+   ],
+   "label": "CANON (gesture); wording paraphrased"
+  },
+  {
+   "line": 6,
+   "year": 12,
+   "frame_device": false,
+   "claims": [
+    8,
+    9
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 7,
+   "year": 13,
+   "frame_device": false,
+   "claims": [
+    10,
+    11
+   ],
+   "label": "SUPPORTED INTERPRETATION + CANON"
+  },
+  {
+   "line": 8,
+   "year": 13,
+   "frame_device": false,
+   "claims": [
+    1
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 9,
+   "year": 13,
+   "frame_device": false,
+   "claims": [
+    12
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 10,
+   "year": 13,
+   "frame_device": false,
+   "claims": [
+    13
+   ],
+   "label": "SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 11,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    14
+   ],
+   "label": "CHANNEL JUDGEMENT"
+  },
+  {
+   "line": 12,
+   "year": 21,
+   "frame_device": false,
+   "claims": [
+    15,
+    16
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 13,
+   "year": 21,
+   "frame_device": false,
+   "claims": [
+    16
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 14,
+   "year": 21,
+   "frame_device": false,
+   "claims": [
+    17
+   ],
+   "label": "ADAPTATION"
+  },
+  {
+   "line": 15,
+   "year": 21,
+   "frame_device": false,
+   "claims": [
+    18,
+    19
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  }
+ ]
+}
