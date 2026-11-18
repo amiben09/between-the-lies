@@ -1,5 +1,7 @@
 # BETWEEN THE LIES — operating instructions for Claude Code
 
+> **New session? Read `docs/STUDIO_MEMORY.md` first** — decisions, pipeline commands, engine map and the lessons learned so far.
+
 Full manual: `docs/Between_the_Lies_Animation_Master_Engine.pdf` (v2.0, 17 Nov 2026). Read it before changing the pipeline.
 Engine state and known issues: `ENGINE_AUDIT.md`. Per-episode files: `story/episodes/<slug>/` (copy from `story/_templates/`).
 
@@ -12,7 +14,7 @@ CORE THEME: Bad people are not born; they are made. Treat this as an inquiry int
 ## Locked defaults (do not ask again)
 - 9:16 vertical, 1080x1920, 30 fps. H.264 MP4, AAC 48 kHz stereo, yuv420p, ~-14 LUFS, <= -1 dBTP.
 - 45-75 seconds; default 60-70 seconds.
-- NARRATION SPEED: 3.7 words per second (~222 WPM), LOCKED by the user (overrides the manual's 175-190 WPM).
+- NARRATION SPEED: 190-205 WPM average incl. pauses (user Phase-6 spec; supersedes the earlier 3.7 w/s lock).
   Fast, steady delivery; keep pauses short and only where a reveal earns them. Verify against the real voice (words.json).
 - English narration for a broad US/Canada/UK audience.
 - One point of view, one central relationship, one emotional question.

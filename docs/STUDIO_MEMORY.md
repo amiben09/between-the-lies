@@ -1,0 +1,83 @@
+# BETWEEN THE LIES — STUDIO MEMORY (read this first in every new session)
+Last updated: 2026-11-18 · Branch: `studio-upgrade` (main = Always v3.1 baseline, tag `v3.1-baseline`)
+This file is the session-to-session memory: what we built, what the user decided, what failed and why, and how to
+continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-won lessons.
+
+## 1. The user and the channel
+- Channel: **Between the Lies** — vertical 9:16 animated shorts about the hidden side of villains/overlooked characters
+  from comics, anime, manga, manhwa, films, TV. Core theme: "bad people are not born; they are made" (explain, never excuse).
+- The user writes in short, all-caps bursts; give clear progress + honest numbers; they value a "studio" feel, rich detail.
+- Reference videos they aim for (style principles only, never copy): "The Pickpocket Who Gave Everything Back" and
+  "What the Grave Bell Really Meant" (3D detailed sets, object storytelling, constant motivated camera, 1-word captions,
+  twist endings). Local copies (git-ignored): `references_ext/`. Analysis: `docs/REFERENCE_ANALYSIS_2026-11-18.md`.
+
+## 2. Locked decisions (do not re-ask)
+| Topic | Decision | Source |
+|---|---|---|
+| Format | 1080×1920, 30 fps, H.264 + AAC 48 kHz, −14 LUFS, ≤ −1 dBTP | manual + user |
+| Length | 45-75 s (default 60-70) | manual |
+| Pace | **190-205 WPM average incl. pauses** (earlier 3.7 w/s lock is superseded); earned pauses at reveals | user (Phase 6 spec) |
+| Story structure | HOOK → WORLD → WORLD RULES → RELATIONSHIP → CONFLICT → TRANSFORMATION → REVELATION → PAYOFF; newcomer must understand everything; world-building ≈ 12-17 s | user |
+| Storytelling DNA | 8 steps in CLAUDE.md ("understand the world, remember the relationship") | user, frozen after Always v3 |
+| Objects | 1-2 meaningful recurring objects per episode (Always: flower; Itachi: forehead poke + headband) | user |
+| Precision | never overstate rules (rival ≠ enemies); explain slurs/prejudice with a visual | user |
+| Canon | every claim labelled CANON / SUPPORTED INTERPRETATION / ADAPTATION / CHANNEL JUDGEMENT / VISUAL EMBELLISHMENT with locator | manual + user |
+| Production | **storyboard-first**: beat sheet + 4-6 styleframes → user approval → full animation | user (Phase 5) |
+| Renderer | **hybrid**: Three.js 3D sets + camera for most beats; our 2D character rig as camera-facing cards; 2.5D canvas for close-ups/inserts | step-4 evidence + user "3" |
+| Captions | phrase captions on a dark plate (user has not chosen 1-2-word yet — still open) | current default |
+| Ending hold | ≥ 4 s after last word (user has not chosen shorter — still open) | current default |
+| Never | imitate a creator's character design / captions font / shots; use `engine-base/references/`; gore | rules |
+
+## 3. Episodes produced
+| Episode | State | Key lessons |
+|---|---|---|
+| Always (Snape) v1 | 2.5D test | cramped story; film-only image (Snape holding Lily) wrongly used as book canon |
+| Always v2 | QC-approved | added psychology, Whisper alignment, QC gate, captions plate, camera glide |
+| Always v3 | QC-approved (user 8.8/10) | world-first after hook → newcomers understand; "houses are enemies" was a canon overstatement |
+| **Always v3.1** | QC-approved, reference episode | rival houses, Mudblood explained with a scene, world 9.5 s, flower object (`engine/src/episodes/snape31`) |
+| Necessity test | done | 3D: 65 % frames with parallax vs 2.5D 2 %; 3D 2.2 s/frame vs 2.5D 0.05 s/frame on CPU (`docs/NECESSITY_TEST_2026-11-18.md`) |
+| **Next Time (Itachi, Naruto)** | storyboard approved by "create it" → full production | see `story/episodes/itachi-next-time/` |
+
+## 4. Pipeline (commands; run from repo root unless noted)
+1. Research → `story/episodes/<ep>/source-dossier.md` (claims table `| # | ... |` — the QC gate parses claim ids).
+2. Narration `narration.txt` (one beat per line, earned pauses `{0.5}`) + optional `lexicon.json` `{"Name": "phonemes"}`.
+3. Voice: `VIRTUAL_ENV=/home/user/.venv-tts PATH=/home/user/.venv-tts/bin:$PATH HF_HUB_DISABLE_XET=1 python engine/tools/tts.py <narration> <voice_dir> am_michael 1.30 0.0`
+4. Verify/re-time: `python engine/tools/align.py <voice.wav> <words.json> <lines.json> <asr_report.json>` (must hear every word).
+5. Captions: `python3 engine/tools/captions.py <narration> <words.json> <captions.json> <out.srt> <highlight words…>`
+6. Beat sheet: `python3 engine/tools/beatsheet.py <beats_src.json> <words.json> <captions.json> <outdir> 4.2` → beats.json + storyboard.md (structure validator).
+7. Styleframes → approval. 8. Episode code in `engine/src/episodes/<ep>/`. 9. Score `engine/audio-lib/score_<ep>.py` → ffmpeg loudnorm two-pass.
+10. Render (from `engine/`): `npx remotion render src/index.ts <Comp> ../out/<ep>/picture.mp4 --codec h264 --crf 17 --concurrency 3 --gl=swangle` (GPU PC: `--gl=angle`).
+11. Mux with `-map 0:v:0 -map 1:a:0`. 12. QC gate `python3 -I engine/scripts/check_episode.py …` (exit 1 = rejected; never deliver).
+13. Reference analysis: `python engine/tools/refscan/refscan.py <video.mp4> <outdir> [--truth truth.json] [--no-ocr]` (TTS venv).
+
+## 5. Engine map
+- `engine/src/btl/` 2.5D canvas engine: `core.ts` (camera keys, `glide`, `K` keyframes, post grade/grain/particles),
+  `people.ts` (character rig: 10 designs incl. Itachi/Sasuke, expressions, saccades, blinks, breathing, hands, tremble, walk,
+  kneel, costume overrides, `eyesRed`, `headband`, **`reachArm()` 2-bone IK**), `envs.ts` (painted sets + `layerRack`), `kit.ts`.
+- `engine/src/three/` 3D: `kit3d.tsx` (toon + ink outlines, `CameraRig`, `CardActor`), `village.tsx` (Japanese-style village kit).
+- `engine/src/tests/` necessity test (Street3D / Street25D); `engine/src/episodes/` (snape, snape2, snape3, snape31, itachi).
+- Tools: `engine/tools/{tts,align,captions,beatsheet}.py`, `engine/tools/refscan/refscan.py`, `engine/scripts/{check_episode.py,short_qa.py,stills.mjs}`.
+
+## 6. Hard-won lessons (bugs we hit — don't repeat)
+- **TTS**: Kokoro timestamps run early → trim lines by *energy*, never by timestamp (clipped "excuse it"). Use a 1 % energy
+  threshold + 150 ms tail (2 % / 100 ms clipped "enemies"). Speed > 1.30 slurs words (Whisper lost 4-13 words at 1.34-1.42).
+- **Names**: Kokoro mispronounces anime names ("tachi", "uchha") → per-episode `lexicon.json` with phonemes fixed it 100 %.
+- **Alignment**: Whisper boundary times drift up to 0.3-0.5 s → snap line starts/ends to the TTS segment audio (`seg_s/seg_e`).
+  Whisper writes numbers as digits and splits hyphens → normalise; proper names → fuzzy match, reported.
+- **Captions**: balanced phrase split; never end on a function word; non-breaking hyphens; plate for contrast.
+- **QC**: judge frozen frames at 270×480 (90×160 hides 1 px/frame creeps). Cameras must never fully stop (`glide`).
+  Payoff ≥ 4 s; total ≤ 75 s → shorten the script, never speed the voice.
+- **3D framing**: vertical 9:16 → horizontal FOV is only ~25° at fov 44: aim the camera close to the subject or it leaves frame.
+- **Toon point lights** make hard circles on walls → keep them weak/close or use emissive planes.
+- **Cards** can't open doors: put the actor in front of an emissive "open doorway" plane. Back views of cards are crude.
+- **Arms**: never guess angles for contact → `reachArm()`; stage so the arm enters from the side (don't cross faces).
+- **R3F**: `makeDefault` is drei-only (drive the camera via `useThree`). R3F clamps dpr ≥ 1, so `--scale` doesn't cut 3D cost.
+- **Rendering here**: no GPU; `BTL_GL=swangle` (stills script) / `--gl=swangle` (render). Remotion bundling costs ~15 s per job.
+- **refscan**: hard-cut detector 97 % recall on v3.1; "visual setups" metric needed for fly-through styles; BPM unreliable.
+- Canon traps: film-only scenes in book continuity; unverifiable quotes → paraphrase and label.
+
+## 7. Open items
+- Push to GitHub (user hasn't given a repo) — the cloud container is ephemeral; a `git bundle` is sent to the user each session.
+- RX 590 benchmark (Test3D) on the user's Windows PC.
+- Captions style + ending-hold length decisions.
+- Acting system beyond IK (state machine, foot planting, 8-direction views), camera-director spec layer, QC v2 scorecard.
