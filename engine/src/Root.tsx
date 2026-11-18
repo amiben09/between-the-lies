@@ -2,6 +2,9 @@ import React from "react";
 import { Composition } from "remotion";
 import { ProofScene, PROOF_FRAMES } from "./proof/ProofScene";
 import { CharSheet } from "./btl/CharSheet";
+import { Street3D } from "./tests/Street3D";
+import { Street25D } from "./tests/Street25D";
+import { TEST_FRAMES, TEST_W, TEST_H } from "./tests/streetSpec";
 import { SnapeEpisode } from "./episodes/snape/Episode";
 import { FRAMES as SNAPE_FRAMES } from "./episodes/snape/shots";
 import { SnapeEpisodeV2 } from "./episodes/snape2/Episode";
@@ -20,5 +23,7 @@ export const Root: React.FC = () => (
     <Composition id="SnapeAlwaysV2" component={SnapeEpisodeV2} durationInFrames={SNAPE2_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="SnapeAlwaysV3" component={SnapeEpisodeV3} durationInFrames={SNAPE3_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="SnapeAlwaysV31" component={SnapeEpisodeV31} durationInFrames={SNAPE31_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Test3D" component={Street3D} durationInFrames={TEST_FRAMES} fps={30} width={TEST_W} height={TEST_H} />
+    <Composition id="Test25D" component={Street25D} durationInFrames={TEST_FRAMES} fps={30} width={1080} height={1920} />
   </>
 );

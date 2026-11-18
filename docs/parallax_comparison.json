@@ -1,0 +1,32 @@
+{
+ "Pickpocket (ref)": {
+  "parallax_residual_median_px@720": 0.56,
+  "parallax_residual_p90_px@720": 10.87,
+  "frames_with_strong_parallax_pct": 34.0,
+  "perspective_gain_median_px": 0.042
+ },
+ "Grave Bell (ref)": {
+  "parallax_residual_median_px@720": 1.86,
+  "parallax_residual_p90_px@720": 8.97,
+  "frames_with_strong_parallax_pct": 56.8,
+  "perspective_gain_median_px": 0.119
+ },
+ "Always v3.1 (ours, 2.5D)": {
+  "parallax_residual_median_px@720": 0.76,
+  "parallax_residual_p90_px@720": 2.74,
+  "frames_with_strong_parallax_pct": 23.4,
+  "perspective_gain_median_px": 0.043
+ },
+ "Test 3D": {
+  "parallax_residual_median_px@720": 1.68,
+  "parallax_residual_p90_px@720": 4.76,
+  "frames_with_strong_parallax_pct": 64.7,
+  "perspective_gain_median_px": 0.23
+ },
+ "Test 2.5D": {
+  "parallax_residual_median_px@720": 0.35,
+  "parallax_residual_p90_px@720": 0.65,
+  "frames_with_strong_parallax_pct": 2.2,
+  "perspective_gain_median_px": 0.013
+ }
+}

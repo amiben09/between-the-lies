@@ -1,0 +1,62 @@
+{
+ "3D (Three.js)": {
+  "follow": {
+   "parallax_residual_px@720": 1.61,
+   "camera_translation_px_per_frame@720": 2.85,
+   "zoom_total": 1.59,
+   "perspective_gain_px": 0.18,
+   "sharp_ratio_max_min_third": 4.0
+  },
+  "stop/OTS": {
+   "parallax_residual_px@720": 2.46,
+   "camera_translation_px_per_frame@720": 22.27,
+   "zoom_total": 1.484,
+   "perspective_gain_px": 0.15,
+   "sharp_ratio_max_min_third": 3.1
+  },
+  "through window": {
+   "parallax_residual_px@720": 16.12,
+   "camera_translation_px_per_frame@720": 39.77,
+   "zoom_total": 1.324,
+   "perspective_gain_px": 4.62,
+   "sharp_ratio_max_min_third": 6.7
+  },
+  "insert": {
+   "parallax_residual_px@720": 2.1,
+   "camera_translation_px_per_frame@720": 31.22,
+   "zoom_total": 1.914,
+   "perspective_gain_px": 1.52,
+   "sharp_ratio_max_min_third": 6.8
+  }
+ },
+ "2.5D (canvas)": {
+  "follow": {
+   "parallax_residual_px@720": 0.31,
+   "camera_translation_px_per_frame@720": 1.26,
+   "zoom_total": 1.109,
+   "perspective_gain_px": 0.01,
+   "sharp_ratio_max_min_third": 8.6
+  },
+  "stop/OTS": {
+   "parallax_residual_px@720": 0.55,
+   "camera_translation_px_per_frame@720": 9.68,
+   "zoom_total": 1.364,
+   "perspective_gain_px": 0.03,
+   "sharp_ratio_max_min_third": 5.8
+  },
+  "through window": {
+   "parallax_residual_px@720": 0.18,
+   "camera_translation_px_per_frame@720": 1.88,
+   "zoom_total": 1.227,
+   "perspective_gain_px": 0.0,
+   "sharp_ratio_max_min_third": 10.5
+  },
+  "insert": {
+   "parallax_residual_px@720": 0.41,
+   "camera_translation_px_per_frame@720": 11.85,
+   "zoom_total": 1.202,
+   "perspective_gain_px": 0.01,
+   "sharp_ratio_max_min_third": 18.3
+  }
+ }
+}

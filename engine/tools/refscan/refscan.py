@@ -139,10 +139,10 @@ def ocr_frame(f, band=None):
             words.append({"t": c[11].strip(), "y": round(y, 4), "x": int(c[6]) / 1080, "hgt": int(c[9]) / 1920})
     return words
 # pass 1: 24 full frames to locate the caption band; pass 2: only that band (fast)
-probe = [w_ for f in np.linspace(0, N - 1, 24).astype(int) for w_ in ocr_frame(int(f))]
+probe = [w_ for f in np.linspace(0, N - 1, 24).astype(int) for w_ in ocr_frame(int(f))] if "--no-ocr" not in sys.argv else []
 band = (max(0.0, float(np.percentile([w_["y"] for w_ in probe], 10)) - 0.06), min(1.0, float(np.percentile([w_["y"] for w_ in probe], 90)) + 0.08)) if probe else None
 R["captions_band_scanned"] = E([round(b, 3) for b in band] if band else "full frame", "pass 1: 24 evenly spaced full-frame OCR samples")
-ocr = [{"f": f, "s": round(f / fps, 2), "words": ocr_frame(f, band)} for f in range(0, N, 6)]
+ocr = [{"f": f, "s": round(f / fps, 2), "words": ocr_frame(f, band)} for f in range(0, N, 6)] if "--no-ocr" not in sys.argv else []
 if os.path.exists(f"{out}/_ocr.png"): os.remove(f"{out}/_ocr.png")
 cap_frames = [o for o in ocr if o["words"]]
 ys = [w_["y"] for o in cap_frames for w_ in o["words"]]; hs = [w_["hgt"] for o in cap_frames for w_ in o["words"]]
@@ -173,19 +173,22 @@ au, sr = sf.read(wav, dtype="float32")
 from faster_whisper import WhisperModel
 segs, _ = WhisperModel("small.en", device="cpu", compute_type="int8").transcribe(au, word_timestamps=True, beam_size=5, condition_on_previous_text=False)
 WW = [{"w": x.word.strip(), "s": round(x.start, 3), "e": round(x.end, 3), "p": round(x.probability, 3)} for sg in segs for x in sg.words]
-gaps = [(WW[i]["e"], WW[i + 1]["s"]) for i in range(len(WW) - 1) if WW[i + 1]["s"] - WW[i]["e"] > 0.3]
-speech_span = WW[-1]["e"] - WW[0]["s"] if WW else 0
-inside = speech_span - sum(b - a_ for a_, b in gaps)
-text = " ".join(x["w"] for x in WW); sents = [s_ for s_ in re.split(r"(?<=[.!?])\s+", text) if s_.strip()]
-R["narration"] = {
-    "transcript": E(text, "faster-whisper small.en (ASR — may contain recognition errors)"),
-    "word_count": E(len(WW), "ASR words"),
-    "first_word_s": E(WW[0]["s"] if WW else None, "ASR"), "last_word_end_s": E(WW[-1]["e"] if WW else None, "ASR"),
-    "wpm_overall": E(round(len(WW) / speech_span * 60, 1) if speech_span else None, "words / (last end - first start)"),
-    "wpm_inside_speech": E(round(len(WW) / inside * 60, 1) if inside else None, "excluding gaps > 0.3 s"),
-    "pauses_over_0_3s": E([[round(a_, 2), round(b - a_, 2)] for a_, b in gaps], "start, length (s)"),
-    "sentences": E(len(sents), "ASR punctuation"), "words_per_sentence_median": E(float(np.median([len(s_.split()) for s_ in sents])) if sents else None, "ASR punctuation"),
-    "tail_after_last_word_s": E(round(dur - WW[-1]["e"], 2) if WW else None, "duration - last word end")}
+if not WW:  # silent clip (e.g. render tests): narration metrics unknown
+    gaps, R["narration"] = [], {"transcript": U("no speech detected"), "word_count": M(0, "ASR found no words")}
+else:
+    gaps = [(WW[i]["e"], WW[i + 1]["s"]) for i in range(len(WW) - 1) if WW[i + 1]["s"] - WW[i]["e"] > 0.3]
+    speech_span = WW[-1]["e"] - WW[0]["s"] if WW else 0
+    inside = speech_span - sum(b - a_ for a_, b in gaps)
+    text = " ".join(x["w"] for x in WW); sents = [s_ for s_ in re.split(r"(?<=[.!?])\s+", text) if s_.strip()]
+    R["narration"] = {
+        "transcript": E(text, "faster-whisper small.en (ASR — may contain recognition errors)"),
+        "word_count": E(len(WW), "ASR words"),
+        "first_word_s": E(WW[0]["s"] if WW else None, "ASR"), "last_word_end_s": E(WW[-1]["e"] if WW else None, "ASR"),
+        "wpm_overall": E(round(len(WW) / speech_span * 60, 1) if speech_span else None, "words / (last end - first start)"),
+        "wpm_inside_speech": E(round(len(WW) / inside * 60, 1) if inside else None, "excluding gaps > 0.3 s"),
+        "pauses_over_0_3s": E([[round(a_, 2), round(b - a_, 2)] for a_, b in gaps], "start, length (s)"),
+        "sentences": E(len(sents), "ASR punctuation"), "words_per_sentence_median": E(float(np.median([len(s_.split()) for s_ in sents])) if sents else None, "ASR punctuation"),
+        "tail_after_last_word_s": E(round(dur - WW[-1]["e"], 2) if WW else None, "duration - last word end")}
 eb = run("ffmpeg", "-i", vid, "-map", "0:a:0", "-af", "ebur128=peak=true", "-f", "null", "-").stderr; tail = eb[eb.rfind("Summary:"):]
 num = lambda pat: float(re.search(pat, tail).group(1)) if re.search(pat, tail) else None
 R["audio"] = {"integrated_lufs": M(num(r"I:\s+(-?[\d.]+) LUFS"), "ffmpeg ebur128"), "lra_lu": M(num(r"LRA:\s+(-?[\d.]+) LU"), "ffmpeg ebur128"), "true_peak_dbtp": M(num(r"Peak:\s+(-?[\d.]+) dBFS"), "ffmpeg ebur128 true peak")}
