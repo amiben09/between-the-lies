@@ -36,6 +36,7 @@ export type Pose = {
   robe?: boolean;                            // floor-length override
   eyesRed?: number;                          // 0..1 the red-eye power (original ring design)
   headband?: "plain" | "scratched";          // cloth band with a plain metal plate (original; no village emblem)
+  mask?: boolean;                            // white spy mask (original design: red cheek marks, eye slits)
 };
 export type Hand = "mitt" | "open" | "fist" | "point" | "grip";
 export type Light = { x: number; y: number; r: number; key: string; shade: string; keyA?: number; shadeA?: number };
@@ -413,6 +414,13 @@ function head(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: nu
     g.beginPath(); g.moveTo(cx + fo - sp + rx * 0.3, ey); g.lineTo(cx + fo + sp - rx * 0.3, ey); g.stroke();
   }
   HB.current = p.headband; frontHair(g, L, kind, age, cx, cy, rx, ry, fo); HB.current = undefined;
+  if (p.mask) {
+    g.beginPath(); g.ellipse(cx + fo * 0.8, cy + ry * 0.1, rx * 0.88, ry * 0.86, 0, 0, 6.283); inked(g, "#f2efe8", 4);
+    g.fillStyle = "#1a1218"; for (const sgn of [-1, 1]) { g.beginPath(); g.ellipse(cx + fo + sgn * sp, ey, rx * 0.2, rx * 0.07, sgn * 0.15, 0, 6.283); g.fill(); }
+    g.strokeStyle = "#b8141e"; g.lineWidth = rx * 0.07; g.lineCap = "round";
+    for (const sgn of [-1, 1]) { g.beginPath(); g.moveTo(cx + fo + sgn * rx * 0.5, cy + ry * 0.2); g.lineTo(cx + fo + sgn * rx * 0.3, cy + ry * 0.45); g.stroke(); }
+    g.beginPath(); g.moveTo(cx + fo, cy - ry * 0.55); g.lineTo(cx + fo, cy - ry * 0.25); g.stroke();
+  }
 }
 
 const HB: { current: Pose["headband"] } = { current: undefined };
