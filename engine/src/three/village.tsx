@@ -44,15 +44,16 @@ export const House: React.FC<{ x: number; z: number; w: number; d: number; h: nu
       // box faces +x,-x,+y,-y,+z,-z ; face=1 → front faces -x (house on the right of a street running along z), -1 → +x, 0 → +z
       return face === 1 ? [side, front, side, side, side, side] : face === -1 ? [front, side, side, side, side, side] : [side, side, side, side, front, side];
     }, [seed, mood, door, lit, face, w, d, h]);
-    const body = useMemo(() => new THREE.BoxGeometry(d, h, w), [d, h, w]);
-    const eave = useMemo(() => new THREE.BoxGeometry(d + 1.0, 0.14, w + 1.0), [d, w]);
+    const [bx, bz] = face === 0 ? [w, d] : [d, w]; // face 0: w runs along x
+    const body = useMemo(() => new THREE.BoxGeometry(bx, h, bz), [bx, h, bz]);
+    const eave = useMemo(() => new THREE.BoxGeometry(bx + 1.0, 0.14, bz + 1.0), [bx, bz]);
     const hip = useMemo(() => { const g = new THREE.ConeGeometry(1, 1, 4); g.rotateY(Math.PI / 4); return g; }, []);
     return (
       <group>
         <Inked geo={body} mat={mats} pos={[x, h / 2, z]} outline={0.006} />
         <Inked geo={eave} mat={toon(roof)} pos={[x, h + 0.05, z]} outline={0.01} />
-        <Inked geo={hip} mat={toon(roof)} pos={[x, h + 0.75, z]} scale={[(d + 0.8) * 0.71, 1.4, (w + 0.8) * 0.71]} outline={0.01} />
-        <Inked geo={new THREE.BoxGeometry(0.16, 0.16, w * 0.55)} mat={toon("#1e2430")} pos={[x, h + 1.42, z]} />
+        <Inked geo={hip} mat={toon(roof)} pos={[x, h + 0.75, z]} scale={[(bx + 0.8) * 0.71, 1.4, (bz + 0.8) * 0.71]} outline={0.01} />
+        <Inked geo={new THREE.BoxGeometry(face === 0 ? w * 0.55 : 0.16, 0.16, face === 0 ? 0.16 : w * 0.55)} mat={toon("#1e2430")} pos={[x, h + 1.42, z]} />
       </group>
     );
   };

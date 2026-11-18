@@ -82,7 +82,7 @@ export const Valley: React.FC<{ f: number; burning?: boolean }> = ({ f, burning 
 
 // ======================= TRAINING YARD (sun / rain) =======================
 export function targetTexture() { return canvasTex(256, 256, (g, w, h) => { const c = ["#f2e6c8", "#b8141e", "#f2e6c8", "#1a1a1a"]; for (let i = 0; i < 4; i++) { g.fillStyle = c[i]; g.beginPath(); g.arc(w / 2, h / 2, w / 2 - i * 30, 0, 6.283); g.fill(); } }); }
-export const TrainingYard: React.FC<{ f: number; rain?: boolean }> = ({ f, rain }) => {
+export const TrainingYard: React.FC<{ f: number; rain?: boolean; crack?: number; knifeFly?: number }> = ({ f, rain, crack = 0, knifeFly }) => {
   const tgt = useMemo(targetTexture, []);
   return (
     <group>
@@ -93,6 +93,9 @@ export const TrainingYard: React.FC<{ f: number; rain?: boolean }> = ({ f, rain 
         <mesh position={[0, 1.25, 0.23]}><circleGeometry args={[0.2, 24]} /><meshToonMaterial map={tgt} gradientMap={gradientMap} /></mesh>
         {[0, 1].map((k) => <mesh key={k} position={[0.05 * (k - 0.5), 1.27 + k * 0.06, 0.38]} rotation={[Math.PI / 2, 0, 0]}><coneGeometry args={[0.025, 0.3, 4]} /><meshBasicMaterial color="#2a2a30" /></mesh>)}
       </group>)}
+      {crack > 0 && <group position={[0, 1.15, -5.76]}>{[[0, 0, 0.5, 0.2], [0.04, 0.12, 0.3, -0.5], [-0.05, -0.1, 0.35, 0.6]].map(([x, y, l, r], i) => <mesh key={i} position={[x, y, 0]} rotation={[0, 0, r]} scale={[1, Math.min(1, crack * 1.5 - i * 0.3), 1]}><planeGeometry args={[0.025, l]} /><meshBasicMaterial color="#1a100a" /></mesh>)}</group>}
+      {knifeFly !== undefined && knifeFly > 0 && (() => { const k = Math.min(1, knifeFly); const a: P3 = [-1.0, 1.25, -2.2], b: P3 = [0.02, 1.27, -5.6]; const x = a[0] + (b[0] - a[0]) * k, y = a[1] + (b[1] - a[1]) * k + Math.sin(k * Math.PI) * 0.25, z = a[2] + (b[2] - a[2]) * k;
+        return <group position={[x, y, z]} rotation={[k < 1 ? -k * 14 : Math.PI / 2, 0.1, 0]}><mesh><coneGeometry args={[0.03, 0.22, 4]} /><meshBasicMaterial color="#c8ccd4" /></mesh><mesh position={[0, -0.16, 0]}><cylinderGeometry args={[0.015, 0.015, 0.12, 6]} /><meshBasicMaterial color="#2a1a14" /></mesh></group>; })()}
       <BambooFence a={[-8, 0, -12]} b={[8, 0, -12]} /><BambooFence a={[-8, 0, -12]} b={[-8, 0, 6]} /><BambooFence a={[8, 0, -12]} b={[8, 0, 6]} />
       {[[-11, -16], [10, -15], [-4, -20], [5, -22]].map(([x, z], i) => <LeafTree key={i} pos={[x, 0, z]} s={1.1} color={rain ? "#2a3a2a" : "#4f6a3a"} seed={i + 3} />)}
       {[[-6.5, -9], [6, -10.5]].map(([x, z], i) => <Rock key={i} pos={[x, 0.2, z]} s={1.2} />)}
@@ -120,7 +123,7 @@ export const PoliceHQ: React.FC<{ f: number }> = ({ f }) => (
 );
 
 // ======================= COUNCIL CHAMBER =======================
-export const Council: React.FC<{ f: number; scroll?: number }> = ({ f }) => {
+export const Council: React.FC<{ f: number; scroll?: number; file?: number }> = ({ f, scroll, file: fileP = 1 }) => {
   const wall = useMemo(() => shojiWallTexture(false), []), tatami = useMemo(tatamiTexture, []);
   const hangScroll = useMemo(() => canvasTex(128, 280, (g, w, h) => { g.fillStyle = "#e8dcc0"; g.fillRect(0, 0, w, h); g.fillStyle = "#3a2a1e"; g.fillRect(0, 0, w, 14); g.fillRect(0, h - 14, w, 14); g.strokeStyle = "#1a1410"; g.lineWidth = 9; g.lineCap = "round"; g.beginPath(); g.moveTo(64, 50); g.lineTo(60, 120); g.moveTo(40, 90); g.lineTo(88, 84); g.moveTo(54, 150); g.quadraticCurveTo(80, 190, 50, 230); g.stroke(); }), []);
   const file = useMemo(() => canvasTex(256, 180, (g, w, h) => { g.fillStyle = "#c8b48a"; g.fillRect(0, 0, w, h); g.strokeStyle = "#5a4630"; g.lineWidth = 3; g.strokeRect(8, 8, w - 16, h - 16); g.fillStyle = "#3a2a1e"; for (let i = 0; i < 6; i++) g.fillRect(24, 30 + i * 22, 120 + (i % 3) * 30, 6); g.strokeStyle = "#b8141e"; g.lineWidth = 8; g.beginPath(); g.arc(w * 0.78, h * 0.5, 30, 0, 6.283); g.stroke(); g.beginPath(); g.moveTo(w * 0.68, h * 0.25); g.lineTo(w * 0.88, h * 0.75); g.stroke(); }), []);
@@ -132,7 +135,12 @@ export const Council: React.FC<{ f: number; scroll?: number }> = ({ f }) => {
       <mesh position={[3.5, 1.6, 0]} rotation={[0, -Math.PI / 2, 0]}><planeGeometry args={[10, 3.2]} /><meshToonMaterial map={wall} gradientMap={gradientMap} color="#8a84a0" /></mesh>
       <Inked geo={new THREE.BoxGeometry(2.6, 0.1, 1.0)} mat={toon("#3a2416")} pos={[0, 0.36, -1.3]} />
       {[[-1.15, -0.4], [1.15, -0.4], [-1.15, 0.4], [1.15, 0.4]].map(([x, z], i) => <Inked key={i} geo={new THREE.BoxGeometry(0.08, 0.32, 0.08)} mat={toon("#24160e")} pos={[x, 0.16, -1.3 + z]} />)}
-      <mesh position={[0.2, 0.415, -1.1]} rotation={[-Math.PI / 2, 0, 0.1]}><planeGeometry args={[0.42, 0.3]} /><meshToonMaterial map={file} gradientMap={gradientMap} /></mesh>
+      <mesh position={[0.2, 0.415, -1.55 + 0.45 * fileP]} rotation={[-Math.PI / 2, 0, 0.1 + (1 - fileP) * 0.3]}><planeGeometry args={[0.42, 0.3]} /><meshToonMaterial map={file} gradientMap={gradientMap} /></mesh>
+      {scroll !== undefined && <group position={[-0.15, 0.46, -1.6 + 0.65 * scroll]} rotation={[0, 0.25, Math.PI / 2]}>
+        <Inked geo={new THREE.CylinderGeometry(0.045, 0.045, 0.42, 14)} mat={toon("#e8dcc0")} pos={[0, 0, 0]} />
+        <Inked geo={new THREE.CylinderGeometry(0.05, 0.05, 0.06, 14)} mat={toon("#9a1418")} pos={[0, 0, 0]} />
+        {[-0.22, 0.22].map((y) => <Inked key={y} geo={new THREE.CylinderGeometry(0.055, 0.055, 0.03, 14)} mat={toon("#3a2416")} pos={[0, y, 0]} />)}
+      </group>}
       {[-0.8, 0.9].map((x, i) => <Inked key={i} geo={new THREE.CylinderGeometry(0.05, 0.04, 0.08, 10)} mat={toon("#e8e2d4")} pos={[x, 0.45, -1.15]} />)}
       {/* paper floor lamp */}
       <group position={[2.4, 0, -1.8]}><Inked geo={new THREE.BoxGeometry(0.4, 0.8, 0.4)} mat={toon("#f0d8a0", undefined, "#ffb060", 0.6)} pos={[0, 0.6, 0]} /><pointLight position={[0, 0.8, 0.3]} intensity={2.2} distance={6} decay={1.5} color="#ffb060" /></group>

@@ -3,7 +3,7 @@
 import React, { useLayoutEffect, useMemo } from "react";
 import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
-import { makeCanvas } from "../btl/core";
+import { Ctx, makeCanvas } from "../btl/core";
 import { Age, Kind, Light, Pose, person } from "../btl/people";
 
 export const gradientMap = (() => { const d = new Uint8Array([60, 140, 255]); const t = new THREE.DataTexture(d, 3, 1, THREE.RedFormat); t.minFilter = t.magFilter = THREE.NearestFilter; t.needsUpdate = true; return t; })();
@@ -39,26 +39,33 @@ export const CameraRig: React.FC<{ pos: THREE.Vector3; look: THREE.Vector3; fov:
   return null;
 };
 
-/** One of our 2D characters as a card standing in the 3D world. `heightM` = real height in metres. */
-export const CardActor: React.FC<{ kind: Kind; age: Age; pose: Partial<Pose>; light: Light; at: [number, number, number]; heightM: number; camPos: THREE.Vector3; spherical?: boolean }> =
-  ({ kind, age, pose, light, at, heightM, camPos, spherical }) => {
-    const card = useMemo(() => { const [c, g] = makeCanvas(1080, 1920); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return { c, g, t }; }, []);
-    const refH = kind === "dumbledore" || kind === "voldemort" ? 1060 : age === "child" ? 640 : age === "teen" ? 880 : 1000;
-    const s = 1700 / refH; // character fills ~1700 px of the 1920 px card
-    card.g.setTransform(1, 0, 0, 1, 0, 0); card.g.clearRect(0, 0, 1080, 1920);
-    person(card.g, { x: 0, y: 0, zoom: 1 }, 1, kind, age, { x: 540, y: 1880, s, ...pose } as Pose, light);
-    card.t.needsUpdate = true;
-    const ppm = 1700 / heightM, hM = 1920 / ppm, wM = 1080 / ppm;
+/** Any 2D drawing (in 1080x1920 card space, ground line at y=1880) on a camera-facing card in the 3D world.
+ *  `ppm` = card pixels per metre. `res` < 1 renders the texture at reduced resolution (cheaper upload). */
+export const CardCanvas: React.FC<{ draw: (g: Ctx) => void; at: [number, number, number]; ppm: number; camPos: THREE.Vector3; spherical?: boolean; res?: number; shadow?: number }> =
+  ({ draw, at, ppm, camPos, spherical, res = 0.5, shadow = 0.35 }) => {
+    const card = useMemo(() => { const [c, g] = makeCanvas(Math.round(1080 * res), Math.round(1920 * res)); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return { c, g, t }; }, [res]);
+    card.g.setTransform(1, 0, 0, 1, 0, 0); card.g.clearRect(0, 0, card.c.width, card.c.height);
+    card.g.setTransform(res, 0, 0, res, 0, 0); draw(card.g); card.t.needsUpdate = true;
+    const hM = 1920 / ppm, wM = 1080 / ppm;
     const yaw = Math.atan2(camPos.x - at[0], camPos.z - at[2]);
-    const pitch = spherical ? -Math.atan2(camPos.y - (at[1] + heightM * 0.6), Math.hypot(camPos.x - at[0], camPos.z - at[2])) : 0;
+    const pitch = spherical ? -Math.atan2(camPos.y - (at[1] + 1.0), Math.hypot(camPos.x - at[0], camPos.z - at[2])) : 0;
     return (
       <group position={at} rotation={[0, yaw, 0]}>
         <group rotation={[pitch, 0, 0]}>
           <mesh position={[0, hM / 2 - 40 / ppm, 0]}><planeGeometry args={[wM, hM]} /><meshBasicMaterial map={card.t} transparent alphaTest={0.05} side={THREE.DoubleSide} /></mesh>
         </group>
-        <mesh position={[0, 0.01, 0]} rotation={[-Math.PI / 2, 0, 0]}><circleGeometry args={[heightM * 0.2, 24]} /><meshBasicMaterial color="#000000" transparent opacity={0.35} depthWrite={false} /></mesh>
+        {shadow > 0 && <mesh position={[0, 0.01, 0]} rotation={[-Math.PI / 2, 0, 0]}><circleGeometry args={[Math.min(0.5, 300 / ppm), 24]} /><meshBasicMaterial color="#000000" transparent opacity={shadow} depthWrite={false} /></mesh>}
       </group>
     );
+  };
+
+/** One of our 2D characters as a card standing in the 3D world. `heightM` = real height in metres. */
+export const CardActor: React.FC<{ kind: Kind; age: Age; pose: Partial<Pose>; light: Light; at: [number, number, number]; heightM: number; camPos: THREE.Vector3; spherical?: boolean; res?: number }> =
+  ({ kind, age, pose, light, at, heightM, camPos, spherical, res }) => {
+    const refH = kind === "dumbledore" || kind === "voldemort" ? 1060 : age === "child" ? 640 : age === "teen" ? 880 : 1000;
+    const s = 1700 / refH;
+    return <CardCanvas at={at} ppm={1700 / heightM} camPos={camPos} spherical={spherical} res={res}
+      draw={(g) => person(g, { x: 0, y: 0, zoom: 1 }, 1, kind, age, { x: 540, y: 1880, s, ...pose } as Pose, light)} />;
   };
 
 export const ease = (t: number) => { t = Math.max(0, Math.min(1, t)); return t * t * t * (t * (t * 6 - 15) + 10); };

@@ -33,12 +33,12 @@ export const CARD_LIGHT: Record<Look, Light> = {
   rainDay: { x: 300, y: 200, r: 2000, key: "#c8d0e0", shade: "#1a1e28", keyA: 0.2, shadeA: 0.4 },
 };
 
-export const Stage: React.FC<{ look: Look; cam: THREE.Vector3; target: THREE.Vector3; fov?: number; roll?: number; fogScale?: number; flash?: number; children: React.ReactNode; vignette?: number; tint?: string }> =
-  ({ look, cam, target, fov = 42, roll = 0, fogScale = 1, flash = 0, children, vignette = 0.5, tint }) => {
+export const Stage: React.FC<{ look: Look; cam: THREE.Vector3; target: THREE.Vector3; fov?: number; roll?: number; fogScale?: number; flash?: number; children: React.ReactNode; vignette?: number; tint?: string; blur?: number; overlay?: React.ReactNode }> =
+  ({ look, cam, target, fov = 42, roll = 0, fogScale = 1, flash = 0, children, vignette = 0.5, tint, blur = 0, overlay }) => {
     const L = LOOKS[look];
     return (
       <AbsoluteFill style={{ background: L.bg }}>
-        <ThreeCanvas width={1080} height={1920} gl={{ antialias: true }}>
+        <AbsoluteFill style={{ filter: blur ? `blur(${blur}px)` : undefined, transform: blur ? "scale(1.04)" : undefined }}><ThreeCanvas width={1080} height={1920} gl={{ antialias: true }}>
           <CameraRig pos={cam} look={target} fov={fov} roll={roll} />
           <fog attach="fog" args={[L.fog[0], L.fog[1] * fogScale, L.fog[2] * fogScale]} />
           <hemisphereLight args={[L.hemi[0], L.hemi[1], L.hemi[2] + flash * 1.5]} />
@@ -46,7 +46,8 @@ export const Stage: React.FC<{ look: Look; cam: THREE.Vector3; target: THREE.Vec
           <directionalLight position={L.fill[0] as [number, number, number]} intensity={L.fill[1]} color={L.fill[2]} />
           <ambientLight intensity={L.amb} />
           {children}
-        </ThreeCanvas>
+        </ThreeCanvas></AbsoluteFill>
+        {overlay}
         {tint && <AbsoluteFill style={{ background: tint, mixBlendMode: "soft-light" }} />}
         <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 52%, rgba(6,4,12,${vignette}) 100%)` }} />
       </AbsoluteFill>
