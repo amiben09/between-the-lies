@@ -3,7 +3,7 @@
 // (key/shade gradient, source-atop), optionally depth-blurred, then composited — so lighting never touches the set.
 import { Cam, Ctx, H, W, makeCanvas, radGrad } from "./core";
 
-export type Kind = "snape" | "lily" | "harry" | "james" | "neville" | "dumbledore" | "voldemort" | "bully";
+export type Kind = "snape" | "lily" | "harry" | "james" | "neville" | "dumbledore" | "voldemort" | "bully" | "itachi" | "sasuke";
 export type Age = "child" | "teen" | "adult";
 export type Arm = [number, number]; // [shoulder deg from straight down, + = toward screen-right; elbow bend deg]
 export type Pose = {
@@ -34,6 +34,8 @@ export type Pose = {
   coat?: string; coatHi?: string;            // costume override (e.g. school robes on children, a wedding dress)
   trim?: string | null;                      // house colour override (null = none)
   robe?: boolean;                            // floor-length override
+  eyesRed?: number;                          // 0..1 the red-eye power (original ring design)
+  headband?: "plain" | "scratched";          // cloth band with a plain metal plate (original; no village emblem)
 };
 export type Hand = "mitt" | "open" | "fist" | "point" | "grip";
 export type Light = { x: number; y: number; r: number; key: string; shade: string; keyA?: number; shadeA?: number };
@@ -50,6 +52,10 @@ function look(kind: Kind, age: Age): Look {
       coat: age === "child" ? "#d9b65e" : age === "adult" ? "#6f7f9e" : "#1d1a22", coatHi: age === "child" ? "#efd27e" : age === "adult" ? "#93a3c0" : "#2f2a36", trim: age === "teen" ? "#a8322b" : undefined, legs: "#e8d0b4", robe: age !== "child" };
     case "harry": return { ...sz, skin: "#ecccb0", skinSh: "#c19c83", hair: "#120f12", hairHi: "#2d2830", iris: "#1fae63",
       coat: age === "adult" ? "#3a3f4a" : "#1d1a22", coatHi: "#343040", trim: "#a8322b", legs: "#2d3140", robe: age === "child" };
+    case "itachi": return { ...sz, skin: "#ead2bc", skinSh: "#bf9f8a", hair: "#14111a", hairHi: "#2e2a3a", iris: "#2a1f24",
+      coat: age === "adult" ? "#1c1a22" : "#2c3240", coatHi: age === "adult" ? "#34303e" : "#424a5e", legs: "#262a34", robe: age === "adult" };
+    case "sasuke": return { ...sz, skin: "#efd4bf", skinSh: "#c8a48c", hair: "#141220", hairHi: "#30304a", iris: "#2a2430",
+      coat: age === "child" ? "#2f5f9a" : "#d8d8d0", coatHi: age === "child" ? "#4a7ab8" : "#f0f0e8", legs: age === "child" ? "#e8e4dc" : "#3a3550", robe: false };
     case "james": return { ...sz, skin: "#e9c8aa", skinSh: "#be987e", hair: "#120f12", hairHi: "#2d2830", iris: "#8a6a3a",
       coat: "#1d1a22", coatHi: "#343040", trim: "#a8322b", legs: "#2d3140", robe: true };
     case "neville": return { ...sz, skin: "#efd0b5", skinSh: "#c79f86", hair: "#5a3b26", hairHi: "#7c5638", iris: "#5a4a3a",
@@ -169,6 +175,10 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
       g.beginPath(); g.moveTo(-sw * 0.2, shY - 8); g.lineTo(-sw * 0.05, shY + 120); g.lineTo(-sw * 0.3, shY + 40); g.closePath(); g.fillStyle = L.coatHi; g.fill(); g.stroke();
       g.beginPath(); g.moveTo(sw * 0.2, shY - 8); g.lineTo(sw * 0.05, shY + 120); g.lineTo(sw * 0.3, shY + 40); g.closePath(); g.fill(); g.stroke();
     }
+    if (kind === "itachi" && age === "adult") { // high collar, red lining
+      g.fillStyle = "#8a1f26"; g.beginPath(); g.moveTo(-sw * 0.3, shY - 30); g.lineTo(-sw * 0.06, shY + 40); g.lineTo(-sw * 0.36, shY + 10); g.closePath(); g.fill();
+      g.beginPath(); g.moveTo(sw * 0.3, shY - 30); g.lineTo(sw * 0.06, shY + 40); g.lineTo(sw * 0.36, shY + 10); g.closePath(); g.fill();
+    }
     if (kind === "lily" && age === "child") { g.fillStyle = "#f6e7b8"; g.beginPath(); g.ellipse(0, shY + 2, sw * 0.22, 14, 0, 0, Math.PI); g.fill(); }
     if (L.robe) { g.beginPath(); g.moveTo((p.facing ?? 0) * 20, shY + 10); g.lineTo((p.facing ?? 0) * 26, hemY - 6); g.strokeStyle = "rgba(0,0,0,0.28)"; g.lineWidth = 4; g.stroke(); }
     g.restore(); }
@@ -278,6 +288,15 @@ function head(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: nu
     g.quadraticCurveTo(cx + rx * 1.25, cy + ry * 0.6, cx + rx * 1.12 + fo, cy - ry * 0.5);
     g.closePath(); inked(g, L.hair, 5);
   }
+  if (kind === "sasuke") { // spiky crown at the back
+    g.beginPath(); g.moveTo(cx - rx * 1.0, cy - ry * 0.2);
+    const sp_ = [[-1.25, -0.9], [-0.8, -1.05], [-0.95, -1.45], [-0.35, -1.2], [-0.2, -1.6], [0.25, -1.25], [0.55, -1.55], [0.75, -1.05], [1.25, -1.0], [1.0, -0.4]];
+    sp_.forEach(([x, y]) => g.lineTo(cx + x * rx, cy + y * ry * 0.85)); g.lineTo(cx + rx * 1.0, cy - ry * 0.1); g.closePath(); inked(g, L.hair, 5);
+  }
+  if (kind === "itachi") { // long dark hair falling behind the face to the shoulders
+    g.beginPath(); g.moveTo(cx - rx * 1.06 + fo, cy - ry * 0.4); g.quadraticCurveTo(cx - rx * 1.12, cy + ry * 0.3, cx - rx * 0.9, cy + ry * 0.7);
+    g.lineTo(cx + rx * 0.9, cy + ry * 0.7); g.quadraticCurveTo(cx + rx * 1.12, cy + ry * 0.3, cx + rx * 1.06 + fo, cy - ry * 0.4); g.closePath(); inked(g, L.hair, 5);
+  }
   if (p.back) {
     g.beginPath(); g.ellipse(cx, cy, rx * 1.1, ry * 1.02, 0, 0, 6.283);
     inked(g, L.hair, 5);
@@ -318,6 +337,12 @@ function head(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: nu
     if (eye > 0.1) {
       const ir = rx * 0.13;
       g.beginPath(); g.arc(ex + lk[0] * ew * 0.45, ey + lk[1] * eh * 0.4, ir, 0, 6.283); g.fillStyle = L.iris; g.fill();
+      if (p.eyesRed && p.eyesRed > 0) { // red iris with a dark ring (original design)
+        const ix = ex + lk[0] * ew * 0.45, iy = ey + lk[1] * eh * 0.4;
+        g.globalAlpha = p.eyesRed; g.beginPath(); g.arc(ix, iy, ir * 1.05, 0, 6.283); g.fillStyle = "#c8141e"; g.fill();
+        g.strokeStyle = "#2a0408"; g.lineWidth = ir * 0.16; g.beginPath(); g.arc(ix, iy, ir * 0.62, 0, 6.283); g.stroke();
+        g.fillStyle = "rgba(255,120,120,0.6)"; g.beginPath(); g.arc(ix - ir * 0.3, iy - ir * 0.35, ir * 0.16, 0, 6.283); g.fill(); g.globalAlpha = 1;
+      }
       g.beginPath(); g.arc(ex + lk[0] * ew * 0.45, ey + lk[1] * eh * 0.4, ir * (hood ? 0.25 : 0.5), 0, 6.283); g.fillStyle = "#0a0708"; g.fill();
       if (!hood) { g.beginPath(); g.arc(ex + lk[0] * ew * 0.45 - ir * 0.35, ey + lk[1] * eh * 0.4 - ir * 0.35, ir * 0.22, 0, 6.283); g.fillStyle = "rgba(255,255,255,0.85)"; g.fill(); }
     }
@@ -336,6 +361,11 @@ function head(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: nu
       g.beginPath(); g.moveTo(ex - sgn * ew * 0.9, sgn > 0 ? inner : inner); g.quadraticCurveTo(ex, Math.min(inner, outer) - 6, ex + sgn * ew * 1.05, outer);
       g.strokeStyle = kind === "dumbledore" ? "#cfcac4" : L.hair; g.lineWidth = rx * 0.09; g.lineCap = "round"; g.stroke();
     }
+  }
+  if (kind === "itachi") { // the long creases under his eyes
+    g.save(); g.strokeStyle = "rgba(60,40,48,0.7)"; g.lineWidth = rx * 0.045; g.lineCap = "round";
+    for (const sgn of [-1, 1]) { const ex = cx + fo + sgn * sp; g.beginPath(); g.moveTo(ex - sgn * rx * 0.13, ey + rx * 0.16); g.quadraticCurveTo(ex - sgn * rx * 0.2, ey + rx * 0.32, ex - sgn * rx * 0.16, ey + rx * 0.44); g.stroke(); }
+    g.restore();
   }
   // tears
   if (p.tear && p.tear > 0) {
@@ -382,9 +412,10 @@ function head(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: nu
     for (const sgn of [-1, 1]) { g.beginPath(); g.arc(cx + fo + sgn * sp, ey, rx * 0.3, 0, 6.283); g.stroke(); }
     g.beginPath(); g.moveTo(cx + fo - sp + rx * 0.3, ey); g.lineTo(cx + fo + sp - rx * 0.3, ey); g.stroke();
   }
-  frontHair(g, L, kind, age, cx, cy, rx, ry, fo);
+  HB.current = p.headband; frontHair(g, L, kind, age, cx, cy, rx, ry, fo); HB.current = undefined;
 }
 
+const HB: { current: Pose["headband"] } = { current: undefined };
 function frontHair(g: Ctx, L: Look, kind: Kind, age: Age, cx: number, cy: number, rx: number, ry: number, fo: number) {
   g.beginPath();
   if (kind === "snape") { // centre part, lank curtains framing the face
@@ -397,6 +428,20 @@ function frontHair(g: Ctx, L: Look, kind: Kind, age: Age, cx: number, cy: number
     g.lineTo(cx + rx * 0.95, cy + ry * (age === "child" ? 0.85 : 1.15));
     g.quadraticCurveTo(cx + rx * 1.0, cy + ry * 0.6, cx + rx * 1.02, cy - ry * 0.1);
     g.bezierCurveTo(cx + rx * 1.05, cy - ry * 0.7, cx + rx * 0.6, cy - ry * 1.05, cx + fo * 0.5, cy - ry * 1.02);
+  } else if (kind === "itachi") { // centre-parted long bangs framing the face
+    g.moveTo(cx + fo * 0.4, cy - ry * 1.02);
+    g.bezierCurveTo(cx - rx * 0.7, cy - ry * 1.05, cx - rx * 1.06, cy - ry * 0.6, cx - rx * 1.0, cy + ry * 0.1);
+    g.quadraticCurveTo(cx - rx * 0.98, cy + ry * 0.45, cx - rx * 0.86, cy + ry * 0.6); g.lineTo(cx - rx * 0.74, cy + ry * 0.05);
+    g.quadraticCurveTo(cx - rx * 0.45, cy - ry * 0.55, cx + fo * 0.4, cy - ry * 0.72);
+    g.quadraticCurveTo(cx + rx * 0.45, cy - ry * 0.55, cx + rx * 0.74, cy + ry * 0.05); g.lineTo(cx + rx * 0.86, cy + ry * 0.6);
+    g.quadraticCurveTo(cx + rx * 0.98, cy + ry * 0.45, cx + rx * 1.0, cy + ry * 0.1);
+    g.bezierCurveTo(cx + rx * 1.06, cy - ry * 0.6, cx + rx * 0.7, cy - ry * 1.05, cx + fo * 0.4, cy - ry * 1.02);
+  } else if (kind === "sasuke") { // bangs hanging at both sides of the face
+    g.moveTo(cx - rx * 1.02, cy - ry * 0.1);
+    g.bezierCurveTo(cx - rx * 1.05, cy - ry * 1.15, cx + rx * 1.05, cy - ry * 1.15, cx + rx * 1.02, cy - ry * 0.1);
+    g.lineTo(cx + rx * 0.95, cy + ry * 0.5); g.lineTo(cx + rx * 0.7, cy - ry * 0.1); g.lineTo(cx + rx * 0.35, cy - ry * 0.55);
+    g.lineTo(cx + fo * 0.3, cy - ry * 0.38); g.lineTo(cx - rx * 0.35, cy - ry * 0.58); g.lineTo(cx - rx * 0.7, cy - ry * 0.1); g.lineTo(cx - rx * 0.95, cy + ry * 0.5);
+    g.closePath();
   } else if (kind === "lily") { // swept fringe
     g.moveTo(cx - rx * 1.02, cy - ry * 0.05);
     g.bezierCurveTo(cx - rx * 1.1, cy - ry * 1.2, cx + rx * 1.1, cy - ry * 1.25, cx + rx * 1.04, cy - ry * 0.05);
@@ -441,9 +486,35 @@ function frontHair(g: Ctx, L: Look, kind: Kind, age: Age, cx: number, cy: number
   const gr = g.createLinearGradient(cx - rx, cy - ry, cx + rx, cy);
   gr.addColorStop(0, L.hairHi); gr.addColorStop(0.5, L.hair); gr.addColorStop(1, L.hair);
   inked(g, gr, 5);
+  if (HB.current) { // ninja headband: dark cloth + plain steel plate (+ a slash when he is a traitor)
+    const by = cy - ry * 0.62, bh = ry * 0.2;
+    g.beginPath(); g.moveTo(cx - rx * 1.03, by + bh * 0.2); g.quadraticCurveTo(cx + fo, by - bh * 0.6, cx + rx * 1.03, by + bh * 0.2); g.lineTo(cx + rx * 1.0, by + bh * 1.2); g.quadraticCurveTo(cx + fo, by + bh * 0.4, cx - rx * 1.0, by + bh * 1.2); g.closePath(); inked(g, "#26304a", 3);
+    g.beginPath(); g.roundRect(cx + fo - rx * 0.42, by - bh * 0.35, rx * 0.84, bh * 1.35, 6); inked(g, "#b8bec8", 3);
+    g.fillStyle = "#7a808a"; for (const sx of [-0.34, 0.34]) for (const sy of [-0.15, 0.75]) { g.beginPath(); g.arc(cx + fo + sx * rx, by + sy * bh, 2.5, 0, 6.283); g.fill(); }
+    if (HB.current === "scratched") { g.strokeStyle = "#2a2a30"; g.lineWidth = 4; g.beginPath(); g.moveTo(cx + fo - rx * 0.38, by + bh * 0.35); g.lineTo(cx + fo + rx * 0.38, by + bh * 0.35); g.stroke(); }
+  }
   if (kind === "snape") { // greasy sheen
     g.save(); g.strokeStyle = "rgba(160,150,190,0.35)"; g.lineWidth = 3;
     for (const sgn of [-1, 1]) { g.beginPath(); g.moveTo(cx + sgn * rx * 0.3, cy - ry * 0.95); g.quadraticCurveTo(cx + sgn * rx * 0.95, cy - ry * 0.6, cx + sgn * rx * 0.92, cy + ry * 0.2); g.stroke(); }
     g.restore();
   }
+}
+
+/** 2-bone IK: arm angles that put the hand (fingertip) of `side` on a SCREEN-space target, for a character drawn with
+ *  person(..., cam {zoom 1, x 0, y 0}, depth 1) at pose x/y/s (no lean/rot). Returns [shoulderDeg, elbowDeg] for armL/armR. */
+export function reachArm(kind: Kind, age: Age, side: "L" | "R", p: { x: number; y: number; s: number; kneel?: number; shoulders?: number }, target: [number, number], elbowDown = true): Arm {
+  const L = look(kind, age); const kneel = p.kneel ?? 0, sh = p.shoulders ?? 0;
+  const Hh = L.H * (1 - kneel * 0.3);
+  const shY = -Hh + L.hh * 1.12 + (sh > 0 ? sh * L.hh * 0.16 : sh * L.hh * 0.09);
+  const sw = L.sw * (1 - Math.max(0, sh) * 0.05);
+  const sx = (side === "L" ? -1 : 1) * sw * 0.44, sy = shY + 14;
+  const tx = (target[0] - p.x) / p.s - sx, ty = (target[1] - p.y) / p.s - sy;
+  const a = L.H * 0.17, b = L.H * 0.16 + L.H * 0.027 * 1.6; // forearm + hand to the fingertip
+  const d = Math.min(a + b - 1, Math.max(Math.abs(a - b) + 1, Math.hypot(tx, ty)));
+  const tgt = Math.atan2(tx, ty) * 180 / Math.PI;                     // 0 = straight down, + = toward screen-right
+  const alpha = Math.acos((a * a + d * d - b * b) / (2 * a * d)) * 180 / Math.PI;
+  const beta = Math.acos((a * a + b * b - d * d) / (2 * a * b)) * 180 / Math.PI;
+  const dir = (elbowDown ? 1 : -1) * (tx < 0 ? 1 : -1);
+  const upper = tgt + dir * alpha;
+  return [upper, -dir * (180 - beta)];
 }

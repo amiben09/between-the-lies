@@ -16,8 +16,15 @@ for l in raw:
 audio, words, t0 = [], [], 0.15
 segs = {}
 audio.append(np.zeros(int(SR * t0), np.float32))
+# optional pronunciation lexicon next to the narration file: {"Word": "phonemes"} → Kokoro inline [Word](/phonemes/)
+import os
+lex_p = os.path.join(os.path.dirname(os.path.abspath(txt)), "lexicon.json")
+LEX = json.load(open(lex_p)) if os.path.exists(lex_p) else {}
+def with_lex(line):
+    for w_, ph in LEX.items(): line = re.sub(rf"\b{re.escape(w_)}\b", f"[{w_}](/{ph}/)", line)
+    return line
 for li, line in enumerate(lines):
-    for r in pipe(line, voice=voice, speed=speed, split_pattern=None):
+    for r in pipe(with_lex(line), voice=voice, speed=speed, split_pattern=None):
         a = r.audio.numpy() if hasattr(r.audio, "numpy") else np.asarray(r.audio)
         tks = [tk for tk in r.tokens if tk.start_ts is not None and re.search(r"[A-Za-z0-9]", tk.text)]
         # trim Kokoro's own head/tail silence: keep 40 ms before the first word, 120 ms after the last

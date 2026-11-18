@@ -4,6 +4,8 @@ import { ProofScene, PROOF_FRAMES } from "./proof/ProofScene";
 import { CharSheet } from "./btl/CharSheet";
 import { Street3D } from "./tests/Street3D";
 import { Street25D } from "./tests/Street25D";
+import { ItachiCharRefs } from "./episodes/itachi/CharRefs";
+import { ItachiStyleframes } from "./episodes/itachi/Styleframes";
 import { TEST_FRAMES, TEST_W, TEST_H } from "./tests/streetSpec";
 import { SnapeEpisode } from "./episodes/snape/Episode";
 import { FRAMES as SNAPE_FRAMES } from "./episodes/snape/shots";
@@ -25,5 +27,7 @@ export const Root: React.FC = () => (
     <Composition id="SnapeAlwaysV31" component={SnapeEpisodeV31} durationInFrames={SNAPE31_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Test3D" component={Street3D} durationInFrames={TEST_FRAMES} fps={30} width={TEST_W} height={TEST_H} />
     <Composition id="Test25D" component={Street25D} durationInFrames={TEST_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="ItachiCharRefs" component={ItachiCharRefs} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="ItachiStyleframes" component={ItachiStyleframes} durationInFrames={6} fps={30} width={1080} height={1920} />
   </>
 );
