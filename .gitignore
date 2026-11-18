@@ -5,3 +5,4 @@ work/frames/
 qa/*/perframe.npz
 *.wav
 !audio/**/.gitkeep
+references_ext/
