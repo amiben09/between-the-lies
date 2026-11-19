@@ -3,7 +3,7 @@
 // (key/shade gradient, source-atop), optionally depth-blurred, then composited — so lighting never touches the set.
 import { Cam, Ctx, H, W, makeCanvas, radGrad } from "./core";
 
-export type Kind = "snape" | "lily" | "harry" | "james" | "neville" | "dumbledore" | "voldemort" | "bully" | "itachi" | "sasuke";
+export type Kind = "snape" | "lily" | "harry" | "james" | "neville" | "dumbledore" | "voldemort" | "bully" | "itachi" | "sasuke" | "victor" | "freeze" | "nora" | "boyle" | "batman";
 export type Age = "child" | "teen" | "adult";
 export type Arm = [number, number]; // [shoulder deg from straight down, + = toward screen-right; elbow bend deg]
 export type Pose = {
@@ -67,6 +67,17 @@ function look(kind: Kind, age: Age): Look {
       coat: "#0f0d12", coatHi: "#211d27", legs: "#0f0d12", robe: true };
     case "bully": return { ...sz, skin: "#e2c4a8", skinSh: "#b5967e", hair: "#2a1f1a", hairHi: "#463630", iris: "#3a2a20",
       coat: "#1d1a22", coatHi: "#343040", trim: "#a8322b", legs: "#2d3140", robe: true };
+    // ---- "Snow Globe" (Mr. Freeze) — original channel renditions, not copied model sheets ----
+    case "victor": return { ...sz, skin: "#e6d0bc", skinSh: "#b89c88", hair: "#1e1a1c", hairHi: "#3a3438", iris: "#3a4a5a",
+      coat: "#e4e8ea", coatHi: "#ffffff", legs: "#2c2f38", robe: true };
+    case "freeze": return { ...sz, H: 1060, sw: 290, skin: "#c4dcea", skinSh: "#8eaec4", hair: "#c4dcea", hairHi: "#dcecf6", iris: "#7fe4ff",
+      coat: "#3e4c5c", coatHi: "#6e8296", legs: "#34404e", robe: false };
+    case "nora": return { ...sz, skin: "#f3e2d6", skinSh: "#cdb0a2", hair: "#ece2c8", hairHi: "#fff8e4", iris: "#5a7ab0",
+      coat: "#a9a3c9", coatHi: "#cbc6e6", legs: "#e8dcd0", robe: true };
+    case "boyle": return { ...sz, skin: "#ecc8a8", skinSh: "#c09a7e", hair: "#a8803e", hairHi: "#d0a858", iris: "#4a6a8a",
+      coat: "#232a40", coatHi: "#3a4462", trim: "#a8222a", legs: "#232a40", robe: false };
+    case "batman": return { ...sz, H: 1040, sw: 280, skin: "#e2c0a2", skinSh: "#b8967a", hair: "#2a2c36", hairHi: "#3c404c", iris: "#f4f4f4",
+      coat: "#4a4f5c", coatHi: "#6a7080", legs: "#3a3e4a", robe: false };
   }
 }
 
@@ -144,7 +155,14 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
       g.restore();
     }
     // back hair falls behind the coat for long hair
-    if (kind === "lily" || kind === "dumbledore") backHair(g, L, kind, shY - L.hh * 0.6, p);
+    if (kind === "lily" || kind === "dumbledore" || kind === "nora") backHair(g, L, kind === "nora" ? "lily" : kind, shY - L.hh * 0.6, p);
+    if (kind === "batman") { // cape: wide, scalloped hem, sways with breath/walk
+      const cs = Math.sin(fr * 0.07) * 10 + (walking ? ws * 18 : 0);
+      g.beginPath(); g.moveTo(-sw * 0.42, shY - 8);
+      g.quadraticCurveTo(-sw * 1.05 + cs, -Hh * 0.45, -sw * 0.95 + cs, -14);
+      for (let k = 0; k < 5; k++) { const x0 = -sw * 0.95 + cs + k * (sw * 1.9 / 5), x1 = x0 + sw * 1.9 / 5; g.quadraticCurveTo((x0 + x1) / 2, -44, x1, -14); }
+      g.quadraticCurveTo(sw * 1.05 + cs, -Hh * 0.45, sw * 0.42, shY - 8); g.closePath(); inked(g, "#1c1e28", 5);
+    }
     // torso / robe
     const flare = L.robe ? 1.3 : 1.12;
     g.beginPath();
@@ -181,6 +199,27 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
       g.beginPath(); g.moveTo(sw * 0.3, shY - 30); g.lineTo(sw * 0.06, shY + 40); g.lineTo(sw * 0.36, shY + 10); g.closePath(); g.fill();
     }
     if (kind === "lily" && age === "child") { g.fillStyle = "#f6e7b8"; g.beginPath(); g.ellipse(0, shY + 2, sw * 0.22, 14, 0, 0, Math.PI); g.fill(); }
+    if (kind === "victor") { // lab coat: open lapels over a dark shirt + tie, pocket with pens
+      g.fillStyle = "#3a4250"; g.beginPath(); g.moveTo(-sw * 0.16, shY - 8); g.lineTo(0, shY + 150); g.lineTo(sw * 0.16, shY - 8); g.closePath(); g.fill();
+      g.fillStyle = "#6a2a30"; g.beginPath(); g.moveTo(-6, shY); g.lineTo(6, shY); g.lineTo(4, shY + 110); g.lineTo(0, shY + 120); g.lineTo(-4, shY + 110); g.closePath(); g.fill();
+      g.strokeStyle = "rgba(0,0,0,0.3)"; g.lineWidth = 3; g.beginPath(); g.moveTo(-sw * 0.16, shY - 8); g.lineTo(-sw * 0.05, shY + 160); g.moveTo(sw * 0.16, shY - 8); g.lineTo(sw * 0.05, shY + 160); g.stroke();
+      g.strokeRect(sw * 0.14, shY + 70, sw * 0.16, 34); g.fillStyle = "#2a5a9a"; g.fillRect(sw * 0.17, shY + 58, 5, 20); g.fillStyle = "#1a1a1a"; g.fillRect(sw * 0.22, shY + 61, 5, 17);
+    }
+    if (kind === "boyle") { // white shirt V under the suit jacket, lapels, pocket square
+      g.fillStyle = "#f2f0ea"; g.beginPath(); g.moveTo(-sw * 0.14, shY - 8); g.lineTo(0, shY + 120); g.lineTo(sw * 0.14, shY - 8); g.closePath(); g.fill();
+      g.fillStyle = L.trim ?? "#a8222a"; g.beginPath(); g.moveTo(-7, shY - 2); g.lineTo(7, shY - 2); g.lineTo(5, shY + 100); g.lineTo(0, shY + 112); g.lineTo(-5, shY + 100); g.closePath(); g.fill();
+      g.fillStyle = "#e8e0d0"; g.beginPath(); g.moveTo(-sw * 0.36, shY + 50); g.lineTo(-sw * 0.24, shY + 44); g.lineTo(-sw * 0.22, shY + 56); g.closePath(); g.fill();
+    }
+    if (kind === "freeze") { // armored cold-suit: chest unit with glowing coolant core, ribbed plates, collar ring
+      g.beginPath(); g.roundRect(-sw * 0.22, shY + 30, sw * 0.44, 110, 14); inked(g, "#2a3440", 4);
+      g.fillStyle = "#7fe4ff"; g.shadowColor = "#7fe4ff"; g.shadowBlur = 18; g.beginPath(); g.arc(0, shY + 85, 20, 0, 6.283); g.fill(); g.shadowBlur = 0;
+      g.strokeStyle = "rgba(160,220,255,0.6)"; g.lineWidth = 3; for (const yy of [shY + 160, shY + 190, shY + 220]) { g.beginPath(); g.moveTo(-sw * 0.38, yy); g.lineTo(sw * 0.38, yy); g.stroke(); }
+      g.beginPath(); g.ellipse(0, shY - 4, sw * 0.32, 22, 0, 0, 6.283); inked(g, "#5a6e82", 4);
+    }
+    if (kind === "batman") { // utility belt (no chest emblem — original rendition)
+      g.beginPath(); g.roundRect(-sw * 0.4, -Hh * 0.47, sw * 0.8, 26, 6); inked(g, "#c8a23a", 4);
+      g.fillStyle = "#8a6a20"; for (let k = -2; k <= 2; k++) { g.beginPath(); g.roundRect(k * sw * 0.15 - 10, -Hh * 0.47 + 4, 20, 18, 3); g.fill(); }
+    }
     if (L.robe) { g.beginPath(); g.moveTo((p.facing ?? 0) * 20, shY + 10); g.lineTo((p.facing ?? 0) * 26, hemY - 6); g.strokeStyle = "rgba(0,0,0,0.28)"; g.lineWidth = 4; g.stroke(); }
     g.restore(); }
     // arms
@@ -337,6 +376,7 @@ function head(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: nu
     g.clip();
     if (eye > 0.1) {
       const ir = rx * 0.13;
+      if (kind === "batman") { g.restore(); continue; } // blank white lenses
       g.beginPath(); g.arc(ex + lk[0] * ew * 0.45, ey + lk[1] * eh * 0.4, ir, 0, 6.283); g.fillStyle = L.iris; g.fill();
       if (p.eyesRed && p.eyesRed > 0) { // red iris with a dark ring (original design)
         const ix = ex + lk[0] * ew * 0.45, iy = ey + lk[1] * eh * 0.4;
@@ -413,7 +453,19 @@ function head(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: nu
     for (const sgn of [-1, 1]) { g.beginPath(); g.arc(cx + fo + sgn * sp, ey, rx * 0.3, 0, 6.283); g.stroke(); }
     g.beginPath(); g.moveTo(cx + fo - sp + rx * 0.3, ey); g.lineTo(cx + fo + sp - rx * 0.3, ey); g.stroke();
   }
+  if (kind === "victor" || kind === "boyle") { // glasses (Victor: round wire frames)
+    if (kind === "victor") { g.strokeStyle = "#3a3a44"; g.lineWidth = 3.5; for (const sgn of [-1, 1]) { g.beginPath(); g.arc(cx + fo + sgn * sp, ey, rx * 0.27, 0, 6.283); g.stroke(); } g.beginPath(); g.moveTo(cx + fo - sp + rx * 0.27, ey); g.lineTo(cx + fo + sp - rx * 0.27, ey); g.stroke(); }
+  }
   HB.current = p.headband; frontHair(g, L, kind, age, cx, cy, rx, ry, fo); HB.current = undefined;
+  if (kind === "freeze") { // cyan goggles + glass dome helmet with a collar ring (original design)
+    g.save(); g.shadowColor = "#7fe4ff"; g.shadowBlur = 14;
+    for (const sgn of [-1, 1]) { g.beginPath(); g.ellipse(cx + fo + sgn * sp, ey, rx * 0.3, rx * 0.2, 0, 0, 6.283); inked(g, "rgba(120,230,255,0.85)", 4); }
+    g.restore(); g.beginPath(); g.moveTo(cx + fo - sp + rx * 0.3, ey); g.lineTo(cx + fo + sp - rx * 0.3, ey); g.strokeStyle = INK; g.lineWidth = 5; g.stroke();
+    g.save(); const dg = g.createRadialGradient(cx - rx * 0.4, cy - ry * 0.6, 4, cx, cy, ry * 1.5);
+    dg.addColorStop(0, "rgba(255,255,255,0.35)"); dg.addColorStop(0.5, "rgba(180,230,255,0.10)"); dg.addColorStop(1, "rgba(140,200,240,0.25)");
+    g.beginPath(); g.ellipse(cx + fo * 0.5, cy - ry * 0.05, rx * 1.45, ry * 1.38, 0, 0, 6.283); g.fillStyle = dg; g.fill(); g.strokeStyle = "rgba(200,240,255,0.8)"; g.lineWidth = 4; g.stroke();
+    g.strokeStyle = "rgba(255,255,255,0.7)"; g.lineWidth = 6; g.beginPath(); g.arc(cx + fo * 0.5, cy - ry * 0.05, rx * 1.2, Math.PI * 1.1, Math.PI * 1.45); g.stroke(); g.restore();
+  }
   if (p.mask) {
     g.beginPath(); g.ellipse(cx + fo * 0.8, cy + ry * 0.1, rx * 0.88, ry * 0.86, 0, 0, 6.283); inked(g, "#f2efe8", 4);
     g.fillStyle = "#1a1218"; for (const sgn of [-1, 1]) { g.beginPath(); g.ellipse(cx + fo + sgn * sp, ey, rx * 0.2, rx * 0.07, sgn * 0.15, 0, 6.283); g.fill(); }
@@ -464,6 +516,26 @@ function frontHair(g: Ctx, L: Look, kind: Kind, age: Age, cx: number, cy: number
     g.lineTo(cx + rx * 1.06, cy - ry * 0.1);
     for (let i = pts.length - 1; i >= 0; i--) g.lineTo(cx + pts[i] * rx * 0.85 + fo * 0.4, cy - ry * (i % 2 ? 0.45 : 0.62));
     g.closePath();
+  } else if (kind === "nora") { // soft swept fringe
+    g.moveTo(cx - rx * 1.04, cy - ry * 0.05);
+    g.bezierCurveTo(cx - rx * 1.12, cy - ry * 1.22, cx + rx * 1.12, cy - ry * 1.26, cx + rx * 1.06, cy - ry * 0.05);
+    g.quadraticCurveTo(cx + rx * 0.6, cy - ry * 0.5, cx - rx * 0.1 + fo, cy - ry * 0.66);
+    g.quadraticCurveTo(cx - rx * 0.6, cy - ry * 0.45, cx - rx * 0.85, cy - ry * 0.15); g.closePath();
+  } else if (kind === "victor" || kind === "boyle") { // combed back (Victor) / side part (Boyle)
+    g.moveTo(cx - rx * 1.02, cy - ry * 0.25);
+    g.bezierCurveTo(cx - rx * 1.06, cy - ry * 1.22, cx + rx * 1.06, cy - ry * 1.22, cx + rx * 1.02, cy - ry * 0.25);
+    if (kind === "boyle") { g.quadraticCurveTo(cx + rx * 0.5, cy - ry * 0.95, cx - rx * 0.35 + fo, cy - ry * 0.82); g.quadraticCurveTo(cx - rx * 0.8, cy - ry * 0.7, cx - rx * 1.02, cy - ry * 0.25); }
+    else g.quadraticCurveTo(cx + fo, cy - ry * 0.95, cx - rx * 1.02, cy - ry * 0.25);
+  } else if (kind === "freeze") { return;
+  } else if (kind === "batman") { // cowl: covers head + upper face, two short pointed ears, open lower face
+    g.moveTo(cx - rx * 1.08, cy + ry * 0.35);
+    g.lineTo(cx - rx * 1.1, cy - ry * 0.7); g.lineTo(cx - rx * 0.85, cy - ry * 1.55); g.lineTo(cx - rx * 0.55, cy - ry * 0.98);
+    g.quadraticCurveTo(cx + fo, cy - ry * 1.1, cx + rx * 0.55, cy - ry * 0.98); g.lineTo(cx + rx * 0.85, cy - ry * 1.55); g.lineTo(cx + rx * 1.1, cy - ry * 0.7);
+    g.lineTo(cx + rx * 1.08, cy + ry * 0.35); g.lineTo(cx + rx * 0.72 + fo, cy + ry * 0.2);
+    g.quadraticCurveTo(cx + rx * 0.55 + fo, cy - ry * 0.12, cx + fo, cy - ry * 0.12); g.quadraticCurveTo(cx - rx * 0.55 + fo, cy - ry * 0.12, cx - rx * 0.72 + fo, cy + ry * 0.2); g.closePath();
+    inked(g, "#2e323e", 5);
+    g.fillStyle = "#f4f4f4"; for (const sgn of [-1, 1]) { g.beginPath(); g.moveTo(cx + fo + sgn * rx * 0.2, cy - ry * 0.02); g.lineTo(cx + fo + sgn * rx * 0.62, cy - ry * 0.08); g.lineTo(cx + fo + sgn * rx * 0.55, cy + ry * 0.06); g.lineTo(cx + fo + sgn * rx * 0.25, cy + ry * 0.06); g.closePath(); g.fill(); }
+    return;
   } else if (kind === "neville" || kind === "bully") {
     g.moveTo(cx - rx * 1.02, cy - ry * 0.15);
     g.bezierCurveTo(cx - rx * 1.05, cy - ry * 1.2, cx + rx * 1.05, cy - ry * 1.2, cx + rx * 1.02, cy - ry * 0.15);

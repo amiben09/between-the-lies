@@ -1,0 +1,14 @@
+{
+ "script_words": 230,
+ "heard": 229,
+ "missing": [],
+ "fuzzy_name_matches": [],
+ "asr_text": "he froze the woman he loved to save her life then his boss pulled the plug this is gotham city run by crime and money where a masked vigilante called batman hunts criminals by night victor freeze was a scientist at gothcorp a giant company his work was cryogenics freezing a living body so time stops inside it his wife nora was dying of an illness no doctor could cure so victor froze her in a glass chamber to wait for a cure he kept a snow globe with a tiny skater inside to him it was nora but he'd used the company's machines the boss ferris boyle ordered them shut off victor begged boyle kicked him into the freezing chemicals and ran nora's chamber went dark victor believed she was gone the chemicals changed his body now he could only survive below zero inside a frozen suit he became mr freeze and he hunted gothcorp to find the man who killed his wife batman stopped him just before he froze boyle alive then he found the security tape and gave it to the news that explains his revenge it doesn't excuse it locked in a cell victor held the snow globe and asked nora to forgive him for failing her he could freeze anything in the world but the only thing he ever wanted to keep was her",
+ "timing_shift_s": {
+  "mean": -0.001,
+  "max_abs": 0.249
+ },
+ "line_snap_s": {
+  "max_abs": 0.249
+ }
+}

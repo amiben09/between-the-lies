@@ -4,7 +4,7 @@
 import json, re, sys, difflib, numpy as np, soundfile as sf
 from faster_whisper import WhisperModel
 voice, wj, lj, rep = sys.argv[1:5]
-HOMOPHONES = {("doe", "dough"), ("doe", "do")}
+HOMOPHONES = {("doe", "dough"), ("doe", "do"), ("fries", "freeze"), ("mister", "mr")}
 a, sr = sf.read(voice, dtype="float32")
 t_out = np.arange(int(len(a) * 16000 / sr)) / 16000
 a16 = np.interp(t_out, np.arange(len(a)) / sr, a).astype(np.float32)
@@ -22,6 +22,13 @@ for w in asr:
 class _W:  # merged word: start of first piece, end of last
     def __init__(self, t, a_, b_): self.word, self.start, self.end = t, a_.start, b_.end
 asr = [_W(t, a_, b_) for t, a_, b_ in asr_m]
+# script tokens like "Nora" + "'s" are one word to Whisper ("nora's"): match on merged groups, map back to every token
+G = []
+for i, w in enumerate(words):
+    if G and n(w["w"]).startswith("'") and n(w["w"]) in ("'s", "'re", "'ll", "'d", "'ve", "'m", "'t"): G[-1].append(i)
+    else: G.append([i])
+_words_tok = words
+words = [{"w": "".join(_words_tok[k]["w"] for k in g), "s": _words_tok[g[0]]["s"], "e": _words_tok[g[-1]]["e"], "_g": g} for g in G]
 A, B = [n(w["w"]) for w in words], [n(w.word) for w in asr]
 sm = difflib.SequenceMatcher(a=A, b=B, autojunk=False)
 matched, deltas, missing, fuzzy = 0, [], [], []
@@ -34,6 +41,13 @@ for tag, i1, i2, j1, j2 in sm.get_opcodes():
             fuzzy.append(f"{words[i]['w']}~{B[j]}"); words[i]["s"], words[i]["e"] = round(asr[j].start, 3), round(asr[j].end, 3); words[i]["asr"] = "fuzzy"; matched += 1
     elif tag in ("delete", "replace"):
         missing += [words[i]["w"] + f"@{words[i]['s']:.2f}" for i in range(i1, i2)]
+# expand merged groups back onto the original tokens (split the time evenly)
+for w in words:
+    g = w["_g"]; k = len(g)
+    for q, idx in enumerate(g):
+        t = _words_tok[idx]; t["s"] = round(w["s"] + (w["e"] - w["s"]) * q / k, 3); t["e"] = round(w["s"] + (w["e"] - w["s"]) * (q + 1) / k, 3)
+        if "asr" in w: t["asr"] = w["asr"]
+words = _words_tok
 # Snap every line's first/last word to the real audio onset/offset (Whisper boundary times drift by up to ~0.3 s),
 # then guarantee a minimum duration per word.
 env_ = np.convolve(np.abs(a), np.ones(int(0.01 * sr)) / int(0.01 * sr), "same"); thr = env_.max() * 0.01

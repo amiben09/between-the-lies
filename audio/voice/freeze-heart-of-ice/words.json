@@ -1,0 +1,1608 @@
+{
+"duration": 67.751,
+"words": [
+{
+"w": "He",
+"s": 0.183,
+"e": 0.263,
+"line": 0,
+"asr": true
+},
+{
+"w": "froze",
+"s": 0.263,
+"e": 0.5,
+"line": 0,
+"asr": true
+},
+{
+"w": "the",
+"s": 0.5,
+"e": 0.74,
+"line": 0,
+"asr": true
+},
+{
+"w": "woman",
+"s": 0.74,
+"e": 0.9,
+"line": 0,
+"asr": true
+},
+{
+"w": "he",
+"s": 0.9,
+"e": 1.08,
+"line": 0,
+"asr": true
+},
+{
+"w": "loved",
+"s": 1.08,
+"e": 1.34,
+"line": 0,
+"asr": true
+},
+{
+"w": "to",
+"s": 1.34,
+"e": 1.62,
+"line": 0,
+"asr": true
+},
+{
+"w": "save",
+"s": 1.62,
+"e": 1.82,
+"line": 0,
+"asr": true
+},
+{
+"w": "her",
+"s": 1.82,
+"e": 2.0,
+"line": 0,
+"asr": true
+},
+{
+"w": "life",
+"s": 2.0,
+"e": 2.24,
+"line": 0,
+"asr": true
+},
+{
+"w": "Then",
+"s": 2.7,
+"e": 2.78,
+"line": 0,
+"asr": true
+},
+{
+"w": "his",
+"s": 2.78,
+"e": 2.94,
+"line": 0,
+"asr": true
+},
+{
+"w": "boss",
+"s": 2.94,
+"e": 3.16,
+"line": 0,
+"asr": true
+},
+{
+"w": "pulled",
+"s": 3.16,
+"e": 3.48,
+"line": 0,
+"asr": true
+},
+{
+"w": "the",
+"s": 3.48,
+"e": 3.66,
+"line": 0,
+"asr": true
+},
+{
+"w": "plug",
+"s": 3.66,
+"e": 3.916,
+"line": 0,
+"asr": true
+},
+{
+"w": "This",
+"s": 4.306,
+"e": 4.42,
+"line": 1,
+"asr": true
+},
+{
+"w": "is",
+"s": 4.42,
+"e": 4.58,
+"line": 1,
+"asr": true
+},
+{
+"w": "Gotham",
+"s": 4.58,
+"e": 4.84,
+"line": 1,
+"asr": true
+},
+{
+"w": "City",
+"s": 4.84,
+"e": 5.22,
+"line": 1,
+"asr": true
+},
+{
+"w": "run",
+"s": 5.62,
+"e": 5.74,
+"line": 1,
+"asr": true
+},
+{
+"w": "by",
+"s": 5.74,
+"e": 5.98,
+"line": 1,
+"asr": true
+},
+{
+"w": "crime",
+"s": 5.98,
+"e": 6.22,
+"line": 1,
+"asr": true
+},
+{
+"w": "and",
+"s": 6.22,
+"e": 6.38,
+"line": 1,
+"asr": true
+},
+{
+"w": "money",
+"s": 6.38,
+"e": 6.68,
+"line": 1,
+"asr": true
+},
+{
+"w": "where",
+"s": 7.0,
+"e": 7.12,
+"line": 1,
+"asr": true
+},
+{
+"w": "a",
+"s": 7.12,
+"e": 7.24,
+"line": 1,
+"asr": true
+},
+{
+"w": "masked",
+"s": 7.24,
+"e": 7.5,
+"line": 1,
+"asr": true
+},
+{
+"w": "vigilante",
+"s": 7.5,
+"e": 7.94,
+"line": 1,
+"asr": true
+},
+{
+"w": "called",
+"s": 7.94,
+"e": 8.36,
+"line": 1,
+"asr": true
+},
+{
+"w": "Batman",
+"s": 8.36,
+"e": 8.7,
+"line": 1,
+"asr": true
+},
+{
+"w": "hunts",
+"s": 8.7,
+"e": 9.02,
+"line": 1,
+"asr": true
+},
+{
+"w": "criminals",
+"s": 9.02,
+"e": 9.38,
+"line": 1,
+"asr": true
+},
+{
+"w": "by",
+"s": 9.38,
+"e": 9.68,
+"line": 1,
+"asr": true
+},
+{
+"w": "night",
+"s": 9.68,
+"e": 9.905,
+"line": 1,
+"asr": true
+},
+{
+"w": "Victor",
+"s": 10.091,
+"e": 10.34,
+"line": 2,
+"asr": true
+},
+{
+"w": "Fries",
+"s": 10.34,
+"e": 10.62,
+"line": 2,
+"asr": true
+},
+{
+"w": "was",
+"s": 10.62,
+"e": 10.84,
+"line": 2,
+"asr": true
+},
+{
+"w": "a",
+"s": 10.84,
+"e": 10.98,
+"line": 2,
+"asr": true
+},
+{
+"w": "scientist",
+"s": 10.98,
+"e": 11.3,
+"line": 2,
+"asr": true
+},
+{
+"w": "at",
+"s": 11.3,
+"e": 11.62,
+"line": 2,
+"asr": true
+},
+{
+"w": "GothCorp",
+"s": 11.62,
+"e": 11.94,
+"line": 2,
+"asr": true
+},
+{
+"w": "a",
+"s": 12.18,
+"e": 12.26,
+"line": 2,
+"asr": true
+},
+{
+"w": "giant",
+"s": 12.26,
+"e": 12.48,
+"line": 2,
+"asr": true
+},
+{
+"w": "company",
+"s": 12.48,
+"e": 12.8,
+"line": 2,
+"asr": true
+},
+{
+"w": "His",
+"s": 13.26,
+"e": 13.4,
+"line": 2,
+"asr": true
+},
+{
+"w": "work",
+"s": 13.4,
+"e": 13.62,
+"line": 2,
+"asr": true
+},
+{
+"w": "was",
+"s": 13.62,
+"e": 13.8,
+"line": 2,
+"asr": true
+},
+{
+"w": "cryogenics",
+"s": 13.8,
+"e": 14.52,
+"line": 2,
+"asr": true
+},
+{
+"w": "freezing",
+"s": 14.82,
+"e": 15.06,
+"line": 2,
+"asr": true
+},
+{
+"w": "a",
+"s": 15.06,
+"e": 15.26,
+"line": 2,
+"asr": true
+},
+{
+"w": "living",
+"s": 15.26,
+"e": 15.46,
+"line": 2,
+"asr": true
+},
+{
+"w": "body",
+"s": 15.46,
+"e": 15.84,
+"line": 2,
+"asr": true
+},
+{
+"w": "so",
+"s": 15.84,
+"e": 16.22,
+"line": 2,
+"asr": true
+},
+{
+"w": "time",
+"s": 16.22,
+"e": 16.48,
+"line": 2,
+"asr": true
+},
+{
+"w": "stops",
+"s": 16.48,
+"e": 16.78,
+"line": 2,
+"asr": true
+},
+{
+"w": "inside",
+"s": 16.78,
+"e": 17.24,
+"line": 2,
+"asr": true
+},
+{
+"w": "it",
+"s": 17.24,
+"e": 17.37,
+"line": 2,
+"asr": true
+},
+{
+"w": "His",
+"s": 17.554,
+"e": 17.64,
+"line": 3,
+"asr": true
+},
+{
+"w": "wife",
+"s": 17.64,
+"e": 17.86,
+"line": 3,
+"asr": true
+},
+{
+"w": "Nora",
+"s": 18.08,
+"e": 18.16,
+"line": 3,
+"asr": true
+},
+{
+"w": "was",
+"s": 18.24,
+"e": 18.36,
+"line": 3,
+"asr": true
+},
+{
+"w": "dying",
+"s": 18.36,
+"e": 18.64,
+"line": 3,
+"asr": true
+},
+{
+"w": "of",
+"s": 18.64,
+"e": 18.78,
+"line": 3,
+"asr": true
+},
+{
+"w": "an",
+"s": 18.78,
+"e": 18.88,
+"line": 3,
+"asr": true
+},
+{
+"w": "illness",
+"s": 18.88,
+"e": 19.22,
+"line": 3,
+"asr": true
+},
+{
+"w": "no",
+"s": 19.22,
+"e": 19.52,
+"line": 3,
+"asr": true
+},
+{
+"w": "doctor",
+"s": 19.52,
+"e": 19.78,
+"line": 3,
+"asr": true
+},
+{
+"w": "could",
+"s": 19.78,
+"e": 20.04,
+"line": 3,
+"asr": true
+},
+{
+"w": "cure",
+"s": 20.04,
+"e": 20.338,
+"line": 3,
+"asr": true
+},
+{
+"w": "So",
+"s": 20.524,
+"e": 20.62,
+"line": 4,
+"asr": true
+},
+{
+"w": "Victor",
+"s": 20.62,
+"e": 20.86,
+"line": 4,
+"asr": true
+},
+{
+"w": "froze",
+"s": 20.86,
+"e": 21.18,
+"line": 4,
+"asr": true
+},
+{
+"w": "her",
+"s": 21.18,
+"e": 21.34,
+"line": 4,
+"asr": true
+},
+{
+"w": "in",
+"s": 21.34,
+"e": 21.42,
+"line": 4,
+"asr": true
+},
+{
+"w": "a",
+"s": 21.42,
+"e": 21.52,
+"line": 4,
+"asr": true
+},
+{
+"w": "glass",
+"s": 21.52,
+"e": 21.76,
+"line": 4,
+"asr": true
+},
+{
+"w": "chamber",
+"s": 21.76,
+"e": 22.14,
+"line": 4,
+"asr": true
+},
+{
+"w": "to",
+"s": 22.14,
+"e": 22.36,
+"line": 4,
+"asr": true
+},
+{
+"w": "wait",
+"s": 22.36,
+"e": 22.5,
+"line": 4,
+"asr": true
+},
+{
+"w": "for",
+"s": 22.5,
+"e": 22.72,
+"line": 4,
+"asr": true
+},
+{
+"w": "a",
+"s": 22.72,
+"e": 22.86,
+"line": 4,
+"asr": true
+},
+{
+"w": "cure",
+"s": 22.86,
+"e": 22.98,
+"line": 4,
+"asr": true
+},
+{
+"w": "He",
+"s": 23.48,
+"e": 23.58,
+"line": 4,
+"asr": true
+},
+{
+"w": "kept",
+"s": 23.58,
+"e": 23.74,
+"line": 4,
+"asr": true
+},
+{
+"w": "a",
+"s": 23.74,
+"e": 23.9,
+"line": 4,
+"asr": true
+},
+{
+"w": "snow",
+"s": 23.9,
+"e": 24.14,
+"line": 4,
+"asr": true
+},
+{
+"w": "globe",
+"s": 24.14,
+"e": 24.48,
+"line": 4,
+"asr": true
+},
+{
+"w": "with",
+"s": 24.48,
+"e": 24.68,
+"line": 4,
+"asr": true
+},
+{
+"w": "a",
+"s": 24.68,
+"e": 24.82,
+"line": 4,
+"asr": true
+},
+{
+"w": "tiny",
+"s": 24.82,
+"e": 25.08,
+"line": 4,
+"asr": true
+},
+{
+"w": "skater",
+"s": 25.08,
+"e": 25.4,
+"line": 4,
+"asr": true
+},
+{
+"w": "inside",
+"s": 25.4,
+"e": 25.8,
+"line": 4,
+"asr": true
+},
+{
+"w": "To",
+"s": 26.22,
+"e": 26.36,
+"line": 4,
+"asr": true
+},
+{
+"w": "him",
+"s": 26.36,
+"e": 26.58,
+"line": 4,
+"asr": true
+},
+{
+"w": "it",
+"s": 26.84,
+"e": 26.92,
+"line": 4,
+"asr": true
+},
+{
+"w": "was",
+"s": 26.92,
+"e": 27.02,
+"line": 4,
+"asr": true
+},
+{
+"w": "Nora",
+"s": 27.02,
+"e": 27.371,
+"line": 4,
+"asr": true
+},
+{
+"w": "But",
+"s": 27.552,
+"e": 27.632,
+"line": 5,
+"asr": true
+},
+{
+"w": "he'd",
+"s": 27.632,
+"e": 27.76,
+"line": 5,
+"asr": true
+},
+{
+"w": "used",
+"s": 27.76,
+"e": 27.92,
+"line": 5,
+"asr": true
+},
+{
+"w": "the",
+"s": 27.92,
+"e": 28.08,
+"line": 5,
+"asr": true
+},
+{
+"w": "company's",
+"s": 28.08,
+"e": 28.42,
+"line": 5,
+"asr": true
+},
+{
+"w": "machines",
+"s": 28.42,
+"e": 28.74,
+"line": 5,
+"asr": true
+},
+{
+"w": "The",
+"s": 29.22,
+"e": 29.32,
+"line": 5,
+"asr": true
+},
+{
+"w": "boss",
+"s": 29.32,
+"e": 29.6,
+"line": 5,
+"asr": true
+},
+{
+"w": "Ferris",
+"s": 29.96,
+"e": 30.14,
+"line": 5,
+"asr": true
+},
+{
+"w": "Boyle",
+"s": 30.14,
+"e": 30.32,
+"line": 5,
+"asr": true
+},
+{
+"w": "ordered",
+"s": 30.54,
+"e": 30.76,
+"line": 5,
+"asr": true
+},
+{
+"w": "them",
+"s": 30.76,
+"e": 30.98,
+"line": 5,
+"asr": true
+},
+{
+"w": "shut",
+"s": 30.98,
+"e": 31.18,
+"line": 5,
+"asr": true
+},
+{
+"w": "off",
+"s": 31.18,
+"e": 31.449,
+"line": 5,
+"asr": true
+},
+{
+"w": "Victor",
+"s": 31.838,
+"e": 32.06,
+"line": 6,
+"asr": true
+},
+{
+"w": "begged",
+"s": 32.06,
+"e": 32.42,
+"line": 6,
+"asr": true
+},
+{
+"w": "Boyle",
+"s": 33.06,
+"e": 33.14,
+"line": 6,
+"asr": true
+},
+{
+"w": "kicked",
+"s": 33.14,
+"e": 33.3,
+"line": 6,
+"asr": true
+},
+{
+"w": "him",
+"s": 33.3,
+"e": 33.48,
+"line": 6,
+"asr": true
+},
+{
+"w": "into",
+"s": 33.48,
+"e": 33.64,
+"line": 6,
+"asr": true
+},
+{
+"w": "the",
+"s": 33.64,
+"e": 33.8,
+"line": 6,
+"asr": true
+},
+{
+"w": "freezing",
+"s": 33.8,
+"e": 34.06,
+"line": 6,
+"asr": true
+},
+{
+"w": "chemicals",
+"s": 34.06,
+"e": 34.52,
+"line": 6,
+"asr": true
+},
+{
+"w": "and",
+"s": 34.52,
+"e": 34.74,
+"line": 6,
+"asr": true
+},
+{
+"w": "ran",
+"s": 34.74,
+"e": 35.062,
+"line": 6,
+"asr": true
+},
+{
+"w": "Nora's",
+"s": 35.642,
+"e": 36.0,
+"line": 7,
+"asr": true
+},
+{
+"w": "chamber",
+"s": 36.0,
+"e": 36.16,
+"line": 7,
+"asr": true
+},
+{
+"w": "went",
+"s": 36.16,
+"e": 36.42,
+"line": 7,
+"asr": true
+},
+{
+"w": "dark",
+"s": 36.42,
+"e": 36.72,
+"line": 7,
+"asr": true
+},
+{
+"w": "Victor",
+"s": 37.1,
+"e": 37.3,
+"line": 7,
+"asr": true
+},
+{
+"w": "believed",
+"s": 37.3,
+"e": 37.66,
+"line": 7,
+"asr": true
+},
+{
+"w": "she",
+"s": 37.66,
+"e": 37.9,
+"line": 7,
+"asr": true
+},
+{
+"w": "was",
+"s": 37.9,
+"e": 38.06,
+"line": 7,
+"asr": true
+},
+{
+"w": "gone",
+"s": 38.06,
+"e": 38.393,
+"line": 7,
+"asr": true
+},
+{
+"w": "The",
+"s": 39.075,
+"e": 39.2,
+"line": 8,
+"asr": true
+},
+{
+"w": "chemicals",
+"s": 39.2,
+"e": 39.48,
+"line": 8,
+"asr": true
+},
+{
+"w": "changed",
+"s": 39.48,
+"e": 39.88,
+"line": 8,
+"asr": true
+},
+{
+"w": "his",
+"s": 39.88,
+"e": 40.1,
+"line": 8,
+"asr": true
+},
+{
+"w": "body",
+"s": 40.1,
+"e": 40.4,
+"line": 8,
+"asr": true
+},
+{
+"w": "Now",
+"s": 40.84,
+"e": 41.02,
+"line": 8,
+"asr": true
+},
+{
+"w": "he",
+"s": 41.02,
+"e": 41.14,
+"line": 8,
+"asr": true
+},
+{
+"w": "could",
+"s": 41.14,
+"e": 41.26,
+"line": 8,
+"asr": true
+},
+{
+"w": "only",
+"s": 41.26,
+"e": 41.54,
+"line": 8,
+"asr": true
+},
+{
+"w": "survive",
+"s": 41.54,
+"e": 42.0,
+"line": 8,
+"asr": true
+},
+{
+"w": "below",
+"s": 42.0,
+"e": 42.26,
+"line": 8,
+"asr": true
+},
+{
+"w": "zero",
+"s": 42.26,
+"e": 42.58,
+"line": 8,
+"asr": true
+},
+{
+"w": "inside",
+"s": 42.58,
+"e": 43.24,
+"line": 8,
+"asr": true
+},
+{
+"w": "a",
+"s": 43.24,
+"e": 43.42,
+"line": 8,
+"asr": true
+},
+{
+"w": "frozen",
+"s": 43.42,
+"e": 43.7,
+"line": 8,
+"asr": true
+},
+{
+"w": "suit",
+"s": 43.7,
+"e": 44.017,
+"line": 8,
+"asr": true
+},
+{
+"w": "He",
+"s": 44.213,
+"e": 44.293,
+"line": 9,
+"asr": true
+},
+{
+"w": "became",
+"s": 44.293,
+"e": 44.6,
+"line": 9,
+"asr": true
+},
+{
+"w": "Mister",
+"s": 44.6,
+"e": 44.98,
+"line": 9,
+"asr": true
+},
+{
+"w": "Freeze",
+"s": 45.22,
+"e": 45.3,
+"line": 9,
+"asr": true
+},
+{
+"w": "and",
+"s": 45.72,
+"e": 45.88,
+"line": 9,
+"asr": true
+},
+{
+"w": "he",
+"s": 45.88,
+"e": 45.98,
+"line": 9,
+"asr": true
+},
+{
+"w": "hunted",
+"s": 45.98,
+"e": 46.24,
+"line": 9,
+"asr": true
+},
+{
+"w": "GothCorp",
+"s": 46.24,
+"e": 46.72,
+"line": 9,
+"asr": true
+},
+{
+"w": "to",
+"s": 46.72,
+"e": 46.9,
+"line": 9,
+"asr": true
+},
+{
+"w": "find",
+"s": 46.9,
+"e": 47.12,
+"line": 9,
+"asr": true
+},
+{
+"w": "the",
+"s": 47.12,
+"e": 47.28,
+"line": 9,
+"asr": true
+},
+{
+"w": "man",
+"s": 47.28,
+"e": 47.48,
+"line": 9,
+"asr": true
+},
+{
+"w": "who",
+"s": 47.48,
+"e": 47.68,
+"line": 9,
+"asr": true
+},
+{
+"w": "killed",
+"s": 47.68,
+"e": 47.9,
+"line": 9,
+"asr": true
+},
+{
+"w": "his",
+"s": 47.9,
+"e": 48.08,
+"line": 9,
+"asr": true
+},
+{
+"w": "wife",
+"s": 48.08,
+"e": 48.435,
+"line": 9,
+"asr": true
+},
+{
+"w": "Batman",
+"s": 48.833,
+"e": 49.06,
+"line": 10,
+"asr": true
+},
+{
+"w": "stopped",
+"s": 49.06,
+"e": 49.38,
+"line": 10,
+"asr": true
+},
+{
+"w": "him",
+"s": 49.38,
+"e": 49.64,
+"line": 10,
+"asr": true
+},
+{
+"w": "just",
+"s": 49.64,
+"e": 49.8,
+"line": 10,
+"asr": true
+},
+{
+"w": "before",
+"s": 49.8,
+"e": 50.12,
+"line": 10,
+"asr": true
+},
+{
+"w": "he",
+"s": 50.12,
+"e": 50.26,
+"line": 10,
+"asr": true
+},
+{
+"w": "froze",
+"s": 50.26,
+"e": 50.52,
+"line": 10,
+"asr": true
+},
+{
+"w": "Boyle",
+"s": 50.52,
+"e": 50.82,
+"line": 10,
+"asr": true
+},
+{
+"w": "alive",
+"s": 50.82,
+"e": 51.26,
+"line": 10,
+"asr": true
+},
+{
+"w": "Then",
+"s": 51.72,
+"e": 51.9,
+"line": 10,
+"asr": true
+},
+{
+"w": "he",
+"s": 51.9,
+"e": 52.0,
+"line": 10,
+"asr": true
+},
+{
+"w": "found",
+"s": 52.0,
+"e": 52.24,
+"line": 10,
+"asr": true
+},
+{
+"w": "the",
+"s": 52.24,
+"e": 52.4,
+"line": 10,
+"asr": true
+},
+{
+"w": "security",
+"s": 52.4,
+"e": 52.74,
+"line": 10,
+"asr": true
+},
+{
+"w": "tape",
+"s": 52.74,
+"e": 53.08,
+"line": 10,
+"asr": true
+},
+{
+"w": "and",
+"s": 53.08,
+"e": 53.44,
+"line": 10,
+"asr": true
+},
+{
+"w": "gave",
+"s": 53.44,
+"e": 53.6,
+"line": 10,
+"asr": true
+},
+{
+"w": "it",
+"s": 53.6,
+"e": 53.74,
+"line": 10,
+"asr": true
+},
+{
+"w": "to",
+"s": 53.74,
+"e": 53.84,
+"line": 10,
+"asr": true
+},
+{
+"w": "the",
+"s": 53.84,
+"e": 53.96,
+"line": 10,
+"asr": true
+},
+{
+"w": "news",
+"s": 53.96,
+"e": 54.347,
+"line": 10,
+"asr": true
+},
+{
+"w": "That",
+"s": 54.529,
+"e": 54.62,
+"line": 11,
+"asr": true
+},
+{
+"w": "explains",
+"s": 54.62,
+"e": 55.0,
+"line": 11,
+"asr": true
+},
+{
+"w": "his",
+"s": 55.0,
+"e": 55.26,
+"line": 11,
+"asr": true
+},
+{
+"w": "revenge",
+"s": 55.26,
+"e": 55.58,
+"line": 11,
+"asr": true
+},
+{
+"w": "It",
+"s": 56.06,
+"e": 56.14,
+"line": 11,
+"asr": true
+},
+{
+"w": "doesn't",
+"s": 56.14,
+"e": 56.36,
+"line": 11,
+"asr": true
+},
+{
+"w": "excuse",
+"s": 56.36,
+"e": 56.72,
+"line": 11,
+"asr": true
+},
+{
+"w": "it",
+"s": 56.72,
+"e": 56.918,
+"line": 11,
+"asr": true
+},
+{
+"w": "Locked",
+"s": 57.462,
+"e": 57.64,
+"line": 12,
+"asr": true
+},
+{
+"w": "in",
+"s": 57.64,
+"e": 57.78,
+"line": 12,
+"asr": true
+},
+{
+"w": "a",
+"s": 57.78,
+"e": 57.9,
+"line": 12,
+"asr": true
+},
+{
+"w": "cell",
+"s": 57.9,
+"e": 58.14,
+"line": 12,
+"asr": true
+},
+{
+"w": "Victor",
+"s": 58.54,
+"e": 58.66,
+"line": 12,
+"asr": true
+},
+{
+"w": "held",
+"s": 58.66,
+"e": 58.98,
+"line": 12,
+"asr": true
+},
+{
+"w": "the",
+"s": 58.98,
+"e": 59.16,
+"line": 12,
+"asr": true
+},
+{
+"w": "snow",
+"s": 59.16,
+"e": 59.38,
+"line": 12,
+"asr": true
+},
+{
+"w": "globe",
+"s": 59.38,
+"e": 59.68,
+"line": 12,
+"asr": true
+},
+{
+"w": "and",
+"s": 59.68,
+"e": 60.14,
+"line": 12,
+"asr": true
+},
+{
+"w": "asked",
+"s": 60.14,
+"e": 60.38,
+"line": 12,
+"asr": true
+},
+{
+"w": "Nora",
+"s": 60.38,
+"e": 60.62,
+"line": 12,
+"asr": true
+},
+{
+"w": "to",
+"s": 60.62,
+"e": 60.82,
+"line": 12,
+"asr": true
+},
+{
+"w": "forgive",
+"s": 60.82,
+"e": 61.06,
+"line": 12,
+"asr": true
+},
+{
+"w": "him",
+"s": 61.06,
+"e": 61.26,
+"line": 12,
+"asr": true
+},
+{
+"w": "for",
+"s": 61.26,
+"e": 61.42,
+"line": 12,
+"asr": true
+},
+{
+"w": "failing",
+"s": 61.42,
+"e": 61.66,
+"line": 12,
+"asr": true
+},
+{
+"w": "her",
+"s": 61.66,
+"e": 61.925,
+"line": 12,
+"asr": true
+},
+{
+"w": "He",
+"s": 62.615,
+"e": 62.695,
+"line": 13,
+"asr": true
+},
+{
+"w": "could",
+"s": 62.695,
+"e": 62.82,
+"line": 13,
+"asr": true
+},
+{
+"w": "freeze",
+"s": 62.82,
+"e": 63.14,
+"line": 13,
+"asr": true
+},
+{
+"w": "anything",
+"s": 63.14,
+"e": 63.48,
+"line": 13,
+"asr": true
+},
+{
+"w": "in",
+"s": 63.48,
+"e": 63.76,
+"line": 13,
+"asr": true
+},
+{
+"w": "the",
+"s": 63.76,
+"e": 63.84,
+"line": 13,
+"asr": true
+},
+{
+"w": "world",
+"s": 63.84,
+"e": 64.1,
+"line": 13,
+"asr": true
+},
+{
+"w": "But",
+"s": 64.52,
+"e": 64.72,
+"line": 13,
+"asr": true
+},
+{
+"w": "the",
+"s": 64.72,
+"e": 64.84,
+"line": 13,
+"asr": true
+},
+{
+"w": "only",
+"s": 64.84,
+"e": 65.04,
+"line": 13,
+"asr": true
+},
+{
+"w": "thing",
+"s": 65.04,
+"e": 65.32,
+"line": 13,
+"asr": true
+},
+{
+"w": "he",
+"s": 65.32,
+"e": 65.5,
+"line": 13,
+"asr": true
+},
+{
+"w": "ever",
+"s": 65.5,
+"e": 65.76,
+"line": 13,
+"asr": true
+},
+{
+"w": "wanted",
+"s": 65.76,
+"e": 65.96,
+"line": 13,
+"asr": true
+},
+{
+"w": "to",
+"s": 65.96,
+"e": 66.14,
+"line": 13,
+"asr": true
+},
+{
+"w": "keep",
+"s": 66.14,
+"e": 66.32,
+"line": 13,
+"asr": true
+},
+{
+"w": "was",
+"s": 66.32,
+"e": 66.52,
+"line": 13,
+"asr": true
+},
+{
+"w": "her",
+"s": 66.52,
+"e": 66.796,
+"line": 13,
+"asr": true
+}
+]
+}

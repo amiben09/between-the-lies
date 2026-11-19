@@ -40,6 +40,11 @@ for li, line in enumerate(lines):
     audio.append(np.zeros(int(SR * gap), np.float32)); t0 += gap
 audio.append(np.zeros(int(SR * 0.3), np.float32)); t0 += 0.3
 sf.write(f"{out}/voice.wav", np.concatenate(audio), SR)
+_m = []  # Kokoro splits possessives ("Nora" + "'s"): merge clitics back so words.json matches the script's word count
+for w in words:
+    if _m and w["w"].startswith("'") and w["line"] == _m[-1]["line"]: _m[-1]["w"] += w["w"]; _m[-1]["e"] = w["e"]
+    else: _m.append(w)
+words = _m
 json.dump({"duration": round(t0, 3), "words": words}, open(f"{out}/words.json", "w"), indent=0)
 speech = words[-1]["e"] - words[0]["s"]
 art = sum(max(w["e"] for w in words if w["line"] == li) - min(w["s"] for w in words if w["line"] == li) for li in range(len(lines)))

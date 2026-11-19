@@ -7,6 +7,8 @@ import { Street25D } from "./tests/Street25D";
 import { ItachiCharRefs } from "./episodes/itachi/CharRefs";
 import { ItachiStyleframes } from "./episodes/itachi/Styleframes";
 import { ItachiSetTests } from "./episodes/itachi/SetTests";
+import { FreezeCharRefs } from "./episodes/freeze/CharRefs";
+import { FreezeStyleframes } from "./episodes/freeze/Styleframes";
 import { ItachiEpisode, TOTAL_FRAMES as ITACHI_FRAMES } from "./episodes/itachi/Episode";
 import { TEST_FRAMES, TEST_W, TEST_H } from "./tests/streetSpec";
 import { SnapeEpisode } from "./episodes/snape/Episode";
@@ -32,6 +34,8 @@ export const Root: React.FC = () => (
     <Composition id="ItachiCharRefs" component={ItachiCharRefs} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="ItachiStyleframes" component={ItachiStyleframes} durationInFrames={6} fps={30} width={1080} height={1920} />
     <Composition id="ItachiSetTests" component={ItachiSetTests} durationInFrames={15} fps={30} width={1080} height={1920} />
+    <Composition id="FreezeCharRefs" component={FreezeCharRefs} durationInFrames={2} fps={30} width={1080} height={1920} />
+    <Composition id="FreezeStyleframes" component={FreezeStyleframes} durationInFrames={6} fps={30} width={1080} height={1920} />
     <Composition id="ItachiNextTime" component={ItachiEpisode} durationInFrames={ITACHI_FRAMES} fps={30} width={1080} height={1920} />
   </>
 );

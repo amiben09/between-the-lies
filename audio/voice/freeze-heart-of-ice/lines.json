@@ -1,0 +1,128 @@
+[
+ {
+  "line": 0,
+  "s": 0.183,
+  "e": 3.916,
+  "pause_after": 0.2,
+  "text": "He froze the woman he loved, to save her life. Then his boss pulled the plug.",
+  "seg_s": 0.15,
+  "seg_e": 4.0737
+ },
+ {
+  "line": 1,
+  "s": 4.306,
+  "e": 9.905,
+  "pause_after": 0.0,
+  "text": "This is Gotham City, run by crime and money, where a masked vigilante called Batman hunts criminals by night.",
+  "seg_s": 4.2737,
+  "seg_e": 10.0582
+ },
+ {
+  "line": 2,
+  "s": 10.091,
+  "e": 17.37,
+  "pause_after": 0.0,
+  "text": "Victor Fries was a scientist at GothCorp, a giant company. His work was cryogenics: freezing a living body, so time stops inside it.",
+  "seg_s": 10.0582,
+  "seg_e": 17.5227
+ },
+ {
+  "line": 3,
+  "s": 17.554,
+  "e": 20.338,
+  "pause_after": 0.0,
+  "text": "His wife, Nora, was dying of an illness no doctor could cure.",
+  "seg_s": 17.5227,
+  "seg_e": 20.4944
+ },
+ {
+  "line": 4,
+  "s": 20.524,
+  "e": 27.371,
+  "pause_after": 0.0,
+  "text": "So Victor froze her in a glass chamber, to wait for a cure. He kept a snow globe with a tiny skater inside. To him, it was Nora.",
+  "seg_s": 20.4944,
+  "seg_e": 27.5215
+ },
+ {
+  "line": 5,
+  "s": 27.552,
+  "e": 31.449,
+  "pause_after": 0.2,
+  "text": "But he'd used the company's machines. The boss, Ferris Boyle, ordered them shut off.",
+  "seg_s": 27.5215,
+  "seg_e": 31.6081
+ },
+ {
+  "line": 6,
+  "s": 31.838,
+  "e": 35.062,
+  "pause_after": 0.4,
+  "text": "Victor begged. Boyle kicked him into the freezing chemicals, and ran.",
+  "seg_s": 31.8081,
+  "seg_e": 35.212
+ },
+ {
+  "line": 7,
+  "s": 35.642,
+  "e": 38.393,
+  "pause_after": 0.5,
+  "text": "Nora's chamber went dark. Victor believed she was gone.",
+  "seg_s": 35.612,
+  "seg_e": 38.5435
+ },
+ {
+  "line": 8,
+  "s": 39.075,
+  "e": 44.017,
+  "pause_after": 0.0,
+  "text": "The chemicals changed his body. Now he could only survive below zero, inside a frozen suit.",
+  "seg_s": 39.0435,
+  "seg_e": 44.1815
+ },
+ {
+  "line": 9,
+  "s": 44.213,
+  "e": 48.435,
+  "pause_after": 0.2,
+  "text": "He became Mister Freeze, and he hunted GothCorp to find the man who killed his wife.",
+  "seg_s": 44.1815,
+  "seg_e": 48.6027
+ },
+ {
+  "line": 10,
+  "s": 48.833,
+  "e": 54.347,
+  "pause_after": 0.0,
+  "text": "Batman stopped him just before he froze Boyle alive. Then he found the security tape, and gave it to the news.",
+  "seg_s": 48.8027,
+  "seg_e": 54.4986
+ },
+ {
+  "line": 11,
+  "s": 54.529,
+  "e": 56.918,
+  "pause_after": 0.35,
+  "text": "That explains his revenge. It doesn't excuse it.",
+  "seg_s": 54.4986,
+  "seg_e": 57.0815
+ },
+ {
+  "line": 12,
+  "s": 57.462,
+  "e": 61.925,
+  "pause_after": 0.5,
+  "text": "Locked in a cell, Victor held the snow globe, and asked Nora to forgive him for failing her.",
+  "seg_s": 57.4315,
+  "seg_e": 62.0785
+ },
+ {
+  "line": 13,
+  "s": 62.615,
+  "e": 66.796,
+  "pause_after": 0.5,
+  "text": "He could freeze anything in the world. But the only thing he ever wanted to keep was her.",
+  "seg_s": 62.5785,
+  "seg_e": 66.9508
+ }
+]
