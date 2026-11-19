@@ -59,9 +59,10 @@ const B2: React.FC<BP> = ({ p, f }) => {
 const B3: React.FC<BP> = ({ p, f }) => {
   const turn = ramp(p * 52, 4, 18), red = ramp(p * 52, 22, 40);
   return <Stage look="nightRed" cam={V(0.4, 0.5, -10)} target={V(0, 7, -40)} blur={5} vignette={0.6} tint="#6a1828" roll={-0.03 * p}
-    overlay={<Over draw={(g) => { const c = { x: 0, y: -20 * p, zoom: 1 + 0.045 * glide(p) };
+    overlay={<Over draw={(g) => { const c = { x: -30 * p, y: -60 * p, zoom: 1 + 0.12 * p };
       person(g, c, 1, "itachi", "adult", { ...IT_A, x: 560, y: 2250, s: 2.2, back: turn < 0.5, facing: -0.15, look: [-0.05, 0.75], brow: -0.1, eye: 0.75, mouth: -0.1, eyesRed: red, armR: [-6, -4], prop: blade, still: true, breathe: f }, { ...L2("nightRed"), x: 980, y: 120 });
-      if (red > 0) { g.save(); g.globalCompositeOperation = "screen"; g.fillStyle = radGrad(g, 560, 330, 0, 260, [[0, `rgba(255,40,30,${0.35 * red})`], [1, "rgba(0,0,0,0)"]]); g.fillRect(0, 0, W, H); g.restore(); } }} />}>
+      if (red > 0) { const pulse = 0.75 + 0.25 * Math.sin(f * 0.5); g.save(); g.globalCompositeOperation = "screen"; g.fillStyle = radGrad(g, 560, 330, 0, 260 + 60 * pulse, [[0, `rgba(255,40,30,${0.4 * red * pulse})`], [1, "rgba(0,0,0,0)"]]); g.fillRect(0, 0, W, H); g.restore(); }
+      particles(g, f * 2, "sparks", 13, 45, "rgba(255,120,70,0.8)"); }} />}>
     <ClanStreet f={f} mood="night" />
   </Stage>;
 };
@@ -210,8 +211,9 @@ const B17: React.FC<BP> = ({ p, f, t }) => {
   </Stage>;
 };
 const B18: React.FC<BP> = ({ p, f }) => {
-  const cam = mv([0.4, 1.7, 0.9], [1.0, 3.8, 8.0], p), look = mv([0, 1.0, -6], [0, -2.5, -30], p);
-  return <Stage look="night" cam={cam} target={look} fov={44} vignette={0.55} tint="#2a3a7a">
+  const q = 0.35 * p + 0.65 * p * p; const L_ = (a: P3, b: P3) => V(lerp(a[0], b[0], q), lerp(a[1], b[1], q), lerp(a[2], b[2], q)); const cam = L_([0.4, 1.7, 0.9], [2.0, 6.0, 14.0]), look = L_([0, 1.0, -6], [0.8, -4.0, -30]);
+  return <Stage look="night" cam={cam} target={look} fov={44} vignette={0.55} tint="#2a3a7a"
+    overlay={<Over draw={(g) => particles(g, f, "sparks", 77, 40, "rgba(215,255,160,0.85)", 2.2)} />}>
     <CliffTop f={f} />
     <CardActor kind="itachi" age="teen" at={[0, 0, -1.4]} heightM={1.62} camPos={cam} light={L2("night")} pose={{ ...IT_T, back: true, shoulders: 0.3, breathe: f }} />
   </Stage>;
@@ -221,7 +223,8 @@ const B19: React.FC<BP> = ({ p, f, t }) => {
   const s = 3.4, it = { x: 540, y: 330 + 880 * s, s };
   const hx = 540, hy = 330 + 30 * s;
   return <Stage look="night" cam={V(0, 1.5, 1)} target={V(0, -2, -30)} blur={10} vignette={0.6} tint="#2a3a7a"
-    overlay={<Over draw={(g) => { const c = { x: 0, y: 0, zoom: 1 + 0.06 * glide(p) };
+    overlay={<Over draw={(g) => { const c = { x: 40 * Math.sin(p * 2.2), y: -40 * p, zoom: 1 + 0.14 * p };
+      particles(g, f * 2.5, "dust", 91, 22, "rgba(210,255,170,0.75)", 1.6);
       person(g, c, 1, "itachi", "teen", { ...IT_T, ...it, facing: -0.15, look: [0.3, 0.3], brow: 0.75, eye: 0.85 - close * 0.75, mouth: -0.25, tear, nod: close * 0.03,
         armL: tie > 0 ? lerpArm([12, 14], reachArm("itachi", "teen", "L", it, [hx - 120, hy]), tie) : [12, 14], armR: tie > 0 ? lerpArm([-12, -14], reachArm("itachi", "teen", "R", it, [hx + 120, hy]), tie) : [-12, -14], handL: "grip", handR: "grip", tremble: tie * 0.2, still: true, breathe: f }, { ...L2("night"), x: 200, y: 300 });
       particles(g, f, "dust", 33, 18, "rgba(200,230,255,0.5)"); }} />}>

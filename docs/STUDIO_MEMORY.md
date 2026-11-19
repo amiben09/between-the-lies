@@ -36,7 +36,7 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
 | Always v3 | QC-approved (user 8.8/10) | world-first after hook → newcomers understand; "houses are enemies" was a canon overstatement |
 | **Always v3.1** | QC-approved, reference episode | rival houses, Mudblood explained with a scene, world 9.5 s, flower object (`engine/src/episodes/snape31`) |
 | Necessity test | done | 3D: 65 % frames with parallax vs 2.5D 2 %; 3D 2.2 s/frame vs 2.5D 0.05 s/frame on CPU (`docs/NECESSITY_TEST_2026-11-18.md`) |
-| **Next Time (Itachi, Naruto)** | full production: 13 dressed 3D sets, 33 beats, original koto/flute/taiko score | `engine/src/episodes/itachi/` (Episode.tsx, sets.tsx, stage.tsx), score `engine/audio-lib/score_itachi.py` |
+| **Next Time (Itachi, Naruto)** | **DONE, QC 21/21** — full production: 13 dressed 3D sets, 33 beats, original koto/flute/taiko score | `engine/src/episodes/itachi/` (Episode.tsx, sets.tsx, stage.tsx), score `engine/audio-lib/score_itachi.py` |
 
 ## 4. Pipeline (commands; run from repo root unless noted)
 1. Research → `story/episodes/<ep>/source-dossier.md` (claims table `| # | ... |` — the QC gate parses claim ids).
@@ -97,13 +97,14 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
 - The repo is PUBLIC: commit author must be the GitHub no-reply identity, never the user's email.
 - Lost (only on old session machines): umbrella_fast_tiktok_30, longway_p1/p2, Iceman video.
 
-## 8. PAUSED WORK — resume when the user says "GO"
-- **Next Time (Itachi)**: beats 1-30 of 33 rendered (frames 0-1885 of 2155). User paused on 19 Nov.
-  Finished chunks are saved on GitHub branch **`wip-itachi-render`** (`itachi-chunks/`, README there has the exact resume steps):
-  copy chunks to `out/itachi/chunks/` → bundle → `scripts/render_beats.py … 2 1886` (beats 31-33, ~15 min) → score
-  (`score_itachi.py`, already written) → `finish_episode.sh` → QC gate (`check_episode.py` with
-  `story/episodes/itachi-next-time/chronology.json` + `source-dossier.md`) → send to user → copy to `videos/between-the-lies/`, push.
-- Render notes: concurrency 2 per beat (3 crashes Chromium on 3D beats; the script retries with 1 automatically).
+## 8. Next Time (Itachi) — DONE 19 Nov
+- Final: `videos/between-the-lies/Next_Time_Itachi.mp4` (71.8 s, QC gate 21/21 PASS, -14.3 LUFS / -1.3 dBTP).
+  QC report + final contact sheet + audio cues in `story/episodes/itachi-next-time/`.
+- Lessons from finishing: (1) stream-copy concat of chunks keeps frames but leaves timestamp gaps → A/V drift; `finish_episode.sh`
+  now re-times with `setpts=N/(30*TB)` (never use `-shortest`, it silently cut 54 frames). (2) Dolly-OUT shots lose pixel motion as
+  they pull back → use an accelerating move (`0.35p + 0.65p²`) or the frozen-frame gate fails. (3) Small 2D dust is invisible at
+  the gate's 270x480 → use `sparks` (rising) at depth ≥ 2 for motion in dark wide shots. (4) `render_beats.py` arg 6 = first
+  frame to render; passing 0 re-renders beat 2 overlapping chunk c00000 — move stale/overlapping chunks to `chunks_old/`.
 
 ## 9. Open items
 - RX 590 benchmark (Test3D) on the user's Windows PC.
