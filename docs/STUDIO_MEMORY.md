@@ -97,7 +97,15 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
 - The repo is PUBLIC: commit author must be the GitHub no-reply identity, never the user's email.
 - Lost (only on old session machines): umbrella_fast_tiktok_30, longway_p1/p2, Iceman video.
 
-## 8. Open items
+## 8. PAUSED WORK — resume when the user says "GO"
+- **Next Time (Itachi)**: beats 1-30 of 33 rendered (frames 0-1885 of 2155). User paused on 19 Nov.
+  Finished chunks are saved on GitHub branch **`wip-itachi-render`** (`itachi-chunks/`, README there has the exact resume steps):
+  copy chunks to `out/itachi/chunks/` → bundle → `scripts/render_beats.py … 2 1886` (beats 31-33, ~15 min) → score
+  (`score_itachi.py`, already written) → `finish_episode.sh` → QC gate (`check_episode.py` with
+  `story/episodes/itachi-next-time/chronology.json` + `source-dossier.md`) → send to user → copy to `videos/between-the-lies/`, push.
+- Render notes: concurrency 2 per beat (3 crashes Chromium on 3D beats; the script retries with 1 automatically).
+
+## 9. Open items
 - RX 590 benchmark (Test3D) on the user's Windows PC.
 - Captions style + ending-hold length decisions.
 - Acting system beyond IK (state machine, foot planting, 8-direction views), camera-director spec layer, QC v2 scorecard.
