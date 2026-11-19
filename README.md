@@ -1,3 +1,7 @@
+> **➜ The current studio is on branch [`studio`](https://github.com/amiben09/between-the-lies/tree/studio)** (3D + 2.5D engine,
+> Always v3.1, Next Time/Itachi, session memory in `docs/STUDIO_MEMORY.md`, every finished video in `videos/`).
+> This `main` branch is the earlier v0.2 system, kept as is.
+
 # BETWEEN THE LIES: production system (v0.2)
 
 Cinematic relationship-drama shorts: "Bad people are not born. They are made."
