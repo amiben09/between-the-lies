@@ -1,0 +1,1622 @@
+{
+"duration": 68.095,
+"words": [
+{
+"w": "He",
+"s": 0.183,
+"e": 0.263,
+"line": 0,
+"asr": true
+},
+{
+"w": "killed",
+"s": 0.263,
+"e": 0.48,
+"line": 0,
+"asr": true
+},
+{
+"w": "his",
+"s": 0.48,
+"e": 0.7,
+"line": 0,
+"asr": true
+},
+{
+"w": "entire",
+"s": 0.7,
+"e": 1.08,
+"line": 0,
+"asr": true
+},
+{
+"w": "family",
+"s": 1.08,
+"e": 1.52,
+"line": 0,
+"asr": true
+},
+{
+"w": "in",
+"s": 1.52,
+"e": 1.76,
+"line": 0,
+"asr": true
+},
+{
+"w": "one",
+"s": 1.76,
+"e": 1.96,
+"line": 0,
+"asr": true
+},
+{
+"w": "night",
+"s": 1.96,
+"e": 2.28,
+"line": 0,
+"asr": true
+},
+{
+"w": "Then",
+"s": 2.7,
+"e": 2.8,
+"line": 0,
+"asr": true
+},
+{
+"w": "he",
+"s": 2.8,
+"e": 2.88,
+"line": 0,
+"asr": true
+},
+{
+"w": "spent",
+"s": 2.88,
+"e": 3.08,
+"line": 0,
+"asr": true
+},
+{
+"w": "years",
+"s": 3.08,
+"e": 3.36,
+"line": 0,
+"asr": true
+},
+{
+"w": "making",
+"s": 3.36,
+"e": 3.68,
+"line": 0,
+"asr": true
+},
+{
+"w": "his",
+"s": 3.68,
+"e": 3.92,
+"line": 0,
+"asr": true
+},
+{
+"w": "little",
+"s": 3.92,
+"e": 4.14,
+"line": 0,
+"asr": true
+},
+{
+"w": "brother",
+"s": 4.14,
+"e": 4.4,
+"line": 0,
+"asr": true
+},
+{
+"w": "hate",
+"s": 4.4,
+"e": 4.64,
+"line": 0,
+"asr": true
+},
+{
+"w": "him",
+"s": 4.64,
+"e": 4.9,
+"line": 0,
+"asr": true
+},
+{
+"w": "on",
+"s": 5.06,
+"e": 5.22,
+"line": 0,
+"asr": true
+},
+{
+"w": "purpose",
+"s": 5.22,
+"e": 5.741,
+"line": 0,
+"asr": true
+},
+{
+"w": "Itachi",
+"s": 6.125,
+"e": 6.48,
+"line": 1,
+"asr": true
+},
+{
+"w": "Uchiha",
+"s": 6.48,
+"e": 6.94,
+"line": 1,
+"asr": true
+},
+{
+"w": "was",
+"s": 6.94,
+"e": 7.08,
+"line": 1,
+"asr": true
+},
+{
+"w": "a",
+"s": 7.08,
+"e": 7.2,
+"line": 1,
+"asr": true
+},
+{
+"w": "ninja",
+"s": 7.2,
+"e": 7.42,
+"line": 1,
+"asr": true
+},
+{
+"w": "in",
+"s": 7.86,
+"e": 7.96,
+"line": 1,
+"asr": true
+},
+{
+"w": "a",
+"s": 7.96,
+"e": 8.08,
+"line": 1,
+"asr": true
+},
+{
+"w": "world",
+"s": 8.08,
+"e": 8.24,
+"line": 1,
+"asr": true
+},
+{
+"w": "where",
+"s": 8.24,
+"e": 8.5,
+"line": 1,
+"asr": true
+},
+{
+"w": "hidden",
+"s": 8.5,
+"e": 8.7,
+"line": 1,
+"asr": true
+},
+{
+"w": "villages",
+"s": 8.7,
+"e": 9.04,
+"line": 1,
+"asr": true
+},
+{
+"w": "train",
+"s": 9.04,
+"e": 9.4,
+"line": 1,
+"asr": "fuzzy"
+},
+{
+"w": "children",
+"s": 9.4,
+"e": 9.7,
+"line": 1,
+"asr": true
+},
+{
+"w": "to",
+"s": 9.7,
+"e": 10.02,
+"line": 1,
+"asr": true
+},
+{
+"w": "fight",
+"s": 10.02,
+"e": 10.22,
+"line": 1,
+"asr": true
+},
+{
+"w": "and",
+"s": 10.22,
+"e": 10.38,
+"line": 1,
+"asr": true
+},
+{
+"w": "spy",
+"s": 10.38,
+"e": 10.668,
+"line": 1,
+"asr": true
+},
+{
+"w": "His",
+"s": 10.888,
+"e": 11.0,
+"line": 2,
+"asr": true
+},
+{
+"w": "clan",
+"s": 11.0,
+"e": 11.26,
+"line": 2,
+"asr": true
+},
+{
+"w": "the",
+"s": 11.46,
+"e": 11.54,
+"line": 2,
+"asr": true
+},
+{
+"w": "Uchiha",
+"s": 11.54,
+"e": 11.96,
+"line": 2,
+"asr": true
+},
+{
+"w": "ran",
+"s": 12.24,
+"e": 12.46,
+"line": 2,
+"asr": true
+},
+{
+"w": "the",
+"s": 12.46,
+"e": 12.64,
+"line": 2,
+"asr": true
+},
+{
+"w": "village",
+"s": 12.64,
+"e": 12.86,
+"line": 2,
+"asr": true
+},
+{
+"w": "police",
+"s": 12.86,
+"e": 13.18,
+"line": 2,
+"asr": true
+},
+{
+"w": "and",
+"s": 13.18,
+"e": 13.46,
+"line": 2,
+"asr": true
+},
+{
+"w": "were",
+"s": 13.46,
+"e": 13.58,
+"line": 2,
+"asr": true
+},
+{
+"w": "born",
+"s": 13.58,
+"e": 13.82,
+"line": 2,
+"asr": true
+},
+{
+"w": "with",
+"s": 13.82,
+"e": 13.98,
+"line": 2,
+"asr": true
+},
+{
+"w": "a",
+"s": 13.98,
+"e": 14.1,
+"line": 2,
+"asr": true
+},
+{
+"w": "rare",
+"s": 14.1,
+"e": 14.26,
+"line": 2,
+"asr": true
+},
+{
+"w": "power",
+"s": 14.26,
+"e": 14.56,
+"line": 2,
+"asr": true
+},
+{
+"w": "in",
+"s": 14.56,
+"e": 14.72,
+"line": 2,
+"asr": true
+},
+{
+"w": "their",
+"s": 14.72,
+"e": 14.84,
+"line": 2,
+"asr": true
+},
+{
+"w": "eyes",
+"s": 14.84,
+"e": 15.237,
+"line": 2,
+"asr": true
+},
+{
+"w": "But",
+"s": 15.424,
+"e": 15.504,
+"line": 3,
+"asr": true
+},
+{
+"w": "after",
+"s": 15.504,
+"e": 15.72,
+"line": 3,
+"asr": true
+},
+{
+"w": "a",
+"s": 15.72,
+"e": 15.88,
+"line": 3,
+"asr": true
+},
+{
+"w": "monster",
+"s": 15.88,
+"e": 16.16,
+"line": 3,
+"asr": true
+},
+{
+"w": "attacked",
+"s": 16.16,
+"e": 16.52,
+"line": 3,
+"asr": true
+},
+{
+"w": "the",
+"s": 16.52,
+"e": 16.7,
+"line": 3,
+"asr": true
+},
+{
+"w": "village",
+"s": 16.7,
+"e": 16.98,
+"line": 3,
+"asr": true
+},
+{
+"w": "the",
+"s": 17.36,
+"e": 17.44,
+"line": 3,
+"asr": true
+},
+{
+"w": "leaders",
+"s": 17.44,
+"e": 17.64,
+"line": 3,
+"asr": true
+},
+{
+"w": "suspected",
+"s": 17.64,
+"e": 18.12,
+"line": 3,
+"asr": true
+},
+{
+"w": "the",
+"s": 18.12,
+"e": 18.34,
+"line": 3,
+"asr": true
+},
+{
+"w": "Uchiha",
+"s": 18.34,
+"e": 18.8,
+"line": 3,
+"asr": true
+},
+{
+"w": "Pushed",
+"s": 19.3,
+"e": 19.44,
+"line": 3,
+"asr": true
+},
+{
+"w": "aside",
+"s": 19.44,
+"e": 19.82,
+"line": 3,
+"asr": true
+},
+{
+"w": "the",
+"s": 20.1,
+"e": 20.18,
+"line": 3,
+"asr": true
+},
+{
+"w": "clan",
+"s": 20.18,
+"e": 20.38,
+"line": 3,
+"asr": true
+},
+{
+"w": "began",
+"s": 20.38,
+"e": 20.66,
+"line": 3,
+"asr": true
+},
+{
+"w": "planning",
+"s": 20.66,
+"e": 21.04,
+"line": 3,
+"asr": true
+},
+{
+"w": "a",
+"s": 21.04,
+"e": 21.2,
+"line": 3,
+"asr": true
+},
+{
+"w": "coup",
+"s": 21.2,
+"e": 21.452,
+"line": 3,
+"asr": true
+},
+{
+"w": "Itachi",
+"s": 21.636,
+"e": 21.94,
+"line": 4,
+"asr": true
+},
+{
+"w": "had",
+"s": 21.94,
+"e": 22.16,
+"line": 4,
+"asr": true
+},
+{
+"w": "one",
+"s": 22.16,
+"e": 22.42,
+"line": 4,
+"asr": true
+},
+{
+"w": "person",
+"s": 22.42,
+"e": 22.74,
+"line": 4,
+"asr": true
+},
+{
+"w": "he",
+"s": 22.74,
+"e": 22.94,
+"line": 4,
+"asr": true
+},
+{
+"w": "loved",
+"s": 22.94,
+"e": 23.14,
+"line": 4,
+"asr": true
+},
+{
+"w": "more",
+"s": 23.14,
+"e": 23.38,
+"line": 4,
+"asr": true
+},
+{
+"w": "than",
+"s": 23.38,
+"e": 23.52,
+"line": 4,
+"asr": true
+},
+{
+"w": "anything",
+"s": 23.52,
+"e": 23.9,
+"line": 4,
+"asr": true
+},
+{
+"w": "his",
+"s": 24.2,
+"e": 24.36,
+"line": 4,
+"asr": true
+},
+{
+"w": "little",
+"s": 24.36,
+"e": 24.56,
+"line": 4,
+"asr": true
+},
+{
+"w": "brother",
+"s": 24.56,
+"e": 24.96,
+"line": 4,
+"asr": true
+},
+{
+"w": "Sasuke",
+"s": 25.14,
+"e": 25.453,
+"line": 4,
+"asr": true
+},
+{
+"w": "Whenever",
+"s": 25.635,
+"e": 25.88,
+"line": 5,
+"asr": true
+},
+{
+"w": "Sasuke",
+"s": 25.88,
+"e": 26.24,
+"line": 5,
+"asr": true
+},
+{
+"w": "begged",
+"s": 26.24,
+"e": 26.54,
+"line": 5,
+"asr": true
+},
+{
+"w": "him",
+"s": 26.54,
+"e": 26.7,
+"line": 5,
+"asr": true
+},
+{
+"w": "to",
+"s": 26.7,
+"e": 26.82,
+"line": 5,
+"asr": true
+},
+{
+"w": "train",
+"s": 26.82,
+"e": 27.1,
+"line": 5,
+"asr": true
+},
+{
+"w": "Itachi",
+"s": 27.48,
+"e": 27.74,
+"line": 5,
+"asr": true
+},
+{
+"w": "would",
+"s": 27.74,
+"e": 27.98,
+"line": 5,
+"asr": true
+},
+{
+"w": "poke",
+"s": 27.98,
+"e": 28.14,
+"line": 5,
+"asr": true
+},
+{
+"w": "his",
+"s": 28.14,
+"e": 28.38,
+"line": 5,
+"asr": true
+},
+{
+"w": "forehead",
+"s": 28.38,
+"e": 28.62,
+"line": 5,
+"asr": true
+},
+{
+"w": "and",
+"s": 28.62,
+"e": 28.86,
+"line": 5,
+"asr": true
+},
+{
+"w": "promise",
+"s": 28.86,
+"e": 29.2,
+"line": 5,
+"asr": true
+},
+{
+"w": "Next",
+"s": 29.72,
+"e": 29.88,
+"line": 5,
+"asr": true
+},
+{
+"w": "time",
+"s": 29.88,
+"e": 30.235,
+"line": 5,
+"asr": true
+},
+{
+"w": "The",
+"s": 30.445,
+"e": 30.54,
+"line": 6,
+"asr": true
+},
+{
+"w": "village",
+"s": 30.54,
+"e": 30.7,
+"line": 6,
+"asr": true
+},
+{
+"w": "made",
+"s": 30.7,
+"e": 31.02,
+"line": 6,
+"asr": true
+},
+{
+"w": "Itachi",
+"s": 31.02,
+"e": 31.42,
+"line": 6,
+"asr": true
+},
+{
+"w": "a",
+"s": 31.42,
+"e": 31.6,
+"line": 6,
+"asr": true
+},
+{
+"w": "spy",
+"s": 31.6,
+"e": 31.78,
+"line": 6,
+"asr": true
+},
+{
+"w": "inside",
+"s": 31.78,
+"e": 32.26,
+"line": 6,
+"asr": true
+},
+{
+"w": "his",
+"s": 32.26,
+"e": 32.46,
+"line": 6,
+"asr": true
+},
+{
+"w": "own",
+"s": 32.46,
+"e": 32.64,
+"line": 6,
+"asr": true
+},
+{
+"w": "clan",
+"s": 32.64,
+"e": 32.98,
+"line": 6,
+"asr": true
+},
+{
+"w": "Then",
+"s": 33.5,
+"e": 33.66,
+"line": 6,
+"asr": true
+},
+{
+"w": "the",
+"s": 33.66,
+"e": 33.78,
+"line": 6,
+"asr": true
+},
+{
+"w": "elders",
+"s": 33.78,
+"e": 34.02,
+"line": 6,
+"asr": true
+},
+{
+"w": "ordered",
+"s": 34.02,
+"e": 34.38,
+"line": 6,
+"asr": true
+},
+{
+"w": "him",
+"s": 34.38,
+"e": 34.6,
+"line": 6,
+"asr": true
+},
+{
+"w": "to",
+"s": 34.6,
+"e": 34.74,
+"line": 6,
+"asr": true
+},
+{
+"w": "stop",
+"s": 34.74,
+"e": 34.94,
+"line": 6,
+"asr": true
+},
+{
+"w": "the",
+"s": 34.94,
+"e": 35.14,
+"line": 6,
+"asr": true
+},
+{
+"w": "coup",
+"s": 35.14,
+"e": 35.28,
+"line": 6,
+"asr": true
+},
+{
+"w": "by",
+"s": 35.28,
+"e": 35.48,
+"line": 6,
+"asr": true
+},
+{
+"w": "wiping",
+"s": 35.48,
+"e": 35.74,
+"line": 6,
+"asr": true
+},
+{
+"w": "out",
+"s": 35.74,
+"e": 35.92,
+"line": 6,
+"asr": true
+},
+{
+"w": "the",
+"s": 35.92,
+"e": 36.06,
+"line": 6,
+"asr": true
+},
+{
+"w": "Uchiha",
+"s": 36.06,
+"e": 36.463,
+"line": 6,
+"asr": true
+},
+{
+"w": "A",
+"s": 36.948,
+"e": 37.06,
+"line": 7,
+"asr": true
+},
+{
+"w": "civil",
+"s": 37.06,
+"e": 37.24,
+"line": 7,
+"asr": true
+},
+{
+"w": "war",
+"s": 37.24,
+"e": 37.5,
+"line": 7,
+"asr": true
+},
+{
+"w": "would",
+"s": 37.5,
+"e": 37.66,
+"line": 7,
+"asr": true
+},
+{
+"w": "have",
+"s": 37.66,
+"e": 37.8,
+"line": 7,
+"asr": true
+},
+{
+"w": "killed",
+"s": 37.8,
+"e": 38.04,
+"line": 7,
+"asr": true
+},
+{
+"w": "thousands",
+"s": 38.04,
+"e": 38.46,
+"line": 7,
+"asr": true
+},
+{
+"w": "So",
+"s": 38.9,
+"e": 39.12,
+"line": 7,
+"asr": true
+},
+{
+"w": "at",
+"s": 39.12,
+"e": 39.24,
+"line": 7,
+"asr": true
+},
+{
+"w": "thirteen",
+"s": 39.24,
+"e": 39.72,
+"line": 7,
+"asr": true
+},
+{
+"w": "Itachi",
+"s": 40.18,
+"e": 40.42,
+"line": 7,
+"asr": true
+},
+{
+"w": "chose",
+"s": 40.42,
+"e": 40.7,
+"line": 7,
+"asr": true
+},
+{
+"w": "the",
+"s": 40.7,
+"e": 40.9,
+"line": 7,
+"asr": true
+},
+{
+"w": "village",
+"s": 40.9,
+"e": 41.12,
+"line": 7,
+"asr": true
+},
+{
+"w": "over",
+"s": 41.12,
+"e": 41.38,
+"line": 7,
+"asr": true
+},
+{
+"w": "his",
+"s": 41.38,
+"e": 41.54,
+"line": 7,
+"asr": true
+},
+{
+"w": "family",
+"s": 41.54,
+"e": 41.979,
+"line": 7,
+"asr": true
+},
+{
+"w": "He",
+"s": 42.378,
+"e": 42.46,
+"line": 8,
+"asr": true
+},
+{
+"w": "killed",
+"s": 42.46,
+"e": 42.68,
+"line": 8,
+"asr": true
+},
+{
+"w": "them",
+"s": 42.68,
+"e": 42.84,
+"line": 8,
+"asr": true
+},
+{
+"w": "all",
+"s": 42.84,
+"e": 43.12,
+"line": 8,
+"asr": true
+},
+{
+"w": "Except",
+"s": 43.26,
+"e": 43.52,
+"line": 8,
+"asr": true
+},
+{
+"w": "one",
+"s": 43.52,
+"e": 43.915,
+"line": 8,
+"asr": true
+},
+{
+"w": "He",
+"s": 44.598,
+"e": 44.678,
+"line": 9,
+"asr": true
+},
+{
+"w": "couldn't",
+"s": 44.678,
+"e": 44.92,
+"line": 9,
+"asr": true
+},
+{
+"w": "kill",
+"s": 44.92,
+"e": 45.14,
+"line": 9,
+"asr": true
+},
+{
+"w": "Sasuke",
+"s": 45.14,
+"e": 45.42,
+"line": 9,
+"asr": true
+},
+{
+"w": "So",
+"s": 45.88,
+"e": 46.02,
+"line": 9,
+"asr": true
+},
+{
+"w": "he",
+"s": 46.02,
+"e": 46.12,
+"line": 9,
+"asr": true
+},
+{
+"w": "made",
+"s": 46.12,
+"e": 46.28,
+"line": 9,
+"asr": true
+},
+{
+"w": "sure",
+"s": 46.28,
+"e": 46.46,
+"line": 9,
+"asr": true
+},
+{
+"w": "Sasuke",
+"s": 46.46,
+"e": 46.82,
+"line": 9,
+"asr": true
+},
+{
+"w": "would",
+"s": 46.82,
+"e": 47.02,
+"line": 9,
+"asr": true
+},
+{
+"w": "hate",
+"s": 47.02,
+"e": 47.18,
+"line": 9,
+"asr": true
+},
+{
+"w": "him",
+"s": 47.18,
+"e": 47.32,
+"line": 9,
+"asr": true
+},
+{
+"w": "instead",
+"s": 47.32,
+"e": 47.746,
+"line": 9,
+"asr": true
+},
+{
+"w": "Hate",
+"s": 47.952,
+"e": 48.06,
+"line": 10,
+"asr": true
+},
+{
+"w": "would",
+"s": 48.06,
+"e": 48.22,
+"line": 10,
+"asr": true
+},
+{
+"w": "make",
+"s": 48.22,
+"e": 48.36,
+"line": 10,
+"asr": true
+},
+{
+"w": "him",
+"s": 48.36,
+"e": 48.54,
+"line": 10,
+"asr": true
+},
+{
+"w": "strong",
+"s": 48.54,
+"e": 48.86,
+"line": 10,
+"asr": true
+},
+{
+"w": "One",
+"s": 49.32,
+"e": 49.5,
+"line": 10,
+"asr": true
+},
+{
+"w": "day",
+"s": 49.5,
+"e": 49.68,
+"line": 10,
+"asr": true
+},
+{
+"w": "Sasuke",
+"s": 49.68,
+"e": 50.0,
+"line": 10,
+"asr": true
+},
+{
+"w": "would",
+"s": 50.0,
+"e": 50.24,
+"line": 10,
+"asr": true
+},
+{
+"w": "kill",
+"s": 50.24,
+"e": 50.42,
+"line": 10,
+"asr": true
+},
+{
+"w": "the",
+"s": 50.42,
+"e": 50.58,
+"line": 10,
+"asr": true
+},
+{
+"w": "traitor",
+"s": 50.58,
+"e": 50.78,
+"line": 10,
+"asr": true
+},
+{
+"w": "and",
+"s": 50.78,
+"e": 50.98,
+"line": 10,
+"asr": true
+},
+{
+"w": "be",
+"s": 50.98,
+"e": 51.1,
+"line": 10,
+"asr": true
+},
+{
+"w": "called",
+"s": 51.1,
+"e": 51.32,
+"line": 10,
+"asr": true
+},
+{
+"w": "a",
+"s": 51.32,
+"e": 51.46,
+"line": 10,
+"asr": true
+},
+{
+"w": "hero",
+"s": 51.46,
+"e": 51.848,
+"line": 10,
+"asr": true
+},
+{
+"w": "That",
+"s": 52.036,
+"e": 52.14,
+"line": 11,
+"asr": true
+},
+{
+"w": "explains",
+"s": 52.14,
+"e": 52.5,
+"line": 11,
+"asr": true
+},
+{
+"w": "the",
+"s": 52.5,
+"e": 52.74,
+"line": 11,
+"asr": true
+},
+{
+"w": "massacre",
+"s": 52.74,
+"e": 53.04,
+"line": 11,
+"asr": true
+},
+{
+"w": "It",
+"s": 53.4,
+"e": 53.5,
+"line": 11,
+"asr": true
+},
+{
+"w": "doesn't",
+"s": 53.5,
+"e": 53.76,
+"line": 11,
+"asr": true
+},
+{
+"w": "make",
+"s": 53.76,
+"e": 53.9,
+"line": 11,
+"asr": true
+},
+{
+"w": "it",
+"s": 53.9,
+"e": 54.04,
+"line": 11,
+"asr": true
+},
+{
+"w": "right",
+"s": 54.04,
+"e": 54.226,
+"line": 11,
+"asr": true
+},
+{
+"w": "Years",
+"s": 54.795,
+"e": 54.94,
+"line": 12,
+"asr": true
+},
+{
+"w": "later",
+"s": 54.94,
+"e": 55.22,
+"line": 12,
+"asr": true
+},
+{
+"w": "Sasuke",
+"s": 55.22,
+"e": 55.56,
+"line": 12,
+"asr": true
+},
+{
+"w": "caught",
+"s": 55.56,
+"e": 55.88,
+"line": 12,
+"asr": true
+},
+{
+"w": "him",
+"s": 55.88,
+"e": 56.16,
+"line": 12,
+"asr": true
+},
+{
+"w": "Sick",
+"s": 56.16,
+"e": 56.6,
+"line": 12,
+"asr": true
+},
+{
+"w": "and",
+"s": 56.6,
+"e": 56.78,
+"line": 12,
+"asr": true
+},
+{
+"w": "dying",
+"s": 56.78,
+"e": 57.12,
+"line": 12,
+"asr": true
+},
+{
+"w": "Itachi",
+"s": 57.3,
+"e": 57.54,
+"line": 12,
+"asr": true
+},
+{
+"w": "reached",
+"s": 57.54,
+"e": 57.78,
+"line": 12,
+"asr": true
+},
+{
+"w": "out",
+"s": 57.78,
+"e": 58.0,
+"line": 12,
+"asr": true
+},
+{
+"w": "one",
+"s": 58.0,
+"e": 58.22,
+"line": 12,
+"asr": true
+},
+{
+"w": "last",
+"s": 58.22,
+"e": 58.5,
+"line": 12,
+"asr": true
+},
+{
+"w": "time",
+"s": 58.5,
+"e": 58.888,
+"line": 12,
+"asr": true
+},
+{
+"w": "and",
+"s": 59.419,
+"e": 59.52,
+"line": 13,
+"asr": true
+},
+{
+"w": "poked",
+"s": 59.52,
+"e": 59.7,
+"line": 13,
+"asr": true
+},
+{
+"w": "his",
+"s": 59.7,
+"e": 59.92,
+"line": 13,
+"asr": true
+},
+{
+"w": "forehead",
+"s": 59.92,
+"e": 60.372,
+"line": 13,
+"asr": true
+},
+{
+"w": "There",
+"s": 61.155,
+"e": 61.235,
+"line": 14,
+"asr": true
+},
+{
+"w": "would",
+"s": 61.235,
+"e": 61.34,
+"line": 14,
+"asr": true
+},
+{
+"w": "be",
+"s": 61.34,
+"e": 61.48,
+"line": 14,
+"asr": true
+},
+{
+"w": "no",
+"s": 61.48,
+"e": 61.66,
+"line": 14,
+"asr": true
+},
+{
+"w": "next",
+"s": 61.66,
+"e": 61.92,
+"line": 14,
+"asr": true
+},
+{
+"w": "time",
+"s": 61.92,
+"e": 62.262,
+"line": 14,
+"asr": true
+},
+{
+"w": "Only",
+"s": 62.946,
+"e": 63.14,
+"line": 15,
+"asr": true
+},
+{
+"w": "after",
+"s": 63.14,
+"e": 63.4,
+"line": 15,
+"asr": true
+},
+{
+"w": "Itachi",
+"s": 63.4,
+"e": 63.8,
+"line": 15,
+"asr": true
+},
+{
+"w": "died",
+"s": 63.8,
+"e": 64.1,
+"line": 15,
+"asr": true
+},
+{
+"w": "did",
+"s": 64.1,
+"e": 64.48,
+"line": 15,
+"asr": true
+},
+{
+"w": "Sasuke",
+"s": 64.48,
+"e": 64.76,
+"line": 15,
+"asr": true
+},
+{
+"w": "learn",
+"s": 64.76,
+"e": 65.08,
+"line": 15,
+"asr": true
+},
+{
+"w": "the",
+"s": 65.08,
+"e": 65.26,
+"line": 15,
+"asr": true
+},
+{
+"w": "truth",
+"s": 65.26,
+"e": 65.48,
+"line": 15,
+"asr": true
+},
+{
+"w": "Every",
+"s": 65.96,
+"e": 66.18,
+"line": 15,
+"asr": true
+},
+{
+"w": "lie",
+"s": 66.18,
+"e": 66.44,
+"line": 15,
+"asr": true
+},
+{
+"w": "had",
+"s": 66.44,
+"e": 66.62,
+"line": 15,
+"asr": true
+},
+{
+"w": "been",
+"s": 66.62,
+"e": 66.74,
+"line": 15,
+"asr": true
+},
+{
+"w": "meant",
+"s": 66.74,
+"e": 66.88,
+"line": 15,
+"asr": true
+},
+{
+"w": "to",
+"s": 66.88,
+"e": 67.04,
+"line": 15,
+"asr": true
+},
+{
+"w": "keep",
+"s": 67.04,
+"e": 67.2,
+"line": 15,
+"asr": true
+},
+{
+"w": "him",
+"s": 67.2,
+"e": 67.32,
+"line": 15,
+"asr": true
+},
+{
+"w": "alive",
+"s": 67.32,
+"e": 67.645,
+"line": 15,
+"asr": true
+}
+]
+}

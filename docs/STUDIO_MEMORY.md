@@ -89,8 +89,15 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
   (no `post()` on overlays: its soft-light fill would paint over the 3D background).
 - Forehead target for Sasuke drawn at (x,y,s), facing ~0.45: `[x + 38s, y − H·s + 38s]` (H = 640 child / 880 teen).
 
-## 7. Open items
-- Push to GitHub (user hasn't given a repo) — the cloud container is ephemeral; a `git bundle` is sent to the user each session.
+## 7. Where things are saved (user rule, 19 Nov: "put the videos there for next sessions")
+- **GitHub: `amiben09/between-the-lies`, branch `studio`** = this whole studio (code, stories, docs, memory) + `videos/`.
+  `main` on that repo belongs to an earlier, different session's project — never overwrite it.
+- **Every finished video goes into `videos/` and is committed + pushed** (`videos/between-the-lies/<Episode>.mp4`).
+  The cloud machine is wiped between sessions; `out/` is git-ignored scratch. Keep files < 95 MB (GitHub limit 100 MB).
+- The repo is PUBLIC: commit author must be the GitHub no-reply identity, never the user's email.
+- Lost (only on old session machines): umbrella_fast_tiktok_30, longway_p1/p2, Iceman video.
+
+## 8. Open items
 - RX 590 benchmark (Test3D) on the user's Windows PC.
 - Captions style + ending-hold length decisions.
 - Acting system beyond IK (state machine, foot planting, 8-direction views), camera-director spec layer, QC v2 scorecard.

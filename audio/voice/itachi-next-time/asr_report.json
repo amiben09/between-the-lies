@@ -1,0 +1,16 @@
+{
+ "script_words": 231,
+ "heard": 231,
+ "missing": [],
+ "fuzzy_name_matches": [
+  "train~trained"
+ ],
+ "asr_text": "he killed his entire family in one night then he spent years making his little brother hate him on purpose itachi uchiha was a ninja in a world where hidden villages trained children to fight and spy his clan the uchiha ran the village police and were born with a rare power in their eyes but after a monster attacked the village the leaders suspected the uchiha pushed aside the clan began planning a coup itachi had one person he loved more than anything his little brother sasuke whenever sasuke begged him to train itachi would poke his forehead and promise next time the village made itachi a spy inside his own clan then the elders ordered him to stop the coup by wiping out the uchiha a civil war would have killed thousands so at thirteen itachi chose the village over his family he killed them all except one he couldn't kill sasuke so he made sure sasuke would hate him instead hate would make him strong one day sasuke would kill the traitor and be called a hero that explains the massacre it doesn't make it right years later sasuke caught him sick and dying itachi reached out one last time and poked his forehead there would be no next time only after itachi died did sasuke learn the truth every lie had been meant to keep him alive",
+ "timing_shift_s": {
+  "mean": 0.002,
+  "max_abs": 0.223
+ },
+ "line_snap_s": {
+  "max_abs": 0.213
+ }
+}

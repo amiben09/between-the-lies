@@ -1,6 +1,7 @@
 # BETWEEN THE LIES — operating instructions for Claude Code
 
 > **New session? Read `docs/STUDIO_MEMORY.md` first** — decisions, pipeline commands, engine map and the lessons learned so far.
+> **Saving:** this studio lives on GitHub `amiben09/between-the-lies`, branch `studio`. Every finished video is committed to `videos/` and pushed — the cloud machine is wiped between sessions.
 
 Full manual: `docs/Between_the_Lies_Animation_Master_Engine.pdf` (v2.0, 17 Nov 2026). Read it before changing the pipeline.
 Engine state and known issues: `ENGINE_AUDIT.md`. Per-episode files: `story/episodes/<slug>/` (copy from `story/_templates/`).
