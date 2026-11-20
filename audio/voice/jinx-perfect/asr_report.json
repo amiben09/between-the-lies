@@ -1,0 +1,14 @@
+{
+ "script_words": 234,
+ "heard": 234,
+ "missing": [],
+ "fuzzy_name_matches": [],
+ "asr_text": "her sister called her a jinx the crime lord who raised her called her perfect piltover is a shining city of inventors beneath it lies zaun the undercity poor poisoned and lawless down there glowing crystals called hextech can power anything or blow it apart powder and her big sister v were orphans raised by vander a retired fighter her brother milo called her a jinx someone who ruins everything she touches only v believed in her powder built little bombs shaped like monkeys none of them ever worked then a crime boss silco silco captured vander the kids went to save him and left powder behind she followed them with a monkey bomb packed with hextech crystals this time it worked the blast killed two of her brothers vander was lost and v said it milo was right you're a jinx then v was gone alone in the smoke she ran into the arms of the man who started it all silco took her in he raised her as his daughter powder became jinx brilliant broken and dangerous years later in a breakdown she shot him then she fired a rocket at the council of piltover that explains her pain it doesn't excuse what she did with his last breath silco said he never would have given her up don't cry you're perfect her sister called her a jinx a monster called her perfect",
+ "timing_shift_s": {
+  "mean": 0.014,
+  "max_abs": 0.36
+ },
+ "line_snap_s": {
+  "max_abs": 0.193
+ }
+}

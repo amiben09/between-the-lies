@@ -19,15 +19,23 @@ export function towerTex(seed: number, lit = 0.3, tint = "#ffcf80") {
 }
 const TOWER_MAT = new Map<string, THREE.Material>();
 /** Facade material: the lit windows glow (emissive), so the night city reads at a distance. */
-function towerMat(seed: number, lit: number, color?: string) {
-  const k = `${seed}|${lit}|${color}`; const hit = TOWER_MAT.get(k); if (hit) return hit;
-  const t = towerTex(seed, lit);
-  const m = new THREE.MeshToonMaterial({ color: color ?? "#ffffff", map: t, emissiveMap: t, emissive: "#ffffff", emissiveIntensity: 0.7, gradientMap });
+function towerMat(seed: number, lit: number, color?: string, glow = 0.7, tint = "#ffcf80") {
+  const k = `${seed}|${lit}|${color}|${glow}|${tint}`; const hit = TOWER_MAT.get(k); if (hit) return hit;
+  const t = towerTex(seed, lit, tint);
+  const m = new THREE.MeshToonMaterial({ color: color ?? "#ffffff", map: t, emissiveMap: t, emissive: "#ffffff", emissiveIntensity: glow, gradientMap });
   TOWER_MAT.set(k, m); return m;
 }
+/** Daylight facade (stone + glass), for a sunlit city: no window glow. */
+function facadeMat(seed: number, stone: string, color: string) {
+  const k = `F${seed}|${stone}|${color}`; const hit = TOWER_MAT.get(k); if (hit) return hit;
+  const t = canvasTex(256, 512, (g, w, h) => { const r = rng(seed); g.fillStyle = stone; g.fillRect(0, 0, w, h);
+    for (let y = 10; y < h - 10; y += 24) for (let x = 10; x < w - 10; x += 22) { g.fillStyle = r() < 0.15 ? "#fff4d8" : "#7aa0c8"; g.fillRect(x, y, 12, 15); }
+    g.fillStyle = "rgba(120,80,30,0.35)"; for (let y = 0; y < h; y += 96) g.fillRect(0, y, w, 6); g.fillStyle = "rgba(255,255,255,0.18)"; for (let x = 0; x < w; x += 64) g.fillRect(x, 0, 4, h); });
+  const m = new THREE.MeshToonMaterial({ color, map: t, gradientMap }); TOWER_MAT.set(k, m); return m;
+}
 /** Art-deco tower: stacked set-backs + spire. */
-export const Tower: React.FC<{ x: number; z: number; w: number; d: number; h: number; seed: number; lit?: number; spire?: boolean; color?: string }> = ({ x, z, w, d, h, seed, lit = 0.3, spire, color }) => {
-  const mat = useMemo(() => towerMat(seed, lit, color), [seed, lit, color]);
+export const Tower: React.FC<{ x: number; z: number; w: number; d: number; h: number; seed: number; lit?: number; spire?: boolean; color?: string; glow?: number; tint?: string; facade?: string }> = ({ x, z, w, d, h, seed, lit = 0.3, spire, color, glow = 0.7, tint = "#ffcf80", facade }) => {
+  const mat = useMemo(() => facade ? facadeMat(seed, facade, color ?? "#ffffff") : towerMat(seed, lit, color, glow, tint), [seed, lit, color, glow, tint, facade]);
   const tiers = [[1, 0.6], [0.78, 0.25], [0.55, 0.15]];
   let y = 0; const out: React.ReactNode[] = [];
   tiers.forEach(([s, f], i) => { const th = h * f; out.push(<Inked key={i} geo={new THREE.BoxGeometry(w * s, th, d * s)} mat={mat} pos={[x, y + th / 2, z]} outline={0.006} />); y += th; });

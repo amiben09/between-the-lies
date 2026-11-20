@@ -4,7 +4,7 @@
 import json, re, sys, difflib, numpy as np, soundfile as sf
 from faster_whisper import WhisperModel
 voice, wj, lj, rep = sys.argv[1:5]
-HOMOPHONES = {("doe", "dough"), ("doe", "do"), ("fries", "freeze"), ("mister", "mr")}
+HOMOPHONES = {("doe", "dough"), ("doe", "do"), ("fries", "freeze"), ("mister", "mr"), ("vi", "v"), ("vi", "vee"), ("mylo", "milo"), ("council", "counsel")}
 a, sr = sf.read(voice, dtype="float32")
 t_out = np.arange(int(len(a) * 16000 / sr)) / 16000
 a16 = np.interp(t_out, np.arange(len(a)) / sr, a).astype(np.float32)
@@ -22,6 +22,12 @@ for w in asr:
 class _W:  # merged word: start of first piece, end of last
     def __init__(self, t, a_, b_): self.word, self.start, self.end = t, a_.start, b_.end
 asr = [_W(t, a_, b_) for t, a_, b_ in asr_m]
+# names Whisper splits in two ("van der" → "vander"): merge adjacent ASR tokens when the pair spells a script word
+_vocab = {n(w["w"]) for w in words}; _m2 = []
+for w in asr:
+    if _m2 and n(_m2[-1].word) not in _vocab and n(_m2[-1].word) + n(w.word) in _vocab: p_ = _m2.pop(); _m2.append(_W(n(p_.word) + n(w.word), p_, w))
+    else: _m2.append(w)
+asr = _m2
 # script tokens like "Nora" + "'s" are one word to Whisper ("nora's"): match on merged groups, map back to every token
 G = []
 for i, w in enumerate(words):

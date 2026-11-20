@@ -1,0 +1,146 @@
+[
+ {
+  "line": 0,
+  "s": 0.182,
+  "e": 3.794,
+  "pause_after": 0.2,
+  "text": "Her sister called her a jinx. The crime lord who raised her called her perfect.",
+  "seg_s": 0.15,
+  "seg_e": 3.9665
+ },
+ {
+  "line": 1,
+  "s": 4.198,
+  "e": 9.934,
+  "pause_after": 0.0,
+  "text": "Piltover is a shining city of inventors. Beneath it lies Zaun, the undercity: poor, poisoned and lawless.",
+  "seg_s": 4.1665,
+  "seg_e": 10.0926
+ },
+ {
+  "line": 2,
+  "s": 10.123,
+  "e": 13.811,
+  "pause_after": 0.0,
+  "text": "Down there, glowing crystals called hextech can power anything, or blow it apart.",
+  "seg_s": 10.0926,
+  "seg_e": 13.975
+ },
+ {
+  "line": 3,
+  "s": 14.007,
+  "e": 18.001,
+  "pause_after": 0.0,
+  "text": "Powder and her big sister, Vi, were orphans, raised by Vander, a retired fighter.",
+  "seg_s": 13.975,
+  "seg_e": 18.1522
+ },
+ {
+  "line": 4,
+  "s": 18.182,
+  "e": 23.36,
+  "pause_after": 0.0,
+  "text": "Her brother Mylo called her a jinx: someone who ruins everything she touches. Only Vi believed in her.",
+  "seg_s": 18.1522,
+  "seg_e": 23.5098
+ },
+ {
+  "line": 5,
+  "s": 23.54,
+  "e": 26.997,
+  "pause_after": 0.2,
+  "text": "Powder built little bombs shaped like monkeys. None of them ever worked.",
+  "seg_s": 23.5098,
+  "seg_e": 27.1531
+ },
+ {
+  "line": 6,
+  "s": 27.383,
+  "e": 32.258,
+  "pause_after": 0.0,
+  "text": "Then a crime boss, Silco, captured Vander. The kids went to save him, and left Powder behind.",
+  "seg_s": 27.3531,
+  "seg_e": 32.4076
+ },
+ {
+  "line": 7,
+  "s": 32.44,
+  "e": 36.459,
+  "pause_after": 0.4,
+  "text": "She followed them with a monkey bomb, packed with hextech crystals. This time, it worked.",
+  "seg_s": 32.4076,
+  "seg_e": 36.6106
+ },
+ {
+  "line": 8,
+  "s": 37.045,
+  "e": 39.814,
+  "pause_after": 0.3,
+  "text": "The blast killed two of her brothers. Vander was lost.",
+  "seg_s": 37.0106,
+  "seg_e": 40.0187
+ },
+ {
+  "line": 9,
+  "s": 40.35,
+  "e": 43.541,
+  "pause_after": 0.4,
+  "text": "And Vi said it. Mylo was right. You're a jinx. Then Vi was gone.",
+  "seg_s": 40.3187,
+  "seg_e": 43.6942
+ },
+ {
+  "line": 10,
+  "s": 44.124,
+  "e": 48.686,
+  "pause_after": 0.0,
+  "text": "Alone in the smoke, she ran into the arms of the man who started it all. Silco took her in.",
+  "seg_s": 44.0942,
+  "seg_e": 48.8374
+ },
+ {
+  "line": 11,
+  "s": 48.869,
+  "e": 53.167,
+  "pause_after": 0.0,
+  "text": "He raised her as his daughter. Powder became Jinx: brilliant, broken, and dangerous.",
+  "seg_s": 48.8374,
+  "seg_e": 53.3178
+ },
+ {
+  "line": 12,
+  "s": 53.35,
+  "e": 57.939,
+  "pause_after": 0.3,
+  "text": "Years later, in a breakdown, she shot him. Then she fired a rocket at the council of Piltover.",
+  "seg_s": 53.3178,
+  "seg_e": 58.1248
+ },
+ {
+  "line": 13,
+  "s": 58.455,
+  "e": 61.093,
+  "pause_after": 0.35,
+  "text": "That explains her pain. It doesn't excuse what she did.",
+  "seg_s": 58.4248,
+  "seg_e": 61.2731
+ },
+ {
+  "line": 14,
+  "s": 61.655,
+  "e": 65.803,
+  "pause_after": 0.5,
+  "text": "With his last breath, Silco said he never would have given her up. Don't cry. You're perfect.",
+  "seg_s": 61.6231,
+  "seg_e": 66.08
+ },
+ {
+  "line": 15,
+  "s": 66.613,
+  "e": 69.429,
+  "pause_after": 0.5,
+  "text": "Her sister called her a jinx. A monster called her perfect.",
+  "seg_s": 66.58,
+  "seg_e": 69.6042
+ }
+]

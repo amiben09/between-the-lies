@@ -106,6 +106,16 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
   the gate's 270x480 → use `sparks` (rising) at depth ≥ 2 for motion in dark wide shots. (4) `render_beats.py` arg 6 = first
   frame to render; passing 0 re-renders beat 2 overlapping chunk c00000 — move stale/overlapping chunks to `chunks_old/`.
 
+## 8b. Next episodes in the pipeline (storyboard-first; waiting for the user's GO)
+- **Snow Globe (Mr. Freeze, BTAS "Heart of Ice")** — `story/episodes/freeze-heart-of-ice/` (voice, 33 beats, 6 styleframes) — user asked
+  for other options instead; kept ready.
+- **Perfect (Jinx, Arcane S1)** — `story/episodes/jinx-perfect/` — chosen by the user (#5 of 10 concepts). Voice 234/234 heard,
+  31 beats, 6 styleframes; sets `engine/src/episodes/jinx/sets.tsx` (VerticalCity, ZaunStreet, Hideout, TableHall, SilcoOffice,
+  RocketRoof, BlastSite, MonkeyBomb). Next: user approval → Episode.tsx (copy the itachi pattern) → score → render → QC.
+- Tooling added: align.py merges split names ("van der" → Vander) + name homophones; tts.py merges possessive tokens;
+  city kit `engine/src/three/city.tsx` (towers with glowing windows or daylight facades, NightSky, Neon, Searchlight, Gargoyle).
+- Lesson: night fog (Stage look "night") hides a whole city beyond 70 m → pass `fogScale={3-4}` for skyline shots.
+
 ## 9. Open items
 - RX 590 benchmark (Test3D) on the user's Windows PC.
 - Captions style + ending-hold length decisions.

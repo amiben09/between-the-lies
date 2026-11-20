@@ -3,7 +3,7 @@
 // (key/shade gradient, source-atop), optionally depth-blurred, then composited — so lighting never touches the set.
 import { Cam, Ctx, H, W, makeCanvas, radGrad } from "./core";
 
-export type Kind = "snape" | "lily" | "harry" | "james" | "neville" | "dumbledore" | "voldemort" | "bully" | "itachi" | "sasuke" | "victor" | "freeze" | "nora" | "boyle" | "batman";
+export type Kind = "snape" | "lily" | "harry" | "james" | "neville" | "dumbledore" | "voldemort" | "bully" | "itachi" | "sasuke" | "victor" | "freeze" | "nora" | "boyle" | "batman" | "jinx" | "vi" | "vander" | "mylo" | "silco";
 export type Age = "child" | "teen" | "adult";
 export type Arm = [number, number]; // [shoulder deg from straight down, + = toward screen-right; elbow bend deg]
 export type Pose = {
@@ -76,6 +76,17 @@ function look(kind: Kind, age: Age): Look {
       coat: "#a9a3c9", coatHi: "#cbc6e6", legs: "#e8dcd0", robe: true };
     case "boyle": return { ...sz, skin: "#ecc8a8", skinSh: "#c09a7e", hair: "#a8803e", hairHi: "#d0a858", iris: "#4a6a8a",
       coat: "#232a40", coatHi: "#3a4462", trim: "#a8222a", legs: "#232a40", robe: false };
+    // ---- "Perfect" (Jinx) — original channel renditions (not Fortiche model sheets) ----
+    case "jinx": return { ...sz, skin: "#f2ddd0", skinSh: "#c8a898", hair: "#2a5ad8", hairHi: "#3a6ae8", iris: age === "child" ? "#4a7ad8" : "#c84ac8",
+      coat: age === "child" ? "#e8d8e8" : "#2a2230", coatHi: age === "child" ? "#ffffff" : "#4a3a50", trim: age === "child" ? undefined : "#e84a9a", legs: age === "child" ? "#5a4a6a" : "#3a2a4a", robe: false };
+    case "vi": return { ...sz, skin: "#ecc8b0", skinSh: "#c09c84", hair: "#d8506a", hairHi: "#ff7a90", iris: "#5a7ab0",
+      coat: "#a8282e", coatHi: "#d0424a", legs: "#3a3440", robe: false };
+    case "vander": return { ...sz, H: 1060, sw: 310, skin: "#d8b494", skinSh: "#a8866a", hair: "#7a7470", hairHi: "#a8a29c", iris: "#5a4a3a",
+      coat: "#5a4030", coatHi: "#7a5a44", legs: "#3a3028", robe: false };
+    case "mylo": return { ...sz, skin: "#e4c4a8", skinSh: "#b89a80", hair: "#3a2a22", hairHi: "#5a4436", iris: "#4a3a2a",
+      coat: "#4a5a3a", coatHi: "#6a7a54", legs: "#3a3430", robe: false };
+    case "silco": return { ...sz, skin: "#e2cfc0", skinSh: "#b0998a", hair: "#2a2228", hairHi: "#4a3e48", iris: "#3a2a24",
+      coat: "#2a3a30", coatHi: "#3e5446", trim: "#7a1a20", legs: "#22261e", robe: true };
     case "batman": return { ...sz, H: 1040, sw: 280, skin: "#e2c0a2", skinSh: "#b8967a", hair: "#2a2c36", hairHi: "#3c404c", iris: "#f4f4f4",
       coat: "#4a4f5c", coatHi: "#6a7080", legs: "#3a3e4a", robe: false };
   }
@@ -156,6 +167,12 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
     }
     // back hair falls behind the coat for long hair
     if (kind === "lily" || kind === "dumbledore" || kind === "nora") backHair(g, L, kind === "nora" ? "lily" : kind, shY - L.hh * 0.6, p);
+    if (kind === "jinx" && age !== "child") { // two very long braids falling behind (original design)
+      for (const sg of [-1, 1]) { const bx = sg * sw * 0.28, sway = Math.sin(fr * 0.06 + sg) * 8;
+        g.beginPath(); g.moveTo(bx - 14, shY - L.hh * 0.5); g.quadraticCurveTo(bx + sg * 40 + sway, -Hh * 0.45, bx + sg * 20 + sway * 2, -Hh * 0.05);
+        g.lineTo(bx + sg * 20 + sway * 2 + 12, -Hh * 0.05); g.quadraticCurveTo(bx + sg * 52 + sway, -Hh * 0.45, bx + 14, shY - L.hh * 0.5); g.closePath(); inked(g, L.hair, 4);
+        g.strokeStyle = L.hairHi; g.lineWidth = 3; for (let k = 1; k < 9; k++) { const t = k / 9, yy = shY - L.hh * 0.5 + t * (-Hh * 0.05 - shY + L.hh * 0.5); g.beginPath(); g.moveTo(bx + sg * 30 * t - 10 + sway * t, yy); g.lineTo(bx + sg * 30 * t + 10 + sway * t, yy + 10); g.stroke(); } }
+    }
     if (kind === "batman") { // cape: wide, scalloped hem, sways with breath/walk
       const cs = Math.sin(fr * 0.07) * 10 + (walking ? ws * 18 : 0);
       g.beginPath(); g.moveTo(-sw * 0.42, shY - 8);
@@ -215,6 +232,17 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
       g.fillStyle = "#7fe4ff"; g.shadowColor = "#7fe4ff"; g.shadowBlur = 18; g.beginPath(); g.arc(0, shY + 85, 20, 0, 6.283); g.fill(); g.shadowBlur = 0;
       g.strokeStyle = "rgba(160,220,255,0.6)"; g.lineWidth = 3; for (const yy of [shY + 160, shY + 190, shY + 220]) { g.beginPath(); g.moveTo(-sw * 0.38, yy); g.lineTo(sw * 0.38, yy); g.stroke(); }
       g.beginPath(); g.ellipse(0, shY - 4, sw * 0.32, 22, 0, 0, 6.283); inked(g, "#5a6e82", 4);
+    }
+    if (kind === "jinx" && age !== "child") { // original pink cloud motif across the shoulder + crossed straps
+      g.strokeStyle = "#e84a9a"; g.lineWidth = 5; for (let k = 0; k < 3; k++) { g.beginPath(); g.arc(-sw * 0.28 + k * 18, shY + 40 + k * 6, 10, Math.PI, 0); g.stroke(); }
+      g.strokeStyle = "#1a1418"; g.lineWidth = 8; g.beginPath(); g.moveTo(-sw * 0.4, shY + 10); g.lineTo(sw * 0.35, -Hh * 0.45); g.stroke();
+    }
+    if (kind === "vi") { g.fillStyle = "#e8e0d8"; g.beginPath(); g.moveTo(-sw * 0.14, shY - 8); g.lineTo(0, shY + 90); g.lineTo(sw * 0.14, shY - 8); g.closePath(); g.fill(); }
+    if (kind === "vander") { g.fillStyle = "#3a2a20"; g.beginPath(); g.roundRect(-sw * 0.42, -Hh * 0.46, sw * 0.84, 24, 6); g.fill(); g.fillStyle = "#c8a050"; g.fillRect(-14, -Hh * 0.46 + 2, 28, 20); }
+    if (kind === "silco") { // high collar, red lining, buttons
+      g.fillStyle = L.trim ?? "#7a1a20"; g.beginPath(); g.moveTo(-sw * 0.28, shY - 34); g.lineTo(-sw * 0.05, shY + 30); g.lineTo(-sw * 0.36, shY + 8); g.closePath(); g.fill();
+      g.beginPath(); g.moveTo(sw * 0.28, shY - 34); g.lineTo(sw * 0.05, shY + 30); g.lineTo(sw * 0.36, shY + 8); g.closePath(); g.fill();
+      g.fillStyle = "#c8b070"; for (let by = shY + 40; by < -Hh * 0.4; by += 30) { g.beginPath(); g.arc((p.facing ?? 0) * 14, by, 3.5, 0, 6.283); g.fill(); }
     }
     if (kind === "batman") { // utility belt (no chest emblem — original rendition)
       g.beginPath(); g.roundRect(-sw * 0.4, -Hh * 0.47, sw * 0.8, 26, 6); inked(g, "#c8a23a", 4);
@@ -453,6 +481,16 @@ function head(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: nu
     for (const sgn of [-1, 1]) { g.beginPath(); g.arc(cx + fo + sgn * sp, ey, rx * 0.3, 0, 6.283); g.stroke(); }
     g.beginPath(); g.moveTo(cx + fo - sp + rx * 0.3, ey); g.lineTo(cx + fo + sp - rx * 0.3, ey); g.stroke();
   }
+  if (kind === "silco") { // scarred, discoloured left eye (original take: a single vertical scar + pale iris ring)
+    const ex = cx + fo - sp; g.save(); g.strokeStyle = "#8a4a50"; g.lineWidth = rx * 0.06; g.lineCap = "round";
+    g.beginPath(); g.moveTo(ex - rx * 0.05, ey - rx * 0.5); g.lineTo(ex + rx * 0.05, ey + rx * 0.45); g.stroke();
+    g.fillStyle = "rgba(200,60,60,0.35)"; g.beginPath(); g.ellipse(ex, ey, rx * 0.3, rx * 0.22, 0, 0, 6.283); g.fill(); g.restore();
+  }
+  if (kind === "vander") { // short grey beard + moustache
+    g.beginPath(); g.moveTo(cx - rx * 0.92, cy + ry * 0.1); g.quadraticCurveTo(cx - rx * 0.85, cy + ry * 1.1, cx + fo, cy + ry * 1.18); g.quadraticCurveTo(cx + rx * 0.85, cy + ry * 1.1, cx + rx * 0.92, cy + ry * 0.1);
+    g.quadraticCurveTo(cx + rx * 0.5, cy + ry * 0.5, cx + fo, cy + ry * 0.42); g.quadraticCurveTo(cx - rx * 0.5, cy + ry * 0.5, cx - rx * 0.92, cy + ry * 0.1); inked(g, L.hair, 4);
+    g.beginPath(); g.ellipse(cx + fo, cy + ry * 0.62, rx * 0.22, ry * 0.08, 0, 0, 6.283); g.fillStyle = "#3a1a20"; g.fill();
+  }
   if (kind === "victor" || kind === "boyle") { // glasses (Victor: round wire frames)
     if (kind === "victor") { g.strokeStyle = "#3a3a44"; g.lineWidth = 3.5; for (const sgn of [-1, 1]) { g.beginPath(); g.arc(cx + fo + sgn * sp, ey, rx * 0.27, 0, 6.283); g.stroke(); } g.beginPath(); g.moveTo(cx + fo - sp + rx * 0.27, ey); g.lineTo(cx + fo + sp - rx * 0.27, ey); g.stroke(); }
   }
@@ -516,6 +554,27 @@ function frontHair(g: Ctx, L: Look, kind: Kind, age: Age, cx: number, cy: number
     g.lineTo(cx + rx * 1.06, cy - ry * 0.1);
     for (let i = pts.length - 1; i >= 0; i--) g.lineTo(cx + pts[i] * rx * 0.85 + fo * 0.4, cy - ry * (i % 2 ? 0.45 : 0.62));
     g.closePath();
+  } else if (kind === "jinx") { // blunt blue bangs (child: short bob to the jaw)
+    g.moveTo(cx - rx * 1.08, cy + ry * (age === "child" ? 0.75 : 0.35));
+    g.bezierCurveTo(cx - rx * 1.15, cy - ry * 1.25, cx + rx * 1.15, cy - ry * 1.25, cx + rx * 1.08, cy + ry * (age === "child" ? 0.75 : 0.35));
+    g.lineTo(cx + rx * 0.82, cy + ry * 0.2); g.lineTo(cx + rx * 0.7, cy - ry * 0.45);
+    for (let k = 0; k <= 6; k++) { const t = k / 6; g.lineTo(cx + rx * (0.7 - 1.4 * t) + fo * 0.5, cy - ry * (k % 2 ? 0.42 : 0.52)); }
+    g.lineTo(cx - rx * 0.82, cy + ry * 0.2); g.closePath();
+  } else if (kind === "vi") { // short hair swept to one side, shaved side
+    g.moveTo(cx - rx * 1.04, cy - ry * 0.05);
+    g.bezierCurveTo(cx - rx * 1.1, cy - ry * 1.3, cx + rx * 1.2, cy - ry * 1.3, cx + rx * 1.08, cy + ry * 0.3);
+    g.quadraticCurveTo(cx + rx * 0.9, cy - ry * 0.3, cx + rx * 0.3 + fo, cy - ry * 0.6);
+    g.quadraticCurveTo(cx - rx * 0.4, cy - ry * 0.75, cx - rx * 0.9, cy - ry * 0.35); g.closePath();
+  } else if (kind === "vander") { // receding grey hair
+    g.moveTo(cx - rx * 1.02, cy - ry * 0.1); g.bezierCurveTo(cx - rx * 1.0, cy - ry * 1.0, cx - rx * 0.4, cy - ry * 1.12, cx + fo, cy - ry * 0.95);
+    g.bezierCurveTo(cx + rx * 0.4, cy - ry * 1.12, cx + rx * 1.0, cy - ry * 1.0, cx + rx * 1.02, cy - ry * 0.1); g.quadraticCurveTo(cx + rx * 0.7, cy - ry * 0.85, cx + fo, cy - ry * 0.88); g.quadraticCurveTo(cx - rx * 0.7, cy - ry * 0.85, cx - rx * 1.02, cy - ry * 0.1);
+  } else if (kind === "mylo") { // spiky short hair
+    g.moveTo(cx - rx * 1.04, cy - ry * 0.2);
+    [-1, -0.7, -0.4, -0.1, 0.2, 0.5, 0.8, 1.04].forEach((t, i) => g.lineTo(cx + t * rx, cy - ry * (i % 2 ? 1.3 : 1.0)));
+    g.lineTo(cx + rx * 1.04, cy - ry * 0.2); g.quadraticCurveTo(cx + fo, cy - ry * 0.7, cx - rx * 1.04, cy - ry * 0.2);
+  } else if (kind === "silco") { // slicked straight back
+    g.moveTo(cx - rx * 1.02, cy - ry * 0.3); g.bezierCurveTo(cx - rx * 1.05, cy - ry * 1.25, cx + rx * 1.05, cy - ry * 1.25, cx + rx * 1.02, cy - ry * 0.3);
+    g.quadraticCurveTo(cx + fo, cy - ry * 0.98, cx - rx * 1.02, cy - ry * 0.3);
   } else if (kind === "nora") { // soft swept fringe
     g.moveTo(cx - rx * 1.04, cy - ry * 0.05);
     g.bezierCurveTo(cx - rx * 1.12, cy - ry * 1.22, cx + rx * 1.12, cy - ry * 1.26, cx + rx * 1.06, cy - ry * 0.05);
