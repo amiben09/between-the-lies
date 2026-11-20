@@ -11,6 +11,7 @@ import { FreezeCharRefs } from "./episodes/freeze/CharRefs";
 import { FreezeStyleframes } from "./episodes/freeze/Styleframes";
 import { JinxCharRefs } from "./episodes/jinx/CharRefs";
 import { JinxStyleframes } from "./episodes/jinx/Styleframes";
+import { JinxEpisode, JINX_FRAMES } from "./episodes/jinx/Episode";
 import { ItachiEpisode, TOTAL_FRAMES as ITACHI_FRAMES } from "./episodes/itachi/Episode";
 import { TEST_FRAMES, TEST_W, TEST_H } from "./tests/streetSpec";
 import { SnapeEpisode } from "./episodes/snape/Episode";
@@ -40,6 +41,7 @@ export const Root: React.FC = () => (
     <Composition id="FreezeStyleframes" component={FreezeStyleframes} durationInFrames={6} fps={30} width={1080} height={1920} />
     <Composition id="JinxCharRefs" component={JinxCharRefs} durationInFrames={1} fps={30} width={1080} height={1920} />
     <Composition id="JinxStyleframes" component={JinxStyleframes} durationInFrames={6} fps={30} width={1080} height={1920} />
+    <Composition id="JinxPerfect" component={JinxEpisode} durationInFrames={JINX_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="ItachiNextTime" component={ItachiEpisode} durationInFrames={ITACHI_FRAMES} fps={30} width={1080} height={1920} />
   </>
 );

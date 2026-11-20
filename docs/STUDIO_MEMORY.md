@@ -120,3 +120,8 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
 - RX 590 benchmark (Test3D) on the user's Windows PC.
 - Captions style + ending-hold length decisions.
 - Acting system beyond IK (state machine, foot planting, 8-direction views), camera-director spec layer, QC v2 scorecard.
+
+
+## 8c. Perfect (Jinx) DONE — 2026-11-20
+- videos/between-the-lies/Perfect_Jinx.mp4 (73.63 s, 2209 f, QC APPROVED). Code: engine/src/episodes/jinx/, story/episodes/jinx-perfect/.
+- Lessons: the "candle" look is too dark for QC (black < 0.03 luma) — add ambientLight 1.2-1.6 + a warm pointLight; never let a scene end dark before the final 24-frame fade (QC checks luma > 0.05 two seconds after the last word); blast scenes need a constant crystal light so the pre-flash frames aren't black. Teen Jinx with nod>0 draws her bangs as a black bar over the eyes — keep nod 0.

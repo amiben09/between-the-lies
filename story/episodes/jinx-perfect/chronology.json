@@ -1,0 +1,183 @@
+{
+ "continuity": "Arcane Season 1 (2021); 'year' = Powder/Jinx's approximate age",
+ "structure": {
+  "hook": [
+   0
+  ],
+  "world": [
+   1
+  ],
+  "world_rules": [
+   2
+  ],
+  "characters": [
+   3,
+   4,
+   5
+  ],
+  "main_drama": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13
+  ],
+  "final_revelation": [
+   14,
+   15
+  ]
+ },
+ "lines": [
+  {
+   "line": 0,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    1,
+    2
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 1,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    3,
+    4
+   ],
+   "label": "CANON (world)"
+  },
+  {
+   "line": 2,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    5
+   ],
+   "label": "CANON (world)"
+  },
+  {
+   "line": 3,
+   "year": 8,
+   "frame_device": false,
+   "claims": [
+    6
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 4,
+   "year": 8,
+   "frame_device": false,
+   "claims": [
+    7,
+    8
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 5,
+   "year": 8,
+   "frame_device": false,
+   "claims": [
+    9
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 6,
+   "year": 9,
+   "frame_device": false,
+   "claims": [
+    10
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 7,
+   "year": 9,
+   "frame_device": false,
+   "claims": [
+    11
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 8,
+   "year": 9,
+   "frame_device": false,
+   "claims": [
+    12
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 9,
+   "year": 9,
+   "frame_device": false,
+   "claims": [
+    13
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 10,
+   "year": 9,
+   "frame_device": false,
+   "claims": [
+    14
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 11,
+   "year": 12,
+   "frame_device": false,
+   "claims": [
+    15
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 12,
+   "year": 18,
+   "frame_device": false,
+   "claims": [
+    16,
+    17
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 13,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    18
+   ],
+   "label": "CHANNEL JUDGEMENT"
+  },
+  {
+   "line": 14,
+   "year": 18,
+   "frame_device": false,
+   "claims": [
+    19
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 15,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    20
+   ],
+   "label": "CHANNEL JUDGEMENT"
+  }
+ ]
+}
