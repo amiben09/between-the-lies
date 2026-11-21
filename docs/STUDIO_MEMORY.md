@@ -125,3 +125,9 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
 ## 8c. Perfect (Jinx) DONE — 2026-11-20
 - videos/between-the-lies/Perfect_Jinx.mp4 (73.63 s, 2209 f, QC APPROVED). Code: engine/src/episodes/jinx/, story/episodes/jinx-perfect/.
 - Lessons: the "candle" look is too dark for QC (black < 0.03 luma) — add ambientLight 1.2-1.6 + a warm pointLight; never let a scene end dark before the final 24-frame fade (QC checks luma > 0.05 two seconds after the last word); blast scenes need a constant crystal light so the pre-flash frames aren't black. Teen Jinx with nod>0 draws her bangs as a black bar over the eyes — keep nod 0.
+
+- **Ink + Wash / Dreamcore version** (user picked style "3" = Ink + Wash, and asked for backrooms/dreamcore background music): videos/between-the-lies/Perfect_Jinx_InkWash_Dreamcore.mp4 (QC APPROVED).
+  Pipeline: render caption-less plates (`BTL_PROPS='{"plate":true}'` with render_beats.py; Episode hides <Captions/> when inputProps.plate) →
+  `engine/tools/ink_episode.py plates.mp4 captioned_final.mp4 out.mp4 wash 4` (ink.py per frame; captions copied back untouched from the captioned render) →
+  `engine/audio-lib/score_dreamcore.py <audio_dir> <beats.json> <out>` (fluorescent hum, slowed detuned music-box lullaby with tape wow, muffled mall e-piano, party-through-the-wall thump, 6 s reverb wash, tape-stop ending; music -16 dB under voice) → finish_episode.sh → QC.
+  ink.py lessons: edges on sqrt(image) so dark-on-dark coats get outlines; shadows keep a deep tint of their own colour (not flat black); white rim lines in solid-ink zones.

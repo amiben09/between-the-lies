@@ -1,6 +1,6 @@
 // "Perfect" (Jinx, Arcane S1) — full episode. 31 beats keyed to beats.json (times from the real voice).
 import React, { useMemo } from "react";
-import { AbsoluteFill, Sequence, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Sequence, getInputProps, useCurrentFrame } from "remotion";
 import * as THREE from "three";
 import { CanvasFrame } from "../../btl/CanvasFrame";
 import { Cam, Ctx, H, W, clamp, glide, lerp, makeCanvas, particles, radGrad, ramp, rng } from "../../btl/core";
@@ -252,6 +252,6 @@ export const JinxEpisode: React.FC = () => {
     {beats.map((b, i) => { const from = fr(b.start_s), d = fr(b.end_s) - from;
       return <Sequence key={b.id} from={from} durationInFrames={d} layout="none"><AbsoluteFill><BeatScene i={i} from={from} d={d} /></AbsoluteFill></Sequence>; })}
     <AbsoluteFill style={{ mixBlendMode: "overlay", opacity: 0.06 }}><Grain /></AbsoluteFill>
-    <Captions />
+    {(getInputProps() as { plate?: boolean }).plate ? null : <Captions />}
   </AbsoluteFill>;
 };

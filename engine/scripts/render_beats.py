@@ -14,7 +14,7 @@ for a, e in segs:
     for t in range(4):
         t0 = time.time()
         r = subprocess.run(["npx", "remotion", "render", bundle, comp, f + ".tmp.mp4", f"--frames={a}-{e}", "--codec", "h264", "--crf", "17",
-                            f"--concurrency={cc if t < 2 else 1}", "--gl=" + os.environ.get("BTL_GL", "angle"), "--log=error", "--timeout=240000"], capture_output=True, text=True)
+                            f"--concurrency={cc if t < 2 else 1}", "--gl=" + os.environ.get("BTL_GL", "angle"), "--log=error", "--timeout=240000"] + ([f"--props={os.environ['BTL_PROPS']}"] if os.environ.get("BTL_PROPS") else []), capture_output=True, text=True)
         if r.returncode == 0 and os.path.exists(f + ".tmp.mp4"): os.rename(f + ".tmp.mp4", f); print(f"chunk {a}-{e} {time.time() - t0:.0f}s", flush=True); break
         print(f"retry {a}-{e} try {t + 1}: {(r.stderr or r.stdout).strip().splitlines()[:1]}", flush=True); subprocess.run(["pkill", "-f", "chrome-headless"])
     else: print(f"FAILED {a}-{e}", flush=True)
