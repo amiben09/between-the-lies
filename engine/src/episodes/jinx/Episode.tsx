@@ -11,6 +11,9 @@ import { CARD_LIGHT, Look, Stage } from "../itachi/stage";
 import { BlastSite, Hideout, MonkeyBomb, RocketRoof, SilcoOffice, TableHall, VerticalCity, ZaunStreet } from "./sets";
 import BEATS from "./beats.json";
 import CAPS from "./captions.json";
+import { CaptionBox, Cap } from "../../btl/captions";
+import { CAPTION, GRADE, LIGHTS } from "./look";
+const { SMOKE, WARM, CANDLE, GREEN } = LIGHTS;
 
 const FPS = 30; const fr = (s: number) => Math.round(s * FPS);
 type P3 = [number, number, number];
@@ -19,10 +22,6 @@ const mv = (a: P3, b: P3, p: number) => { const k = glide(p); return V(lerp(a[0]
 const lerpArm = (a: Arm, b: Arm, k: number): Arm => [lerp(a[0], b[0], k), lerp(a[1], b[1], k)];
 const ON: Cam = { x: 0, y: 0, zoom: 1 };
 const L2 = (l: Look) => CARD_LIGHT[l];
-const SMOKE: Light = { x: 900, y: 600, r: 1900, key: "#ffa860", shade: "#0a140e", keyA: 0.3, shadeA: 0.5 };
-const WARM: Light = { x: 700, y: 200, r: 1900, key: "#ffc070", shade: "#2a1a14", keyA: 0.3, shadeA: 0.35 };
-const CANDLE: Light = { x: 540, y: 1500, r: 1500, key: "#ffa050", shade: "#08040a", keyA: 0.38, shadeA: 0.6 };
-const GREEN: Light = { x: 540, y: 300, r: 1800, key: "#8aff9a", shade: "#06100a", keyA: 0.25, shadeA: 0.55 };
 const Over: React.FC<{ draw: (g: Ctx) => void }> = ({ draw }) => <CanvasFrame draw={(g) => draw(g)} />;
 const CLAG: Partial<Pose> = { coat: "#6a5a3a", coatHi: "#8a7a54", robe: false, trim: null };
 const THUG: Partial<Pose> = { coat: "#2a2a2a", coatHi: "#444", robe: false, trim: null, brow: -0.6, mouth: -0.3 };
@@ -232,15 +231,7 @@ const SCENES: React.FC<BP>[] = [B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B1
 type Beat = { id: number; start_s: number; end_s: number };
 const BeatScene: React.FC<{ i: number; from: number; d: number }> = ({ i, from, d }) => { const t = useCurrentFrame(); const S = SCENES[i]; return <S t={t} d={d} p={clamp(t / Math.max(1, d - 1))} f={from + t} />; };
 
-type Cap = { text: string; s: number; e: number; hl: number[] };
-const Captions: React.FC = () => {
-  const t = useCurrentFrame() / 30; const c = (CAPS as Cap[]).find((x) => t >= x.s - 0.04 && t < x.e); if (!c) return null;
-  const k = Math.min(1, (t - c.s + 0.04) / 0.1);
-  return <div style={{ position: "absolute", left: 56, right: 120, top: 1330, display: "flex", justifyContent: "center", opacity: k, transform: `translateY(${(1 - k) * 8}px)` }}>
-    <div style={{ background: "rgba(8,6,12,0.62)", borderRadius: 22, padding: "14px 30px 18px", boxShadow: "0 0 0 2px rgba(255,255,255,0.06), 0 10px 40px rgba(0,0,0,0.55)", fontFamily: "'DejaVu Sans', 'Helvetica Neue', Arial, sans-serif", fontWeight: 800, fontSize: 58, lineHeight: 1.2, color: "#fbf7ef", textAlign: "center", textWrap: "balance", maxWidth: 860, textShadow: "0 2px 0 #000, 2px 0 0 #000, -2px 0 0 #000, 0 -2px 0 #000, 0 0 12px rgba(0,0,0,0.9)" }}>
-      {c.text.split(" ").map((w, i) => <span key={i} style={{ color: c.hl.includes(i) ? "#ff7ac0" : undefined }}>{w.replace(/-/g, "‑")}{" "}</span>)}
-    </div></div>;
-};
+const Captions: React.FC = () => <CaptionBox caps={CAPS as Cap[]} look={CAPTION} />;
 const grainTiles = (() => { let t: HTMLCanvasElement[] | null = null; return () => t ??= [0, 1, 2, 3].map((k) => { const [c, g] = makeCanvas(256, 256); const im = g.createImageData(256, 256); const r = rng(k * 99 + 7); for (let i = 0; i < im.data.length; i += 4) { const v = 128 + (r() - 0.5) * 255; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; } g.putImageData(im, 0, 0); return c; }); })();
 const Grain: React.FC = () => <CanvasFrame draw={(g, f) => { g.fillStyle = g.createPattern(grainTiles()[f % 4], "repeat")!; g.fillRect(0, 0, W, H); }} />;
 void radGrad; void useMemo;
@@ -251,7 +242,7 @@ export const JinxEpisode: React.FC = () => {
   return <AbsoluteFill style={{ background: "#000" }}>
     {beats.map((b, i) => { const from = fr(b.start_s), d = fr(b.end_s) - from;
       return <Sequence key={b.id} from={from} durationInFrames={d} layout="none"><AbsoluteFill><BeatScene i={i} from={from} d={d} /></AbsoluteFill></Sequence>; })}
-    <AbsoluteFill style={{ mixBlendMode: "overlay", opacity: 0.06 }}><Grain /></AbsoluteFill>
+    <AbsoluteFill style={{ mixBlendMode: "overlay", opacity: GRADE.grainOpacity }}><Grain /></AbsoluteFill>
     {(getInputProps() as { plate?: boolean }).plate ? null : <Captions />}
   </AbsoluteFill>;
 };
