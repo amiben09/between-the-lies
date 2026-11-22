@@ -131,6 +131,15 @@ black/broken frames, severe flicker, clipping or sync problems.
 7. Full render → mux → QC gate `python3 engine/scripts/check_episode.py …` — exit 1 = REJECTED, never deliver.
 Payoff rule: ≥ 4 s of picture after the last spoken word. Every shot must keep moving (camera `glide`, breathing, saccades).
 
+## Motion grammar (adopted 22 Nov 2026 — see docs/CODE_ANIMATION_GUIDE_REVIEW_2026-11-22.md)
+- No linear motion for position/scale/rotation: use `smooth`/`glide`/`ramp` (btl/core.ts) or Remotion `Easing`/`spring` with clamp.
+- Every overlay entrance (caption plate, insert, label, title) animates 2-3 properties: opacity + travel + scale 0.94→1 or blur→sharp.
+- Stagger sibling elements 3-6 frames; exits ~30-40 % faster than entrances; hard cuts only on a story or music hit.
+- Timing derived from FPS in new code (`Math.round(0.4 * FPS)`), or from words/lines.json — never magic frame numbers.
+- Per-episode look module (`engine/src/episodes/<ep>/look.ts`): palette, lights, caption style. No new inline hex in beat code.
+- Before delivery, besides the contact sheet: inspect 5-8 chosen full-size frames per 60 s (hook, peak action, densest
+  caption, mid-transition, payoff) for clipped text, caption collisions, framing and contrast; fix → re-render → re-inspect.
+
 ## Commands (run from `engine/`)
 - Studio preview: `npm run studio`
 - Typecheck: `npm run typecheck`

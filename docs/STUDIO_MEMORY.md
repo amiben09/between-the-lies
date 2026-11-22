@@ -131,3 +131,8 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
   `engine/tools/ink_episode.py plates.mp4 captioned_final.mp4 out.mp4 wash 4` (ink.py per frame; captions copied back untouched from the captioned render) →
   `engine/audio-lib/score_dreamcore.py <audio_dir> <beats.json> <out>` (fluorescent hum, slowed detuned music-box lullaby with tape wow, muffled mall e-piano, party-through-the-wall thump, 6 s reverb wash, tape-stop ending; music -16 dB under voice) → finish_episode.sh → QC.
   ink.py lessons: edges on sqrt(image) so dark-on-dark coats get outlines; shadows keep a deep tint of their own colour (not flat black); white rim lines in solid-ink zones.
+
+## 10. 22 Nov 2026 — external guide review
+User shared a guide on code-driven animation (Remotion/HyperFrames/Manim, motion rules, frame QA). Review:
+`docs/CODE_ANIMATION_GUIDE_REVIEW_2026-11-22.md`. Most of it was already our pipeline; the missing motion-grammar rules
+(multi-property entrances, stagger, faster exits, FPS timing, per-episode look.ts, targeted frame inspection) are now in CLAUDE.md.
