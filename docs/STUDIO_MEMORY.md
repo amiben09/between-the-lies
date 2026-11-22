@@ -136,3 +136,12 @@ continue. `CLAUDE.md` holds the rules; this file holds the history and the hard-
 User shared a guide on code-driven animation (Remotion/HyperFrames/Manim, motion rules, frame QA). Review:
 `docs/CODE_ANIMATION_GUIDE_REVIEW_2026-11-22.md`. Most of it was already our pipeline; the missing motion-grammar rules
 (multi-property entrances, stagger, faster exits, FPS timing, per-episode look.ts, targeted frame inspection) are now in CLAUDE.md.
+
+## 11. 22 Nov 2026 — motion-grammar captions (CaptionBox) + look.ts
+- `engine/src/btl/captions.tsx` = shared caption box for all future episodes (entrance: fade+rise+scale+blur, words ripple
+  1 frame apart, highlight word turns accent + pops WHEN SPOKEN, exit 33 % faster and never overlapping the next caption).
+  `engine/src/episodes/jinx/look.ts` = first per-episode look file (palette, card lights, caption style, grade); Jinx uses both.
+- Demo: `videos/demos/Demo_Captions_*.mp4` (Jinx 0-5 s, before/after, slow-mo) + the frame-QA defects in `videos/demos/qa/`.
+- Frame-QA lessons: inline-block words with the space inside break `text-wrap: balance`; a 3-frame word stagger leaves an
+  empty 2-line plate (use 1 frame inside one caption); highlight pop > 8 % collides with neighbours.
+- Jinx beat 2 (SilcoOffice + blur overlay) crashes Chromium at concurrency 3 here → render it at `--concurrency 1`.

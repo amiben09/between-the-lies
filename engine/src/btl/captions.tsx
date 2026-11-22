@@ -48,7 +48,7 @@ export const CaptionBox: React.FC<{ caps: Cap[]; look: CaptionLook }> = ({ caps,
         {words.map((w, j) => { const d = Math.min(j * stg, cap), k = easeOutExpo((local - d) / wd), hl = c.hl.includes(j);
           // highlight fires when the word is SPOKEN (estimated by character position inside the caption's time span)
           const said = Math.round(((c.s + (c.e - c.s) * (words.slice(0, j).join(" ").length / c.text.length)) - c.s + m.lead) * fps);
-          const lit = hl ? c01((local - said) / 3) : 0;
+          const lit = hl && local >= said ? 1 : 0; // colour and pop on the same frame (QA: 2-frame lag)
           const pk = hl && local >= said ? 1 - spring({ frame: local - said, fps, config: { damping: 10, mass: 0.5 } }) : 0, pop = 1 + 0.08 * pk; // ≤ 8 %: more collides with neighbours (QA)
           // the space stays OUTSIDE the inline-block so text-wrap: balance still sees normal word breaks
           return <React.Fragment key={j}><span style={{ display: "inline-block", opacity: k, color: lit > 0.5 ? look.accent : undefined,
