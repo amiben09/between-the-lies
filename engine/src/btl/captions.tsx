@@ -24,10 +24,11 @@ export function captionState(caps: Cap[], i: number, f: number, fps: number) {
   const m = CAPTION_MOTION, c = caps[i], next = caps[i + 1];
   const s = Math.round((c.s - m.lead) * fps), e = Math.round(c.e * fps);
   const enter = Math.round(m.enter * fps), exit = Math.round(m.exit * fps);
-  const gapToNext = next ? Math.round((next.s - m.lead) * fps) - e : Infinity;
-  // exit after the last word when there is room, otherwise end exactly on it; never eat into the entrance
-  const x0 = gapToNext >= exit ? e : Math.max(s + enter, e - exit);
-  const x1 = x0 + exit;
+  const nextS = next ? Math.round((next.s - m.lead) * fps) : Infinity;
+  // exit after the last word when there is room; otherwise finish BEFORE the next caption's first frame
+  // (QA 23 Nov: ending "on" the last word still overlapped the next caption by its 1-frame lead)
+  const x1 = Math.min(nextS - e >= exit ? e + exit : nextS, Infinity);
+  const x0 = Math.max(s + enter, x1 - exit);
   if (f < s || f >= x1) return null;
   const kin = easeOutExpo((f - s) / enter), kout = easeInCubic((f - x0) / exit);
   return { local: f - s, kin, kout };
