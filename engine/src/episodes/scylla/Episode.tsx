@@ -132,8 +132,8 @@ const B10: React.FC<BP> = ({ p, f, t }) => { const laugh = ramp(t, 4, 18);
     <Backdrop mood="dawn" z={-90} y={12} /><Ocean f={f} color="#4a7aa0" amp={0.18} /><Beach />
   </Stage>; };
 const B11: React.FC<BP> = ({ p, f, t }) => <AbsoluteFill><CanvasFrame draw={(g) => {
-  sky(g, [[0, "#140a08"], [1, "#2a1408"]]); const c: Cam = { x: 0, y: 0, zoom: 1 + 0.12 * glide(p) };
-  g.fillStyle = radGrad(g, 300, 1700, 0, 1000, [[0, "rgba(255,150,60,0.55)"], [1, "rgba(0,0,0,0)"]]); g.fillRect(0, 0, W, H);
+  sky(g, [[0, "#140a08"], [1, "#2a1408"]]); const c: Cam = { x: -40 * glide(p), y: 0, zoom: 1 + 0.22 * glide(p) }; const fl = 0.55 + 0.25 * Math.sin(f * 0.9) + 0.12 * Math.sin(f * 2.3); // firelight flicker (QC frozen-frame gate)
+  g.fillStyle = radGrad(g, 300, 1700, 0, 1000, [[0, `rgba(255,150,60,${fl})`], [1, "rgba(0,0,0,0)"]]); g.fillRect(0, 0, W, H);
   P("glaucos", "adult", { x: 360, y: 900 + 1000 * 2.4, s: 2.4, headOnly: true, facing: 0.3, eye: 0.05, mouth: 0.15, tilt: 18, still: true, breathe: f }, { ...LIGHTS.SUNSET, x: 300, y: 1800 }, g, c);
   // the cup and the drip of sap from her fingers
   g.save(); g.translate((760 - 540) * (c.zoom - 1), 0); g.fillStyle = "#a8683a"; g.strokeStyle = "#1c121c"; g.lineWidth = 6; g.beginPath(); g.moveTo(680, 1350); g.lineTo(860, 1350); g.lineTo(830, 1560); g.lineTo(710, 1560); g.closePath(); g.fill(); g.stroke();
@@ -188,8 +188,8 @@ const B17: React.FC<BP> = ({ p, f, t }) => { const pour = ramp(t, 0, 20);
     <Backdrop mood="night" z={-90} y={14} /><Ocean f={f} color="#1a3048" y={-0.3} /><Cove f={f} pool="#0a1418" glow={0.25} />
   </Stage>; };
 const B18: React.FC<BP> = ({ p, f, t }) => <AbsoluteFill><CanvasFrame draw={(g) => {
-  sky(g, [[0, "#06080e"], [1, "#100a06"]]); const c: Cam = { x: -25 * glide(p), y: 0, zoom: 1 + 0.14 * glide(p) };
-  g.fillStyle = radGrad(g, 540, 1900, 0, 1300, [[0, "rgba(255,200,80,0.5)"], [1, "rgba(0,0,0,0)"]]); g.fillRect(0, 0, W, H);
+  sky(g, [[0, "#0e1018"], [1, "#1a120a"]]); const c: Cam = { x: -60 * glide(p), y: 20 * glide(p), zoom: 1 + 0.26 * glide(p) }; const gl = 0.5 + 0.2 * Math.sin(f * 0.35) + 0.08 * Math.sin(f * 1.7); // the sap glow pulses (QC)
+  g.fillStyle = radGrad(g, 540, 1900, 0, 1300, [[0, `rgba(255,200,80,${gl})`], [1, "rgba(0,0,0,0)"]]); g.fillRect(0, 0, W, H);
   P("circe", "teen", { x: 540, y: 620 + 880 * 2.6, s: 2.6, headOnly: true, facing: 0.05, look: [0, 0.6], eye: 0.8, brow: lerp(0.5, -0.3, ramp(t, 20, 70)), mouth: -0.4, tear: 0.8, breathe: f, blink: blink(f, 18) }, LIGHTS.SAP, g, c);
   particles(g, f, "sparks", 18, 25, "rgba(255,220,120,0.7)", 1.1); darkVig(g, 0.7); }} /></AbsoluteFill>;
 
@@ -200,7 +200,7 @@ const B19: React.FC<BP> = ({ p, f, t }) => { const cam = mv([0, 1.4, 3.6], [0, 1
     <CardActor kind="scylla" age="teen" at={[0, 0.15, -4]} heightM={1.65} camPos={cam} light={LIGHTS.DAWN} pose={{ facing: 0, look: [0, -0.3], eye: 1.2, brow: 0.9, mouth: -0.5, open: 0.5 * boil, tremble: boil, breathe: f * 2, armL: [-120, -30], armR: [120, 30], kneel: 0.3 * boil }} />
   </Stage>; };
 const B20: React.FC<BP> = ({ p, f, t }) => <Stage look="storm" cam={V(0, 0.6, 4)} target={V(0, 3, -6)} fov={50} blur={10} vignette={0.65} tint="#3a5a5a" flash={(1 - ramp(t, 0, 8)) * 0.4}
-  overlay={<Over draw={(g) => { scylla(g, { x: 0, y: -30 * p, zoom: 1 + 0.1 * glide(p) }, 540, 1640, 1.05, f, LIGHTS.STORM, { rise: clamp(0.25 + ramp(t, 0, 24) * 0.8), fear: 1, lunge: ramp(t, 20, 40) * 0.5, lungeHead: 2 }); particles(g, f, "rain", 5, 120, "rgba(200,230,240,0.6)"); }} />}>
+  overlay={<Over draw={(g) => { scylla(g, { x: 0, y: -30 * p, zoom: 1 + 0.1 * glide(p) }, 540, 1400, 1.0, f, LIGHTS.STORM, { rise: clamp(0.25 + ramp(t, 0, 24) * 0.8), fear: 1, lunge: ramp(t, 20, 40) * 0.5, lungeHead: 2 }); particles(g, f, "rain", 5, 120, "rgba(200,230,240,0.6)"); }} />}>
   <Backdrop mood="night" z={-90} y={14} /><Ocean f={f} storm={0.6} color="#1a3a48" y={-0.3} /><Cove f={f} pool="#2a5a4a" boil={1} /><Cliff pos={[-8, -1, -14]} r={6} h={12} seed={2} color="#4a4440" />
 </Stage>;
 const B21: React.FC<BP> = ({ p, f }) => <AbsoluteFill><CanvasFrame draw={(g) => {

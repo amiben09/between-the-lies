@@ -161,3 +161,18 @@ User shared a guide on code-driven animation (Remotion/HyperFrames/Manim, motion
   give close-ups ≥ 0.12 zoom or a lateral drift; (6) blurred-set + 2D overlay beats crash Chromium at 2 tabs sometimes —
   render_beats retries at 1 tab automatically; (7) Kokoro venv needs Python ≤ 3.12 (`uv venv -p /usr/bin/python3.12`), plus scipy for scores.
 - Open: "pride had blinded him" wording unverified (paraphrased) — check against the film before publishing.
+
+## 13. The Monster She Made (Scylla, from Madeline Miller's novel *Circe*) — DONE 23 Nov 2026
+- New channel direction (user, 23 Nov): NOVELS with no screen adaptation → our own imagined visual version; screening file
+  `story/concepts/2026-11-23_novel_concepts.md` (adaptation status checked by search). First one: Circe → Scylla.
+- Final: `videos/between-the-lies/The_Monster_She_Made_Scylla.mp4` (68.83 s, QC APPROVED, -14.2 LUFS / -1.0 dBTP).
+- NEW: rig kinds circe (teen = young, adult = old, grey + plum shawl), glaucos, seagod, scylla; `HAIR` map lets new kinds reuse
+  existing hair designs; `btl/myth.ts` scylla() = six animated necks + her own torso/face + `stone` 0..1 from the base up;
+  sea kit `three/sea.tsx` (Ocean with per-frame waves, Cliff, Cove pool with glow/boil, Beach, Ship, IslandHouse, CloudHalls).
+  align.py homophones: Whisper writes "Circe" as "cersei".
+- Lessons: (1) a script with many short words runs fast — measure WPM on the real voice; Kokoro speed 1.22 gave 200 WPM here;
+  (2) Whisper drops "a" before a name ("where a Titan's") and a word after a sibilant ("gifts. That") → rephrase / add {0.2};
+  (3) far-away actors/creatures on cliffs read as specks in 9:16 — keep cards ≤ ~4 m off-axis and ppm ~105;
+  (4) dark close-ups fail the frozen-frame gate even with a push → add flicker/pulse of light + ≥ 0.2 zoom;
+  (5) EVERY blurred-set + 2D overlay beat crashes Chromium at 2 tabs (6 beats here) → consider rendering those beats at
+  concurrency 1 directly; (6) check the caption band (y 1330-1500) against faces in key frames.
