@@ -88,7 +88,7 @@ const B4: React.FC<BP> = ({ p, f }) => <Stage look="dawn" cam={mv([2, 1.8, -24],
 const B5: React.FC<BP> = ({ p, f }) => <Stage look="interior" cam={mv([0, 0.9, 1], [0, 1.8, -4], p)} target={mv([0, 4, -12], [0, 7, -12], p)} fov={46} vignette={0.6} tint="#a87040">
   <ScrollHall f={f} shafts={1.2} /><Motes f={f} n={70} box={[[-3, 0.5, -11], [3, 7, -2]]} color="#ffe0b0" size={0.04} rise={0.01} /></Stage>;
 const B6: React.FC<BP> = ({ p, f, t }) => <AbsoluteFill><CanvasFrame draw={(g) => {
-  g.fillStyle = "#050306"; g.fillRect(0, 0, W, H); const k = ramp(t, 0, 40), z = 1 + 0.08 * glide(p);
+  g.fillStyle = "#050306"; g.fillRect(0, 0, W, H); const k = 0.4 + 0.6 * ramp(t, 0, 40), z = 1 + 0.08 * glide(p); // never starts black (QC)
   g.fillStyle = radGrad(g, 540, 1050, 0, 300 + 900 * k, [[0, `rgba(255,226,150,${0.95 * k})`], [0.35, `rgba(232,170,70,${0.55 * k})`], [1, "rgba(0,0,0,0)"]]); g.fillRect(0, 0, W, H);
   for (let i = 0; i < 14; i++) { const a = i / 14 * 6.283 + t * 0.004; g.strokeStyle = `rgba(255,220,140,${0.08 * k})`; g.lineWidth = 30; g.beginPath(); g.moveTo(540, 1050); g.lineTo(540 + Math.cos(a) * 1600, 1050 + Math.sin(a) * 1600); g.stroke(); }
   silhouette(g, "tailung", "adult", { x: 540, y: 1560, s: 1.0 * z, facing: 0, still: true, armL: [25, 10], armR: [-25, -10], breathe: f }, "#120a06", ramp(t, 25, 60));
@@ -151,7 +151,7 @@ const B13: React.FC<BP> = ({ p, f, t, d }) => { const half = t < d * 0.45, k = h
   return <AbsoluteFill><CanvasFrame draw={(g) => {
     g.fillStyle = linGrad(g, 0, 0, 0, H, [[0, "#1a0c18"], [1, "#2a1426"]]); g.fillRect(0, 0, W, H);
     g.fillStyle = radGrad(g, 260, 300, 0, 1500, [[0, "rgba(170,140,210,0.35)"], [1, "rgba(0,0,0,0)"]]); g.fillRect(0, 0, W, H);
-    const c: Cam = { x: 0, y: 0, zoom: 1 + 0.05 * k };
+    const c: Cam = { x: (half ? 1 : -1) * 30 * k, y: 0, zoom: 1 + 0.14 * k }; // stronger push (QC frozen-frame gate)
     if (half) P("oogway", "adult", { x: 540, y: 980 + 760 * 2.6, s: 2.6, headOnly: true, facing: 0.1, look: [0.2, 0.1], eye: lerp(0.65, 0.32, k), mouth: lerp(0, -0.25, k), brow: lerp(0, -0.4, k), still: true, breathe: f }, LIGHTS.HALL, g, c);
     else P("tailung", "teen", { x: 540, y: 820 + 960 * 2.4, s: 2.4, headOnly: true, facing: -0.15, look: [-0.2, -0.2], eye: lerp(1.15, 1.2, k), mouth: lerp(0.4, -0.45, k), brow: lerp(0.1, 0.85, k), open: 0.1 * k, still: true, breathe: f }, LIGHTS.HALL, g, c);
     particles(g, f, "dust", 13, 20, "rgba(210,190,240,0.5)"); darkVig(g, 0.75); }} /></AbsoluteFill>; };
@@ -181,7 +181,7 @@ const B16: React.FC<BP> = ({ p, f, t }) => { const lower = ramp(t, 16, 44);
     {[[-5, -4], [5, -6], [-6, -12]].map(([x, z], i) => <ValleyHouse key={i} pos={[x, 0, z]} rotY={x > 0 ? -Math.PI / 2 : Math.PI / 2} seed={i + 9} />)}
     {[[-5, 4.2, -4], [5, 4.2, -6]].map((q, i) => <Flame key={i} pos={q as P3} f={f} s={2.2} light={4} seed={i * 5} smoke />)}
   </Stage>; };
-const B17: React.FC<BP> = ({ p, f, t, d }) => { const cam = mv([3, 1.4, 1], [2.8, 1.5, 0.6], p); const touch = ramp(t, 0, 10), fall = ramp(t, 10, 26), black = ramp(t, d - 8, d);
+const B17: React.FC<BP> = ({ p, f, t, d }) => { const cam = mv([3, 1.4, 1], [2.8, 1.5, 0.6], p); const touch = ramp(t, 0, 10), fall = ramp(t, 10, 26), black = 0.82 * ramp(t, d - 8, d); // deep dark, never pure black outside the final fade (QC)
   return <AbsoluteFill><Stage look="night" cam={cam} target={V(-0.2, 1.2, -4)} fov={44} vignette={0.7} tint="#2a3a6a"><Courtyard f={f} dusk={false} />
     <Flame pos={[-4, 0.2, -6]} f={f} s={1.2 * (1 - fall * 0.7)} light={2} seed={3} />
     <CardActor kind="oogway" age="adult" at={[-1.1, 0, -4]} heightM={1.5} camPos={cam} light={CARD_NIGHT} pose={{ facing: 0.6, look: [0.7, -0.3], eye: 0.6, mouth: 0, breathe: f * 0.5, armR: la([-10, -10], [70, 10], touch), handR: "point", armL: [20, 40] }} />
@@ -195,10 +195,10 @@ const B18: React.FC<BP> = ({ p, f, t }) => { const a = lerp(-0.5, 0.35, glide(p)
     <Motes f={f} n={40} box={[[-5, 0.5, -5], [5, 6, 4]]} color="#a8c0d8" size={0.04} />
   </Stage>; void t; };
 const B19: React.FC<BP> = ({ p, f, t }) => <AbsoluteFill><CanvasFrame draw={(g) => {
-  g.fillStyle = "#04070c"; g.fillRect(0, 0, W, H); const c: Cam = { x: 0, y: 0, zoom: 1 + 0.06 * glide(p) };
-  P("tailung", "adult", { x: 540, y: 700 + 1100 * 4.2, s: 4.2, headOnly: true, facing: 0.05, look: [0.05, 0.05], eye: 0.75, brow: -0.85, mouth: -0.5, still: true, breathe: f }, LIGHTS.PRISON, g, c);
+  g.fillStyle = "#04070c"; g.fillRect(0, 0, W, H); const c: Cam = { x: 0, y: 0, zoom: 1 + 0.2 * glide(p) };
+  P("tailung", "adult", { x: 540, y: 700 + 1100 * 4.2, s: 4.2, headOnly: true, facing: 0.05 + 0.08 * Math.sin(t * 0.2), look: [0.05 + 0.3 * Math.sin(t * 0.17), 0.05], eye: 0.75, brow: -0.85, mouth: -0.5, breathe: f }, LIGHTS.PRISON, g, c);
   g.fillStyle = "rgba(4,7,12,0.55)"; g.fillRect(0, 0, W, H); g.fillStyle = radGrad(g, 540, 820, 60, 520, [[0, "rgba(0,0,0,0)"], [1, "rgba(4,7,12,0.92)"]]); g.fillRect(0, 0, W, H);
-  const br = 0.5 + 0.5 * Math.sin(t * 0.25); g.fillStyle = `rgba(200,220,240,${0.12 * br})`; for (let i = 0; i < 6; i++) { g.beginPath(); g.ellipse(540 + (i - 2.5) * 40, 1380 + Math.sin(t * 0.1 + i) * 30 - br * 60, 90, 40, 0, 0, 6.283); g.fill(); } }} /></AbsoluteFill>;
+  const br = 0.5 + 0.5 * Math.sin(t * 0.25); g.fillStyle = `rgba(200,220,240,${0.22 * br})`; for (let i = 0; i < 6; i++) { g.beginPath(); g.ellipse(540 + (i - 2.5) * 40, 1380 + Math.sin(t * 0.1 + i) * 30 - br * 60, 90, 40, 0, 0, 6.283); g.fill(); } }} /></AbsoluteFill>;
 
 // ======================= TRANSFORMATION =======================
 const B20: React.FC<BP> = ({ p, f, t }) => { const k = 0.35 * p + 0.65 * p * p; const cam = V(0.2, 1.6, 3 - 9 * k); const flash = ramp(t, 0, 4) * (1 - ramp(t, 4, 14));

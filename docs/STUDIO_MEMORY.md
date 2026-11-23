@@ -145,3 +145,19 @@ User shared a guide on code-driven animation (Remotion/HyperFrames/Manim, motion
 - Frame-QA lessons: inline-block words with the space inside break `text-wrap: balance`; a 3-frame word stagger leaves an
   empty 2-line plate (use 1 frame inside one caption); highlight pop > 8 % collides with neighbours.
 - Jinx beat 2 (SilcoOffice + blur overlay) crashes Chromium at concurrency 3 here → render it at `--concurrency 1`.
+
+## 12. The Scroll That Was Always Empty (Tai Lung, Kung Fu Panda 2008) — DONE 23 Nov 2026
+- Final: `videos/between-the-lies/The_Empty_Scroll_TaiLung.mp4` (68.47 s, 2054 f, QC gate APPROVED, -14.2 LUFS / -1.3 dBTP).
+  Story files + QC report + contact sheet in `story/episodes/tailung-empty-scroll/`; code `engine/src/episodes/tailung/`.
+- Chosen from the 10 concepts screened with the new W/C/A fit checks (after the user judged Jinx too complex to explain).
+- NEW: animal characters in the rig (`tailung`, `shifu`, `oogway` in people.ts: `beastHead`, tails, shell, kung-fu trousers,
+  back-of-head view); `BEAST()`, `figH()`; CardActor uses real drawn height for animals only (humans unchanged).
+  NEW: valley set kit `engine/src/three/valley.tsx` (Roof, PalaceHall, Stairs, Mountain, PeachTree, ValleyHouse, ScrollHall,
+  ScrollCase, PrisonCavern). Score `engine/audio-lib/score_tailung.py` (guzheng/dizi/drums; music -19 dB under voice).
+- Lessons: (1) a lying/rotated character overflows its 1080-wide card → use kneel+slump or pass `x` in the pose;
+  (2) vertical 9:16 again: horizontal FOV ±1.2 m at ~4 m — keep both actors within that; (3) fogScale < 1 hid the rampage;
+  (4) caption hand-off overlapped by 1 frame (fixed in btl/captions.tsx: exit ends before the next caption's first frame);
+  (5) QC rejects any pure-black frame outside the final fade (beat-start from black, cut-to-black) and slow ECU pushes —
+  give close-ups ≥ 0.12 zoom or a lateral drift; (6) blurred-set + 2D overlay beats crash Chromium at 2 tabs sometimes —
+  render_beats retries at 1 tab automatically; (7) Kokoro venv needs Python ≤ 3.12 (`uv venv -p /usr/bin/python3.12`), plus scipy for scores.
+- Open: "pride had blinded him" wording unverified (paraphrased) — check against the film before publishing.
