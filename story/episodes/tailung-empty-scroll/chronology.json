@@ -1,0 +1,185 @@
+{
+ "continuity": "Kung Fu Panda (2008); 'year' = canon-timeline order",
+ "structure": {
+  "hook": [
+   0
+  ],
+  "world": [
+   1
+  ],
+  "world_rules": [
+   2
+  ],
+  "characters": [
+   3,
+   4
+  ],
+  "main_drama": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ],
+  "final_revelation": [
+   12,
+   13,
+   14,
+   15
+  ]
+ },
+ "lines": [
+  {
+   "line": 0,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    1,
+    2
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 1,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    3
+   ],
+   "label": "CANON (world)"
+  },
+  {
+   "line": 2,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    4
+   ],
+   "label": "CANON (world rule)"
+  },
+  {
+   "line": 3,
+   "year": 1,
+   "frame_device": false,
+   "claims": [
+    5
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 4,
+   "year": 2,
+   "frame_device": false,
+   "claims": [
+    6,
+    7
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 5,
+   "year": 3,
+   "frame_device": false,
+   "claims": [
+    8
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 6,
+   "year": 3,
+   "frame_device": false,
+   "claims": [
+    9
+   ],
+   "label": "SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 7,
+   "year": 4,
+   "frame_device": false,
+   "claims": [
+    10,
+    11
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 8,
+   "year": 5,
+   "frame_device": false,
+   "claims": [
+    12,
+    13,
+    14
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 9,
+   "year": 6,
+   "frame_device": false,
+   "claims": [
+    15
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 10,
+   "year": 7,
+   "frame_device": false,
+   "claims": [
+    16
+   ],
+   "label": "CANON (paraphrase)"
+  },
+  {
+   "line": 11,
+   "year": 7,
+   "frame_device": false,
+   "claims": [
+    17
+   ],
+   "label": "CANON (paraphrase)"
+  },
+  {
+   "line": 12,
+   "year": 8,
+   "frame_device": false,
+   "claims": [
+    18
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 13,
+   "year": 8,
+   "frame_device": false,
+   "claims": [
+    19,
+    20
+   ],
+   "label": "CANON + VISUAL EMBELLISHMENT"
+  },
+  {
+   "line": 14,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    21
+   ],
+   "label": "CHANNEL JUDGEMENT"
+  },
+  {
+   "line": 15,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    22
+   ],
+   "label": "CHANNEL JUDGEMENT"
+  }
+ ]
+}

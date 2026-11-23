@@ -1,0 +1,1531 @@
+{
+"duration": 65.227,
+"words": [
+{
+"w": "He",
+"s": 0.18,
+"e": 0.26,
+"line": 0,
+"asr": true
+},
+{
+"w": "did",
+"s": 0.26,
+"e": 0.34,
+"line": 0,
+"asr": true
+},
+{
+"w": "everything",
+"s": 0.34,
+"e": 0.7,
+"line": 0,
+"asr": true
+},
+{
+"w": "to",
+"s": 0.7,
+"e": 0.98,
+"line": 0,
+"asr": true
+},
+{
+"w": "make",
+"s": 0.98,
+"e": 1.1,
+"line": 0,
+"asr": true
+},
+{
+"w": "his",
+"s": 1.1,
+"e": 1.3,
+"line": 0,
+"asr": true
+},
+{
+"w": "master",
+"s": 1.3,
+"e": 1.62,
+"line": 0,
+"asr": true
+},
+{
+"w": "proud",
+"s": 1.62,
+"e": 1.98,
+"line": 0,
+"asr": true
+},
+{
+"w": "He",
+"s": 2.42,
+"e": 2.5,
+"line": 0,
+"asr": true
+},
+{
+"w": "heard",
+"s": 2.5,
+"e": 2.66,
+"line": 0,
+"asr": true
+},
+{
+"w": "it",
+"s": 2.66,
+"e": 2.82,
+"line": 0,
+"asr": true
+},
+{
+"w": "far",
+"s": 2.82,
+"e": 3.0,
+"line": 0,
+"asr": true
+},
+{
+"w": "too",
+"s": 3.0,
+"e": 3.24,
+"line": 0,
+"asr": true
+},
+{
+"w": "late",
+"s": 3.24,
+"e": 3.509,
+"line": 0,
+"asr": true
+},
+{
+"w": "In",
+"s": 3.89,
+"e": 3.97,
+"line": 1,
+"asr": true
+},
+{
+"w": "a",
+"s": 3.97,
+"e": 4.06,
+"line": 1,
+"asr": true
+},
+{
+"w": "valley",
+"s": 4.06,
+"e": 4.26,
+"line": 1,
+"asr": true
+},
+{
+"w": "where",
+"s": 4.26,
+"e": 4.5,
+"line": 1,
+"asr": true
+},
+{
+"w": "animals",
+"s": 4.5,
+"e": 4.86,
+"line": 1,
+"asr": true
+},
+{
+"w": "live",
+"s": 4.86,
+"e": 5.1,
+"line": 1,
+"asr": true
+},
+{
+"w": "by",
+"s": 5.1,
+"e": 5.34,
+"line": 1,
+"asr": true
+},
+{
+"w": "kung",
+"s": 5.34,
+"e": 5.58,
+"line": 1,
+"asr": true
+},
+{
+"w": "fu",
+"s": 5.58,
+"e": 5.82,
+"line": 1,
+"asr": true
+},
+{
+"w": "masters",
+"s": 6.36,
+"e": 6.54,
+"line": 1,
+"asr": true
+},
+{
+"w": "train",
+"s": 6.54,
+"e": 6.94,
+"line": 1,
+"asr": true
+},
+{
+"w": "at",
+"s": 6.94,
+"e": 7.1,
+"line": 1,
+"asr": true
+},
+{
+"w": "the",
+"s": 7.1,
+"e": 7.22,
+"line": 1,
+"asr": true
+},
+{
+"w": "Jade",
+"s": 7.22,
+"e": 7.46,
+"line": 1,
+"asr": true
+},
+{
+"w": "Palace",
+"s": 7.46,
+"e": 7.82,
+"line": 1,
+"asr": true
+},
+{
+"w": "above",
+"s": 7.82,
+"e": 8.32,
+"line": 1,
+"asr": true
+},
+{
+"w": "the",
+"s": 8.32,
+"e": 8.5,
+"line": 1,
+"asr": true
+},
+{
+"w": "village",
+"s": 8.5,
+"e": 8.922,
+"line": 1,
+"asr": true
+},
+{
+"w": "Inside",
+"s": 9.104,
+"e": 9.4,
+"line": 2,
+"asr": true
+},
+{
+"w": "waits",
+"s": 9.4,
+"e": 9.68,
+"line": 2,
+"asr": true
+},
+{
+"w": "the",
+"s": 9.68,
+"e": 9.88,
+"line": 2,
+"asr": true
+},
+{
+"w": "Dragon",
+"s": 9.88,
+"e": 10.2,
+"line": 2,
+"asr": true
+},
+{
+"w": "Scroll",
+"s": 10.2,
+"e": 10.6,
+"line": 2,
+"asr": true
+},
+{
+"w": "limitless",
+"s": 11.12,
+"e": 11.32,
+"line": 2,
+"asr": true
+},
+{
+"w": "power",
+"s": 11.32,
+"e": 11.74,
+"line": 2,
+"asr": true
+},
+{
+"w": "for",
+"s": 11.74,
+"e": 11.98,
+"line": 2,
+"asr": true
+},
+{
+"w": "one",
+"s": 11.98,
+"e": 12.18,
+"line": 2,
+"asr": true
+},
+{
+"w": "chosen",
+"s": 12.18,
+"e": 12.44,
+"line": 2,
+"asr": true
+},
+{
+"w": "hero",
+"s": 12.44,
+"e": 12.82,
+"line": 2,
+"asr": true
+},
+{
+"w": "the",
+"s": 13.14,
+"e": 13.24,
+"line": 2,
+"asr": true
+},
+{
+"w": "Dragon",
+"s": 13.24,
+"e": 13.52,
+"line": 2,
+"asr": true
+},
+{
+"w": "Warrior",
+"s": 13.52,
+"e": 14.013,
+"line": 2,
+"asr": true
+},
+{
+"w": "Master",
+"s": 14.193,
+"e": 14.48,
+"line": 3,
+"asr": true
+},
+{
+"w": "Shifu",
+"s": 14.48,
+"e": 14.9,
+"line": 3,
+"asr": true
+},
+{
+"w": "a",
+"s": 15.12,
+"e": 15.22,
+"line": 3,
+"asr": true
+},
+{
+"w": "red",
+"s": 15.22,
+"e": 15.4,
+"line": 3,
+"asr": true
+},
+{
+"w": "panda",
+"s": 15.4,
+"e": 15.8,
+"line": 3,
+"asr": true
+},
+{
+"w": "found",
+"s": 16.06,
+"e": 16.22,
+"line": 3,
+"asr": true
+},
+{
+"w": "a",
+"s": 16.22,
+"e": 16.36,
+"line": 3,
+"asr": true
+},
+{
+"w": "snow",
+"s": 16.36,
+"e": 16.6,
+"line": 3,
+"asr": true
+},
+{
+"w": "leopard",
+"s": 16.6,
+"e": 16.92,
+"line": 3,
+"asr": true
+},
+{
+"w": "cub",
+"s": 16.92,
+"e": 17.14,
+"line": 3,
+"asr": true
+},
+{
+"w": "on",
+"s": 17.14,
+"e": 17.32,
+"line": 3,
+"asr": true
+},
+{
+"w": "his",
+"s": 17.32,
+"e": 17.46,
+"line": 3,
+"asr": true
+},
+{
+"w": "steps",
+"s": 17.46,
+"e": 17.7,
+"line": 3,
+"asr": true
+},
+{
+"w": "and",
+"s": 17.7,
+"e": 18.14,
+"line": 3,
+"asr": true
+},
+{
+"w": "raised",
+"s": 18.14,
+"e": 18.44,
+"line": 3,
+"asr": true
+},
+{
+"w": "Tai",
+"s": 18.44,
+"e": 18.72,
+"line": 3,
+"asr": true
+},
+{
+"w": "Lung",
+"s": 18.72,
+"e": 18.92,
+"line": 3,
+"asr": true
+},
+{
+"w": "as",
+"s": 18.92,
+"e": 19.1,
+"line": 3,
+"asr": true
+},
+{
+"w": "a",
+"s": 19.1,
+"e": 19.3,
+"line": 3,
+"asr": true
+},
+{
+"w": "son",
+"s": 19.3,
+"e": 19.439,
+"line": 3,
+"asr": true
+},
+{
+"w": "He",
+"s": 19.62,
+"e": 19.7,
+"line": 4,
+"asr": true
+},
+{
+"w": "trained",
+"s": 19.7,
+"e": 19.92,
+"line": 4,
+"asr": true
+},
+{
+"w": "him",
+"s": 19.92,
+"e": 20.1,
+"line": 4,
+"asr": true
+},
+{
+"w": "day",
+"s": 20.1,
+"e": 20.28,
+"line": 4,
+"asr": true
+},
+{
+"w": "and",
+"s": 20.28,
+"e": 20.44,
+"line": 4,
+"asr": true
+},
+{
+"w": "night",
+"s": 20.44,
+"e": 20.68,
+"line": 4,
+"asr": true
+},
+{
+"w": "sure",
+"s": 21.02,
+"e": 21.12,
+"line": 4,
+"asr": true
+},
+{
+"w": "he",
+"s": 21.12,
+"e": 21.3,
+"line": 4,
+"asr": true
+},
+{
+"w": "was",
+"s": 21.3,
+"e": 21.4,
+"line": 4,
+"asr": true
+},
+{
+"w": "the",
+"s": 21.4,
+"e": 21.58,
+"line": 4,
+"asr": true
+},
+{
+"w": "Dragon",
+"s": 21.58,
+"e": 21.88,
+"line": 4,
+"asr": true
+},
+{
+"w": "Warrior",
+"s": 21.88,
+"e": 22.32,
+"line": 4,
+"asr": true
+},
+{
+"w": "Every",
+"s": 22.76,
+"e": 22.98,
+"line": 4,
+"asr": true
+},
+{
+"w": "move",
+"s": 22.98,
+"e": 23.26,
+"line": 4,
+"asr": true
+},
+{
+"w": "was",
+"s": 23.26,
+"e": 23.46,
+"line": 4,
+"asr": true
+},
+{
+"w": "for",
+"s": 23.46,
+"e": 23.64,
+"line": 4,
+"asr": true
+},
+{
+"w": "his",
+"s": 23.64,
+"e": 23.8,
+"line": 4,
+"asr": true
+},
+{
+"w": "father's",
+"s": 23.8,
+"e": 24.18,
+"line": 4,
+"asr": true
+},
+{
+"w": "smile",
+"s": 24.18,
+"e": 24.53,
+"line": 4,
+"asr": true
+},
+{
+"w": "But",
+"s": 24.711,
+"e": 24.8,
+"line": 5,
+"asr": true
+},
+{
+"w": "the",
+"s": 24.8,
+"e": 24.9,
+"line": 5,
+"asr": true
+},
+{
+"w": "grand",
+"s": 24.9,
+"e": 25.14,
+"line": 5,
+"asr": true
+},
+{
+"w": "master",
+"s": 25.14,
+"e": 25.62,
+"line": 5,
+"asr": true
+},
+{
+"w": "Oogway",
+"s": 25.62,
+"e": 26.26,
+"line": 5,
+"asr": true
+},
+{
+"w": "an",
+"s": 26.42,
+"e": 26.5,
+"line": 5,
+"asr": true
+},
+{
+"w": "ancient",
+"s": 26.5,
+"e": 26.72,
+"line": 5,
+"asr": true
+},
+{
+"w": "tortoise",
+"s": 26.72,
+"e": 27.18,
+"line": 5,
+"asr": true
+},
+{
+"w": "saw",
+"s": 27.36,
+"e": 27.62,
+"line": 5,
+"asr": true
+},
+{
+"w": "darkness",
+"s": 27.62,
+"e": 27.98,
+"line": 5,
+"asr": true
+},
+{
+"w": "in",
+"s": 27.98,
+"e": 28.2,
+"line": 5,
+"asr": true
+},
+{
+"w": "him",
+"s": 28.2,
+"e": 28.34,
+"line": 5,
+"asr": true
+},
+{
+"w": "and",
+"s": 28.34,
+"e": 28.5,
+"line": 5,
+"asr": true
+},
+{
+"w": "refused",
+"s": 28.5,
+"e": 29.012,
+"line": 5,
+"asr": true
+},
+{
+"w": "Shifu",
+"s": 29.493,
+"e": 29.82,
+"line": 6,
+"asr": true
+},
+{
+"w": "didn't",
+"s": 29.82,
+"e": 30.12,
+"line": 6,
+"asr": true
+},
+{
+"w": "fight",
+"s": 30.12,
+"e": 30.24,
+"line": 6,
+"asr": true
+},
+{
+"w": "that",
+"s": 30.24,
+"e": 30.46,
+"line": 6,
+"asr": true
+},
+{
+"w": "decision",
+"s": 30.46,
+"e": 30.879,
+"line": 6,
+"asr": true
+},
+{
+"w": "Tai",
+"s": 31.46,
+"e": 31.64,
+"line": 7,
+"asr": true
+},
+{
+"w": "Lung",
+"s": 31.64,
+"e": 31.86,
+"line": 7,
+"asr": true
+},
+{
+"w": "tore",
+"s": 31.86,
+"e": 32.14,
+"line": 7,
+"asr": true
+},
+{
+"w": "through",
+"s": 32.14,
+"e": 32.38,
+"line": 7,
+"asr": true
+},
+{
+"w": "the",
+"s": 32.38,
+"e": 32.52,
+"line": 7,
+"asr": true
+},
+{
+"w": "valley",
+"s": 32.52,
+"e": 32.7,
+"line": 7,
+"asr": true
+},
+{
+"w": "for",
+"s": 32.7,
+"e": 32.92,
+"line": 7,
+"asr": true
+},
+{
+"w": "the",
+"s": 32.92,
+"e": 33.12,
+"line": 7,
+"asr": true
+},
+{
+"w": "scroll",
+"s": 33.12,
+"e": 33.3,
+"line": 7,
+"asr": true
+},
+{
+"w": "Shifu",
+"s": 33.94,
+"e": 34.1,
+"line": 7,
+"asr": true
+},
+{
+"w": "couldn't",
+"s": 34.1,
+"e": 34.36,
+"line": 7,
+"asr": true
+},
+{
+"w": "bring",
+"s": 34.36,
+"e": 34.48,
+"line": 7,
+"asr": true
+},
+{
+"w": "himself",
+"s": 34.48,
+"e": 34.76,
+"line": 7,
+"asr": true
+},
+{
+"w": "to",
+"s": 34.76,
+"e": 35.02,
+"line": 7,
+"asr": true
+},
+{
+"w": "hurt",
+"s": 35.02,
+"e": 35.2,
+"line": 7,
+"asr": true
+},
+{
+"w": "him",
+"s": 35.2,
+"e": 35.424,
+"line": 7,
+"asr": true
+},
+{
+"w": "Oogway",
+"s": 35.606,
+"e": 35.9,
+"line": 8,
+"asr": true
+},
+{
+"w": "stopped",
+"s": 35.9,
+"e": 36.2,
+"line": 8,
+"asr": true
+},
+{
+"w": "him",
+"s": 36.2,
+"e": 36.5,
+"line": 8,
+"asr": true
+},
+{
+"w": "Twenty",
+"s": 36.86,
+"e": 37.02,
+"line": 8,
+"asr": true
+},
+{
+"w": "years",
+"s": 37.02,
+"e": 37.3,
+"line": 8,
+"asr": true
+},
+{
+"w": "in",
+"s": 37.3,
+"e": 37.5,
+"line": 8,
+"asr": true
+},
+{
+"w": "chains",
+"s": 37.5,
+"e": 37.8,
+"line": 8,
+"asr": true
+},
+{
+"w": "in",
+"s": 37.8,
+"e": 38.08,
+"line": 8,
+"asr": true
+},
+{
+"w": "a",
+"s": 38.08,
+"e": 38.18,
+"line": 8,
+"asr": true
+},
+{
+"w": "mountain",
+"s": 38.18,
+"e": 38.4,
+"line": 8,
+"asr": true
+},
+{
+"w": "prison",
+"s": 38.4,
+"e": 38.84,
+"line": 8,
+"asr": true
+},
+{
+"w": "blaming",
+"s": 39.08,
+"e": 39.28,
+"line": 8,
+"asr": true
+},
+{
+"w": "his",
+"s": 39.28,
+"e": 39.58,
+"line": 8,
+"asr": true
+},
+{
+"w": "father",
+"s": 39.58,
+"e": 39.929,
+"line": 8,
+"asr": true
+},
+{
+"w": "He",
+"s": 40.11,
+"e": 40.19,
+"line": 9,
+"asr": true
+},
+{
+"w": "escaped",
+"s": 40.19,
+"e": 40.44,
+"line": 9,
+"asr": true
+},
+{
+"w": "and",
+"s": 40.44,
+"e": 40.68,
+"line": 9,
+"asr": true
+},
+{
+"w": "came",
+"s": 40.68,
+"e": 40.84,
+"line": 9,
+"asr": true
+},
+{
+"w": "home",
+"s": 40.84,
+"e": 41.08,
+"line": 9,
+"asr": true
+},
+{
+"w": "for",
+"s": 41.08,
+"e": 41.28,
+"line": 9,
+"asr": true
+},
+{
+"w": "the",
+"s": 41.28,
+"e": 41.44,
+"line": 9,
+"asr": true
+},
+{
+"w": "scroll",
+"s": 41.44,
+"e": 41.68,
+"line": 9,
+"asr": true
+},
+{
+"w": "and",
+"s": 41.96,
+"e": 42.14,
+"line": 9,
+"asr": true
+},
+{
+"w": "for",
+"s": 42.14,
+"e": 42.28,
+"line": 9,
+"asr": true
+},
+{
+"w": "an",
+"s": 42.28,
+"e": 42.4,
+"line": 9,
+"asr": true
+},
+{
+"w": "answer",
+"s": 42.4,
+"e": 42.769,
+"line": 9,
+"asr": true
+},
+{
+"w": "He",
+"s": 42.95,
+"e": 43.04,
+"line": 10,
+"asr": true
+},
+{
+"w": "beat",
+"s": 43.04,
+"e": 43.18,
+"line": 10,
+"asr": true
+},
+{
+"w": "his",
+"s": 43.18,
+"e": 43.34,
+"line": 10,
+"asr": true
+},
+{
+"w": "old",
+"s": 43.34,
+"e": 43.56,
+"line": 10,
+"asr": true
+},
+{
+"w": "master",
+"s": 43.56,
+"e": 43.92,
+"line": 10,
+"asr": true
+},
+{
+"w": "down",
+"s": 43.92,
+"e": 44.32,
+"line": 10,
+"asr": true
+},
+{
+"w": "roaring",
+"s": 44.94,
+"e": 45.02,
+"line": 10,
+"asr": true
+},
+{
+"w": "that",
+"s": 45.02,
+"e": 45.16,
+"line": 10,
+"asr": true
+},
+{
+"w": "everything",
+"s": 45.16,
+"e": 45.44,
+"line": 10,
+"asr": true
+},
+{
+"w": "was",
+"s": 45.44,
+"e": 45.78,
+"line": 10,
+"asr": true
+},
+{
+"w": "to",
+"s": 45.78,
+"e": 45.96,
+"line": 10,
+"asr": true
+},
+{
+"w": "make",
+"s": 45.96,
+"e": 46.12,
+"line": 10,
+"asr": true
+},
+{
+"w": "him",
+"s": 46.12,
+"e": 46.34,
+"line": 10,
+"asr": true
+},
+{
+"w": "proud",
+"s": 46.34,
+"e": 46.592,
+"line": 10,
+"asr": true
+},
+{
+"w": "And",
+"s": 46.773,
+"e": 46.88,
+"line": 11,
+"asr": true
+},
+{
+"w": "Shifu",
+"s": 46.88,
+"e": 47.24,
+"line": 11,
+"asr": true
+},
+{
+"w": "finally",
+"s": 47.24,
+"e": 47.46,
+"line": 11,
+"asr": true
+},
+{
+"w": "said",
+"s": 47.46,
+"e": 47.84,
+"line": 11,
+"asr": true
+},
+{
+"w": "it",
+"s": 47.84,
+"e": 48.02,
+"line": 11,
+"asr": true
+},
+{
+"w": "he'd",
+"s": 48.16,
+"e": 48.3,
+"line": 11,
+"asr": true
+},
+{
+"w": "always",
+"s": 48.3,
+"e": 48.56,
+"line": 11,
+"asr": true
+},
+{
+"w": "been",
+"s": 48.56,
+"e": 48.82,
+"line": 11,
+"asr": true
+},
+{
+"w": "proud",
+"s": 48.82,
+"e": 49.14,
+"line": 11,
+"asr": true
+},
+{
+"w": "His",
+"s": 49.56,
+"e": 49.7,
+"line": 11,
+"asr": true
+},
+{
+"w": "pride",
+"s": 49.7,
+"e": 49.98,
+"line": 11,
+"asr": true
+},
+{
+"w": "had",
+"s": 49.98,
+"e": 50.14,
+"line": 11,
+"asr": true
+},
+{
+"w": "blinded",
+"s": 50.14,
+"e": 50.44,
+"line": 11,
+"asr": true
+},
+{
+"w": "him",
+"s": 50.44,
+"e": 50.76,
+"line": 11,
+"asr": true
+},
+{
+"w": "Tai",
+"s": 51.342,
+"e": 51.52,
+"line": 12,
+"asr": true
+},
+{
+"w": "Lung",
+"s": 51.52,
+"e": 51.66,
+"line": 12,
+"asr": true
+},
+{
+"w": "didn't",
+"s": 51.66,
+"e": 52.02,
+"line": 12,
+"asr": true
+},
+{
+"w": "stop",
+"s": 52.02,
+"e": 52.24,
+"line": 12,
+"asr": true
+},
+{
+"w": "He",
+"s": 52.54,
+"e": 52.7,
+"line": 12,
+"asr": true
+},
+{
+"w": "took",
+"s": 52.7,
+"e": 52.82,
+"line": 12,
+"asr": true
+},
+{
+"w": "the",
+"s": 52.82,
+"e": 53.04,
+"line": 12,
+"asr": true
+},
+{
+"w": "scroll",
+"s": 53.04,
+"e": 53.26,
+"line": 12,
+"asr": true
+},
+{
+"w": "and",
+"s": 53.26,
+"e": 53.48,
+"line": 12,
+"asr": true
+},
+{
+"w": "opened",
+"s": 53.48,
+"e": 53.72,
+"line": 12,
+"asr": true
+},
+{
+"w": "it",
+"s": 53.72,
+"e": 53.908,
+"line": 12,
+"asr": true
+},
+{
+"w": "It",
+"s": 54.489,
+"e": 54.569,
+"line": 13,
+"asr": true
+},
+{
+"w": "was",
+"s": 54.569,
+"e": 54.7,
+"line": 13,
+"asr": true
+},
+{
+"w": "blank",
+"s": 54.7,
+"e": 54.98,
+"line": 13,
+"asr": true
+},
+{
+"w": "A",
+"s": 55.3,
+"e": 55.44,
+"line": 13,
+"asr": true
+},
+{
+"w": "golden",
+"s": 55.44,
+"e": 55.68,
+"line": 13,
+"asr": true
+},
+{
+"w": "surface",
+"s": 55.68,
+"e": 56.16,
+"line": 13,
+"asr": true
+},
+{
+"w": "reflecting",
+"s": 56.16,
+"e": 56.58,
+"line": 13,
+"asr": true
+},
+{
+"w": "his",
+"s": 56.58,
+"e": 56.88,
+"line": 13,
+"asr": true
+},
+{
+"w": "own",
+"s": 56.88,
+"e": 57.04,
+"line": 13,
+"asr": true
+},
+{
+"w": "face",
+"s": 57.04,
+"e": 57.465,
+"line": 13,
+"asr": true
+},
+{
+"w": "That",
+"s": 58.146,
+"e": 58.24,
+"line": 14,
+"asr": true
+},
+{
+"w": "explains",
+"s": 58.24,
+"e": 58.62,
+"line": 14,
+"asr": true
+},
+{
+"w": "his",
+"s": 58.62,
+"e": 58.86,
+"line": 14,
+"asr": true
+},
+{
+"w": "rage",
+"s": 58.86,
+"e": 59.14,
+"line": 14,
+"asr": true
+},
+{
+"w": "It",
+"s": 59.52,
+"e": 59.62,
+"line": 14,
+"asr": true
+},
+{
+"w": "doesn't",
+"s": 59.62,
+"e": 59.82,
+"line": 14,
+"asr": true
+},
+{
+"w": "excuse",
+"s": 59.82,
+"e": 60.16,
+"line": 14,
+"asr": true
+},
+{
+"w": "the",
+"s": 60.16,
+"e": 60.36,
+"line": 14,
+"asr": true
+},
+{
+"w": "harm",
+"s": 60.36,
+"e": 60.683,
+"line": 14,
+"asr": true
+},
+{
+"w": "He",
+"s": 61.164,
+"e": 61.244,
+"line": 15,
+"asr": true
+},
+{
+"w": "spent",
+"s": 61.244,
+"e": 61.4,
+"line": 15,
+"asr": true
+},
+{
+"w": "his",
+"s": 61.4,
+"e": 61.58,
+"line": 15,
+"asr": true
+},
+{
+"w": "life",
+"s": 61.58,
+"e": 61.76,
+"line": 15,
+"asr": true
+},
+{
+"w": "trying",
+"s": 61.76,
+"e": 62.04,
+"line": 15,
+"asr": true
+},
+{
+"w": "to",
+"s": 62.04,
+"e": 62.18,
+"line": 15,
+"asr": true
+},
+{
+"w": "make",
+"s": 62.18,
+"e": 62.32,
+"line": 15,
+"asr": true
+},
+{
+"w": "his",
+"s": 62.32,
+"e": 62.5,
+"line": 15,
+"asr": true
+},
+{
+"w": "father",
+"s": 62.5,
+"e": 62.72,
+"line": 15,
+"asr": true
+},
+{
+"w": "proud",
+"s": 62.72,
+"e": 63.04,
+"line": 15,
+"asr": true
+},
+{
+"w": "He",
+"s": 63.48,
+"e": 63.62,
+"line": 15,
+"asr": true
+},
+{
+"w": "never",
+"s": 63.62,
+"e": 63.76,
+"line": 15,
+"asr": true
+},
+{
+"w": "had",
+"s": 63.76,
+"e": 64.0,
+"line": 15,
+"asr": true
+},
+{
+"w": "to",
+"s": 64.0,
+"e": 64.274,
+"line": 15,
+"asr": true
+}
+]
+}

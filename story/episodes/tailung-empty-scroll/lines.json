@@ -1,0 +1,146 @@
+[
+ {
+  "line": 0,
+  "s": 0.18,
+  "e": 3.509,
+  "pause_after": 0.2,
+  "text": "He did everything to make his master proud. He heard it far too late.",
+  "seg_s": 0.15,
+  "seg_e": 3.6593
+ },
+ {
+  "line": 1,
+  "s": 3.89,
+  "e": 8.922,
+  "pause_after": 0.0,
+  "text": "In a valley where animals live by kung fu, masters train at the Jade Palace, above the village.",
+  "seg_s": 3.8593,
+  "seg_e": 9.0741
+ },
+ {
+  "line": 2,
+  "s": 9.104,
+  "e": 14.013,
+  "pause_after": 0.0,
+  "text": "Inside waits the Dragon Scroll: limitless power, for one chosen hero, the Dragon Warrior.",
+  "seg_s": 9.0741,
+  "seg_e": 14.1629
+ },
+ {
+  "line": 3,
+  "s": 14.193,
+  "e": 19.439,
+  "pause_after": 0.0,
+  "text": "Master Shifu, a red panda, found a snow leopard cub on his steps, and raised Tai Lung as a son.",
+  "seg_s": 14.1629,
+  "seg_e": 19.59
+ },
+ {
+  "line": 4,
+  "s": 19.62,
+  "e": 24.53,
+  "pause_after": 0.0,
+  "text": "He trained him day and night, sure he was the Dragon Warrior. Every move was for his father's smile.",
+  "seg_s": 19.59,
+  "seg_e": 24.6802
+ },
+ {
+  "line": 5,
+  "s": 24.711,
+  "e": 29.012,
+  "pause_after": 0.3,
+  "text": "But the grand master, Oogway, an ancient tortoise, saw darkness in him, and refused.",
+  "seg_s": 24.6802,
+  "seg_e": 29.1629
+ },
+ {
+  "line": 6,
+  "s": 29.493,
+  "e": 30.879,
+  "pause_after": 0.4,
+  "text": "Shifu didn't fight that decision.",
+  "seg_s": 29.4629,
+  "seg_e": 31.0291
+ },
+ {
+  "line": 7,
+  "s": 31.46,
+  "e": 35.424,
+  "pause_after": 0.0,
+  "text": "Tai Lung tore through the valley for the scroll. Shifu couldn't bring himself to hurt him.",
+  "seg_s": 31.4291,
+  "seg_e": 35.5757
+ },
+ {
+  "line": 8,
+  "s": 35.606,
+  "e": 39.929,
+  "pause_after": 0.0,
+  "text": "Oogway stopped him. Twenty years in chains, in a mountain prison, blaming his father.",
+  "seg_s": 35.5757,
+  "seg_e": 40.0793
+ },
+ {
+  "line": 9,
+  "s": 40.11,
+  "e": 42.769,
+  "pause_after": 0.0,
+  "text": "He escaped, and came home for the scroll, and for an answer.",
+  "seg_s": 40.0793,
+  "seg_e": 42.9199
+ },
+ {
+  "line": 10,
+  "s": 42.95,
+  "e": 46.592,
+  "pause_after": 0.0,
+  "text": "He beat his old master down, roaring that everything was to make him proud.",
+  "seg_s": 42.9199,
+  "seg_e": 46.7424
+ },
+ {
+  "line": 11,
+  "s": 46.773,
+  "e": 50.76,
+  "pause_after": 0.4,
+  "text": "And Shifu finally said it: he'd always been proud. His pride had blinded him.",
+  "seg_s": 46.7424,
+  "seg_e": 50.912
+ },
+ {
+  "line": 12,
+  "s": 51.342,
+  "e": 53.908,
+  "pause_after": 0.4,
+  "text": "Tai Lung didn't stop. He took the scroll, and opened it.",
+  "seg_s": 51.312,
+  "seg_e": 54.0592
+ },
+ {
+  "line": 13,
+  "s": 54.489,
+  "e": 57.465,
+  "pause_after": 0.5,
+  "text": "It was blank. A golden surface, reflecting his own face.",
+  "seg_s": 54.4592,
+  "seg_e": 57.6156
+ },
+ {
+  "line": 14,
+  "s": 58.146,
+  "e": 60.683,
+  "pause_after": 0.3,
+  "text": "That explains his rage. It doesn't excuse the harm.",
+  "seg_s": 58.1156,
+  "seg_e": 60.8329
+ },
+ {
+  "line": 15,
+  "s": 61.164,
+  "e": 64.274,
+  "pause_after": 0.5,
+  "text": "He spent his life trying to make his father proud. He never had to.",
+  "seg_s": 61.1329,
+  "seg_e": 64.427
+ }
+]

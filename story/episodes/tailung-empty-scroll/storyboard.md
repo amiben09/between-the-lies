@@ -1,0 +1,72 @@
+# Storyboard / beat sheet — The Scroll That Was Always Empty (Tai Lung)
+Times come from the real voiceover (Whisper-verified). Structure check: **PASS**
+
+Beats 31 · total 68.5 s · average beat 2.21 s · world-building 10.3 s (15%) · renderers {'2.5D': 2, '2.5D CU': 13, '3D': 16}
+
+## HOOK
+| # | Time | Narration | Character | Action | Environment | Camera position | Camera move (purpose) | Lighting | FG | MG | BG | Caption | Music | SFX | Transition | Render |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 0.0-2.3 | He did everything to make his master proud | Tai Lung (youth) + Shifu | youth lands a perfect kick, looks UP for approval; Shifu, back half-turned, gives nothing | training courtyard at dusk | low behind Tai Lung | slow push to his face — *the need in one look* | warm amber, long shadows | dust motes | Tai Lung | Shifu small on the steps | He did everything to make his master proud. | single low guzheng note | cloth snap, wind | cut | 3D |
+| 2 | 2.3-3.8 | He heard it far too late | Tai Lung (adult) | his amber eye reflected in a gold surface, a tear line catching light | dark hall | extreme CU | micro push — *promise of the ending* | gold glow from below, black around | — | eye + reflection | black | He did everything to make his master proud. / He heard it far too late. | drone swells | heartbeat | hard cut | 2.5D CU |
+
+## WORLD
+| # | Time | Narration | Character | Action | Environment | Camera position | Camera move (purpose) | Lighting | FG | MG | BG | Caption | Music | SFX | Transition | Render |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 3 | 3.8-6.3 | In a valley where animals live by kung fu | none | morning mist over a valley of tiled roofs, peach trees, a mountain rising behind | the valley | high wide | crane down through mist — *where we are* | soft dawn gold | peach blossoms | rooftops | mountain | He heard it far too late. / In a valley / where animals live by kung fu, | flute enters | birds, distant bell | cut | 3D |
+| 4 | 6.3-9.0 | masters train at the Jade Palace above the village | tiny figures training | the palace on the summit, a thousand steps climbing to it; figures training in the courtyard | mountain stairs + palace | from the stairs' foot | tilt/crane up the stairs — *who trains there* | warm sun on red pillars | stone lanterns | stairs | palace | masters train at the Jade Palace, / above the village. | flute phrase | wind | dissolve | 3D |
+
+World line → visual: #3 'a valley where animals live by kung fu' → the valley itself, wide, with villagers practising in the streets · #4 'masters train at the Jade Palace, above the village' → the palace on the summit, stairs, figures training
+
+## WORLD RULES
+| # | Time | Narration | Character | Action | Environment | Camera position | Camera move (purpose) | Lighting | FG | MG | BG | Caption | Music | SFX | Transition | Render |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 5 | 9.0-11.0 | Inside waits the Dragon Scroll | none | inside the hall: a scroll case high on a carved beam, light falling on it | palace hall | low, looking up | slow push up toward the case — *the object* | shafts of light, incense haze | incense smoke | pillars | scroll case high | above the village. / Inside waits the Dragon Scroll: limitless power, | shimmer chime | incense hiss | cut | 3D |
+| 6 | 11.0-14.1 | limitless power for one chosen hero the Dragon Warrior | silhouette hero | golden light spills from the case; a single warrior silhouette forms in it | stylised golden space | frontal | slow push — *one chosen hero* | gold on black | sparks | silhouette | glow | Inside waits the Dragon Scroll: limitless power, / for one chosen hero, the Dragon Warrior. | choir pad | rising shimmer | cut | 2.5D |
+
+World line → visual: #5 'Inside waits the Dragon Scroll' → the scroll case high in the hall · #6 'limitless power, for one chosen hero' → golden light forming one warrior silhouette
+
+## RELATIONSHIP
+| # | Time | Narration | Character | Action | Environment | Camera position | Camera move (purpose) | Lighting | FG | MG | BG | Caption | Music | SFX | Transition | Render |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 7 | 14.1-16.0 | Master Shifu a red panda | Shifu (younger) | night: Shifu on the palace steps finds a bundle; a tiny cub inside | palace steps at night | high over Shifu's shoulder | slow push to the bundle — *the meeting* | cool moonlight + warm lantern | lantern | Shifu kneeling | dark steps | for one chosen hero, the Dragon Warrior. / Master Shifu, a red panda, | music box-like guzheng | crickets, small mew | cut | 3D |
+| 8 | 16.0-18.1 | found a snow leopard cub on his steps and | cub + Shifu | huge-eyed cub grabs Shifu's finger; Shifu's face softens | steps, lantern light | 2-shot CU | micro push — *love at first sight* | warm lantern | — | cub + Shifu | bokeh | Master Shifu, a red panda, / found a snow leopard cub on his steps, / and raised Tai Lung as a son. | warm theme | tiny purr | cut | 2.5D CU |
+| 9 | 18.1-19.5 | raised Tai Lung as a son | Shifu + cub (older) | Shifu ties a small cloth training wrap on the cub's paw | training hall | insert CU on hands | slow push — *OBJECT 2 introduced* | warm | wrap cloth | paws/hands | blur | and raised Tai Lung as a son. | warm theme | cloth knot | match cut | 2.5D CU |
+| 10 | 19.5-22.7 | He trained him day and night sure he was the Dragon Warrior | Tai Lung growing | montage: cub → teen → youth, the same kata in the same spot, each faster | courtyard, seasons change | side | lateral track — *years of training* | amber → gold | falling leaves/snow | Tai Lung | Shifu watching | and raised Tai Lung as a son. / He trained him day and night, / sure he was the Dragon Warrior. | drums build | impacts on beat | match cuts | 3D |
+| 11 | 22.7-24.6 | Every move was for his father's smile | Tai Lung + Shifu | youth lands the move, looks up; Shifu smiles and nods — Tai Lung glows | courtyard | 2-shot from below | push in — *the smile he lives for* | warm gold | — | Tai Lung | Shifu | sure he was the Dragon Warrior. / Every move was for his father's smile. | theme peak | — | cut | 2.5D CU |
+
+## CONFLICT
+| # | Time | Narration | Character | Action | Environment | Camera position | Camera move (purpose) | Lighting | FG | MG | BG | Caption | Music | SFX | Transition | Render |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 12 | 24.6-27.3 | But the grand master Oogway an ancient tortoise | Oogway | the ancient tortoise in the hall, leaning on his staff, slow head turn toward Tai Lung | palace hall | low wide | slow push — *the authority* | cool hard light | incense | Oogway | Tai Lung kneeling, expectant | Every move was for his father's smile. / But the grand master, Oogway, an ancient tortoise, | music drops out | staff tap | cut | 3D |
+| 13 | 27.3-29.4 | saw darkness in him and refused | Oogway + Tai Lung | Oogway's eyes narrow; Tai Lung's eager face falls | hall | CU shot/reverse | micro push — *the refusal* | plum shadow | — | faces | — | But the grand master, Oogway, an ancient tortoise, / saw darkness in him, and refused. | low cello | silence | cut | 2.5D CU |
+| 14 | 29.4-31.4 | Shifu didn't fight that decision | Shifu + Tai Lung | Tai Lung turns to Shifu for help; Shifu looks down, hands hidden in his sleeves | hall | over Tai Lung's shoulder | slow push to Shifu — *the silence that broke him* | cold | Tai Lung's shoulder | Shifu | pillars | Shifu didn't fight that decision. | held cello note | — | cut | 2.5D CU |
+| 15 | 31.4-33.9 | Tai Lung tore through the valley for the scroll | Tai Lung (shadow) | night: a huge shadow tears through the village, lanterns fall, roofs break, silhouettes flee | village at night | street level | handheld-like shake (glide) — *the harm is real* | fire orange + plum | falling lantern | shadow | burning roofs | Tai Lung tore through the valley / for the scroll. | taiko hits | crashes, wind | cut | 3D |
+| 16 | 33.9-35.5 | Shifu couldn't bring himself to hurt him | Shifu + Tai Lung | Shifu in fighting stance; his paw raised; it trembles and lowers | palace steps, fire behind | low 2-shot | slow push — *he can't hurt his son* | fire rim | embers | Shifu | Tai Lung looming | Shifu couldn't bring himself to hurt him. | heartbeat | fire crackle | cut | 2.5D |
+| 17 | 35.5-36.8 | Oogway stopped him | Oogway + Tai Lung | a calm finger touch; Tai Lung freezes mid-leap and falls | palace steps | wide | still → slight push — *stopped* | fire fades to cold | — | both | night | Shifu couldn't bring himself to hurt him. / Oogway stopped him. | single gong | thud, silence | cut to black | 3D |
+| 18 | 36.8-39.0 | Twenty years in chains in a mountain prison | Tai Lung (prison) | inside a mountain prison: chained to a stone ring; the iron cuff sits over the old training wrap | prison cavern | slow orbit | orbit + push — *twenty years* | cold blue-grey, one torch | chains | Tai Lung | stone walls | Oogway stopped him. / Twenty years in chains, / in a mountain prison, blaming his father. | low drone | chain clink, drip | cut | 3D |
+| 19 | 39.0-40.0 | blaming his father | Tai Lung | his eyes in the dark, breath steaming, jaw tight | prison | ECU | micro push — *blame* | blue-grey | breath steam | eyes | black | in a mountain prison, blaming his father. | drone | breath | cut | 2.5D CU |
+
+## TRANSFORMATION
+| # | Time | Narration | Character | Action | Environment | Camera position | Camera move (purpose) | Lighting | FG | MG | BG | Caption | Music | SFX | Transition | Render |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 20 | 40.0-41.9 | He escaped and came home for the scroll | Tai Lung | chains burst; he runs up a rope bridge toward a cave mouth of daylight | prison exit | behind him | fast follow (accel.) — *escape* | white daylight ahead | chains flying | Tai Lung | light | in a mountain prison, blaming his father. / He escaped, and came home for the scroll, | drums return | chains snap | cut | 3D |
+| 21 | 41.9-42.9 | and for an answer | Tai Lung (adult) | at the foot of the palace stairs, he looks up — same framing as the cub | stairs at dusk | low behind him | slow push — *home, the mirror of the beginning* | dusk amber + plum | — | Tai Lung | palace far above | He escaped, and came home for the scroll, / and for an answer. | theme in minor | wind | cut | 3D |
+| 22 | 42.9-44.9 | He beat his old master down | Tai Lung + Shifu (old) | impact: Shifu thrown into a pillar, it cracks (cut on impact) | palace hall | wide | whip pan → hold — *the violence* | hard plum light | dust | both | pillars | and for an answer. / He beat his old master down, | taiko | impact, crack | cut | 3D |
+| 23 | 44.9-46.7 | roaring that everything was to make him proud | Tai Lung over Shifu | standing over him, roaring, eyes wet | hall, dust settling | low from Shifu's POV | slight push — *what he wanted all along* | plum + gold | dust | Tai Lung | ceiling | roaring that everything was to make him proud. | strings swell | roar (muted under voice) | cut | 2.5D CU |
+
+## REVELATION
+| # | Time | Narration | Character | Action | Environment | Camera position | Camera move (purpose) | Lighting | FG | MG | BG | Caption | Music | SFX | Transition | Render |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 24 | 46.7-49.5 | And Shifu finally said it he'd always been proud | Shifu | on the floor, Shifu looks up and finally meets his eyes; he speaks | hall floor | CU | slow push — *the words* | neutral light on his face | rubble | Shifu | blur | roaring that everything was to make him proud. / And Shifu finally said it: / he'd always been proud. | music stops | — | cut | 2.5D CU |
+| 25 | 49.5-51.3 | His pride had blinded him | Shifu + memory | memory flash: Shifu's hand on the cub's head, smiling — then back to the old face | memory amber → present | CU | dissolve — *pride blinded him* | amber flash | — | faces | — | he'd always been proud. / His pride had blinded him. | one guzheng note | — | dissolve | 2.5D CU |
+| 26 | 51.3-53.2 | Tai Lung didn't stop He took the scroll | Tai Lung | he turns away from his father and takes the scroll | hall | side | track — *he chooses the scroll* | cold | — | Tai Lung | scroll | Tai Lung didn't stop. / He took the scroll, and opened it. | drone | cloth tear | cut | 3D |
+| 27 | 53.2-54.4 | and opened it | Tai Lung | he unrolls it; gold light floods his face | hall | frontal CU | push — *the moment* | gold from below | scroll edge | face | dark | He took the scroll, and opened it. | rising shimmer | paper unroll | cut | 2.5D CU |
+| 28 | 54.4-56.1 | It was blank A golden surface | scroll | the scroll: blank, a polished gold surface | — | insert, top-down | slow push — *nothing inside* | gold | — | scroll | — | It was blank. / A golden surface, reflecting his own face. | shimmer cuts out | silence | cut | 2.5D CU |
+| 29 | 56.1-58.1 | reflecting his own face | Tai Lung's reflection | in the gold: his own face, confused, the anger draining | — | over-shoulder into the mirror | slow push — *OBJECT payoff* | gold | scroll edge | reflection | — | A golden surface, reflecting his own face. | single low note | breath | cut | 2.5D CU |
+| 30 | 58.1-61.1 | That explains his rage It doesn't excuse the harm | village aftermath | quiet: the broken village from the old rampage, a lantern rocking; villagers rebuilding | village dawn | wide | slow drift — *the harm is not erased* | grey dawn | broken lantern | villagers | mountain | That explains his rage. / It doesn't excuse the harm. | quiet strings | wind | dissolve | 3D |
+
+## PAYOFF
+| # | Time | Narration | Character | Action | Environment | Camera position | Camera move (purpose) | Lighting | FG | MG | BG | Caption | Music | SFX | Transition | Render |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 31 | 61.1-68.5 | He spent his life trying to make his father proud He never had to | Shifu + scroll + wrap | the open scroll on the floor; beside it the frayed training wrap; Shifu's small hand reaches and closes over it. Hold. Fade. | hall, dust in a light shaft | high, looking down | slow crane down — *he never had to earn it* | warm shaft of light | dust motes | scroll + wrap | floor | He spent his life trying / to make his father proud. / He never had to. | warm theme returns, resolves | — | fade to black | 3D |
+
