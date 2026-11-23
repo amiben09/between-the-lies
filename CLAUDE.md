@@ -76,6 +76,9 @@ turns on (what it means and who it targets) — with its own visual.
 - Present exactly 10 screened concepts when the user asks for ideas, each with: title (5-9 words), source locator,
   overlooked character, relationship core, wound, hook, twist/reveal, three visual moments, canon status, and scores 1-5 for
   emotional specificity, canon strength, character depth, twist fairness, visual potential and channel fit.
+- FIT CHECKS (user decision 23 Nov 2026, after Perfect/Jinx): every concept must also pass
+  W = world explainable in ≤ 2 sentences · C = ≤ 3 named characters carry the story · A = key moments are acting
+  (look, gesture, object), not action. A concept failing any check needs a re-cut plan before it can be chosen.
 - Build a character psychology profile and relationship map before drafting.
 - Show love through a specific action, habit, object or decision. One wound must cause a believable chain of choices.
 - Explain harmful behaviour without excusing harm to others.
