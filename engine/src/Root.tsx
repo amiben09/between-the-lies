@@ -14,6 +14,8 @@ import { JinxStyleframes } from "./episodes/jinx/Styleframes";
 import { JinxEpisode, JINX_FRAMES } from "./episodes/jinx/Episode";
 import { CaptionDemo } from "./demo/CaptionDemo";
 import { TaiLungCharRefs } from "./episodes/tailung/CharRefs";
+import { ScyllaCharRefs } from "./episodes/scylla/CharRefs";
+import { ScyllaStyleframes } from "./episodes/scylla/Styleframes";
 import { TaiLungStyleframes } from "./episodes/tailung/Styleframes";
 import { TaiLungEpisode, TAILUNG_FRAMES } from "./episodes/tailung/Episode";
 import { ItachiEpisode, TOTAL_FRAMES as ITACHI_FRAMES } from "./episodes/itachi/Episode";
@@ -47,6 +49,8 @@ export const Root: React.FC = () => (
     <Composition id="JinxStyleframes" component={JinxStyleframes} durationInFrames={6} fps={30} width={1080} height={1920} />
     <Composition id="TaiLungEmptyScroll" component={TaiLungEpisode} durationInFrames={TAILUNG_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="TaiLungStyleframes" component={TaiLungStyleframes} durationInFrames={6} fps={30} width={1080} height={1920} />
+    <Composition id="ScyllaStyleframes" component={ScyllaStyleframes} durationInFrames={6} fps={30} width={1080} height={1920} />
+    <Composition id="ScyllaCharRefs" component={ScyllaCharRefs} durationInFrames={2} fps={30} width={1080} height={1920} />
     <Composition id="TaiLungCharRefs" component={TaiLungCharRefs} durationInFrames={2} fps={30} width={1080} height={1920} />
     <Composition id="CaptionDemo" component={CaptionDemo} durationInFrames={150} fps={30} width={1080} height={1920} />
     <Composition id="JinxPerfect" component={JinxEpisode} durationInFrames={JINX_FRAMES} fps={30} width={1080} height={1920} />

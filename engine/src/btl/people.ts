@@ -3,7 +3,9 @@
 // (key/shade gradient, source-atop), optionally depth-blurred, then composited — so lighting never touches the set.
 import { Cam, Ctx, H, W, makeCanvas, radGrad } from "./core";
 
-export type Kind = "snape" | "lily" | "harry" | "james" | "neville" | "dumbledore" | "voldemort" | "bully" | "itachi" | "sasuke" | "victor" | "freeze" | "nora" | "boyle" | "batman" | "jinx" | "vi" | "vander" | "mylo" | "silco" | "tailung" | "shifu" | "oogway";
+export type Kind = "snape" | "lily" | "harry" | "james" | "neville" | "dumbledore" | "voldemort" | "bully" | "itachi" | "sasuke" | "victor" | "freeze" | "nora" | "boyle" | "batman" | "jinx" | "vi" | "vander" | "mylo" | "silco" | "tailung" | "shifu" | "oogway" | "circe" | "glaucos" | "seagod" | "scylla";
+/** hair styles reused by newer characters (kind → existing hair design) */
+const HAIR: Partial<Record<Kind, Kind>> = { circe: "lily", scylla: "nora", glaucos: "harry", seagod: "harry" };
 /** anthropomorphic animal characters (original channel designs): fur = skin, markings = hair */
 export const BEAST = (k: Kind) => k === "tailung" || k === "shifu" || k === "oogway";
 export type Age = "child" | "teen" | "adult";
@@ -96,6 +98,15 @@ function look(kind: Kind, age: Age): Look {
       coat: "#d8d6d0", coatHi: "#f0eee8", legs: "#4a4450", robe: false }
       : { ...sz, H: age === "teen" ? 960 : 1100, hh: age === "teen" ? 230 : 245, sw: age === "teen" ? 270 : 340, skin: "#dcdad4", skinSh: "#a4a09c", hair: "#34323c", hairHi: "#56545e", iris: "#e8a42c",
       coat: "#cfccc6", coatHi: "#eeebe6", legs: "#3a3440", robe: false }; // bare furred torso + arms, dark trousers
+    // ---- Circe (Madeline Miller) — ORIGINAL imagined designs; age "teen" = young, "adult" = centuries later ----
+    case "circe": return { ...sz, skin: "#d8a47c", skinSh: "#a8744e", hair: age === "adult" ? "#7a6a64" : "#8a3418", hairHi: age === "adult" ? "#d8d2cc" : "#d8782c", iris: "#e09a2a",
+      coat: age === "adult" ? "#5a3a4a" : "#d8cdb4", coatHi: age === "adult" ? "#7a5a6a" : "#f0e8d4", legs: "#3a2a22", robe: true }; // older: grey hair, dark shawl
+    case "glaucos": return { ...sz, skin: "#c8865a", skinSh: "#94603e", hair: "#3a2a1c", hairHi: "#6a5038", iris: "#4a3a2a",
+      coat: "#8a7a5a", coatHi: "#a8987a", legs: "#5a4a38", robe: false };
+    case "seagod": return { ...sz, H: 1060, skin: "#6aa89a", skinSh: "#3e7a6e", hair: "#1e4a3a", hairHi: "#3a7a5a", iris: "#b8f0ff",
+      coat: "#2a6a7a", coatHi: "#4a9aa8", legs: "#2a5a6a", robe: true };
+    case "scylla": return { ...sz, skin: "#e6eef2", skinSh: "#aebcc8", hair: "#dfe4ec", hairHi: "#ffffff", iris: "#4ab8c8",
+      coat: "#9ad4dc", coatHi: "#c8eef2", legs: "#6a9aa8", robe: true };
     case "shifu": return { ...sz, H: 600, hh: 175, sw: 165, skin: "#c45a2a", skinSh: "#86381a", hair: age === "adult" ? "#e8e2d8" : "#f6efe2", hairHi: "#ffffff", iris: "#2a1a14",
       coat: "#7a6440", coatHi: "#a08858", legs: "#3a2a22", robe: true };
     case "oogway": return { ...sz, H: 760, hh: 200, sw: 270, skin: "#93a27e", skinSh: "#5e6c4e", hair: "#5e6c4e", hairHi: "#b4c2a0", iris: "#3a3020",
@@ -186,7 +197,7 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
       g.restore();
     }
     // back hair falls behind the coat for long hair
-    if (kind === "lily" || kind === "dumbledore" || kind === "nora") backHair(g, L, kind === "nora" ? "lily" : kind, shY - L.hh * 0.6, p);
+    if (kind === "lily" || kind === "dumbledore" || kind === "nora" || kind === "circe" || kind === "scylla") backHair(g, L, kind === "dumbledore" ? kind : "lily", shY - L.hh * 0.6, p);
     if (kind === "jinx" && age !== "child") { // two very long braids falling behind (original design)
       for (const sg of [-1, 1]) { const bx = sg * sw * 0.28, sway = Math.sin(fr * 0.06 + sg) * 8;
         g.beginPath(); g.moveTo(bx - 14, shY - L.hh * 0.5); g.quadraticCurveTo(bx + sg * 40 + sway, -Hh * 0.45, bx + sg * 20 + sway * 2, -Hh * 0.05);
@@ -283,6 +294,9 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
       g.beginPath(); g.moveTo(sw * 0.28, shY - 34); g.lineTo(sw * 0.05, shY + 30); g.lineTo(sw * 0.36, shY + 8); g.closePath(); g.fill();
       g.fillStyle = "#c8b070"; for (let by = shY + 40; by < -Hh * 0.4; by += 30) { g.beginPath(); g.arc((p.facing ?? 0) * 14, by, 3.5, 0, 6.283); g.fill(); }
     }
+    if (kind === "scylla") { g.fillStyle = "#7af0e0"; for (let k = 0; k < 7; k++) { const a = Math.PI * (0.15 + k * 0.1); g.beginPath(); g.arc(Math.cos(a) * sw * 0.32, shY + 6 + Math.sin(a) * 40, 9, 0, 6.283); g.fill(); } }
+    if (kind === "circe") { g.strokeStyle = "#8a5a2a"; g.lineWidth = 6; g.beginPath(); g.moveTo(-sw * 0.42, -Hh * 0.5); g.quadraticCurveTo(0, -Hh * 0.47, sw * 0.42, -Hh * 0.5); g.stroke(); }
+    if (kind === "seagod") { g.strokeStyle = "rgba(160,240,230,0.55)"; g.lineWidth = 4; for (let k = 0; k < 4; k++) { g.beginPath(); g.moveTo(-sw * 0.3 + k * sw * 0.2, shY + 40); g.quadraticCurveTo(-sw * 0.2 + k * sw * 0.2, -Hh * 0.6, -sw * 0.32 + k * sw * 0.2, -Hh * 0.2); g.stroke(); } }
     if (kind === "tailung") { // rosettes on the shoulders + a dark cloth sash at the waist (original)
       g.fillStyle = L0.hair; for (const [x, y] of [[-0.3, 0.06], [0.28, 0.1], [-0.1, 0.2], [0.12, 0.32], [-0.33, 0.36]]) { g.beginPath(); g.ellipse(sw * x, shY + (-Hh * 0.36 - shY) * y + 30, sw * 0.04, sw * 0.03, 0, 0, 6.283); g.fill(); }
       g.beginPath(); g.roundRect(-sw * 0.5, -Hh * 0.38 - 30, sw, 34, 8); inked(g, "#5a2a3a", 4);
@@ -538,7 +552,7 @@ function head(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: nu
   if (kind === "victor" || kind === "boyle") { // glasses (Victor: round wire frames)
     if (kind === "victor") { g.strokeStyle = "#3a3a44"; g.lineWidth = 3.5; for (const sgn of [-1, 1]) { g.beginPath(); g.arc(cx + fo + sgn * sp, ey, rx * 0.27, 0, 6.283); g.stroke(); } g.beginPath(); g.moveTo(cx + fo - sp + rx * 0.27, ey); g.lineTo(cx + fo + sp - rx * 0.27, ey); g.stroke(); }
   }
-  HB.current = p.headband; frontHair(g, L, kind, age, cx, cy, rx, ry, fo); HB.current = undefined;
+  HB.current = p.headband; frontHair(g, L, HAIR[kind] ?? kind, age, cx, cy, rx, ry, fo); HB.current = undefined;
   if (kind === "freeze") { // cyan goggles + glass dome helmet with a collar ring (original design)
     g.save(); g.shadowColor = "#7fe4ff"; g.shadowBlur = 14;
     for (const sgn of [-1, 1]) { g.beginPath(); g.ellipse(cx + fo + sgn * sp, ey, rx * 0.3, rx * 0.2, 0, 0, 6.283); inked(g, "rgba(120,230,255,0.85)", 4); }

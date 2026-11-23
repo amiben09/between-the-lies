@@ -1,0 +1,25 @@
+{
+ "script_words": 218,
+ "heard": 218,
+ "missing": [],
+ "fuzzy_name_matches": [
+  "Scylla~sylla",
+  "Glaucos~glaucus",
+  "Scylla~sylla",
+  "Scylla's~syllas's",
+  "Scylla~syllas",
+  "Scylla~syllas",
+  "Scylla~silla",
+  "peace~piece",
+  "Scylla~silla",
+  "Scylla's~silla's"
+ ],
+ "asr_text": "sailors feared the monster sylla none knew who made her a lonely girl with a basket of flowers the greek gods ruled the world and played with mortals like toys yellow flowers grew where titan blood had soaked the earth their sap could change a creature into its truest self cersei daughter of the sun god was mocked by her own family then she met glaucus a poor fisherman who was kind to her to keep him she fed him the sap he became a sea god a god had no use for cersei he chose sylla a beautiful nymph who flaunted his gifts that night cersei poured the sap into syllas's bathing pool to show the world how ugly she was inside syllas screamed six necks burst from the water six mouths forever hungry from a cliff above the sea she snatched sailors from passing ships the gods exiled cersei years later she learned how many men syllas had eaten every one of them was her fault centuries later she went back to face what she made she couldn't undo it so she turned silla to stone the only piece left silla never chose to be a monster cersei did she wanted the world to see silla's true face in the end the flowers showed her own",
+ "timing_shift_s": {
+  "mean": -0.008,
+  "max_abs": 0.336
+ },
+ "line_snap_s": {
+  "max_abs": 0.22
+ }
+}

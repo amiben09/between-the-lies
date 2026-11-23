@@ -4,7 +4,7 @@
 import json, re, sys, difflib, numpy as np, soundfile as sf
 from faster_whisper import WhisperModel
 voice, wj, lj, rep = sys.argv[1:5]
-HOMOPHONES = {("doe", "dough"), ("doe", "do"), ("fries", "freeze"), ("mister", "mr"), ("vi", "v"), ("vi", "vee"), ("mylo", "milo"), ("council", "counsel")}
+HOMOPHONES = {("doe", "dough"), ("doe", "do"), ("fries", "freeze"), ("mister", "mr"), ("vi", "v"), ("vi", "vee"), ("mylo", "milo"), ("council", "counsel"), ("circe", "cersei"), ("circe", "circe"), ("circe", "searcy")}
 a, sr = sf.read(voice, dtype="float32")
 t_out = np.arange(int(len(a) * 16000 / sr)) / 16000
 a16 = np.interp(t_out, np.arange(len(a)) / sr, a).astype(np.float32)

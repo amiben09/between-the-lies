@@ -1,0 +1,184 @@
+{
+ "continuity": "Circe (Madeline Miller, 2018); 'year' = canon-timeline order",
+ "structure": {
+  "hook": [
+   0
+  ],
+  "world": [
+   1
+  ],
+  "world_rules": [
+   2
+  ],
+  "characters": [
+   3,
+   4
+  ],
+  "main_drama": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "final_revelation": [
+   13,
+   14,
+   15
+  ]
+ },
+ "lines": [
+  {
+   "line": 0,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    1,
+    2,
+    3
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 1,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    4
+   ],
+   "label": "CANON (world)"
+  },
+  {
+   "line": 2,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    5,
+    6
+   ],
+   "label": "CANON (world rule)"
+  },
+  {
+   "line": 3,
+   "year": 1,
+   "frame_device": false,
+   "claims": [
+    7
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 4,
+   "year": 2,
+   "frame_device": false,
+   "claims": [
+    8
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 5,
+   "year": 3,
+   "frame_device": false,
+   "claims": [
+    9
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 6,
+   "year": 3,
+   "frame_device": false,
+   "claims": [
+    10,
+    11
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 7,
+   "year": 4,
+   "frame_device": false,
+   "claims": [
+    12
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 8,
+   "year": 4,
+   "frame_device": false,
+   "claims": [
+    13
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 9,
+   "year": 4,
+   "frame_device": false,
+   "claims": [
+    14
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 10,
+   "year": 5,
+   "frame_device": false,
+   "claims": [
+    15,
+    16
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 11,
+   "year": 6,
+   "frame_device": false,
+   "claims": [
+    17
+   ],
+   "label": "CANON + CHANNEL JUDGEMENT"
+  },
+  {
+   "line": 12,
+   "year": 7,
+   "frame_device": false,
+   "claims": [
+    18
+   ],
+   "label": "CANON"
+  },
+  {
+   "line": 13,
+   "year": 7,
+   "frame_device": false,
+   "claims": [
+    19
+   ],
+   "label": "CANON + SUPPORTED INTERPRETATION"
+  },
+  {
+   "line": 14,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    20
+   ],
+   "label": "CHANNEL JUDGEMENT"
+  },
+  {
+   "line": 15,
+   "year": null,
+   "frame_device": true,
+   "claims": [
+    21
+   ],
+   "label": "CHANNEL JUDGEMENT"
+  }
+ ]
+}

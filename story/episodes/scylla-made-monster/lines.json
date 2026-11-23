@@ -1,0 +1,146 @@
+[
+ {
+  "line": 0,
+  "s": 0.185,
+  "e": 5.439,
+  "pause_after": 0.3,
+  "text": "Sailors feared the monster Scylla. None knew who made her: a lonely girl with a basket of flowers.",
+  "seg_s": 0.15,
+  "seg_e": 5.5967
+ },
+ {
+  "line": 1,
+  "s": 5.931,
+  "e": 9.34,
+  "pause_after": 0.0,
+  "text": "The Greek gods ruled the world, and played with mortals like toys.",
+  "seg_s": 5.8967,
+  "seg_e": 9.4932
+ },
+ {
+  "line": 2,
+  "s": 9.525,
+  "e": 14.963,
+  "pause_after": 0.0,
+  "text": "Yellow flowers grew where Titan blood had soaked the earth. Their sap could change a creature into its truest self.",
+  "seg_s": 9.4932,
+  "seg_e": 15.115
+ },
+ {
+  "line": 3,
+  "s": 15.15,
+  "e": 18.454,
+  "pause_after": 0.0,
+  "text": "Circe, daughter of the sun god, was mocked by her own family.",
+  "seg_s": 15.115,
+  "seg_e": 18.6114
+ },
+ {
+  "line": 4,
+  "s": 18.643,
+  "e": 21.574,
+  "pause_after": 0.0,
+  "text": "Then she met Glaucos, a poor fisherman who was kind to her.",
+  "seg_s": 18.6114,
+  "seg_e": 21.7274
+ },
+ {
+  "line": 5,
+  "s": 21.758,
+  "e": 24.54,
+  "pause_after": 0.0,
+  "text": "To keep him, she fed him the sap. He became a sea god.",
+  "seg_s": 21.7274,
+  "seg_e": 24.6958
+ },
+ {
+  "line": 6,
+  "s": 24.728,
+  "e": 29.735,
+  "pause_after": 0.2,
+  "text": "A god had no use for Circe. He chose Scylla, a beautiful nymph, who flaunted his gifts.",
+  "seg_s": 24.6958,
+  "seg_e": 29.8885
+ },
+ {
+  "line": 7,
+  "s": 30.12,
+  "e": 35.39,
+  "pause_after": 0.3,
+  "text": "That night, Circe poured the sap into Scylla's bathing pool, to show the world how ugly she was inside.",
+  "seg_s": 30.0885,
+  "seg_e": 35.548
+ },
+ {
+  "line": 8,
+  "s": 35.879,
+  "e": 39.955,
+  "pause_after": 0.3,
+  "text": "Scylla screamed. Six necks burst from the water, six mouths, forever hungry.",
+  "seg_s": 35.848,
+  "seg_e": 40.1048
+ },
+ {
+  "line": 9,
+  "s": 40.437,
+  "e": 43.684,
+  "pause_after": 0.0,
+  "text": "From a cliff above the sea, she snatched sailors from passing ships.",
+  "seg_s": 40.4048,
+  "seg_e": 43.8364
+ },
+ {
+  "line": 10,
+  "s": 43.869,
+  "e": 48.034,
+  "pause_after": 0.0,
+  "text": "The gods exiled Circe. Years later, she learned how many men Scylla had eaten.",
+  "seg_s": 43.8364,
+  "seg_e": 48.2973
+ },
+ {
+  "line": 11,
+  "s": 48.328,
+  "e": 49.9,
+  "pause_after": 0.0,
+  "text": "Every one of them was her fault.",
+  "seg_s": 48.2973,
+  "seg_e": 50.054
+ },
+ {
+  "line": 12,
+  "s": 50.086,
+  "e": 52.742,
+  "pause_after": 0.2,
+  "text": "Centuries later, she went back to face what she made.",
+  "seg_s": 50.054,
+  "seg_e": 52.9225
+ },
+ {
+  "line": 13,
+  "s": 53.153,
+  "e": 56.791,
+  "pause_after": 0.5,
+  "text": "She couldn't undo it. So she turned Scylla to stone, the only peace left.",
+  "seg_s": 53.1225,
+  "seg_e": 56.9413
+ },
+ {
+  "line": 14,
+  "s": 57.475,
+  "e": 60.052,
+  "pause_after": 0.3,
+  "text": "Scylla never chose to be a monster. Circe did.",
+  "seg_s": 57.4413,
+  "seg_e": 60.212
+ },
+ {
+  "line": 15,
+  "s": 60.545,
+  "e": 64.626,
+  "pause_after": 0.5,
+  "text": "She wanted the world to see Scylla's true face. In the end, the flowers showed her own.",
+  "seg_s": 60.512,
+  "seg_e": 64.7815
+ }
+]

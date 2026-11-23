@@ -1,0 +1,1531 @@
+{
+"duration": 65.581,
+"words": [
+{
+"w": "Sailors",
+"s": 0.185,
+"e": 0.56,
+"line": 0,
+"asr": true
+},
+{
+"w": "feared",
+"s": 0.56,
+"e": 0.82,
+"line": 0,
+"asr": true
+},
+{
+"w": "the",
+"s": 0.82,
+"e": 1.02,
+"line": 0,
+"asr": true
+},
+{
+"w": "monster",
+"s": 1.02,
+"e": 1.34,
+"line": 0,
+"asr": true
+},
+{
+"w": "Scylla",
+"s": 1.34,
+"e": 1.74,
+"line": 0,
+"asr": "fuzzy"
+},
+{
+"w": "None",
+"s": 2.2,
+"e": 2.28,
+"line": 0,
+"asr": true
+},
+{
+"w": "knew",
+"s": 2.28,
+"e": 2.5,
+"line": 0,
+"asr": true
+},
+{
+"w": "who",
+"s": 2.5,
+"e": 2.66,
+"line": 0,
+"asr": true
+},
+{
+"w": "made",
+"s": 2.66,
+"e": 2.86,
+"line": 0,
+"asr": true
+},
+{
+"w": "her",
+"s": 2.86,
+"e": 3.1,
+"line": 0,
+"asr": true
+},
+{
+"w": "a",
+"s": 3.2,
+"e": 3.48,
+"line": 0,
+"asr": true
+},
+{
+"w": "lonely",
+"s": 3.48,
+"e": 3.78,
+"line": 0,
+"asr": true
+},
+{
+"w": "girl",
+"s": 3.78,
+"e": 4.14,
+"line": 0,
+"asr": true
+},
+{
+"w": "with",
+"s": 4.14,
+"e": 4.36,
+"line": 0,
+"asr": true
+},
+{
+"w": "a",
+"s": 4.36,
+"e": 4.46,
+"line": 0,
+"asr": true
+},
+{
+"w": "basket",
+"s": 4.46,
+"e": 4.72,
+"line": 0,
+"asr": true
+},
+{
+"w": "of",
+"s": 4.72,
+"e": 4.92,
+"line": 0,
+"asr": true
+},
+{
+"w": "flowers",
+"s": 4.92,
+"e": 5.439,
+"line": 0,
+"asr": true
+},
+{
+"w": "The",
+"s": 5.931,
+"e": 6.02,
+"line": 1,
+"asr": true
+},
+{
+"w": "Greek",
+"s": 6.02,
+"e": 6.2,
+"line": 1,
+"asr": true
+},
+{
+"w": "gods",
+"s": 6.2,
+"e": 6.54,
+"line": 1,
+"asr": true
+},
+{
+"w": "ruled",
+"s": 6.54,
+"e": 6.82,
+"line": 1,
+"asr": true
+},
+{
+"w": "the",
+"s": 6.82,
+"e": 7.02,
+"line": 1,
+"asr": true
+},
+{
+"w": "world",
+"s": 7.02,
+"e": 7.24,
+"line": 1,
+"asr": true
+},
+{
+"w": "and",
+"s": 7.24,
+"e": 7.72,
+"line": 1,
+"asr": true
+},
+{
+"w": "played",
+"s": 7.72,
+"e": 7.96,
+"line": 1,
+"asr": true
+},
+{
+"w": "with",
+"s": 7.96,
+"e": 8.22,
+"line": 1,
+"asr": true
+},
+{
+"w": "mortals",
+"s": 8.22,
+"e": 8.48,
+"line": 1,
+"asr": true
+},
+{
+"w": "like",
+"s": 8.48,
+"e": 8.82,
+"line": 1,
+"asr": true
+},
+{
+"w": "toys",
+"s": 8.82,
+"e": 9.34,
+"line": 1,
+"asr": true
+},
+{
+"w": "Yellow",
+"s": 9.525,
+"e": 9.74,
+"line": 2,
+"asr": true
+},
+{
+"w": "flowers",
+"s": 9.74,
+"e": 10.14,
+"line": 2,
+"asr": true
+},
+{
+"w": "grew",
+"s": 10.14,
+"e": 10.44,
+"line": 2,
+"asr": true
+},
+{
+"w": "where",
+"s": 10.44,
+"e": 10.7,
+"line": 2,
+"asr": true
+},
+{
+"w": "Titan",
+"s": 10.7,
+"e": 10.96,
+"line": 2,
+"asr": true
+},
+{
+"w": "blood",
+"s": 10.96,
+"e": 11.28,
+"line": 2,
+"asr": true
+},
+{
+"w": "had",
+"s": 11.28,
+"e": 11.44,
+"line": 2,
+"asr": true
+},
+{
+"w": "soaked",
+"s": 11.44,
+"e": 11.66,
+"line": 2,
+"asr": true
+},
+{
+"w": "the",
+"s": 11.66,
+"e": 11.88,
+"line": 2,
+"asr": true
+},
+{
+"w": "earth",
+"s": 11.88,
+"e": 12.08,
+"line": 2,
+"asr": true
+},
+{
+"w": "Their",
+"s": 12.56,
+"e": 12.74,
+"line": 2,
+"asr": true
+},
+{
+"w": "sap",
+"s": 12.74,
+"e": 12.94,
+"line": 2,
+"asr": true
+},
+{
+"w": "could",
+"s": 12.94,
+"e": 13.16,
+"line": 2,
+"asr": true
+},
+{
+"w": "change",
+"s": 13.16,
+"e": 13.42,
+"line": 2,
+"asr": true
+},
+{
+"w": "a",
+"s": 13.42,
+"e": 13.58,
+"line": 2,
+"asr": true
+},
+{
+"w": "creature",
+"s": 13.58,
+"e": 13.82,
+"line": 2,
+"asr": true
+},
+{
+"w": "into",
+"s": 13.82,
+"e": 14.08,
+"line": 2,
+"asr": true
+},
+{
+"w": "its",
+"s": 14.08,
+"e": 14.28,
+"line": 2,
+"asr": true
+},
+{
+"w": "truest",
+"s": 14.28,
+"e": 14.62,
+"line": 2,
+"asr": true
+},
+{
+"w": "self",
+"s": 14.62,
+"e": 14.963,
+"line": 2,
+"asr": true
+},
+{
+"w": "Circe",
+"s": 15.15,
+"e": 15.52,
+"line": 3,
+"asr": true
+},
+{
+"w": "daughter",
+"s": 15.58,
+"e": 15.82,
+"line": 3,
+"asr": true
+},
+{
+"w": "of",
+"s": 15.82,
+"e": 16.0,
+"line": 3,
+"asr": true
+},
+{
+"w": "the",
+"s": 16.0,
+"e": 16.1,
+"line": 3,
+"asr": true
+},
+{
+"w": "sun",
+"s": 16.1,
+"e": 16.26,
+"line": 3,
+"asr": true
+},
+{
+"w": "god",
+"s": 16.26,
+"e": 16.54,
+"line": 3,
+"asr": true
+},
+{
+"w": "was",
+"s": 16.84,
+"e": 17.1,
+"line": 3,
+"asr": true
+},
+{
+"w": "mocked",
+"s": 17.1,
+"e": 17.38,
+"line": 3,
+"asr": true
+},
+{
+"w": "by",
+"s": 17.38,
+"e": 17.6,
+"line": 3,
+"asr": true
+},
+{
+"w": "her",
+"s": 17.6,
+"e": 17.72,
+"line": 3,
+"asr": true
+},
+{
+"w": "own",
+"s": 17.72,
+"e": 17.94,
+"line": 3,
+"asr": true
+},
+{
+"w": "family",
+"s": 17.94,
+"e": 18.454,
+"line": 3,
+"asr": true
+},
+{
+"w": "Then",
+"s": 18.643,
+"e": 18.74,
+"line": 4,
+"asr": true
+},
+{
+"w": "she",
+"s": 18.74,
+"e": 18.88,
+"line": 4,
+"asr": true
+},
+{
+"w": "met",
+"s": 18.88,
+"e": 19.1,
+"line": 4,
+"asr": true
+},
+{
+"w": "Glaucos",
+"s": 19.1,
+"e": 19.48,
+"line": 4,
+"asr": "fuzzy"
+},
+{
+"w": "a",
+"s": 19.92,
+"e": 20.04,
+"line": 4,
+"asr": true
+},
+{
+"w": "poor",
+"s": 20.04,
+"e": 20.24,
+"line": 4,
+"asr": true
+},
+{
+"w": "fisherman",
+"s": 20.24,
+"e": 20.58,
+"line": 4,
+"asr": true
+},
+{
+"w": "who",
+"s": 20.58,
+"e": 20.84,
+"line": 4,
+"asr": true
+},
+{
+"w": "was",
+"s": 20.84,
+"e": 20.94,
+"line": 4,
+"asr": true
+},
+{
+"w": "kind",
+"s": 20.94,
+"e": 21.18,
+"line": 4,
+"asr": true
+},
+{
+"w": "to",
+"s": 21.18,
+"e": 21.4,
+"line": 4,
+"asr": true
+},
+{
+"w": "her",
+"s": 21.4,
+"e": 21.574,
+"line": 4,
+"asr": true
+},
+{
+"w": "To",
+"s": 21.758,
+"e": 21.84,
+"line": 5,
+"asr": true
+},
+{
+"w": "keep",
+"s": 21.84,
+"e": 22.04,
+"line": 5,
+"asr": true
+},
+{
+"w": "him",
+"s": 22.04,
+"e": 22.22,
+"line": 5,
+"asr": true
+},
+{
+"w": "she",
+"s": 22.22,
+"e": 22.4,
+"line": 5,
+"asr": true
+},
+{
+"w": "fed",
+"s": 22.4,
+"e": 22.62,
+"line": 5,
+"asr": true
+},
+{
+"w": "him",
+"s": 22.62,
+"e": 22.76,
+"line": 5,
+"asr": true
+},
+{
+"w": "the",
+"s": 22.76,
+"e": 22.9,
+"line": 5,
+"asr": true
+},
+{
+"w": "sap",
+"s": 22.9,
+"e": 23.12,
+"line": 5,
+"asr": true
+},
+{
+"w": "He",
+"s": 23.44,
+"e": 23.6,
+"line": 5,
+"asr": true
+},
+{
+"w": "became",
+"s": 23.6,
+"e": 23.82,
+"line": 5,
+"asr": true
+},
+{
+"w": "a",
+"s": 23.82,
+"e": 23.96,
+"line": 5,
+"asr": true
+},
+{
+"w": "sea",
+"s": 23.96,
+"e": 24.12,
+"line": 5,
+"asr": true
+},
+{
+"w": "god",
+"s": 24.12,
+"e": 24.54,
+"line": 5,
+"asr": true
+},
+{
+"w": "A",
+"s": 24.728,
+"e": 24.82,
+"line": 6,
+"asr": true
+},
+{
+"w": "god",
+"s": 24.82,
+"e": 25.04,
+"line": 6,
+"asr": true
+},
+{
+"w": "had",
+"s": 25.04,
+"e": 25.24,
+"line": 6,
+"asr": true
+},
+{
+"w": "no",
+"s": 25.24,
+"e": 25.46,
+"line": 6,
+"asr": true
+},
+{
+"w": "use",
+"s": 25.46,
+"e": 25.64,
+"line": 6,
+"asr": true
+},
+{
+"w": "for",
+"s": 25.64,
+"e": 25.86,
+"line": 6,
+"asr": true
+},
+{
+"w": "Circe",
+"s": 25.86,
+"e": 26.26,
+"line": 6,
+"asr": true
+},
+{
+"w": "He",
+"s": 26.64,
+"e": 26.84,
+"line": 6,
+"asr": true
+},
+{
+"w": "chose",
+"s": 26.84,
+"e": 27.1,
+"line": 6,
+"asr": true
+},
+{
+"w": "Scylla",
+"s": 27.1,
+"e": 27.48,
+"line": 6,
+"asr": "fuzzy"
+},
+{
+"w": "a",
+"s": 27.76,
+"e": 27.86,
+"line": 6,
+"asr": true
+},
+{
+"w": "beautiful",
+"s": 27.86,
+"e": 28.24,
+"line": 6,
+"asr": true
+},
+{
+"w": "nymph",
+"s": 28.24,
+"e": 28.56,
+"line": 6,
+"asr": true
+},
+{
+"w": "who",
+"s": 28.56,
+"e": 28.76,
+"line": 6,
+"asr": true
+},
+{
+"w": "flaunted",
+"s": 28.76,
+"e": 29.06,
+"line": 6,
+"asr": true
+},
+{
+"w": "his",
+"s": 29.06,
+"e": 29.32,
+"line": 6,
+"asr": true
+},
+{
+"w": "gifts",
+"s": 29.32,
+"e": 29.735,
+"line": 6,
+"asr": true
+},
+{
+"w": "That",
+"s": 30.12,
+"e": 30.24,
+"line": 7,
+"asr": true
+},
+{
+"w": "night",
+"s": 30.24,
+"e": 30.56,
+"line": 7,
+"asr": true
+},
+{
+"w": "Circe",
+"s": 30.78,
+"e": 30.94,
+"line": 7,
+"asr": true
+},
+{
+"w": "poured",
+"s": 30.94,
+"e": 31.2,
+"line": 7,
+"asr": true
+},
+{
+"w": "the",
+"s": 31.2,
+"e": 31.4,
+"line": 7,
+"asr": true
+},
+{
+"w": "sap",
+"s": 31.4,
+"e": 31.58,
+"line": 7,
+"asr": true
+},
+{
+"w": "into",
+"s": 31.58,
+"e": 31.9,
+"line": 7,
+"asr": true
+},
+{
+"w": "Scylla's",
+"s": 31.9,
+"e": 32.3,
+"line": 7,
+"asr": "fuzzy"
+},
+{
+"w": "bathing",
+"s": 32.3,
+"e": 32.46,
+"line": 7,
+"asr": true
+},
+{
+"w": "pool",
+"s": 32.46,
+"e": 32.88,
+"line": 7,
+"asr": true
+},
+{
+"w": "to",
+"s": 32.88,
+"e": 33.32,
+"line": 7,
+"asr": true
+},
+{
+"w": "show",
+"s": 33.32,
+"e": 33.52,
+"line": 7,
+"asr": true
+},
+{
+"w": "the",
+"s": 33.52,
+"e": 33.68,
+"line": 7,
+"asr": true
+},
+{
+"w": "world",
+"s": 33.68,
+"e": 33.9,
+"line": 7,
+"asr": true
+},
+{
+"w": "how",
+"s": 33.9,
+"e": 34.16,
+"line": 7,
+"asr": true
+},
+{
+"w": "ugly",
+"s": 34.16,
+"e": 34.46,
+"line": 7,
+"asr": true
+},
+{
+"w": "she",
+"s": 34.46,
+"e": 34.7,
+"line": 7,
+"asr": true
+},
+{
+"w": "was",
+"s": 34.7,
+"e": 34.84,
+"line": 7,
+"asr": true
+},
+{
+"w": "inside",
+"s": 34.84,
+"e": 35.39,
+"line": 7,
+"asr": true
+},
+{
+"w": "Scylla",
+"s": 35.879,
+"e": 36.2,
+"line": 8,
+"asr": "fuzzy"
+},
+{
+"w": "screamed",
+"s": 36.2,
+"e": 36.48,
+"line": 8,
+"asr": true
+},
+{
+"w": "Six",
+"s": 37.18,
+"e": 37.26,
+"line": 8,
+"asr": true
+},
+{
+"w": "necks",
+"s": 37.26,
+"e": 37.46,
+"line": 8,
+"asr": true
+},
+{
+"w": "burst",
+"s": 37.46,
+"e": 37.78,
+"line": 8,
+"asr": true
+},
+{
+"w": "from",
+"s": 37.78,
+"e": 38.0,
+"line": 8,
+"asr": true
+},
+{
+"w": "the",
+"s": 38.0,
+"e": 38.12,
+"line": 8,
+"asr": true
+},
+{
+"w": "water",
+"s": 38.12,
+"e": 38.36,
+"line": 8,
+"asr": true
+},
+{
+"w": "six",
+"s": 38.56,
+"e": 38.64,
+"line": 8,
+"asr": true
+},
+{
+"w": "mouths",
+"s": 38.64,
+"e": 39.0,
+"line": 8,
+"asr": true
+},
+{
+"w": "forever",
+"s": 39.0,
+"e": 39.42,
+"line": 8,
+"asr": true
+},
+{
+"w": "hungry",
+"s": 39.42,
+"e": 39.955,
+"line": 8,
+"asr": true
+},
+{
+"w": "From",
+"s": 40.437,
+"e": 40.52,
+"line": 9,
+"asr": true
+},
+{
+"w": "a",
+"s": 40.52,
+"e": 40.62,
+"line": 9,
+"asr": true
+},
+{
+"w": "cliff",
+"s": 40.62,
+"e": 40.78,
+"line": 9,
+"asr": true
+},
+{
+"w": "above",
+"s": 40.78,
+"e": 41.02,
+"line": 9,
+"asr": true
+},
+{
+"w": "the",
+"s": 41.02,
+"e": 41.22,
+"line": 9,
+"asr": true
+},
+{
+"w": "sea",
+"s": 41.22,
+"e": 41.46,
+"line": 9,
+"asr": true
+},
+{
+"w": "she",
+"s": 41.78,
+"e": 41.92,
+"line": 9,
+"asr": true
+},
+{
+"w": "snatched",
+"s": 41.92,
+"e": 42.24,
+"line": 9,
+"asr": true
+},
+{
+"w": "sailors",
+"s": 42.24,
+"e": 42.64,
+"line": 9,
+"asr": true
+},
+{
+"w": "from",
+"s": 42.64,
+"e": 42.9,
+"line": 9,
+"asr": true
+},
+{
+"w": "passing",
+"s": 42.9,
+"e": 43.2,
+"line": 9,
+"asr": true
+},
+{
+"w": "ships",
+"s": 43.2,
+"e": 43.684,
+"line": 9,
+"asr": true
+},
+{
+"w": "The",
+"s": 43.869,
+"e": 43.98,
+"line": 10,
+"asr": true
+},
+{
+"w": "gods",
+"s": 43.98,
+"e": 44.22,
+"line": 10,
+"asr": true
+},
+{
+"w": "exiled",
+"s": 44.22,
+"e": 44.74,
+"line": 10,
+"asr": true
+},
+{
+"w": "Circe",
+"s": 44.74,
+"e": 45.26,
+"line": 10,
+"asr": true
+},
+{
+"w": "Years",
+"s": 45.76,
+"e": 45.92,
+"line": 10,
+"asr": true
+},
+{
+"w": "later",
+"s": 45.92,
+"e": 46.22,
+"line": 10,
+"asr": true
+},
+{
+"w": "she",
+"s": 46.22,
+"e": 46.44,
+"line": 10,
+"asr": true
+},
+{
+"w": "learned",
+"s": 46.44,
+"e": 46.64,
+"line": 10,
+"asr": true
+},
+{
+"w": "how",
+"s": 46.64,
+"e": 46.88,
+"line": 10,
+"asr": true
+},
+{
+"w": "many",
+"s": 46.88,
+"e": 47.1,
+"line": 10,
+"asr": true
+},
+{
+"w": "men",
+"s": 47.1,
+"e": 47.32,
+"line": 10,
+"asr": true
+},
+{
+"w": "Scylla",
+"s": 47.32,
+"e": 47.64,
+"line": 10,
+"asr": "fuzzy"
+},
+{
+"w": "had",
+"s": 47.64,
+"e": 47.82,
+"line": 10,
+"asr": true
+},
+{
+"w": "eaten",
+"s": 47.82,
+"e": 48.034,
+"line": 10,
+"asr": true
+},
+{
+"w": "Every",
+"s": 48.328,
+"e": 48.56,
+"line": 11,
+"asr": true
+},
+{
+"w": "one",
+"s": 48.56,
+"e": 48.74,
+"line": 11,
+"asr": true
+},
+{
+"w": "of",
+"s": 48.74,
+"e": 48.86,
+"line": 11,
+"asr": true
+},
+{
+"w": "them",
+"s": 48.86,
+"e": 49.02,
+"line": 11,
+"asr": true
+},
+{
+"w": "was",
+"s": 49.02,
+"e": 49.3,
+"line": 11,
+"asr": true
+},
+{
+"w": "her",
+"s": 49.3,
+"e": 49.48,
+"line": 11,
+"asr": true
+},
+{
+"w": "fault",
+"s": 49.48,
+"e": 49.9,
+"line": 11,
+"asr": true
+},
+{
+"w": "Centuries",
+"s": 50.086,
+"e": 50.46,
+"line": 12,
+"asr": true
+},
+{
+"w": "later",
+"s": 50.46,
+"e": 50.88,
+"line": 12,
+"asr": true
+},
+{
+"w": "she",
+"s": 51.08,
+"e": 51.3,
+"line": 12,
+"asr": true
+},
+{
+"w": "went",
+"s": 51.3,
+"e": 51.44,
+"line": 12,
+"asr": true
+},
+{
+"w": "back",
+"s": 51.44,
+"e": 51.68,
+"line": 12,
+"asr": true
+},
+{
+"w": "to",
+"s": 51.68,
+"e": 51.88,
+"line": 12,
+"asr": true
+},
+{
+"w": "face",
+"s": 51.88,
+"e": 52.06,
+"line": 12,
+"asr": true
+},
+{
+"w": "what",
+"s": 52.06,
+"e": 52.26,
+"line": 12,
+"asr": true
+},
+{
+"w": "she",
+"s": 52.26,
+"e": 52.4,
+"line": 12,
+"asr": true
+},
+{
+"w": "made",
+"s": 52.4,
+"e": 52.742,
+"line": 12,
+"asr": true
+},
+{
+"w": "She",
+"s": 53.153,
+"e": 53.24,
+"line": 13,
+"asr": true
+},
+{
+"w": "couldn't",
+"s": 53.24,
+"e": 53.46,
+"line": 13,
+"asr": true
+},
+{
+"w": "undo",
+"s": 53.46,
+"e": 53.76,
+"line": 13,
+"asr": true
+},
+{
+"w": "it",
+"s": 53.76,
+"e": 54.1,
+"line": 13,
+"asr": true
+},
+{
+"w": "So",
+"s": 54.1,
+"e": 54.42,
+"line": 13,
+"asr": true
+},
+{
+"w": "she",
+"s": 54.42,
+"e": 54.56,
+"line": 13,
+"asr": true
+},
+{
+"w": "turned",
+"s": 54.56,
+"e": 54.84,
+"line": 13,
+"asr": true
+},
+{
+"w": "Scylla",
+"s": 54.84,
+"e": 55.04,
+"line": 13,
+"asr": "fuzzy"
+},
+{
+"w": "to",
+"s": 55.04,
+"e": 55.26,
+"line": 13,
+"asr": true
+},
+{
+"w": "stone",
+"s": 55.26,
+"e": 55.56,
+"line": 13,
+"asr": true
+},
+{
+"w": "the",
+"s": 55.8,
+"e": 55.88,
+"line": 13,
+"asr": true
+},
+{
+"w": "only",
+"s": 55.88,
+"e": 56.04,
+"line": 13,
+"asr": true
+},
+{
+"w": "peace",
+"s": 56.04,
+"e": 56.34,
+"line": 13,
+"asr": "fuzzy"
+},
+{
+"w": "left",
+"s": 56.34,
+"e": 56.791,
+"line": 13,
+"asr": true
+},
+{
+"w": "Scylla",
+"s": 57.475,
+"e": 57.68,
+"line": 14,
+"asr": "fuzzy"
+},
+{
+"w": "never",
+"s": 57.68,
+"e": 57.92,
+"line": 14,
+"asr": true
+},
+{
+"w": "chose",
+"s": 57.92,
+"e": 58.2,
+"line": 14,
+"asr": true
+},
+{
+"w": "to",
+"s": 58.2,
+"e": 58.42,
+"line": 14,
+"asr": true
+},
+{
+"w": "be",
+"s": 58.42,
+"e": 58.54,
+"line": 14,
+"asr": true
+},
+{
+"w": "a",
+"s": 58.54,
+"e": 58.68,
+"line": 14,
+"asr": true
+},
+{
+"w": "monster",
+"s": 58.68,
+"e": 58.98,
+"line": 14,
+"asr": true
+},
+{
+"w": "Circe",
+"s": 59.54,
+"e": 59.7,
+"line": 14,
+"asr": true
+},
+{
+"w": "did",
+"s": 59.7,
+"e": 60.052,
+"line": 14,
+"asr": true
+},
+{
+"w": "She",
+"s": 60.545,
+"e": 60.64,
+"line": 15,
+"asr": true
+},
+{
+"w": "wanted",
+"s": 60.64,
+"e": 60.8,
+"line": 15,
+"asr": true
+},
+{
+"w": "the",
+"s": 60.8,
+"e": 60.98,
+"line": 15,
+"asr": true
+},
+{
+"w": "world",
+"s": 60.98,
+"e": 61.16,
+"line": 15,
+"asr": true
+},
+{
+"w": "to",
+"s": 61.16,
+"e": 61.38,
+"line": 15,
+"asr": true
+},
+{
+"w": "see",
+"s": 61.38,
+"e": 61.5,
+"line": 15,
+"asr": true
+},
+{
+"w": "Scylla's",
+"s": 61.5,
+"e": 61.92,
+"line": 15,
+"asr": "fuzzy"
+},
+{
+"w": "true",
+"s": 61.92,
+"e": 62.08,
+"line": 15,
+"asr": true
+},
+{
+"w": "face",
+"s": 62.08,
+"e": 62.4,
+"line": 15,
+"asr": true
+},
+{
+"w": "In",
+"s": 62.86,
+"e": 62.98,
+"line": 15,
+"asr": true
+},
+{
+"w": "the",
+"s": 62.98,
+"e": 63.1,
+"line": 15,
+"asr": true
+},
+{
+"w": "end",
+"s": 63.1,
+"e": 63.36,
+"line": 15,
+"asr": true
+},
+{
+"w": "the",
+"s": 63.46,
+"e": 63.56,
+"line": 15,
+"asr": true
+},
+{
+"w": "flowers",
+"s": 63.56,
+"e": 63.88,
+"line": 15,
+"asr": true
+},
+{
+"w": "showed",
+"s": 63.88,
+"e": 64.2,
+"line": 15,
+"asr": true
+},
+{
+"w": "her",
+"s": 64.2,
+"e": 64.38,
+"line": 15,
+"asr": true
+},
+{
+"w": "own",
+"s": 64.38,
+"e": 64.626,
+"line": 15,
+"asr": true
+}
+]
+}
