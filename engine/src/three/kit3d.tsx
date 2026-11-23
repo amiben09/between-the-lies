@@ -4,7 +4,7 @@ import React, { useEffect, useLayoutEffect, useMemo } from "react";
 import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { Ctx, makeCanvas } from "../btl/core";
-import { Age, Kind, Light, Pose, person } from "../btl/people";
+import { BEAST, figH, Age, Kind, Light, Pose, person } from "../btl/people";
 
 export const gradientMap = (() => { const d = new Uint8Array([60, 140, 255]); const t = new THREE.DataTexture(d, 3, 1, THREE.RedFormat); t.minFilter = t.magFilter = THREE.NearestFilter; t.needsUpdate = true; return t; })();
 const matCache = new Map<string, THREE.Material>();
@@ -73,7 +73,7 @@ export const CardCanvas: React.FC<{ draw: (g: Ctx) => void; at: [number, number,
 /** One of our 2D characters as a card standing in the 3D world. `heightM` = real height in metres. */
 export const CardActor: React.FC<{ kind: Kind; age: Age; pose: Partial<Pose>; light: Light; at: [number, number, number]; heightM: number; camPos: THREE.Vector3; spherical?: boolean; res?: number }> =
   ({ kind, age, pose, light, at, heightM, camPos, spherical, res }) => {
-    const refH = kind === "dumbledore" || kind === "voldemort" ? 1060 : age === "child" ? 640 : age === "teen" ? 880 : 1000;
+    const refH = BEAST(kind) ? figH(kind, age) /* animals: real drawn height */ : kind === "dumbledore" || kind === "voldemort" ? 1060 : age === "child" ? 640 : age === "teen" ? 880 : 1000;
     const s = 1700 / refH;
     return <CardCanvas at={at} ppm={1700 / heightM} camPos={camPos} spherical={spherical} res={res}
       draw={(g) => person(g, { x: 0, y: 0, zoom: 1 }, 1, kind, age, { x: 540, y: 1880, s, ...pose } as Pose, light)} />;

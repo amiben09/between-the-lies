@@ -3,7 +3,9 @@
 // (key/shade gradient, source-atop), optionally depth-blurred, then composited — so lighting never touches the set.
 import { Cam, Ctx, H, W, makeCanvas, radGrad } from "./core";
 
-export type Kind = "snape" | "lily" | "harry" | "james" | "neville" | "dumbledore" | "voldemort" | "bully" | "itachi" | "sasuke" | "victor" | "freeze" | "nora" | "boyle" | "batman" | "jinx" | "vi" | "vander" | "mylo" | "silco";
+export type Kind = "snape" | "lily" | "harry" | "james" | "neville" | "dumbledore" | "voldemort" | "bully" | "itachi" | "sasuke" | "victor" | "freeze" | "nora" | "boyle" | "batman" | "jinx" | "vi" | "vander" | "mylo" | "silco" | "tailung" | "shifu" | "oogway";
+/** anthropomorphic animal characters (original channel designs): fur = skin, markings = hair */
+export const BEAST = (k: Kind) => k === "tailung" || k === "shifu" || k === "oogway";
 export type Age = "child" | "teen" | "adult";
 export type Arm = [number, number]; // [shoulder deg from straight down, + = toward screen-right; elbow bend deg]
 export type Pose = {
@@ -89,8 +91,20 @@ function look(kind: Kind, age: Age): Look {
       coat: "#2a3a30", coatHi: "#3e5446", trim: "#7a1a20", legs: "#22261e", robe: true };
     case "batman": return { ...sz, H: 1040, sw: 280, skin: "#e2c0a2", skinSh: "#b8967a", hair: "#2a2c36", hairHi: "#3c404c", iris: "#f4f4f4",
       coat: "#4a4f5c", coatHi: "#6a7080", legs: "#3a3e4a", robe: false };
+    // ---- Kung Fu valley (original designs; no studio model sheets) ----
+    case "tailung": return age === "child" ? { ...sz, H: 520, hh: 190, sw: 150, skin: "#e2e0da", skinSh: "#aeaaa6", hair: "#3a3842", hairHi: "#5a5862", iris: "#e8a42c",
+      coat: "#d8d6d0", coatHi: "#f0eee8", legs: "#4a4450", robe: false }
+      : { ...sz, H: age === "teen" ? 960 : 1100, hh: age === "teen" ? 230 : 245, sw: age === "teen" ? 270 : 340, skin: "#dcdad4", skinSh: "#a4a09c", hair: "#34323c", hairHi: "#56545e", iris: "#e8a42c",
+      coat: "#cfccc6", coatHi: "#eeebe6", legs: "#3a3440", robe: false }; // bare furred torso + arms, dark trousers
+    case "shifu": return { ...sz, H: 600, hh: 175, sw: 165, skin: "#c45a2a", skinSh: "#86381a", hair: age === "adult" ? "#e8e2d8" : "#f6efe2", hairHi: "#ffffff", iris: "#2a1a14",
+      coat: "#7a6440", coatHi: "#a08858", legs: "#3a2a22", robe: true };
+    case "oogway": return { ...sz, H: 760, hh: 200, sw: 270, skin: "#93a27e", skinSh: "#5e6c4e", hair: "#5e6c4e", hairHi: "#b4c2a0", iris: "#3a3020",
+      coat: "#7a6a48", coatHi: "#9a8a62", legs: "#5e6c4e", robe: true };
   }
 }
+
+/** drawn height (px at s = 1) of a character — used to size cards in metres */
+export const figH = (kind: Kind, age: Age) => look(kind, age).H;
 
 let scratch: [HTMLCanvasElement, Ctx] | null = null;
 const sc = () => (scratch ??= makeCanvas(W, H));
@@ -159,9 +173,15 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
       g.save();
       for (const sx of [-1, 1]) {
         const lift = walking ? Math.max(0, sx * ws) * 26 : 0, stride = walking ? sx * ws * sw * 0.12 : 0;
+        if (BEAST(kind)) { // loose kung-fu trousers gathered at the ankle + furred paws
+          const lx = sx * sw * 0.2 + stride * 0.5, top = hemY - 24, bot = -26 - lift;
+          g.beginPath(); g.moveTo(lx - sw * 0.17, top); g.lineTo(lx + sw * 0.17, top); g.quadraticCurveTo(lx + sw * 0.2, (top + bot) / 2, lx + sw * 0.1, bot); g.lineTo(lx - sw * 0.1, bot); g.quadraticCurveTo(lx - sw * 0.2, (top + bot) / 2, lx - sw * 0.17, top); g.closePath(); inked(g, L.legs, 4);
+          g.beginPath(); g.roundRect(lx - sw * 0.11, bot - 6, sw * 0.22, 16, 6); inked(g, "#2a2028", 3);
+          g.beginPath(); g.ellipse(sx * sw * 0.2 + (p.facing ?? 0) * 12 + stride, -8 - lift, sw * 0.15, 14, 0, 0, 6.283); inked(g, L.skin, 4);
+        } else {
         g.beginPath(); g.roundRect(sx * sw * 0.16 - sw * 0.1 + stride * 0.5, hemY - 20, sw * 0.2, -hemY + 6 - lift, 6);
         inked(g, L.legs, 4);
-        g.beginPath(); g.ellipse(sx * sw * 0.16 + (p.facing ?? 0) * 10 + stride, -6 - lift, sw * 0.15, 12, 0, 0, 6.283); inked(g, "#1d1719", 4);
+        g.beginPath(); g.ellipse(sx * sw * 0.16 + (p.facing ?? 0) * 10 + stride, -6 - lift, sw * 0.15, 12, 0, 0, 6.283); inked(g, "#1d1719", 4); }
       }
       g.restore();
     }
@@ -180,8 +200,27 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
       for (let k = 0; k < 5; k++) { const x0 = -sw * 0.95 + cs + k * (sw * 1.9 / 5), x1 = x0 + sw * 1.9 / 5; g.quadraticCurveTo((x0 + x1) / 2, -44, x1, -14); }
       g.quadraticCurveTo(sw * 1.05 + cs, -Hh * 0.45, sw * 0.42, shY - 8); g.closePath(); inked(g, "#1c1e28", 5);
     }
+    if (kind === "tailung" || kind === "shifu") { // tail: thick (leopard, dark tip) / ringed (red panda); sways with breath
+      const ts = Math.sin(fr * 0.045) * 0.25 + (walking ? ws * 0.3 : 0), tl = L.H * (kind === "shifu" ? 0.6 : 0.62), tw = kind === "shifu" ? sw * 0.2 : sw * 0.085;
+      g.save(); g.translate((p.facing ?? 0) * -sw * 0.2 - sw * 0.25, -Hh * 0.36);
+      const n = 26, pts: [number, number, number][] = [];
+      for (let k = 0; k <= n; k++) { const t = k / n; // hangs from the hip behind the legs, then curls up and out (stays inside the card)
+        const px = -Math.sin(t * 2.4) * tl * 0.32 - ts * t * tl * 0.12, py = Math.sin(t * Math.PI * 0.85) * tl * 0.55 - t * t * tl * 0.55;
+        pts.push([px, py, tw * (1.05 - t * 0.45)]); }
+      g.lineCap = "round"; g.lineJoin = "round";
+      for (const pass of [0, 1]) for (let k = 0; k < n; k++) { const [x0, y0, w0] = pts[k], [x1, y1] = pts[k + 1];
+        g.beginPath(); g.moveTo(x0, y0); g.lineTo(x1, y1);
+        g.strokeStyle = pass === 0 ? INK : kind === "shifu" ? (Math.floor(k / 3) % 2 ? "#ead9bf" : L.skin) : (k > n - 4 ? L.hair : L.skin);
+        g.lineWidth = pass === 0 ? w0 * 2 + 8 : w0 * 2; g.stroke(); }
+      if (kind === "tailung") { g.fillStyle = L.hair; for (let k = 3; k < n - 4; k += 4) { const [x, y, w] = pts[k]; g.beginPath(); g.ellipse(x, y - w * 0.3, w * 0.35, w * 0.25, 0, 0, 6.283); g.fill(); } }
+      g.restore();
+    }
+    if (kind === "oogway") { // shell behind the robe: domed, plated
+      g.beginPath(); g.ellipse(0, shY + (-Hh * 0.36 - shY) * 0.45, sw * 0.72, (-Hh * 0.36 - shY) * 0.75 + 40, 0, 0, 6.283); inked(g, "#6a5a3a", 5);
+      g.strokeStyle = "rgba(30,20,10,0.45)"; g.lineWidth = 4; for (const dx of [-0.4, 0, 0.4]) { g.beginPath(); g.moveTo(sw * dx, shY - 30); g.lineTo(sw * dx * 1.3, -Hh * 0.2); g.stroke(); }
+    }
     // torso / robe
-    const flare = L.robe ? 1.3 : 1.12;
+    const flare = L.robe ? 1.3 : kind === "tailung" ? 0.74 : 1.12;
     g.beginPath();
     g.moveTo(-sw / 2, shY + 18);
     g.quadraticCurveTo(-sw / 2 - 6, shY - 6, -sw * 0.18, shY - 12);
@@ -243,6 +282,10 @@ function drawFigure(g: Ctx, kind: Kind, age: Age, p: Pose) {
       g.fillStyle = L.trim ?? "#7a1a20"; g.beginPath(); g.moveTo(-sw * 0.28, shY - 34); g.lineTo(-sw * 0.05, shY + 30); g.lineTo(-sw * 0.36, shY + 8); g.closePath(); g.fill();
       g.beginPath(); g.moveTo(sw * 0.28, shY - 34); g.lineTo(sw * 0.05, shY + 30); g.lineTo(sw * 0.36, shY + 8); g.closePath(); g.fill();
       g.fillStyle = "#c8b070"; for (let by = shY + 40; by < -Hh * 0.4; by += 30) { g.beginPath(); g.arc((p.facing ?? 0) * 14, by, 3.5, 0, 6.283); g.fill(); }
+    }
+    if (kind === "tailung") { // rosettes on the shoulders + a dark cloth sash at the waist (original)
+      g.fillStyle = L0.hair; for (const [x, y] of [[-0.3, 0.06], [0.28, 0.1], [-0.1, 0.2], [0.12, 0.32], [-0.33, 0.36]]) { g.beginPath(); g.ellipse(sw * x, shY + (-Hh * 0.36 - shY) * y + 30, sw * 0.04, sw * 0.03, 0, 0, 6.283); g.fill(); }
+      g.beginPath(); g.roundRect(-sw * 0.5, -Hh * 0.38 - 30, sw, 34, 8); inked(g, "#5a2a3a", 4);
     }
     if (kind === "batman") { // utility belt (no chest emblem — original rendition)
       g.beginPath(); g.roundRect(-sw * 0.4, -Hh * 0.47, sw * 0.8, 26, 6); inked(g, "#c8a23a", 4);
@@ -340,6 +383,7 @@ function head(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: nu
   const eye = p.blink ? 0.05 : (p.eye ?? 1);
   const brow = p.brow ?? 0, mouth = p.mouth ?? 0, open = p.open ?? 0;
   const hood = kind === "voldemort";
+  if (BEAST(kind)) { beastHead(g, L, kind, age, p, cx, cy); return; }
 
   // neck
   g.beginPath(); g.roundRect(cx - rx * 0.38 + fo * 0.3, cy + ry * 0.55, rx * 0.76, hh * 0.4, 8); inked(g, L.skinSh, 4);
@@ -656,4 +700,103 @@ export function reachArm(kind: Kind, age: Age, side: "L" | "R", p: { x: number; 
   const dir = (elbowDown ? 1 : -1) * (tx < 0 ? 1 : -1);
   const upper = tgt + dir * alpha;
   return [upper, -dir * (180 - beta)];
+}
+
+/** Animal heads (original designs): ears, broad furred skull, markings, eyes (same expression controls), muzzle, whiskers. */
+function beastHead(g: Ctx, L: Look, kind: Kind, age: Age, p: Pose, cx: number, cy: number) {
+  const hh = L.hh, rx = hh * (kind === "oogway" ? 0.4 : 0.46), ry = hh * (kind === "oogway" ? 0.52 : 0.47);
+  const f = p.facing ?? 0, fo = f * rx * 0.3, lk = p.look ?? [0, 0];
+  const eye = p.blink ? 0.05 : (p.eye ?? 1), brow = p.brow ?? 0, mouth = p.mouth ?? 0, open = p.open ?? 0;
+  const cub = age === "child", old = kind === "shifu" && age === "adult";
+  // neck
+  if (kind === "oogway") { g.beginPath(); g.roundRect(cx - rx * 0.3 + fo * 0.3, cy + ry * 0.3, rx * 0.6, hh * 0.75, 14); inked(g, L.skinSh, 4); }
+  else { g.beginPath(); g.moveTo(cx - rx * 0.75, cy + ry * 0.4); // fur ruff under the jaw
+    for (let k = 0; k <= 8; k++) { const t = k / 8, x = cx - rx * 0.75 + t * rx * 1.5 + fo * 0.3; g.lineTo(x, cy + ry * (k % 2 ? 1.25 : 1.1)); }
+    g.lineTo(cx + rx * 0.75, cy + ry * 0.4); g.closePath(); inked(g, kind === "shifu" ? L.skinSh : L.skin, 4); }
+  if (p.back) { // back of the head: ears, skull, markings (no face)
+    if (kind !== "oogway") for (const sgn of [-1, 1]) { const er = rx * (kind === "shifu" ? 0.42 : 0.3); g.save(); g.translate(cx + sgn * rx * 0.66, cy - ry * 0.82); g.rotate(sgn * 0.35);
+      g.beginPath(); if (kind === "shifu") { g.moveTo(-er * 0.8, er * 0.5); g.quadraticCurveTo(-er * 0.7, -er * 1.2, 0, -er * 1.25); g.quadraticCurveTo(er * 0.7, -er * 1.2, er * 0.8, er * 0.5); g.closePath(); } else g.ellipse(0, -er * 0.2, er, er * 0.9, 0, 0, 6.283);
+      inked(g, kind === "shifu" ? L.skinSh : L.skin, 4); if (kind === "tailung") { g.beginPath(); g.arc(0, -er * 0.2, er * 0.98, Math.PI * 1.1, Math.PI * 1.9); g.strokeStyle = L.hair; g.lineWidth = er * 0.28; g.stroke(); } g.restore(); }
+    g.beginPath(); g.ellipse(cx, cy, rx * 0.98, ry, 0, 0, 6.283); inked(g, L.skin, 5);
+    g.save(); g.clip(); g.fillStyle = kind === "tailung" ? L.hair : kind === "shifu" ? L.skinSh : "rgba(40,50,30,0.3)";
+    for (const [sx, sy] of [[-0.4, -0.5], [0.05, -0.65], [0.45, -0.45], [-0.2, -0.1], [0.3, 0.0], [-0.5, 0.2], [0.1, 0.35], [0.55, 0.3]]) { g.beginPath(); g.ellipse(cx + rx * sx, cy + ry * sy, rx * 0.09, rx * 0.07, sx, 0, 6.283); g.fill(); }
+    g.restore(); return; }
+  // ears (behind the skull)
+  if (kind !== "oogway") for (const sgn of [-1, 1]) {
+    const ex = cx + sgn * rx * (kind === "shifu" ? 0.78 : 0.66) + fo * 0.4, ey = cy - ry * (kind === "shifu" ? 0.78 : 0.82), er = rx * (kind === "shifu" ? 0.42 : cub ? 0.38 : 0.3);
+    const droop = (brow > 0.4 ? brow * 0.5 : 0) + (p.shoulders ?? 0) * 0.3; // grief = ears fold back
+    g.save(); g.translate(ex, ey); g.rotate(sgn * (0.35 + droop));
+    g.beginPath();
+    if (kind === "shifu") { g.moveTo(-er * 0.8, er * 0.5); g.quadraticCurveTo(-er * 0.7, -er * 1.2, 0, -er * 1.25); g.quadraticCurveTo(er * 0.7, -er * 1.2, er * 0.8, er * 0.5); g.closePath(); inked(g, L.hair, 4);
+      g.beginPath(); g.moveTo(-er * 0.45, er * 0.4); g.quadraticCurveTo(0, -er * 0.8, er * 0.45, er * 0.4); g.fillStyle = L.skinSh; g.fill(); }
+    else { g.ellipse(0, -er * 0.2, er, er * 0.9, 0, 0, 6.283); inked(g, L.skin, 4); g.beginPath(); g.ellipse(0, -er * 0.1, er * 0.55, er * 0.5, 0, 0, 6.283); g.fillStyle = "#c8a0a0"; g.fill();
+      g.beginPath(); g.arc(0, -er * 0.2, er * 0.98, Math.PI * 1.1, Math.PI * 1.9); g.strokeStyle = L.hair; g.lineWidth = er * 0.28; g.stroke(); }
+    g.restore();
+  }
+  // skull: broad cheeks with fur tufts (cats/panda), long smooth head (tortoise)
+  g.beginPath();
+  if (kind === "oogway") { // wide, flat-topped skull tapering to a beak
+    g.moveTo(cx - rx * 1.05, cy); g.bezierCurveTo(cx - rx * 1.1, cy - ry * 0.95, cx + rx * 1.1, cy - ry * 0.95, cx + rx * 1.05, cy);
+    g.bezierCurveTo(cx + rx * 1.0, cy + ry * 0.55, cx + rx * 0.45 + fo, cy + ry * 0.8, cx + fo * 1.2, cy + ry * 0.82);
+    g.bezierCurveTo(cx - rx * 0.45 + fo, cy + ry * 0.8, cx - rx * 1.0, cy + ry * 0.55, cx - rx * 1.05, cy); }
+  else {
+    g.moveTo(cx - rx * 0.95, cy - ry * 0.15); g.bezierCurveTo(cx - rx * 0.95, cy - ry * 1.15, cx + rx * 0.95, cy - ry * 1.15, cx + rx * 0.95, cy - ry * 0.15);
+    for (let k = 0; k <= 3; k++) { const t = k / 3; g.lineTo(cx + rx * (1.12 - t * 0.35) + fo * t, cy + ry * (0.05 + t * 0.55)); if (k < 3) g.lineTo(cx + rx * (0.92 - t * 0.3) + fo * t, cy + ry * (0.18 + t * 0.55)); }
+    g.quadraticCurveTo(cx + fo, cy + ry * 1.0, cx - rx * 0.77 + fo, cy + ry * 0.6);
+    for (let k = 3; k >= 0; k--) { const t = k / 3; if (k < 3) g.lineTo(cx - rx * (0.92 - t * 0.3) + fo * t, cy + ry * (0.18 + t * 0.55)); g.lineTo(cx - rx * (1.12 - t * 0.35) + fo * t, cy + ry * (0.05 + t * 0.55)); }
+    g.closePath();
+  }
+  const sk = g.createRadialGradient(cx - rx * 0.3, cy - ry * 0.35, 2, cx, cy, ry * 1.25);
+  sk.addColorStop(0, L.skin); sk.addColorStop(0.7, L.skin); sk.addColorStop(1, L.skinSh);
+  inked(g, sk, 5);
+  const ey = cy - ry * (kind === "oogway" ? 0.22 : 0.05), sp = rx * (kind === "oogway" ? 0.5 : 0.4);
+  // markings (clipped to the skull)
+  g.save(); g.clip();
+  if (kind === "tailung") { g.fillStyle = L.hair; const spots = [[-0.35, -0.75], [0.1, -0.85], [0.45, -0.7], [-0.62, -0.45], [0.66, -0.42], [-0.15, -0.55], [0.25, -0.5]];
+    for (const [sx, sy] of spots) { g.beginPath(); g.ellipse(cx + rx * sx + fo * 0.6, cy + ry * sy, rx * 0.075, rx * 0.06, sx, 0, 6.283); g.fill(); }
+    for (const sgn of [-1, 1]) { g.beginPath(); g.moveTo(cx + fo + sgn * rx * 0.55, cy + ry * 0.05); g.lineTo(cx + fo + sgn * rx * 0.9, cy + ry * 0.12); g.strokeStyle = L.hair; g.lineWidth = rx * 0.05; g.stroke(); } }
+  if (kind === "shifu") { g.fillStyle = L.hair; // white brow patches, cheeks + muzzle; dark tear stripes
+    for (const sgn of [-1, 1]) { g.beginPath(); g.ellipse(cx + fo + sgn * sp, ey - rx * 0.42, rx * 0.2, rx * 0.12, -sgn * 0.3, 0, 6.283); g.fill();
+      g.beginPath(); g.ellipse(cx + fo + sgn * rx * 0.62, cy + ry * 0.35, rx * 0.34, rx * 0.26, 0, 0, 6.283); g.fill();
+      g.fillStyle = "#5a2410"; g.beginPath(); g.ellipse(cx + fo + sgn * sp * 0.95, ey + rx * 0.36, rx * 0.09, rx * 0.26, sgn * 0.25, 0, 6.283); g.fill(); g.fillStyle = L.hair; } }
+  if (kind === "oogway") { g.strokeStyle = "rgba(40,50,30,0.45)"; g.lineWidth = 3; for (let k = 0; k < 4; k++) { g.beginPath(); g.arc(cx + fo, cy - ry * 0.5, rx * (0.25 + k * 0.12), Math.PI * 1.2, Math.PI * 1.8); g.stroke(); } }
+  g.restore();
+  // eyes (same expression controls as the human rig)
+  for (const sgn of [-1, 1]) {
+    const far = f * sgn < 0 ? 1 - Math.abs(f) * 0.3 : 1, ex = cx + fo + sgn * sp * (1 - Math.abs(f) * 0.12);
+    const ew = rx * (cub ? 0.3 : kind === "oogway" ? 0.2 : 0.25) * far, eh = rx * (cub ? 0.27 : kind === "oogway" ? 0.1 : 0.16) * Math.min(1.25, eye);
+    g.save(); g.beginPath(); g.ellipse(ex, ey, ew, Math.max(0.5, eh), sgn * (kind === "tailung" && !cub ? -0.12 : 0), 0, 6.283);
+    g.fillStyle = kind === "tailung" ? "#f6e8c4" : "#f4efe8"; g.fill(); g.clip();
+    if (eye > 0.1) { const ir = rx * (cub ? 0.2 : kind === "tailung" ? 0.15 : 0.12), ix = ex + lk[0] * ew * 0.45, iy = ey + lk[1] * eh * 0.4;
+      g.beginPath(); g.arc(ix, iy, ir, 0, 6.283); g.fillStyle = L.iris; g.fill();
+      g.beginPath(); if (kind === "tailung" && !cub) g.ellipse(ix, iy, ir * 0.22, ir * 0.75, 0, 0, 6.283); else g.arc(ix, iy, ir * 0.55, 0, 6.283); g.fillStyle = "#0a0708"; g.fill();
+      g.beginPath(); g.arc(ix - ir * 0.35, iy - ir * 0.35, ir * (cub ? 0.32 : 0.22), 0, 6.283); g.fillStyle = "rgba(255,255,255,0.88)"; g.fill(); }
+    g.restore();
+    g.beginPath(); g.ellipse(ex, ey, ew * 1.05, Math.max(1, eh), 0, Math.PI * 1.05, Math.PI * 1.95); g.strokeStyle = INK; g.lineWidth = kind === "oogway" ? 6 : 4.5; g.stroke();
+    if (kind === "oogway") { g.beginPath(); g.ellipse(ex, ey - eh * 0.3, ew * 1.15, eh * 0.9, 0, Math.PI, 0); g.fillStyle = L.skinSh; g.fill(); }
+    // brows (fur tufts / white patch edge); same brow semantics
+    const by = ey - rx * 0.32 - (eye > 1.05 ? rx * 0.08 : 0), inner = by + brow * -rx * 0.14 + (brow < 0 ? -brow * rx * 0.22 : 0), outer = by + (brow > 0 ? rx * 0.06 * brow : -rx * 0.03);
+    g.beginPath(); g.moveTo(ex - sgn * ew * 0.95, inner); g.quadraticCurveTo(ex, Math.min(inner, outer) - 6, ex + sgn * ew * 1.1, outer);
+    g.strokeStyle = kind === "shifu" ? (old ? "#ffffff" : "#f6efe2") : kind === "oogway" ? "#4a5840" : L.hair; g.lineWidth = rx * (kind === "shifu" ? 0.11 : 0.08); g.lineCap = "round"; g.stroke();
+  }
+  if (p.tear && p.tear > 0) { g.save(); g.globalAlpha = 0.8 * p.tear; g.strokeStyle = "#cfe4ff"; g.lineWidth = 3.5;
+    for (const sgn of [-1, 1]) { const ex = cx + fo + sgn * sp; g.beginPath(); g.moveTo(ex, ey + rx * 0.15); g.quadraticCurveTo(ex + sgn * 4, ey + rx * 0.5 * p.tear, ex + sgn * 2, ey + rx * 0.9 * p.tear); g.stroke(); } g.restore(); }
+  // muzzle
+  const mx = cx + fo * 1.2, ny = ey + rx * (kind === "oogway" ? 0.38 : 0.3);
+  if (kind !== "oogway") { g.fillStyle = kind === "shifu" ? L.hair : "#f2f0ec"; for (const sgn of [-1, 1]) { g.beginPath(); g.ellipse(mx + sgn * rx * 0.17, ny + rx * 0.22, rx * 0.22, rx * 0.17, 0, 0, 6.283); g.fill(); } }
+  g.beginPath();
+  if (kind === "oogway") { g.arc(mx - rx * 0.08, ny, 3, 0, 6.283); g.arc(mx + rx * 0.08, ny, 3, 0, 6.283); g.fillStyle = INK; g.fill(); }
+  else { const nw = rx * (cub ? 0.13 : 0.16); g.moveTo(mx - nw, ny - nw * 0.3); g.lineTo(mx + nw, ny - nw * 0.3); g.quadraticCurveTo(mx + nw * 0.4, ny + nw * 0.6, mx, ny + nw * 0.8); g.quadraticCurveTo(mx - nw * 0.4, ny + nw * 0.6, mx - nw, ny - nw * 0.3);
+    inked(g, kind === "shifu" ? "#1a1212" : "#7a5458", 3); }
+  // mouth: Y from the nose, corners by `mouth`, opening by `open`
+  const my = ny + rx * (kind === "oogway" ? 0.28 : 0.4), mw = rx * (kind === "oogway" ? 0.7 : 0.26) * (1 + open * 0.2);
+  g.beginPath(); if (kind !== "oogway") { g.moveTo(mx, ny + rx * 0.12); g.lineTo(mx, my - rx * 0.04); }
+  g.moveTo(mx - mw, my - mouth * rx * 0.08); g.quadraticCurveTo(mx, my + mouth * rx * 0.12 + open * rx * 0.3, mx + mw, my - mouth * rx * 0.08);
+  if (open > 0.05) { g.quadraticCurveTo(mx, my - open * rx * 0.02, mx - mw, my - mouth * rx * 0.08); g.fillStyle = "#3a1a20"; g.fill();
+    if (kind === "tailung" && open > 0.3) { g.fillStyle = "#f6f2e8"; for (const sgn of [-1, 1]) { g.beginPath(); g.moveTo(mx + sgn * mw * 0.55, my - 2); g.lineTo(mx + sgn * mw * 0.45, my + rx * 0.13 * open); g.lineTo(mx + sgn * mw * 0.35, my - 2); g.fill(); } } }
+  g.strokeStyle = INK; g.lineWidth = 4; g.stroke();
+  // whiskers (old Shifu: long drooping grey moustache whiskers)
+  if (kind !== "oogway") { g.strokeStyle = old ? "rgba(230,226,218,0.95)" : "rgba(40,30,30,0.55)"; g.lineWidth = old ? 3.5 : 2; g.lineCap = "round";
+    for (const sgn of [-1, 1]) for (let k = 0; k < (old ? 2 : 3); k++) { const wy = ny + rx * (0.2 + k * 0.09); g.beginPath(); g.moveTo(mx + sgn * rx * 0.3, wy);
+      g.quadraticCurveTo(mx + sgn * rx * (old ? 0.9 : 0.75), wy + (old ? rx * 0.35 : -rx * 0.04 + k * 4), mx + sgn * rx * (old ? 0.95 : 1.05), wy + (old ? rx * 0.55 : k * 10)); g.stroke(); } }
 }
